@@ -135,6 +135,28 @@ export function formatFeetInches(inches, denom = 16) {
   return (neg ? "-" : "") + parts.join(" ");
 }
 
+// Parse a typed length into INCHES, honoring the current unit mode.
+// Imperial: "12'6", "12' 6\"", "12'", `6"`, "12 6", or a bare number = inches.
+// Metric: a bare number = millimetres.
+export function parseLengthInput(str) {
+  if (str == null) return NaN;
+  const s = String(str).trim();
+  if (!s) return NaN;
+  if (_unit === "metric") {
+    const mm = parseFloat(s.replace(/[^\d.\-]/g, ""));
+    return isNaN(mm) ? NaN : mm / MM_PER_IN;
+  }
+  // imperial: pull feet (before ') and inches (rest)
+  const feetMatch = s.match(/(-?\d+(\.\d+)?)\s*'/);
+  let inches = 0;
+  let rest = s;
+  if (feetMatch) { inches += parseFloat(feetMatch[1]) * 12; rest = s.slice(feetMatch.index + feetMatch[0].length); }
+  const inMatch = rest.match(/(-?\d+(\.\d+)?)/);
+  if (inMatch) inches += parseFloat(inMatch[1]);
+  else if (!feetMatch) return NaN;
+  return inches;
+}
+
 // Format an area given in square inches, as square feet or square metres.
 export function formatArea(sqInches) {
   if (_unit === "metric") {

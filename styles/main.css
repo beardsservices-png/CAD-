@@ -160,6 +160,17 @@ body.hide-panel .panel { display: none; }
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+/* Floating typed-dimension entry */
+.dim-input {
+  position: fixed; z-index: 75;
+  background: #1e293b; color: #fff;
+  font-size: 13px; font-variant-numeric: tabular-nums;
+  padding: 4px 9px; border-radius: 7px;
+  border: 1px solid #2563eb;
+  pointer-events: none; display: none;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.3);
+}
+
 /* In-app modal dialogs (replace native prompt/confirm/alert) */
 .app-modal {
   position: fixed; inset: 0; z-index: 80;

@@ -74,6 +74,17 @@ class PolyTool {
       this.app.snap
     );
   }
+  // Place the next vertex at an exact distance along the current direction.
+  commitTypedLength(inches) {
+    if (!this.pts.length || !this.cursor || !isFinite(inches) || inches <= 0) return false;
+    const a = this.pts[this.pts.length - 1];
+    const d = sub(this.cursor, a);
+    const l = len(d) || 1;
+    const np = v(a.x + (d.x / l) * inches, a.y + (d.y / l) * inches);
+    this.pts.push(np);
+    this.cursor = { ...np };
+    return true;
+  }
   onDblClick() {
     this._commit(false);
   }

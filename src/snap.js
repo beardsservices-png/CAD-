@@ -46,7 +46,33 @@ export function resolveSnap(worldPt, doc, viewport, settings, exclude = new Set(
     }
   }
 
-  if (best) return { point: best, type };
+  if (best) return { point: best, type, guides: [] };
+
+  // Magnetic alignment: snap X and/or Y to line up with an existing vertex,
+  // drawing a guide line to show the inferred alignment.
+  if (settings.align) {
+    let ax = null, ay = null;
+    let dxBest = tolWorld, dyBest = tolWorld;
+    for (const s of doc.shapes) {
+      if (exclude.has(s.id)) continue;
+      if (!doc.layer(s.layer).visible) continue;
+      for (const pt of shapePoints(s)) {
+        const dx = Math.abs(pt.x - worldPt.x);
+        const dy = Math.abs(pt.y - worldPt.y);
+        if (dx < dxBest) { dxBest = dx; ax = pt; }
+        if (dy < dyBest) { dyBest = dy; ay = pt; }
+      }
+    }
+    if (ax || ay) {
+      const px = ax ? ax.x : (settings.grid ? snapToStep(worldPt.x, settings.gridStep) : worldPt.x);
+      const py = ay ? ay.y : (settings.grid ? snapToStep(worldPt.y, settings.gridStep) : worldPt.y);
+      const point = v(px, py);
+      const guides = [];
+      if (ax) guides.push({ from: { ...ax }, to: point, axis: "v" });
+      if (ay) guides.push({ from: { ...ay }, to: point, axis: "h" });
+      return { point, type: "align", guides };
+    }
+  }
 
   // Fall back to grid snap.
   if (settings.grid) {
@@ -56,8 +82,9 @@ export function resolveSnap(worldPt, doc, viewport, settings, exclude = new Set(
         snapToStep(worldPt.y, settings.gridStep)
       ),
       type: "grid",
+      guides: [],
     };
   }
 
-  return { point: { ...worldPt }, type: null };
+  return { point: { ...worldPt }, type: null, guides: [] };
 }

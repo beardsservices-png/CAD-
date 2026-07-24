@@ -1,7 +1,7 @@
 // main.js — application orchestrator: wiring, input, render loop, file I/O.
 import {
   v, dist, formatFeetInches, formatArea,
-  setUnitMode, getUnitMode, toDisplay, fromDisplay, unitLabel, displayStep, roundDisplay,
+  setUnitMode, getUnitMode, toDisplay, fromDisplay, unitLabel, displayStep, roundDisplay, parseLengthInput,
 } from "./geometry.js";
 import { Viewport } from "./viewport.js";
 import { Document, shapeMetrics, shapeClosed, makeShape, MATERIALS } from "./model.js";
@@ -44,6 +44,7 @@ const theme = {
     endpoint: "#16a34a",
     midpoint: "#0891b2",
     grid: "#94a3b8",
+    align: "#a855f7",
   },
 };
 
@@ -65,7 +66,7 @@ class App {
     this.vp = new Viewport(this.canvas);
     this.doc = new Document();
     this.wallThickness = 3.5;
-    this.snap = { grid: true, gridStep: 1, endpoint: true, ortho: false, angleLock: false, tolPx: 12 };
+    this.snap = { grid: true, gridStep: 1, endpoint: true, align: true, ortho: false, angleLock: false, tolPx: 12 };
     this.activeToolName = "select";
     this.tool = createTool(this, "select");
     this.mouseWorld = v(0, 0);
@@ -76,6 +77,10 @@ class App {
     this.spaceDown = false;
     this.projectId = null; // current cloud project id, if saved
     this.cloudOn = false;
+    this.hoverId = null;
+    this._dragging = false;
+    this.dimBuffer = null; // typed-dimension entry while drawing
+    this.mouseScreen = v(0, 0);
 
     this._initCanvas();
     this._bindPointer();
@@ -111,9 +116,57 @@ class App {
     ctx.setTransform(this.vp.dpr, 0, 0, this.vp.dpr, 0, 0);
     ctx.clearRect(0, 0, this.vp.width, this.vp.height);
     this.vp.drawGrid(ctx, theme);
+    this._drawHover(ctx);
     renderShapes(ctx, this.doc, this.vp, theme);
     if (this.tool.draw) this.tool.draw(ctx, this.vp, theme);
+    this._drawGuides(ctx);
     this._drawSnapIndicator(ctx);
+  }
+
+  // Subtle highlight of the shape under the cursor (Select tool).
+  _drawHover(ctx) {
+    if (this.activeToolName !== "select" || !this.hoverId) return;
+    if (this.doc.selection.has(this.hoverId)) return;
+    const s = this.doc.get(this.hoverId);
+    if (!s) return;
+    const pts = shapePoints(s);
+    ctx.save();
+    ctx.strokeStyle = "rgba(37,99,235,0.5)";
+    ctx.lineWidth = 3;
+    ctx.lineJoin = "round";
+    ctx.beginPath();
+    pts.forEach((p, i) => { const sp = this.vp.worldToScreen(p); i ? ctx.lineTo(sp.x, sp.y) : ctx.moveTo(sp.x, sp.y); });
+    if (shapeClosed(s) || s.type === "symbol") ctx.closePath();
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // Magnetic alignment guide lines from the current snap.
+  _drawGuides(ctx) {
+    const g = this.lastSnap && this.lastSnap.guides;
+    if (!g || !g.length || this.activeToolName === "select" && !this._dragging) return;
+    ctx.save();
+    ctx.strokeStyle = theme.snap.align;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([5, 4]);
+    for (const gd of g) {
+      const a = this.vp.worldToScreen(gd.from);
+      const b = this.vp.worldToScreen(gd.to);
+      // extend slightly past the cursor for a "guide" feel
+      const ex = b.x + (b.x - a.x) * 0.06;
+      const ey = b.y + (b.y - a.y) * 0.06;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(ex, ey);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = theme.snap.align;
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, 2.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.setLineDash([5, 4]);
+    }
+    ctx.restore();
   }
 
   _drawSnapIndicator(ctx) {
@@ -155,6 +208,51 @@ class App {
     return { snap: res.point, world };
   }
 
+  // Context-aware hover: highlight the shape under the cursor and set the cursor.
+  _updateHover(sp, world) {
+    if (this.activeToolName !== "select" || this._dragging) { this.hoverId = null; return; }
+    const tol = 8 / this.vp.scale;
+    let overHandle = false;
+    for (const id of this.doc.selection) {
+      const s = this.doc.get(id);
+      if (!s || s.locked) continue;
+      if (shapePoints(s).some((p) => dist(world, p) <= tol)) { overHandle = true; break; }
+    }
+    const hit = this.doc.hitTest(world, tol);
+    this.hoverId = hit ? hit.id : null;
+    this.canvas.style.cursor = overHandle ? "grab" : hit ? "move" : "default";
+  }
+
+  // Pan the view when drawing near a screen edge so long runs keep flowing.
+  _autoPan(sp) {
+    const t = this.tool;
+    const drawing = this.activeToolName !== "select" && t &&
+      ((t.pts && t.pts.length) || t.p0 || t.start || t.a);
+    if (!drawing) return;
+    const m = 28, speed = 12;
+    let dx = 0, dy = 0;
+    if (sp.x < m) dx = speed; else if (sp.x > this.vp.width - m) dx = -speed;
+    if (sp.y < m) dy = speed; else if (sp.y > this.vp.height - m) dy = -speed;
+    if (dx || dy) this.vp.panBy(dx, dy);
+  }
+
+  // Floating "type a length" box shown while entering a typed dimension.
+  _showDimInput() {
+    let el = document.getElementById("dim-input");
+    if (!el) { el = document.createElement("div"); el.id = "dim-input"; el.className = "dim-input"; document.body.appendChild(el); }
+    el.textContent = `⟺ ${this.dimBuffer} ${unitLabel()}`;
+    el.style.display = "block";
+    this._positionDimInput();
+  }
+  _positionDimInput() {
+    const el = document.getElementById("dim-input");
+    if (!el || this.dimBuffer == null) return;
+    const r = this.canvas.getBoundingClientRect();
+    el.style.left = `${r.left + this.mouseScreen.x + 18}px`;
+    el.style.top = `${r.top + this.mouseScreen.y - 12}px`;
+  }
+  _hideDimInput() { const el = document.getElementById("dim-input"); if (el) el.style.display = "none"; }
+
   _bindPointer() {
     const c = this.canvas;
     c.addEventListener("pointerdown", (ev) => {
@@ -176,6 +274,7 @@ class App {
       }
       if (ev.button !== 0) return;
 
+      this._dragging = true;
       const sp = this._screenPt(ev);
       const { snap, world } = this._snapped(sp);
       this.tool.onDown && this.tool.onDown(snap, ev, world);
@@ -189,6 +288,7 @@ class App {
         return;
       }
       const sp = this._screenPt(ev);
+      this.mouseScreen = sp;
       if (this.panning) {
         const dx = sp.x - this.panLast.x;
         const dy = sp.y - this.panLast.y;
@@ -198,13 +298,17 @@ class App {
       }
       const { snap, world } = this._snapped(sp);
       this.mouseWorld = world;
+      this._updateHover(sp, world);
+      this._autoPan(sp);
       this.tool.onMove && this.tool.onMove(snap, ev, world);
+      if (this.dimBuffer != null) this._positionDimInput();
       this._updateStatus();
     });
 
     const end = (ev) => {
       this.pointers.delete(ev.pointerId);
       if (this.pointers.size < 2) this.gesture = null;
+      this._dragging = false;
       if (this.panning) {
         this.panning = false;
         return;
@@ -215,7 +319,8 @@ class App {
       this._save();
     };
     c.addEventListener("pointerup", end);
-    c.addEventListener("pointercancel", (ev) => this.pointers.delete(ev.pointerId));
+    c.addEventListener("pointercancel", (ev) => { this.pointers.delete(ev.pointerId); this._dragging = false; });
+    c.addEventListener("pointerleave", () => { this.hoverId = null; });
     c.addEventListener("dblclick", async (ev) => {
       // Double-click a text shape to edit it in place.
       if (this.activeToolName === "select") {
@@ -279,6 +384,32 @@ class App {
     };
     window.addEventListener("keydown", (ev) => {
       if (ev.target.tagName === "INPUT" || ev.target.tagName === "TEXTAREA") return;
+
+      // Type-a-dimension while drawing: capture digits/feet-inches into a
+      // floating box; Enter fixes the current segment to that exact length.
+      const dt = this.tool;
+      const canDim = this.activeToolName !== "select" && dt &&
+        typeof dt.commitTypedLength === "function" && dt.pts && dt.pts.length && dt.cursor;
+      if (canDim || this.dimBuffer != null) {
+        if (/^[0-9.'"]$/.test(ev.key)) {
+          ev.preventDefault(); this.dimBuffer = (this.dimBuffer || "") + ev.key; this._showDimInput(); return;
+        }
+        if (ev.key === "Backspace" && this.dimBuffer != null) {
+          ev.preventDefault();
+          this.dimBuffer = this.dimBuffer.slice(0, -1);
+          if (!this.dimBuffer) { this.dimBuffer = null; this._hideDimInput(); } else this._showDimInput();
+          return;
+        }
+        if (ev.key === "Enter" && this.dimBuffer) {
+          ev.preventDefault();
+          const inches = parseLengthInput(this.dimBuffer);
+          this.dimBuffer = null; this._hideDimInput();
+          if (isFinite(inches) && dt.commitTypedLength) { this.doc.snapshot(); dt.commitTypedLength(inches); this._save(); }
+          return;
+        }
+        if (ev.key === "Escape" && this.dimBuffer != null) { ev.preventDefault(); this.dimBuffer = null; this._hideDimInput(); return; }
+      }
+
       if (ev.code === "Space") { this.spaceDown = true; this.canvas.style.cursor = "grab"; return; }
       if (ev.key === "Tab") { ev.preventDefault(); this._togglePanel(); return; }
       const meta = ev.ctrlKey || ev.metaKey;
@@ -331,6 +462,8 @@ class App {
   // ---- tool + commit ----
   setTool(name) {
     if (this.tool && this.tool.cancel) this.tool.cancel();
+    this.dimBuffer = null; this._hideDimInput();
+    this.hoverId = null;
     this.activeToolName = name;
     this.tool = createTool(this, name);
     document.querySelectorAll(".tool-btn").forEach((b) => {
@@ -445,6 +578,7 @@ class App {
     };
     bind("snap-grid", "grid");
     bind("snap-endpoint", "endpoint");
+    bind("snap-align", "align");
     bind("snap-ortho", "ortho");
 
     const gridStep = document.getElementById("grid-step");
