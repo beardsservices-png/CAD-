@@ -148,6 +148,33 @@ body {
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+/* In-app modal dialogs (replace native prompt/confirm/alert) */
+.app-modal {
+  position: fixed; inset: 0; z-index: 80;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.app-modal-card {
+  background: var(--panel);
+  border-radius: 14px;
+  width: 100%; max-width: 420px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+}
+.app-modal-title { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.app-modal-msg { color: var(--muted); font-size: 13px; margin-bottom: 12px; line-height: 1.5; }
+.app-modal-input {
+  width: 100%; border: 1px solid var(--line); border-radius: 8px;
+  padding: 9px 11px; font-size: 14px; margin: 8px 0 14px;
+}
+.app-modal-input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+.app-modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.app-modal-actions .ghost { color: var(--ink); border-color: var(--line); }
+.app-modal-actions .ghost:hover { background: var(--bg); color: var(--ink); }
+.app-modal-actions .ghost.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.app-modal-actions .ghost.primary:hover { background: #1d4ed8; color: #fff; }
+
 /* Workspace */
 .workspace { flex: 1 1 auto; display: flex; min-height: 0; }
 

@@ -1,7 +1,7 @@
 // main.js — application orchestrator: wiring, input, render loop, file I/O.
 import { v, dist, formatFeetInches, formatArea } from "./geometry.js";
 import { Viewport } from "./viewport.js";
-import { Document, shapeMetrics, shapeClosed } from "./model.js";
+import { Document, shapeMetrics, shapeClosed, makeShape } from "./model.js";
 import { resolveSnap } from "./snap.js";
 import { renderShapes } from "./render.js";
 import { createTool } from "./tools.js";
@@ -211,13 +211,13 @@ class App {
     };
     c.addEventListener("pointerup", end);
     c.addEventListener("pointercancel", (ev) => this.pointers.delete(ev.pointerId));
-    c.addEventListener("dblclick", (ev) => {
+    c.addEventListener("dblclick", async (ev) => {
       // Double-click a text shape to edit it in place.
       if (this.activeToolName === "select") {
         const world = this.vp.screenToWorld(this._screenPt(ev));
         const hit = this.doc.hitTest(world, 12 / this.vp.scale);
         if (hit && hit.type === "text") {
-          const t = window.prompt("Edit text:", hit.text || "");
+          const t = await this._prompt("Edit text", hit.text || "");
           if (t != null) this.commit(() => (hit.text = t.trim()));
           return;
         }
@@ -384,8 +384,8 @@ class App {
       btn.addEventListener("click", () => this.setTool(btn.dataset.tool));
     });
     // file actions
-    document.getElementById("btn-new").onclick = () => {
-      if (confirm("Start a new drawing? Unsaved work is cleared.")) {
+    document.getElementById("btn-new").onclick = async () => {
+      if (await this._confirm("Start a new drawing?", "Unsaved local changes will be cleared.")) {
         this.doc = new Document();
         this.projectId = null;
         this._save();
@@ -557,13 +557,13 @@ class App {
       await cloud.update(this.projectId, this.doc.name, this.doc.toJSON());
       this._toast("Saved to cloud");
     } catch (e) {
-      alert(e.message || "Save failed");
+      this._alert("Save failed", e.message || "");
     }
   }
 
   async _cloudSaveAs() {
     if (!this.cloudOn) return;
-    const name = prompt("Project name:", this.doc.name && this.doc.name !== "Untitled" ? this.doc.name : "");
+    const name = await this._prompt("Project name", this.doc.name && this.doc.name !== "Untitled" ? this.doc.name : "", "Untitled");
     if (name == null) return;
     this.doc.name = name.trim() || "Untitled";
     try {
@@ -574,7 +574,7 @@ class App {
       const modal = document.getElementById("projects-modal");
       if (!modal.classList.contains("hidden")) this._renderProjectList();
     } catch (e) {
-      alert(e.message || "Save failed");
+      this._alert("Save failed", e.message || "");
     }
   }
 
@@ -633,12 +633,12 @@ class App {
       this._setProjectName();
       document.getElementById("projects-modal").classList.add("hidden");
     } catch (e) {
-      alert(e.message || "Could not open project");
+      this._alert("Could not open project", e.message || "");
     }
   }
 
   async _deleteProject(id, name) {
-    if (!confirm(`Delete “${name || "Untitled"}”? This cannot be undone.`)) return;
+    if (!(await this._confirm(`Delete “${name || "Untitled"}”?`, "This cannot be undone."))) return;
     try {
       await cloud.remove(id);
       if (this.projectId === id) {
@@ -647,7 +647,7 @@ class App {
       }
       this._renderProjectList();
     } catch (e) {
-      alert(e.message || "Delete failed");
+      this._alert("Delete failed", e.message || "");
     }
   }
 
@@ -663,6 +663,85 @@ class App {
     el.classList.add("show");
     clearTimeout(this._toastT);
     this._toastT = setTimeout(() => el.classList.remove("show"), 1800);
+  }
+
+  // ---- non-blocking modal dialogs (replace native prompt/confirm/alert) ----
+  // These never freeze the page and always let the user escape (Esc / backdrop).
+  _modal({ title, message = "", input = false, value = "", placeholder = "", ok = "OK", cancel = "Cancel" }) {
+    return new Promise((resolve) => {
+      const back = document.createElement("div");
+      back.className = "app-modal";
+      const card = document.createElement("div");
+      card.className = "app-modal-card";
+      const h = document.createElement("div");
+      h.className = "app-modal-title";
+      h.textContent = title;
+      card.appendChild(h);
+      if (message) {
+        const p = document.createElement("div");
+        p.className = "app-modal-msg";
+        p.textContent = message;
+        card.appendChild(p);
+      }
+      let field = null;
+      if (input) {
+        field = document.createElement("input");
+        field.className = "app-modal-input";
+        field.type = "text";
+        field.value = value;
+        field.placeholder = placeholder;
+        card.appendChild(field);
+      }
+      const actions = document.createElement("div");
+      actions.className = "app-modal-actions";
+      const cancelBtn = document.createElement("button");
+      cancelBtn.className = "ghost";
+      cancelBtn.textContent = cancel;
+      const okBtn = document.createElement("button");
+      okBtn.className = "ghost primary";
+      okBtn.textContent = ok;
+      if (cancel === null) cancelBtn.style.display = "none";
+      actions.append(cancelBtn, okBtn);
+      card.appendChild(actions);
+      back.appendChild(card);
+      document.body.appendChild(back);
+      if (field) setTimeout(() => { field.focus(); field.select(); }, 0);
+
+      const finish = (result) => {
+        window.removeEventListener("keydown", onKey, true);
+        back.remove();
+        resolve(result);
+      };
+      const onKey = (e) => {
+        if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); finish(input ? null : false); }
+        else if (e.key === "Enter") { e.preventDefault(); e.stopPropagation(); finish(input ? (field ? field.value : "") : true); }
+      };
+      window.addEventListener("keydown", onKey, true);
+      okBtn.onclick = () => finish(input ? (field ? field.value : "") : true);
+      cancelBtn.onclick = () => finish(input ? null : false);
+      back.onclick = (e) => { if (e.target === back) finish(input ? null : false); };
+    });
+  }
+  _prompt(title, value = "", placeholder = "") {
+    return this._modal({ title, input: true, value, placeholder });
+  }
+  _confirm(title, message = "") {
+    return this._modal({ title, message, ok: "OK", cancel: "Cancel" });
+  }
+  _alert(title, message = "") {
+    return this._modal({ title, message, ok: "OK", cancel: null });
+  }
+
+  // Place a text note using the in-app modal, then return to Select so the
+  // Text tool can't re-trap the user on the next click.
+  async _promptText(sp) {
+    const t = await this._prompt("Text / note", "", "Type a note…");
+    if (t != null && t.trim()) {
+      this.commit(() =>
+        this.doc.add(makeShape("text", { layer: "detail", pts: [{ ...sp }], text: t.trim(), size: 12 }))
+      );
+    }
+    this.setTool("select");
   }
 
   _drawSymbolPreview(cv, sym) {
@@ -713,8 +792,8 @@ class App {
       name.textContent = layer.name;
       name.className = "layer-name";
       name.title = "Double-click to rename";
-      name.ondblclick = () => {
-        const n = prompt("Layer name:", layer.name);
+      name.ondblclick = async () => {
+        const n = await this._prompt("Layer name", layer.name);
         if (n && n.trim()) { layer.name = n.trim(); this._buildLayers(); this.refreshPanel(); this._save(); }
       };
 
@@ -735,8 +814,8 @@ class App {
     host.appendChild(add);
   }
 
-  _addLayer() {
-    const n = prompt("New layer name:", `Layer ${this.doc.layers.length + 1}`);
+  async _addLayer() {
+    const n = await this._prompt("New layer name", `Layer ${this.doc.layers.length + 1}`);
     if (!n || !n.trim()) return;
     const id = `layer_${Date.now().toString(36)}`;
     const palette = ["#0891b2", "#be123c", "#4d7c0f", "#a16207", "#7c3aed"];
@@ -747,11 +826,11 @@ class App {
     this._save();
   }
 
-  _deleteLayer(id) {
-    if (this.doc.layers.length <= 1) { alert("Keep at least one layer."); return; }
+  async _deleteLayer(id) {
+    if (this.doc.layers.length <= 1) { this._alert("Can’t delete", "Keep at least one layer."); return; }
     const used = this.doc.shapes.some((s) => s.layer === id);
     const fallback = this.doc.layers.find((l) => l.id !== id).id;
-    if (used && !confirm("Delete this layer? Its shapes move to another layer.")) return;
+    if (used && !(await this._confirm("Delete this layer?", "Its shapes move to another layer."))) return;
     this.commit(() => {
       this.doc.shapes.forEach((s) => { if (s.layer === id) s.layer = fallback; });
       this.doc.layers = this.doc.layers.filter((l) => l.id !== id);
@@ -1052,7 +1131,7 @@ class App {
         this.refreshPanel();
         this._fit();
         this._save();
-      } catch (err) { alert("Could not open that file."); }
+      } catch (err) { this._alert("Could not open that file", "It may be corrupted or not a Draft Studio file."); }
     };
     reader.readAsText(file);
     e.target.value = "";

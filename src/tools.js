@@ -351,14 +351,8 @@ class TextTool {
     this.cursor = null;
   }
   onDown(sp) {
-    const text = window.prompt("Text / note:", "");
-    if (text && text.trim()) {
-      this.app.commit(() =>
-        this.app.doc.add(
-          makeShape("text", { layer: "detail", pts: [{ ...sp }], text: text.trim(), size: 12 })
-        )
-      );
-    }
+    // Non-blocking in-app dialog; returns to Select afterward.
+    this.app._promptText({ ...sp });
   }
   onMove(sp) {
     this.cursor = { ...sp };
