@@ -16,6 +16,7 @@ import {
   setCircleDiameter,
   setSegmentLength,
 } from "./transforms.js";
+import * as cloud from "./cloud.js";
 
 const theme = {
   gridMinor: "#eef2f7",
@@ -57,6 +58,8 @@ class App {
     this.gesture = null;
     this.panning = false;
     this.spaceDown = false;
+    this.projectId = null; // current cloud project id, if saved
+    this.cloudOn = false;
 
     this._initCanvas();
     this._bindPointer();
@@ -257,7 +260,7 @@ class App {
         if (ev.shiftKey) this.doc.redo(); else this.doc.undo();
         this.refreshPanel(); this._save(); return;
       }
-      if (meta && ev.key.toLowerCase() === "s") { ev.preventDefault(); this._saveFile(); return; }
+      if (meta && ev.key.toLowerCase() === "s") { ev.preventDefault(); if (this.cloudOn) this._cloudSave(); else this._saveFile(); return; }
       if (meta && ev.key.toLowerCase() === "a") {
         ev.preventDefault();
         this.doc.shapes.forEach((s) => this.doc.selection.add(s.id));
@@ -355,8 +358,11 @@ class App {
     document.getElementById("btn-new").onclick = () => {
       if (confirm("Start a new drawing? Unsaved work is cleared.")) {
         this.doc = new Document();
+        this.projectId = null;
         this._save();
+        this._buildLayers();
         this.refreshPanel();
+        this._setProjectName();
       }
     };
     document.getElementById("btn-save").onclick = () => this._saveFile();
@@ -364,6 +370,7 @@ class App {
     document.getElementById("file-input").onchange = (e) => this._openFile(e);
     document.getElementById("btn-png").onclick = () => this._exportPNG();
     document.getElementById("btn-fit").onclick = () => this._fit();
+    this._setupCloud();
     this._setup3D();
 
     // snap toggles
@@ -489,6 +496,143 @@ class App {
   _close3D() {
     this.overlay.classList.add("hidden");
     this.view3dOpen = false;
+  }
+
+  // ---- cloud storage (server /api backed by the DATA_DIR volume) ----
+  async _setupCloud() {
+    this.cloudOn = await cloud.isAvailable();
+    const projBtn = document.getElementById("btn-projects");
+    const saveBtn = document.getElementById("btn-cloud-save");
+    if (!this.cloudOn) return; // static-only host: cloud UI stays hidden
+    projBtn.hidden = false;
+    saveBtn.hidden = false;
+    projBtn.onclick = () => this._openProjects();
+    saveBtn.onclick = () => this._cloudSave();
+    document.getElementById("btn-projects-close").onclick = () =>
+      document.getElementById("projects-modal").classList.add("hidden");
+    document.getElementById("btn-save-as").onclick = () => this._cloudSaveAs();
+    this._setProjectName();
+  }
+
+  _setProjectName() {
+    const el = document.getElementById("project-name");
+    if (el) el.textContent = this.projectId ? this.doc.name || "Untitled" : "";
+  }
+
+  // Save to the current cloud project, or create one if none yet.
+  async _cloudSave() {
+    if (!this.cloudOn) return;
+    try {
+      if (!this.projectId) return this._cloudSaveAs();
+      await cloud.update(this.projectId, this.doc.name, this.doc.toJSON());
+      this._toast("Saved to cloud");
+    } catch (e) {
+      alert(e.message || "Save failed");
+    }
+  }
+
+  async _cloudSaveAs() {
+    if (!this.cloudOn) return;
+    const name = prompt("Project name:", this.doc.name && this.doc.name !== "Untitled" ? this.doc.name : "");
+    if (name == null) return;
+    this.doc.name = name.trim() || "Untitled";
+    try {
+      const meta = await cloud.create(this.doc.name, this.doc.toJSON());
+      this.projectId = meta.id;
+      this._setProjectName();
+      this._toast("Saved to cloud");
+      const modal = document.getElementById("projects-modal");
+      if (!modal.classList.contains("hidden")) this._renderProjectList();
+    } catch (e) {
+      alert(e.message || "Save failed");
+    }
+  }
+
+  async _openProjects() {
+    const modal = document.getElementById("projects-modal");
+    modal.classList.remove("hidden");
+    document.getElementById("storage-note").textContent = "Saved on the server volume";
+    this._renderProjectList();
+  }
+
+  async _renderProjectList() {
+    const host = document.getElementById("projects-list");
+    host.innerHTML = `<div class="projects-empty">Loading…</div>`;
+    let items = [];
+    try {
+      items = await cloud.list();
+    } catch (e) {
+      host.innerHTML = `<div class="projects-empty">${e.message}</div>`;
+      return;
+    }
+    if (!items.length) {
+      host.innerHTML = `<div class="projects-empty">No saved projects yet.<br>Use “Save current as new”.</div>`;
+      return;
+    }
+    host.innerHTML = "";
+    for (const it of items) {
+      const row = document.createElement("div");
+      row.className = "project-row";
+      const when = it.updatedAt ? new Date(it.updatedAt).toLocaleString() : "";
+      const main = document.createElement("div");
+      main.className = "p-main";
+      main.innerHTML = `<div class="p-name"></div><div class="p-date">${when}${this.projectId === it.id ? " · open" : ""}</div>`;
+      main.querySelector(".p-name").textContent = it.name || "Untitled";
+      const open = document.createElement("button");
+      open.textContent = "Open";
+      open.onclick = () => this._openProject(it.id);
+      const del = document.createElement("button");
+      del.textContent = "Delete";
+      del.className = "danger";
+      del.onclick = () => this._deleteProject(it.id, it.name);
+      row.append(main, open, del);
+      host.appendChild(row);
+    }
+  }
+
+  async _openProject(id) {
+    try {
+      const rec = await cloud.load(id);
+      this.doc = Document.fromJSON(rec.doc || {});
+      this.doc.name = rec.name || "Untitled";
+      this.projectId = rec.id;
+      this._buildLayers();
+      this.refreshPanel();
+      this._fit();
+      this._save();
+      this._setProjectName();
+      document.getElementById("projects-modal").classList.add("hidden");
+    } catch (e) {
+      alert(e.message || "Could not open project");
+    }
+  }
+
+  async _deleteProject(id, name) {
+    if (!confirm(`Delete “${name || "Untitled"}”? This cannot be undone.`)) return;
+    try {
+      await cloud.remove(id);
+      if (this.projectId === id) {
+        this.projectId = null;
+        this._setProjectName();
+      }
+      this._renderProjectList();
+    } catch (e) {
+      alert(e.message || "Delete failed");
+    }
+  }
+
+  _toast(msg) {
+    let el = document.getElementById("toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "toast";
+      el.className = "toast";
+      document.body.appendChild(el);
+    }
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(this._toastT);
+    this._toastT = setTimeout(() => el.classList.remove("show"), 1800);
   }
 
   _drawSymbolPreview(cv, sym) {

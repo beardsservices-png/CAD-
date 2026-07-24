@@ -11,17 +11,34 @@
       <div class="brand">
         <span class="logo">▦</span>
         <span>Draft Studio</span>
+        <span id="project-name" class="project-name"></span>
       </div>
       <div class="file-actions">
         <button id="btn-new" class="ghost">New</button>
+        <button id="btn-projects" class="ghost" hidden>Projects</button>
+        <button id="btn-cloud-save" class="ghost primary" hidden>Cloud Save</button>
         <button id="btn-open" class="ghost">Open</button>
-        <button id="btn-save" class="ghost">Save</button>
+        <button id="btn-save" class="ghost">Export JSON</button>
         <button id="btn-png" class="ghost">Export PNG</button>
         <button id="btn-fit" class="ghost">Fit</button>
         <button id="btn-3d" class="ghost primary">3D View</button>
         <input id="file-input" type="file" accept=".json" hidden />
       </div>
     </header>
+
+    <div id="projects-modal" class="modal hidden">
+      <div class="modal-card">
+        <div class="modal-head">
+          <h2>Cloud Projects</h2>
+          <button id="btn-projects-close" class="ghost">Close</button>
+        </div>
+        <div class="modal-actions">
+          <button id="btn-save-as" class="ghost primary">＋ Save current as new</button>
+          <span id="storage-note" class="muted"></span>
+        </div>
+        <div id="projects-list" class="projects-list"></div>
+      </div>
+    </div>
 
     <div class="workspace">
       <nav class="toolbar" aria-label="Tools">

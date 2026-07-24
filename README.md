@@ -11,24 +11,36 @@ an iPad/tablet with touch.
 
 ## Running it
 
-It's a static site — any web server works. From the project folder:
-
 ```bash
-python3 -m http.server 8000
-# then open http://localhost:8000
+npm start          # zero-dependency Node server, defaults to port 8080
+# then open http://localhost:8080
 ```
 
-(ES modules need to be served over http, not opened as a `file://` path.)
+The server (`server.js`) serves the app *and* provides a small storage API. It
+has no npm dependencies. (A plain static server like `python3 -m http.server`
+also works for the drawing UI, but without cloud project storage.)
 
 ## Deploying (Railway / Render / Fly / any host)
-
-The app ships with a tiny zero-dependency Node server (`server.js`) so any
-process-based host can run it:
 
 - **Railway:** New Project → Deploy from GitHub repo → pick this repo. Railway
   auto-detects Node from `package.json`, runs `npm start`, and binds to the
   `PORT` it provides. No build step, no config needed.
-- Locally the same command works: `npm start` (defaults to port 8080).
+- **Persistent storage:** add a Volume and mount it (e.g. at `/data`), then set
+  the env var `DATA_DIR=/data`. Drawings saved from the app land there and
+  survive redeploys, shared across every device that opens the site. Without a
+  volume the app still runs — it just falls back to a local folder and the
+  Cloud Projects UI hides itself if no API is reachable.
+
+### Storage API
+
+| Method | Path | Purpose |
+|--------|------|---------|
+| GET | `/api/health` | Check API + report storage dir |
+| GET | `/api/drawings` | List saved projects (id, name, updatedAt) |
+| POST | `/api/drawings` | Create a project → returns new id |
+| GET | `/api/drawings/:id` | Load a project |
+| PUT | `/api/drawings/:id` | Update a project |
+| DELETE | `/api/drawings/:id` | Delete a project |
 
 ## What it does today
 
