@@ -2,7 +2,7 @@
 // World units (inches) map directly to SVG user units; world Y is down, which
 // matches SVG, so no coordinate flip is needed.
 import { shapePoints, shapeClosed, shapeBBox, shapeMetrics } from "./model.js";
-import { arcThrough, formatFeetInches } from "./geometry.js";
+import { arcThrough, formatFeetInches, roundedRectPoints } from "./geometry.js";
 import { symbolById } from "./symbols.js";
 
 const esc = (s) => String(s).replace(/[<>&"]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]));
@@ -47,6 +47,11 @@ function shapeSVG(s, doc, baseW) {
   }
   if (s.type === "wall") {
     return `<polyline points="${ptsStr(s.pts)}" stroke="${color}" stroke-width="${n(s.thickness || 3.5)}" fill="none" stroke-linejoin="round" stroke-linecap="round"/>`;
+  }
+  if (s.type === "rect" && s.radius > 0) {
+    const b = shapeBBox(s);
+    const r = Math.min(s.radius, (b.max.x - b.min.x) / 2, (b.max.y - b.min.y) / 2);
+    return `<rect x="${n(b.min.x)}" y="${n(b.min.y)}" width="${n(b.max.x - b.min.x)}" height="${n(b.max.y - b.min.y)}" rx="${n(r)}" ry="${n(r)}" stroke="${color}" stroke-width="${n(w)}" ${fillFor(s, color)}${dash}/>`;
   }
   if (s.type === "rect" || s.type === "polygon") {
     const pts = shapePoints(s);

@@ -208,6 +208,32 @@ export function arcPoints(a, b, c, n = 24) {
   return out;
 }
 
+// Outline points for a rounded rectangle between corners `a` and `b`, with
+// corner radius `r` (clamped) and `seg` segments per corner. Used for drawing
+// rounded rects and extruding them to 3D.
+export function roundedRectPoints(a, b, r, seg = 6) {
+  const x0 = Math.min(a.x, b.x), x1 = Math.max(a.x, b.x);
+  const y0 = Math.min(a.y, b.y), y1 = Math.max(a.y, b.y);
+  const w = x1 - x0, h = y1 - y0;
+  r = Math.max(0, Math.min(r, w / 2, h / 2));
+  if (r <= 0.01) return [v(x0, y0), v(x1, y0), v(x1, y1), v(x0, y1)];
+  const pts = [];
+  // centers of the four corner arcs, with their start angles (CW from top-left)
+  const corners = [
+    { cx: x1 - r, cy: y0 + r, a0: -Math.PI / 2 }, // top-right
+    { cx: x1 - r, cy: y1 - r, a0: 0 },            // bottom-right
+    { cx: x0 + r, cy: y1 - r, a0: Math.PI / 2 },  // bottom-left
+    { cx: x0 + r, cy: y0 + r, a0: Math.PI },      // top-left
+  ];
+  for (const c of corners) {
+    for (let i = 0; i <= seg; i++) {
+      const ang = c.a0 + (Math.PI / 2) * (i / seg);
+      pts.push(v(c.cx + Math.cos(ang) * r, c.cy + Math.sin(ang) * r));
+    }
+  }
+  return pts;
+}
+
 // Length of a 3-point arc.
 export function arcLength(a, b, c) {
   const arc = arcThrough(a, b, c);

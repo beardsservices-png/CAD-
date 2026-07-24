@@ -87,7 +87,14 @@ also works for the drawing UI, but without cloud project storage.)
   shape and the 3D view renders it with procedural grain/coursing/speckle,
   gradient shading, and a soft ground shadow — so a "plywood shelf" looks like
   one. Library materials (lumber, CMU, brick, metal roof…) are auto-detected.
-- **Export** — vector **SVG**, **PNG**, or a `.json` project file.
+- **Rounded corners** — give any rectangle a corner radius (great for curbs and
+  rounded parts); renders in 2D, SVG, and the 3D extrusion.
+- **Material hatch fills** — filled shapes with a material show a 2D hatch
+  (brick coursing, wood grain, concrete speckle, glass streaks) so the flat
+  plan reads like a real construction drawing.
+- **Export** — vector **SVG**, **PNG**, a `.json` project, or a 3D **mesh**:
+  **STL** for 3D printing and **OBJ** for games / Blender (both in millimeters,
+  from the 3D overlay).
 - **Cloud projects** — when deployed with a storage volume, save/open drawings
   on the server, shared across devices.
 - **Undo / redo**, autosave to the browser.

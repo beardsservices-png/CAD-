@@ -26,6 +26,7 @@ import {
 } from "./transforms.js";
 import * as cloud from "./cloud.js";
 import { toSVG } from "./svg.js";
+import { toSTL, toOBJ } from "./exporters.js";
 
 const theme = {
   gridMinor: "#eef2f7",
@@ -529,6 +530,8 @@ class App {
     document.querySelectorAll("[data-view]").forEach((btn) => {
       btn.onclick = () => { this.view3d.setView(btn.dataset.view); this.view3d.render(); };
     });
+    document.getElementById("btn-export-stl").onclick = () => this._exportMesh("stl");
+    document.getElementById("btn-export-obj").onclick = () => this._exportMesh("obj");
 
     let last = null;
     canvas3d.addEventListener("pointerdown", (ev) => {
@@ -940,6 +943,7 @@ class App {
       if (s.type === "rect") {
         rows += `<label class="opt inline">Width (${u})<input id="p-w" type="number" min="0" step="${st}" value="${dn(bb.max.x - bb.min.x)}"></label>`;
         rows += `<label class="opt inline">Height (${u})<input id="p-h" type="number" min="0" step="${st}" value="${dn(bb.max.y - bb.min.y)}"></label>`;
+        rows += `<label class="opt inline">Corner radius (${u})<input id="p-radius" type="number" min="0" step="${st}" value="${dn(s.radius || 0)}"></label>`;
       } else if (s.type === "circle") {
         rows += `<label class="opt inline">Diameter (${u})<input id="p-d" type="number" min="0" step="${st}" value="${dn(bb.max.x - bb.min.x)}"></label>`;
       } else if ((s.type === "line" || s.type === "wall") && s.pts.length === 2) {
@@ -982,6 +986,7 @@ class App {
       bind("p-h", (val) => setRectSize(s, shapeBBox(s).max.x - shapeBBox(s).min.x, Math.max(0.1, val)));
       bind("p-d", (val) => setCircleDiameter(s, Math.max(0.1, val)));
       bind("p-len", (val) => setSegmentLength(s, Math.max(0.1, val)));
+      bind("p-radius", (val) => { s.radius = Math.max(0, val); });
       const hEl = document.getElementById("p-height");
       const eEl = document.getElementById("p-elev");
       if (hEl) hEl.onchange = () => { s.height = Math.max(0, fromDisplay(parseFloat(hEl.value) || 0)); this._save(); };
@@ -1272,10 +1277,25 @@ class App {
 
   _exportSVG() {
     const svg = toSVG(this.doc);
-    const blob = new Blob([svg], { type: "image/svg+xml" });
+    this._download(svg, `${this.doc.name || "drawing"}.svg`, "image/svg+xml");
+  }
+
+  // Export the 3D mesh for printing (STL) or games/Blender (OBJ). Millimeters.
+  _exportMesh(kind) {
+    this.view3d.setDoc(this.doc);
+    const tris = this.view3d.meshTriangles();
+    if (!tris.length) { this._toast("Nothing with height to export"); return; }
+    const name = (this.doc.name || "model").replace(/[^a-z0-9_-]+/gi, "_");
+    if (kind === "stl") this._download(toSTL(tris, name), `${name}.stl`, "model/stl");
+    else this._download(toOBJ(tris, name), `${name}.obj`, "text/plain");
+    this._toast(`Exported ${tris.length} triangles (mm)`);
+  }
+
+  _download(text, filename, type) {
+    const blob = new Blob([text], { type });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `${this.doc.name || "drawing"}.svg`;
+    a.download = filename;
     a.click();
     URL.revokeObjectURL(a.href);
   }

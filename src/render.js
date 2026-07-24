@@ -1,6 +1,6 @@
 // render.js — draws the document (shapes, dimensions, selection) to the canvas.
-import { v, sub, len, angle, formatFeetInches, formatArea, arcThrough } from "./geometry.js";
-import { shapePoints, shapeClosed, shapeBBox, shapeMetrics, lineWeightPx, dashArray } from "./model.js";
+import { v, sub, len, angle, formatFeetInches, formatArea, arcThrough, roundedRectPoints } from "./geometry.js";
+import { shapePoints, shapeClosed, shapeBBox, shapeMetrics, lineWeightPx, dashArray, materialFor } from "./model.js";
 import { symbolById, drawSymbolDef } from "./symbols.js";
 
 // Draw a text label with a rounded background pill, centered at screen point.
@@ -89,7 +89,8 @@ function drawShape(ctx, shape, vp, theme, color, selected) {
   } else if (shape.type === "arc") {
     drawArc(ctx, shape, vp, theme, stroke, selected, color);
   } else if (shape.type === "rect" || shape.type === "polygon") {
-    const pts = shapePoints(shape);
+    const rounded = shape.type === "rect" && shape.radius > 0;
+    const pts = rounded ? roundedRectPoints(shape.pts[0], shape.pts[1], shape.radius, 6) : shapePoints(shape);
     const closed = shapeClosed(shape);
     ctx.lineWidth = lineWeightPx(shape, selected);
     ctx.strokeStyle = stroke;
@@ -98,26 +99,28 @@ function drawShape(ctx, shape, vp, theme, color, selected) {
       ctx.fillStyle = hexA(color, shape.fill === "solid" ? 0.35 : 0.08);
       screenPath(ctx, vp, pts, true);
       ctx.fill();
+      hatchFill(ctx, shape, () => screenPath(ctx, vp, pts, true), shapeBBox(shape), vp);
     }
     screenPath(ctx, vp, pts, closed);
     ctx.stroke();
     ctx.setLineDash([]);
     if (closed) drawAreaLabel(ctx, shape, vp, theme);
-    drawSegmentLengths(ctx, shape, vp, theme);
+    if (!rounded) drawSegmentLengths(ctx, shape, vp, theme);
   } else if (shape.type === "circle") {
     const b = shapeBBox(shape);
     const p0 = vp.worldToScreen(b.min);
     const p1 = vp.worldToScreen(b.max);
     const cx = (p0.x + p1.x) / 2;
     const cy = (p0.y + p1.y) / 2;
+    const ellipse = () => { ctx.beginPath(); ctx.ellipse(cx, cy, Math.abs(p1.x - p0.x) / 2, Math.abs(p1.y - p0.y) / 2, 0, 0, Math.PI * 2); };
     ctx.lineWidth = lineWeightPx(shape, selected);
     ctx.strokeStyle = stroke;
     ctx.setLineDash(dashArray(shape));
-    ctx.beginPath();
-    ctx.ellipse(cx, cy, Math.abs(p1.x - p0.x) / 2, Math.abs(p1.y - p0.y) / 2, 0, 0, Math.PI * 2);
+    ellipse();
     if (shape.fill !== false) {
       ctx.fillStyle = hexA(color, shape.fill === "solid" ? 0.35 : 0.08);
       ctx.fill();
+      hatchFill(ctx, shape, ellipse, b, vp);
     }
     ctx.stroke();
     ctx.setLineDash([]);
@@ -130,6 +133,42 @@ function drawShape(ctx, shape, vp, theme, color, selected) {
     drawSymbol(ctx, shape, vp, theme, stroke, selected);
   }
 
+  ctx.restore();
+}
+
+// Draw a material hatch pattern clipped to a filled shape's path.
+function hatchFill(ctx, shape, pathFn, wbb, vp) {
+  const mat = materialFor(shape);
+  if (!mat || !mat.tex) return;
+  const p0 = vp.worldToScreen(wbb.min), p1 = vp.worldToScreen(wbb.max);
+  const x0 = Math.min(p0.x, p1.x), x1 = Math.max(p0.x, p1.x);
+  const y0 = Math.min(p0.y, p1.y), y1 = Math.max(p0.y, p1.y);
+  ctx.save();
+  pathFn();
+  ctx.clip();
+  ctx.lineWidth = 1;
+  const tex = mat.tex;
+  if (tex === "grain") {
+    ctx.strokeStyle = "rgba(120,80,30,0.22)";
+    for (let y = y0; y <= y1; y += 7) { ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y); ctx.stroke(); }
+  } else if (tex === "courses" || tex === "brick") {
+    ctx.strokeStyle = "rgba(40,40,40,0.3)";
+    let row = 0;
+    for (let y = y0; y <= y1; y += 10) {
+      ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y); ctx.stroke();
+      const off = row % 2 ? 10 : 0;
+      for (let x = x0 + off; x <= x1; x += 20) { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y + 10); ctx.stroke(); }
+      row++;
+    }
+  } else if (tex === "speckle") {
+    ctx.fillStyle = "rgba(30,30,30,0.2)";
+    for (let y = y0; y <= y1; y += 9)
+      for (let x = x0; x <= x1; x += 9) { ctx.beginPath(); ctx.arc(x + ((Math.round(y / 9) % 2) ? 4 : 0), y, 0.9, 0, Math.PI * 2); ctx.fill(); }
+  } else if (tex === "glass") {
+    ctx.strokeStyle = "rgba(80,160,190,0.4)";
+    const span = y1 - y0;
+    for (let x = x0 - span; x <= x1; x += 10) { ctx.beginPath(); ctx.moveTo(x, y1); ctx.lineTo(x + span, y0); ctx.stroke(); }
+  }
   ctx.restore();
 }
 

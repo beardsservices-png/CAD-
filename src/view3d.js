@@ -4,31 +4,9 @@
 // height, then draws the faces with an orthographic camera and a painter's
 // algorithm (sort far-to-near). This is the conceptual bridge from drafting to
 // CAD: one model, viewed in plan (2D) or in 3D — no separate modeling step.
-import { shapePoints, shapeBBox, shapeClosed, shapeHeight, shapeElevation, MATERIAL_BY_ID } from "./model.js";
+import { shapePoints, shapeBBox, shapeClosed, shapeHeight, shapeElevation, materialFor } from "./model.js";
 import { hexA } from "./render.js";
-import { arcPoints } from "./geometry.js";
-import { symbolById } from "./symbols.js";
-
-// Infer a material id from a symbol when the shape has none set.
-const SYMBOL_MATERIAL = {
-  plywood: "ply", osb: "ply", ply34: "ply", "1x6": "wood",
-  deckpt: "pt", "4x4pt": "pt", "6x6pt": "pt", dogear: "pt", dogearpanel: "pt", privacy: "pt", deckrun: "wood",
-  cmu16: "concrete", cmu8: "concrete", concpad: "concrete", pier12: "concrete", brick: "brick", brickveneer: "brick",
-  metalroof: "metal", chainlink: "metal", anglebracket: "metal", postbase: "metal", hurricanetie: "metal",
-  lagbolt: "metal", carriagebolt: "metal", deckscrew: "metal", nailplate: "metal", furnace: "metal", minisplit: "metal",
-  drywall48: "drywall", drywall412: "drywall", stucco: "drywall",
-  skylight: "glass", window: "glass", shingle: "shingle",
-};
-function materialFor(shape) {
-  if (shape.material && shape.material !== "auto") return MATERIAL_BY_ID[shape.material] || null;
-  if (shape.type === "symbol") {
-    const m = SYMBOL_MATERIAL[shape.symbol];
-    if (m) return MATERIAL_BY_ID[m];
-    const def = symbolById(shape.symbol);
-    if (def && (def.category === "Lumber" || def.category === "Decking & Stairs")) return MATERIAL_BY_ID.wood;
-  }
-  return null; // fall back to the shape/layer color, flat
-}
+import { arcPoints, roundedRectPoints } from "./geometry.js";
 
 // ---- minimal 3D vector helpers (z is up) ----
 const sub3 = (a, b) => ({ x: a.x - b.x, y: a.y - b.y, z: a.z - b.z });
@@ -184,6 +162,18 @@ export class View3D {
     return faces;
   }
 
+  // Triangulate every face into world-space triangles (z up) for mesh export.
+  meshTriangles() {
+    const tris = [];
+    for (const f of this._faces()) {
+      const vs = f.verts;
+      for (let i = 1; i < vs.length - 1; i++) {
+        tris.push([vs[0], vs[i], vs[i + 1]]); // fan triangulation
+      }
+    }
+    return tris;
+  }
+
   // Build a box (4 sides + top) for one wall segment at half-thickness `t`.
   _segmentBox(faces, a, b, t, z0, z1, color) {
     const dx = b.x - a.x, dy = b.y - a.y;
@@ -206,6 +196,9 @@ export class View3D {
   _outline(s) {
     if (s.type === "arc" && s.pts.length === 3) {
       return arcPoints(s.pts[0], s.pts[1], s.pts[2], 24);
+    }
+    if (s.type === "rect" && s.radius > 0) {
+      return roundedRectPoints(s.pts[0], s.pts[1], s.radius, 6);
     }
     if (s.type === "circle") {
       const p = shapePoints(s);

@@ -9,6 +9,7 @@ import {
   arcPoints,
   arcLength,
 } from "./geometry.js";
+import { symbolById } from "./symbols.js";
 
 let _id = 1;
 const nextId = () => `s${_id++}`;
@@ -67,6 +68,29 @@ export const MATERIALS = [
   { id: "shingle", name: "Shingle", color: "#4b5563", tex: "courses" },
 ];
 export const MATERIAL_BY_ID = Object.fromEntries(MATERIALS.map((m) => [m.id, m]));
+
+// Infer a material from a symbol when the shape doesn't set one explicitly.
+const SYMBOL_MATERIAL = {
+  plywood: "ply", osb: "ply", ply34: "ply", "1x6": "wood",
+  deckpt: "pt", "4x4pt": "pt", "6x6pt": "pt", dogear: "pt", dogearpanel: "pt", privacy: "pt", deckrun: "wood",
+  cmu16: "concrete", cmu8: "concrete", concpad: "concrete", pier12: "concrete", brick: "brick", brickveneer: "brick",
+  metalroof: "metal", chainlink: "metal", anglebracket: "metal", postbase: "metal", hurricanetie: "metal",
+  lagbolt: "metal", carriagebolt: "metal", deckscrew: "metal", nailplate: "metal", furnace: "metal", minisplit: "metal",
+  drywall48: "drywall", drywall412: "drywall", stucco: "drywall",
+  skylight: "glass", window: "glass", shingle: "shingle",
+};
+
+// Resolve a shape's material object (or null to use its plain color).
+export function materialFor(shape) {
+  if (shape.material && shape.material !== "auto") return MATERIAL_BY_ID[shape.material] || null;
+  if (shape.type === "symbol") {
+    const m = SYMBOL_MATERIAL[shape.symbol];
+    if (m) return MATERIAL_BY_ID[m];
+    const def = symbolById(shape.symbol);
+    if (def && (def.category === "Lumber" || def.category === "Decking & Stairs")) return MATERIAL_BY_ID.wood;
+  }
+  return null;
+}
 
 export function shapeHeight(shape) {
   if (shape.height != null) return shape.height;
