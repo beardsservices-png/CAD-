@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Draft Studio — Design & Drafting</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">▦</span>
+        <span>Draft Studio</span>
+      </div>
+      <div class="file-actions">
+        <button id="btn-new" class="ghost">New</button>
+        <button id="btn-open" class="ghost">Open</button>
+        <button id="btn-save" class="ghost">Save</button>
+        <button id="btn-png" class="ghost">Export PNG</button>
+        <button id="btn-fit" class="ghost">Fit</button>
+        <button id="btn-3d" class="ghost primary">3D View</button>
+        <input id="file-input" type="file" accept=".json" hidden />
+      </div>
+    </header>
+
+    <div class="workspace">
+      <nav class="toolbar" aria-label="Tools">
+        <button class="tool-btn active" data-tool="select" title="Select (V)"><span>▲</span><small>Select</small></button>
+        <button class="tool-btn" data-tool="line" title="Line (L)"><span>╱</span><small>Line</small></button>
+        <button class="tool-btn" data-tool="wall" title="Wall (W)"><span>▬</span><small>Wall</small></button>
+        <button class="tool-btn" data-tool="rect" title="Rectangle (R)"><span>▭</span><small>Rect</small></button>
+        <button class="tool-btn" data-tool="circle" title="Circle (C)"><span>◯</span><small>Circle</small></button>
+        <button class="tool-btn" data-tool="polygon" title="Polygon (P)"><span>⬠</span><small>Polygon</small></button>
+        <button class="tool-btn" data-tool="dimension" title="Dimension (D)"><span>↔</span><small>Dim</small></button>
+        <button class="tool-btn" data-tool="text" title="Text (T)"><span>T</span><small>Text</small></button>
+      </nav>
+
+      <main class="canvas-wrap">
+        <canvas id="canvas"></canvas>
+        <div id="hint" class="hint"></div>
+      </main>
+
+      <aside class="panel">
+        <section>
+          <h3>Properties</h3>
+          <div id="props" class="card"></div>
+        </section>
+
+        <section>
+          <h3>Shape Library</h3>
+          <input id="shape-search" class="search" type="search" placeholder="Search shapes…" />
+          <div id="shape-lib"></div>
+        </section>
+
+        <section>
+          <h3>Takeoff</h3>
+          <div id="takeoff" class="card"></div>
+        </section>
+
+        <section>
+          <h3>Layers</h3>
+          <div id="layers" class="card"></div>
+        </section>
+
+        <section>
+          <h3>Snapping</h3>
+          <div class="card">
+            <label class="opt"><input id="snap-grid" type="checkbox" /> Grid snap</label>
+            <label class="opt"><input id="snap-endpoint" type="checkbox" /> Endpoint / midpoint</label>
+            <label class="opt"><input id="snap-ortho" type="checkbox" /> Ortho lock</label>
+            <label class="opt inline">Grid step (in) <input id="grid-step" type="number" min="0.25" step="0.25" /></label>
+            <label class="opt inline">Wall thickness (in) <input id="wall-thick" type="number" min="0.5" step="0.5" /></label>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <div id="view3d" class="overlay hidden">
+      <canvas id="canvas3d"></canvas>
+      <div class="overlay-bar">
+        <div><strong>3D Preview</strong> · massing model (extruded from your plan)</div>
+        <div class="o-right">
+          <span class="o-hint">drag to orbit · scroll to zoom</span>
+          <button id="btn-3d-fit" class="ghost">Recenter</button>
+          <button id="btn-3d-close" class="ghost">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="statusbar">
+      <span id="coords">X 0"   Y 0"</span>
+      <span class="spacer"></span>
+      <span id="zoom">100%</span>
+    </footer>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
