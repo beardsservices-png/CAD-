@@ -1,7 +1,67 @@
 // transforms.js — precise editing operations on the current selection:
-// duplicate, rotate, mirror, and exact numeric resizing.
+// duplicate, rotate, mirror, offset, and exact numeric resizing.
 import { v } from "./geometry.js";
-import { shapePoints, shapeBBox, cloneShape } from "./model.js";
+import { shapePoints, shapeBBox, shapeClosed, cloneShape } from "./model.js";
+
+// ---- offset / parallel copy -----------------------------------------------
+function edgeNormal(a, b) {
+  const dx = b.x - a.x, dy = b.y - a.y;
+  const l = Math.hypot(dx, dy) || 1;
+  return { x: -dy / l, y: dx / l }; // left-hand normal
+}
+function offsetPolyline(pts, dist, closed) {
+  const n = pts.length;
+  if (n < 2) return null;
+  const res = [];
+  for (let i = 0; i < n; i++) {
+    const prev = pts[(i - 1 + n) % n], cur = pts[i], next = pts[(i + 1) % n];
+    const hasPrev = closed || i > 0;
+    const hasNext = closed || i < n - 1;
+    if (hasPrev && hasNext) {
+      const n1 = edgeNormal(prev, cur), n2 = edgeNormal(cur, next);
+      let bx = n1.x + n2.x, by = n1.y + n2.y;
+      const bl = Math.hypot(bx, by) || 1; bx /= bl; by /= bl;
+      const dot = Math.max(0.3, n1.x * bx + n1.y * by); // clamp miter blow-up
+      res.push(v(cur.x + (bx * dist) / dot, cur.y + (by * dist) / dot));
+    } else if (hasNext) {
+      const nn = edgeNormal(cur, next);
+      res.push(v(cur.x + nn.x * dist, cur.y + nn.y * dist));
+    } else {
+      const nn = edgeNormal(prev, cur);
+      res.push(v(cur.x + nn.x * dist, cur.y + nn.y * dist));
+    }
+  }
+  return res;
+}
+
+// Return a new shape offset from `shape` by `dist` (parallel copy). null if the
+// shape type isn't offsettable or the result would collapse.
+export function offsetShape(shape, dist) {
+  const copy = cloneShape(shape);
+  if (shape.type === "circle") {
+    const b = shapeBBox(shape);
+    const cx = (b.min.x + b.max.x) / 2, cy = (b.min.y + b.max.y) / 2;
+    const rx = (b.max.x - b.min.x) / 2 + dist, ry = (b.max.y - b.min.y) / 2 + dist;
+    if (rx <= 0 || ry <= 0) return null;
+    copy.pts = [v(cx - rx, cy - ry), v(cx + rx, cy + ry)];
+    return copy;
+  }
+  if (shape.type === "rect") {
+    const b = shapeBBox(shape);
+    const x0 = b.min.x - dist, y0 = b.min.y - dist, x1 = b.max.x + dist, y1 = b.max.y + dist;
+    if (x1 <= x0 || y1 <= y0) return null;
+    copy.pts = [v(x0, y0), v(x1, y1)];
+    return copy;
+  }
+  if (shape.type === "line" || shape.type === "polygon") {
+    const pts = shape.type === "polygon" ? shapePoints(shape) : shape.pts;
+    const off = offsetPolyline(pts, dist, shapeClosed(shape));
+    if (!off) return null;
+    copy.pts = off;
+    return copy;
+  }
+  return null;
+}
 
 // Union bbox center of a set of shapes — the pivot for rotate/mirror.
 export function selectionCenter(doc, ids) {

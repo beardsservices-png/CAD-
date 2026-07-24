@@ -448,7 +448,7 @@ class SelectTool {
     // 1) grab a vertex handle of an already-selected shape
     for (const id of doc.selection) {
       const shape = doc.get(id);
-      if (!shape || shape.type === "symbol") continue;
+      if (!shape || shape.type === "symbol" || shape.locked) continue;
       const pts = shape.pts;
       for (let i = 0; i < pts.length; i++) {
         if (dist(rawWorld, pts[i]) <= tolWorld) {
@@ -496,7 +496,7 @@ class SelectTool {
       if (dx || dy) this.moved = true;
       for (const id of this.app.doc.selection) {
         const shape = this.app.doc.get(id);
-        if (!shape) continue;
+        if (!shape || shape.locked) continue; // locked shapes don't move
         shape.pts = shape.pts.map((p) => v(p.x + dx, p.y + dy));
       }
       this.last = sp;

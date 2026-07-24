@@ -15,14 +15,33 @@
 export const CATEGORIES = [
   "Geometric",
   "Lumber",
+  "Sheet Goods",
   "Masonry & Concrete",
+  "Roofing",
+  "Siding",
+  "Decking & Stairs",
   "Fencing",
+  "Hardware",
+  "Electrical",
+  "HVAC",
+  "Plumbing",
   "Structural",
   "Architectural",
   "Site & Landscape",
   "Furniture",
   "Annotation",
 ];
+
+// Evenly spaced parallel lines (for siding, decking, grilles, etc.).
+function stripes(dir, count, x0 = 0, x1 = 1, y0 = 0, y1 = 1) {
+  const p = [];
+  for (let i = 1; i < count; i++) {
+    const t = i / count;
+    if (dir === "h") p.push({ t: "line", x1: x0, y1: y0 + (y1 - y0) * t, x2: x1, y2: y0 + (y1 - y0) * t });
+    else p.push({ t: "line", x1: x0 + (x1 - x0) * t, y1: y0, x2: x0 + (x1 - x0) * t, y2: y1 });
+  }
+  return p;
+}
 
 // Grain lines for a lumber cross-section (a few lines along the length).
 function grain(along = "h") {
@@ -194,6 +213,122 @@ export const SYMBOLS = [
             { t: "line", x1: 0.6, y1: 0, x2: 0.6, y2: 1 }, { t: "line", x1: 0.8, y1: 0, x2: 0.8, y2: 1 }] },
   { id: "gate", name: "Gate", category: "Fencing", w: 48, h: 72, label: "Gate",
     prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 1, x2: 1, y2: 0 }] },
+
+  // ---- Sheet goods -----------------------------------------------------------
+  { id: "ply34", name: "Plywood 3/4″ 4×8", category: "Sheet Goods", w: 48, h: 96, label: '3/4" Ply',
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0, x2: 1, y2: 0.05 }] },
+  { id: "drywall48", name: "Drywall 4×8", category: "Sheet Goods", w: 48, h: 96, label: "Drywall", color: "#94a3b8",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }] },
+  { id: "drywall412", name: "Drywall 4×12", category: "Sheet Goods", w: 48, h: 144, label: "Drywall 4×12", color: "#94a3b8",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }] },
+  { id: "mdf", name: "MDF 4×8", category: "Sheet Goods", w: 48, h: 96, label: "MDF", color: "#a16207",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }] },
+  { id: "cementboard", name: "Cement Board 3×5", category: "Sheet Goods", w: 36, h: 60, label: "Cement bd", color: "#6b7280",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("h", 5)] },
+  { id: "rigidfoam", name: "Rigid Foam 4×8", category: "Sheet Goods", w: 48, h: 96, label: "Foam", color: "#db2777",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 1, x2: 1, y2: 0 }, { t: "line", x1: 0, y1: 0.5, x2: 0.5, y2: 0 }] },
+
+  // ---- Roofing ---------------------------------------------------------------
+  { id: "shingle", name: "Shingle Course", category: "Roofing", w: 36, h: 12, label: "Shingles", color: "#334155",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("v", 6, 0, 1, 0.4, 1) , { t: "line", x1: 0, y1: 0.4, x2: 1, y2: 0.4 }] },
+  { id: "metalroof", name: "Metal Roof Panel", category: "Roofing", w: 36, h: 120, label: "Metal panel", color: "#64748b",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("v", 5)] },
+  { id: "ridgecap", name: "Ridge Cap", category: "Roofing", w: 12, h: 36, label: "Ridge",
+    prims: [{ t: "poly", pts: [[0, 0.5], [0.5, 0.1], [1, 0.5]] }, { t: "line", x1: 0.5, y1: 0.1, x2: 0.5, y2: 1 }] },
+  { id: "roofvent", name: "Roof Vent", category: "Roofing", w: 12, h: 12, label: "Vent",
+    prims: [{ t: "rect", x: 0.05, y: 0.05, w: 0.9, h: 0.9 }, { t: "circle", cx: 0.5, cy: 0.5, r: 0.3 }] },
+  { id: "skylight", name: "Skylight", category: "Roofing", w: 24, h: 48, label: "Skylight", color: "#0ea5e9",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0, x2: 1, y2: 1 }, { t: "line", x1: 1, y1: 0, x2: 0, y2: 1 }] },
+  { id: "chimney", name: "Chimney", category: "Roofing", w: 16, h: 16, label: "Chimney", color: "#9a3412",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "rect", x: 0.25, y: 0.25, w: 0.5, h: 0.5 }] },
+
+  // ---- Siding ----------------------------------------------------------------
+  { id: "lapsiding", name: "Lap Siding", category: "Siding", w: 96, h: 24, label: "Lap siding",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("h", 6)] },
+  { id: "vinylsiding", name: "Vinyl Siding", category: "Siding", w: 96, h: 24, label: "Vinyl siding", color: "#e2e8f0",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("h", 4)] },
+  { id: "boardbatten", name: "Board & Batten", category: "Siding", w: 96, h: 48, label: "Board & batten",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("v", 8)] },
+  { id: "brickveneer", name: "Brick Veneer", category: "Siding", w: 48, h: 24, label: "Brick", color: "#9a3412",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("h", 3),
+            { t: "line", x1: 0.5, y1: 0, x2: 0.5, y2: 0.333 }, { t: "line", x1: 0.25, y1: 0.333, x2: 0.25, y2: 0.666 }, { t: "line", x1: 0.75, y1: 0.333, x2: 0.75, y2: 0.666 }] },
+  { id: "stucco", name: "Stucco Panel", category: "Siding", w: 48, h: 48, label: "Stucco", color: "#d6d3d1",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 },
+            { t: "circle", cx: 0.3, cy: 0.3, r: 0.03, fill: true }, { t: "circle", cx: 0.7, cy: 0.4, r: 0.03, fill: true },
+            { t: "circle", cx: 0.5, cy: 0.7, r: 0.03, fill: true }, { t: "circle", cx: 0.2, cy: 0.7, r: 0.03, fill: true }] },
+
+  // ---- Decking & Stairs ------------------------------------------------------
+  { id: "deckrun", name: "Deck Board Run", category: "Decking & Stairs", w: 96, h: 48, label: "Decking", color: "#a16207",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("h", 9)] },
+  { id: "joistlayout", name: "Joist Layout 16″", category: "Decking & Stairs", w: 96, h: 96, label: "Joists 16″",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("v", 6)] },
+  { id: "stairstringer", name: "Stair Stringer", category: "Decking & Stairs", w: 40, h: 48, label: "Stringer",
+    prims: [{ t: "poly", pts: [[0, 1], [0, 0.75], [0.25, 0.75], [0.25, 0.5], [0.5, 0.5], [0.5, 0.25], [0.75, 0.25], [0.75, 0], [1, 0], [1, 1]], closed: true }] },
+  { id: "stairsection", name: "Stairs (section)", category: "Decking & Stairs", w: 48, h: 60, label: "Stairs",
+    prims: [{ t: "rect", x: 0.05, y: 0.02, w: 0.9, h: 0.96 }, ...stripes("h", 7, 0.05, 0.95)] },
+  { id: "baluster", name: "Baluster", category: "Decking & Stairs", w: 2, h: 36, label: "Baluster",
+    prims: [{ t: "rect", x: 0.2, y: 0, w: 0.6, h: 1 }] },
+
+  // ---- Hardware --------------------------------------------------------------
+  { id: "anglebracket", name: "Angle Bracket", category: "Hardware", w: 3, h: 3, label: "L-bracket", color: "#475569",
+    prims: [{ t: "poly", pts: [[0.1, 0.1], [0.9, 0.1], [0.9, 0.35], [0.35, 0.35], [0.35, 0.9], [0.1, 0.9]], closed: true },
+            { t: "circle", cx: 0.22, cy: 0.6, r: 0.05, fill: true }, { t: "circle", cx: 0.6, cy: 0.22, r: 0.05, fill: true }] },
+  { id: "postbase", name: "Post Base", category: "Hardware", w: 6, h: 6, label: "Post base", color: "#475569",
+    prims: [{ t: "rect", x: 0.1, y: 0.1, w: 0.8, h: 0.8 }, { t: "rect", x: 0.4, y: 0.02, w: 0.2, h: 0.4 }, { t: "circle", cx: 0.5, cy: 0.6, r: 0.06, fill: true }] },
+  { id: "hurricanetie", name: "Hurricane Tie", category: "Hardware", w: 3, h: 5, label: "H-tie", color: "#475569",
+    prims: [{ t: "poly", pts: [[0.3, 0], [0.7, 0], [0.7, 0.6], [0.9, 0.6], [0.9, 1], [0.5, 1], [0.5, 0.6], [0.3, 0.6]], closed: true }] },
+  { id: "lagbolt", name: "Lag Bolt", category: "Hardware", w: 1, h: 6, label: "Lag bolt", color: "#334155",
+    prims: [{ t: "rect", x: 0.2, y: 0, w: 0.6, h: 0.18 }, { t: "line", x1: 0.5, y1: 0.18, x2: 0.5, y2: 1 }, ...stripes("h", 8, 0.35, 0.65, 0.2, 1)] },
+  { id: "carriagebolt", name: "Carriage Bolt", category: "Hardware", w: 1, h: 6, label: "Carriage", color: "#334155",
+    prims: [{ t: "circle", cx: 0.5, cy: 0.14, r: 0.14 }, { t: "line", x1: 0.5, y1: 0.28, x2: 0.5, y2: 1 }] },
+  { id: "deckscrew", name: "Deck Screw", category: "Hardware", w: 0.5, h: 3, label: "Screw", color: "#334155",
+    prims: [{ t: "poly", pts: [[0.2, 0], [0.8, 0], [0.5, 0.15]], closed: true }, { t: "line", x1: 0.5, y1: 0.15, x2: 0.5, y2: 1 }, ...stripes("h", 6, 0.3, 0.7, 0.15, 1)] },
+  { id: "nailplate", name: "Nail Plate", category: "Hardware", w: 5, h: 3, label: "Nail plate", color: "#64748b",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("v", 6), ...stripes("h", 4)] },
+
+  // ---- Electrical ------------------------------------------------------------
+  { id: "outlet", name: "Duplex Outlet", category: "Electrical", w: 4, h: 4, label: "Outlet",
+    prims: [{ t: "circle", cx: 0.5, cy: 0.5, r: 0.45 }, { t: "line", x1: 0.5, y1: 0.1, x2: 0.5, y2: 0.9 }, { t: "line", x1: 0.35, y1: 0.35, x2: 0.35, y2: 0.65 }, { t: "line", x1: 0.65, y1: 0.35, x2: 0.65, y2: 0.65 }] },
+  { id: "switch", name: "Switch", category: "Electrical", w: 4, h: 4, label: "Switch",
+    prims: [{ t: "circle", cx: 0.5, cy: 0.5, r: 0.45 }, { t: "line", x1: 0.35, y1: 0.7, x2: 0.65, y2: 0.3 }] },
+  { id: "ceilinglight", name: "Ceiling Light", category: "Electrical", w: 12, h: 12, label: "Light",
+    prims: [{ t: "circle", cx: 0.5, cy: 0.5, r: 0.45 }, { t: "line", x1: 0.15, y1: 0.15, x2: 0.85, y2: 0.85 }, { t: "line", x1: 0.85, y1: 0.15, x2: 0.15, y2: 0.85 }] },
+  { id: "recessed", name: "Recessed Light", category: "Electrical", w: 6, h: 6, label: "Can light",
+    prims: [{ t: "circle", cx: 0.5, cy: 0.5, r: 0.45 }, { t: "circle", cx: 0.5, cy: 0.5, r: 0.2 }] },
+  { id: "epanel", name: "Electrical Panel", category: "Electrical", w: 14, h: 20, label: "Panel", color: "#475569",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "rect", x: 0.15, y: 0.1, w: 0.7, h: 0.8 }, ...stripes("h", 6, 0.15, 0.85, 0.1, 0.9)] },
+  { id: "jbox", name: "Junction Box", category: "Electrical", w: 4, h: 4, label: "J-box",
+    prims: [{ t: "rect", x: 0.1, y: 0.1, w: 0.8, h: 0.8 }, { t: "line", x1: 0.1, y1: 0.1, x2: 0.9, y2: 0.9 }] },
+
+  // ---- HVAC ------------------------------------------------------------------
+  { id: "supplyreg", name: "Supply Register", category: "HVAC", w: 12, h: 6, label: "Supply",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("v", 6)] },
+  { id: "returngrille", name: "Return Grille", category: "HVAC", w: 20, h: 20, label: "Return",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...stripes("h", 6)] },
+  { id: "ductround", name: "Round Duct", category: "HVAC", w: 8, h: 8, label: "Duct",
+    prims: [{ t: "circle", cx: 0.5, cy: 0.5, r: 0.45 }, { t: "circle", cx: 0.5, cy: 0.5, r: 0.35 }] },
+  { id: "ductrect", name: "Rect Duct", category: "HVAC", w: 20, h: 8, label: "Duct",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0, x2: 0.1, y2: 0.2 }] },
+  { id: "minisplit", name: "Mini-Split Head", category: "HVAC", w: 32, h: 8, label: "Mini-split", color: "#e2e8f0",
+    prims: [{ t: "rect", x: 0, y: 0.1, w: 1, h: 0.8 }, { t: "line", x1: 0.05, y1: 0.7, x2: 0.95, y2: 0.7 }] },
+  { id: "furnace", name: "Furnace / AHU", category: "HVAC", w: 24, h: 30, label: "Furnace", color: "#475569",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0.3, x2: 1, y2: 0.3 }, { t: "circle", cx: 0.5, cy: 0.65, r: 0.2 }] },
+
+  // ---- Plumbing --------------------------------------------------------------
+  { id: "pipe", name: "Pipe", category: "Plumbing", w: 4, h: 48, label: "Pipe", color: "#0891b2",
+    prims: [{ t: "line", x1: 0.3, y1: 0, x2: 0.3, y2: 1 }, { t: "line", x1: 0.7, y1: 0, x2: 0.7, y2: 1 }] },
+  { id: "elbow", name: "Pipe Elbow", category: "Plumbing", w: 8, h: 8, label: "Elbow", color: "#0891b2",
+    prims: [{ t: "line", x1: 0.3, y1: 0, x2: 0.3, y2: 0.7 }, { t: "line", x1: 0.3, y1: 0.7, x2: 1, y2: 0.7 }, { t: "line", x1: 0.7, y1: 0, x2: 0.7, y2: 0.3 }, { t: "line", x1: 0.7, y1: 0.3, x2: 1, y2: 0.3 }] },
+  { id: "tee", name: "Pipe Tee", category: "Plumbing", w: 12, h: 8, label: "Tee", color: "#0891b2",
+    prims: [{ t: "line", x1: 0, y1: 0.3, x2: 1, y2: 0.3 }, { t: "line", x1: 0, y1: 0.7, x2: 1, y2: 0.7 }, { t: "line", x1: 0.4, y1: 0.7, x2: 0.4, y2: 1 }, { t: "line", x1: 0.6, y1: 0.7, x2: 0.6, y2: 1 }] },
+  { id: "valve", name: "Valve", category: "Plumbing", w: 8, h: 6, label: "Valve", color: "#0891b2",
+    prims: [{ t: "poly", pts: [[0.05, 0.2], [0.5, 0.5], [0.05, 0.8]], closed: true }, { t: "poly", pts: [[0.95, 0.2], [0.5, 0.5], [0.95, 0.8]], closed: true }] },
+  { id: "cleanout", name: "Cleanout", category: "Plumbing", w: 6, h: 6, label: "CO", color: "#0891b2",
+    prims: [{ t: "circle", cx: 0.5, cy: 0.5, r: 0.45 }, { t: "line", x1: 0.3, y1: 0.3, x2: 0.7, y2: 0.7 }, { t: "line", x1: 0.7, y1: 0.3, x2: 0.3, y2: 0.7 }] },
+  { id: "floordrain", name: "Floor Drain", category: "Plumbing", w: 6, h: 6, label: "Drain", color: "#0891b2",
+    prims: [{ t: "rect", x: 0.05, y: 0.05, w: 0.9, h: 0.9 }, ...stripes("v", 4, 0.05, 0.95, 0.05, 0.95)] },
+  { id: "hosebib", name: "Hose Bib", category: "Plumbing", w: 4, h: 4, label: "Hose bib", color: "#0891b2",
+    prims: [{ t: "circle", cx: 0.5, cy: 0.5, r: 0.3 }, { t: "line", x1: 0.5, y1: 0.5, x2: 0.5, y2: 1 }, { t: "line", x1: 0.5, y1: 0.2, x2: 0.5, y2: 0 }] },
 ];
 
 export function symbolById(id) {

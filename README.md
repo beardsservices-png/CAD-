@@ -53,12 +53,14 @@ also works for the drawing UI, but without cloud project storage.)
   labels, takeoff, grid, and all numeric fields update together.
 - **Groups** — group shapes so they select and move as one unit (Ctrl/⌘+G,
   ungroup with Shift).
-- **Shape Library** — a searchable, categorized palette of symbols: Geometric,
-  **Lumber** (2×4…2×12, 4×4/6×6 posts, plywood/OSB sheets, pressure-treated
-  variants), **Masonry & Concrete** (CMU block, brick, pads, piers), **Fencing**
-  (chain-link, dog-ear pickets/panels, privacy, gates), Structural,
-  Architectural, Site & Landscape, Furniture, Annotation. All real dimensions.
-  Symbols are pure data (`src/symbols.js`), so adding more is trivial.
+- **Shape Library** — a searchable palette of ~95 symbols across 17 categories,
+  all at real dimensions: Geometric, **Lumber**, **Sheet Goods**,
+  **Masonry & Concrete**, **Roofing**, **Siding**, **Decking & Stairs**,
+  **Fencing**, **Hardware** (brackets, ties, post bases, fasteners),
+  **Electrical**, **HVAC**, **Plumbing**, Structural, Architectural,
+  Site & Landscape, Furniture, Annotation. Symbols are pure data
+  (`src/symbols.js`), so adding more is trivial; each can carry a default color
+  (PT green, concrete grey, brick red, etc.).
 - **Collapsible panels** — click any side-panel section header to fold it; hit
   **Tab** (or the Panel button) to hide the whole sidebar for a clean canvas.
 - **Exact dimensions & position** — select any shape and type its precise
@@ -67,7 +69,8 @@ also works for the drawing UI, but without cloud project storage.)
 - **Styling** — per-shape stroke color (palette, custom, or by-layer), fill
   (none / light / solid), line weight, and line style (solid / dashed / dotted).
 - **Editing tools** — Duplicate, Rotate (±90° or a typed angle), Mirror ↔/↕,
-  Copy/Paste, Align (6 edges) & Distribute, drag-to-move and vertex handles.
+  Copy/Paste, Align (6 edges) & Distribute, Offset (parallel copy), Lock/Unlock,
+  drag-to-move and vertex handles.
 - **Live dimensions** — length + angle while drawing, segment lengths, area and
   perimeter on closed shapes, square footage.
 - **Snapping** — grid, endpoint/midpoint, and ortho lock (or hold Shift).

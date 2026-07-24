@@ -22,6 +22,7 @@ import {
   setPosition,
   alignSelection,
   distributeSelection,
+  offsetShape,
 } from "./transforms.js";
 import * as cloud from "./cloud.js";
 import { toSVG } from "./svg.js";
@@ -304,15 +305,16 @@ class App {
         const step = ev.shiftKey ? this.snap.gridStep * 12 : this.snap.gridStep || 1;
         const dx = ev.key === "ArrowRight" ? step : ev.key === "ArrowLeft" ? -step : 0;
         const dy = ev.key === "ArrowDown" ? step : ev.key === "ArrowUp" ? -step : 0;
-        this.commit(() => translateShapes(this.doc, [...this.doc.selection], dx, dy));
+        if (this._editableIds().length) this.commit(() => translateShapes(this.doc, this._editableIds(), dx, dy));
         return;
       }
       if (ev.key === "Escape") { this.tool.cancel && this.tool.cancel(); return; }
       if (ev.key === "Enter") { this.tool.onEnter && this.tool.onEnter(); this._save(); return; }
       if (ev.key === "Delete" || ev.key === "Backspace") {
-        if (this.doc.selection.size) {
+        const ids = this._editableIds();
+        if (ids.length) {
           ev.preventDefault();
-          this.commit(() => this.doc.remove([...this.doc.selection]));
+          this.commit(() => this.doc.remove(ids));
           this.refreshPanel();
         }
         return;
@@ -351,13 +353,17 @@ class App {
   _selIds() {
     return [...this.doc.selection];
   }
+  // Selected ids that aren't locked — the ones edits are allowed to change.
+  _editableIds() {
+    return this._selIds().filter((id) => { const s = this.doc.get(id); return s && !s.locked; });
+  }
   _rotate(deg) {
-    if (!this.doc.selection.size) return;
-    this.commit(() => rotateSelection(this.doc, this._selIds(), deg));
+    if (!this._editableIds().length) return;
+    this.commit(() => rotateSelection(this.doc, this._editableIds(), deg));
   }
   _mirror(axis) {
-    if (!this.doc.selection.size) return;
-    this.commit(() => mirrorSelection(this.doc, this._selIds(), axis));
+    if (!this._editableIds().length) return;
+    this.commit(() => mirrorSelection(this.doc, this._editableIds(), axis));
   }
   _duplicate() {
     if (!this.doc.selection.size) return;
@@ -376,6 +382,13 @@ class App {
     const ids = this._selIds();
     if (!ids.length) return;
     this.commit(() => ids.forEach((id) => { const s = this.doc.get(id); if (s) delete s.group; }));
+  }
+  // Toggle lock: if any selected is locked, unlock all; else lock all.
+  _toggleLock() {
+    const sel = this._selIds().map((id) => this.doc.get(id)).filter(Boolean);
+    if (!sel.length) return;
+    const unlock = sel.some((s) => s.locked);
+    this.commit(() => sel.forEach((s) => { if (unlock) delete s.locked; else s.locked = true; }));
   }
   _copy() {
     this.clipboard = this._selIds().map((id) => cloneShape(this.doc.get(id))).filter(Boolean);
@@ -930,6 +943,12 @@ class App {
         rows += `<label class="opt inline">Length (${u})<input id="p-len" type="number" min="0" step="${st}" value="${dn(m.length)}"></label>`;
       }
 
+      if (["line", "rect", "circle", "polygon"].includes(s.type)) {
+        rows += `<div class="prop-sep"></div>`;
+        rows += `<label class="opt inline">Offset (${u})<input id="p-offset" type="number" step="${st}" value="${dn(6)}"></label>`;
+        rows += `<div class="modify-grid"><button id="btn-offset">Offset copy</button></div>`;
+      }
+
       if (s.type !== "dimension" && s.type !== "text") {
         rows += `<div class="prop-sep"></div>`;
         rows += `<label class="opt inline">3D height (${u})<input id="p-height" type="number" min="0" step="${st}" value="${dn(shapeHeight(s))}"></label>`;
@@ -941,8 +960,9 @@ class App {
     }
 
     const hasGroup = sel.some((s) => s.group);
+    const anyLocked = sel.some((s) => s.locked);
     rows += this._styleHTML(sel);
-    rows += this._modifyHTML(sel.length, hasGroup);
+    rows += this._modifyHTML(sel.length, hasGroup, anyLocked);
     host.innerHTML = rows;
 
     // ---- single-shape numeric binds ----
@@ -963,6 +983,14 @@ class App {
       const eEl = document.getElementById("p-elev");
       if (hEl) hEl.onchange = () => { s.height = Math.max(0, fromDisplay(parseFloat(hEl.value) || 0)); this._save(); };
       if (eEl) eEl.onchange = () => { s.elevation = fromDisplay(parseFloat(eEl.value) || 0); this._save(); };
+      const offBtn = document.getElementById("btn-offset");
+      if (offBtn) offBtn.onclick = () => {
+        const d = fromDisplay(parseFloat(document.getElementById("p-offset").value) || 0);
+        if (!d) return;
+        const ns = offsetShape(s, d);
+        if (!ns) { this._toast("Can't offset by that amount"); return; }
+        this.commit(() => { this.doc.add(ns); this.doc.selection = new Set([ns.id]); });
+      };
     }
 
     this._bindLayerSelect(sel);
@@ -1056,7 +1084,7 @@ class App {
     }));
   }
 
-  _modifyHTML(count, hasGroup) {
+  _modifyHTML(count, hasGroup, anyLocked) {
     let html =
       `<div class="prop-sep"></div>` +
       `<div class="modify-grid">` +
@@ -1068,12 +1096,11 @@ class App {
       `<button data-mod="del">Delete</button>` +
       `</div>` +
       `<label class="opt inline">Rotate by°<input id="p-rot" type="number" step="1" value="0"></label>`;
-    if (count > 1 || hasGroup) {
-      html += `<div class="modify-grid">`;
-      if (count > 1) html += `<button data-mod="group">Group</button>`;
-      if (hasGroup) html += `<button data-mod="ungroup">Ungroup</button>`;
-      html += `</div>`;
-    }
+    html += `<div class="modify-grid">`;
+    html += `<button data-mod="lock">${anyLocked ? "🔓 Unlock" : "🔒 Lock"}</button>`;
+    if (count > 1) html += `<button data-mod="group">Group</button>`;
+    if (hasGroup) html += `<button data-mod="ungroup">Ungroup</button>`;
+    html += `</div>`;
     if (count > 1) {
       html += `<div class="prop-sep"></div><div class="style-label">Align</div>`;
       html += `<div class="align-grid">` +
@@ -1104,15 +1131,16 @@ class App {
           case "mirror-v": this._mirror("v"); break;
           case "group": this._group(); break;
           case "ungroup": this._ungroup(); break;
-          case "del": this.commit(() => this.doc.remove(this._selIds())); break;
+          case "lock": this._toggleLock(); break;
+          case "del": { const ids = this._editableIds(); if (ids.length) this.commit(() => this.doc.remove(ids)); break; }
         }
       };
     });
     host.querySelectorAll("[data-align]").forEach((btn) => {
-      btn.onclick = () => this.commit(() => alignSelection(this.doc, this._selIds(), btn.dataset.align));
+      btn.onclick = () => this.commit(() => alignSelection(this.doc, this._editableIds(), btn.dataset.align));
     });
     host.querySelectorAll("[data-dist]").forEach((btn) => {
-      btn.onclick = () => this.commit(() => distributeSelection(this.doc, this._selIds(), btn.dataset.dist));
+      btn.onclick = () => this.commit(() => distributeSelection(this.doc, this._editableIds(), btn.dataset.dist));
     });
     const rot = document.getElementById("p-rot");
     if (rot) rot.onchange = () => { const d = parseFloat(rot.value) || 0; if (d) this._rotate(d); };

@@ -322,6 +322,23 @@ function drawSymbol(ctx, shape, vp, theme, stroke, selected) {
 }
 
 function drawHandles(ctx, shape, vp, theme) {
+  const b = shapeBBox(shape);
+  // Locked shapes show a padlock badge and no editable handles.
+  if (shape.locked) {
+    const c = vp.worldToScreen(v(b.max.x, b.min.y));
+    ctx.save();
+    ctx.fillStyle = "#f59e0b";
+    ctx.strokeStyle = "#fff";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(c.x + 6, c.y - 6, 6, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(c.x + 4, c.y - 6, 4, 4); // tiny lock body
+    ctx.restore();
+    return;
+  }
   const pts = shape.type === "symbol" ? [] : shapePoints(shape);
   ctx.save();
   ctx.fillStyle = "#fff";
