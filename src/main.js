@@ -278,6 +278,7 @@ class App {
     window.addEventListener("keydown", (ev) => {
       if (ev.target.tagName === "INPUT" || ev.target.tagName === "TEXTAREA") return;
       if (ev.code === "Space") { this.spaceDown = true; this.canvas.style.cursor = "grab"; return; }
+      if (ev.key === "Tab") { ev.preventDefault(); this._togglePanel(); return; }
       const meta = ev.ctrlKey || ev.metaKey;
       if (meta && ev.key.toLowerCase() === "z") {
         ev.preventDefault();
@@ -415,8 +416,12 @@ class App {
     document.getElementById("btn-png").onclick = () => this._exportPNG();
     document.getElementById("btn-svg").onclick = () => this._exportSVG();
     document.getElementById("btn-fit").onclick = () => this._fit();
+    document.getElementById("btn-undo").onclick = () => { this.doc.undo(); this.refreshPanel(); this._save(); };
+    document.getElementById("btn-redo").onclick = () => { this.doc.redo(); this.refreshPanel(); this._save(); };
+    document.getElementById("btn-panel").onclick = () => this._togglePanel();
     this._setupCloud();
     this._setup3D();
+    this._setupPanels();
 
     // snap toggles
     const bind = (id, key) => {
@@ -538,6 +543,30 @@ class App {
         this.view3d.render();
       }
     });
+  }
+
+  // Make each side-panel section header collapse its contents, persisted.
+  _setupPanels() {
+    let collapsed = [];
+    try { collapsed = JSON.parse(localStorage.getItem("draftstudio.collapsed") || "[]"); } catch (e) {}
+    document.querySelectorAll(".panel section > h3").forEach((h) => {
+      const key = h.textContent.trim();
+      const section = h.parentElement;
+      if (collapsed.includes(key)) section.classList.add("collapsed");
+      h.classList.add("collapsible");
+      h.onclick = () => {
+        section.classList.toggle("collapsed");
+        const now = [...document.querySelectorAll(".panel section.collapsed > h3")].map((x) => x.textContent.trim());
+        try { localStorage.setItem("draftstudio.collapsed", JSON.stringify(now)); } catch (e) {}
+      };
+    });
+  }
+
+  _togglePanel() {
+    document.body.classList.toggle("hide-panel");
+    // canvas width changed — keep the backing store crisp
+    this.vp.resize();
+    this.ctx.setTransform(this.vp.dpr, 0, 0, this.vp.dpr, 0, 0);
   }
 
   _open3D() {

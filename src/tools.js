@@ -312,15 +312,13 @@ class SymbolTool {
   onDown(sp) {
     const w = (this.def && this.def.w) || 24;
     const h = (this.def && this.def.h) || 24;
-    this.app.commit(() =>
-      this.app.doc.add(
-        makeShape("symbol", {
-          symbol: this.symbolId,
-          layer: "objects",
-          pts: [v(sp.x - w / 2, sp.y - h / 2), v(sp.x + w / 2, sp.y + h / 2)],
-        })
-      )
-    );
+    const props = {
+      symbol: this.symbolId,
+      layer: "objects",
+      pts: [v(sp.x - w / 2, sp.y - h / 2), v(sp.x + w / 2, sp.y + h / 2)],
+    };
+    if (this.def && this.def.color) props.color = this.def.color; // e.g. PT green
+    this.app.commit(() => this.app.doc.add(makeShape("symbol", props)));
   }
   onMove(sp) {
     this.cursor = { ...sp };

@@ -53,9 +53,14 @@ also works for the drawing UI, but without cloud project storage.)
   labels, takeoff, grid, and all numeric fields update together.
 - **Groups** — group shapes so they select and move as one unit (Ctrl/⌘+G,
   ungroup with Shift).
-- **Shape Library** — a searchable, categorized palette of symbols (Geometric,
-  Structural, Architectural, Site & Landscape, Furniture, Annotation). Symbols
-  are pure data (`src/symbols.js`), so adding more is trivial.
+- **Shape Library** — a searchable, categorized palette of symbols: Geometric,
+  **Lumber** (2×4…2×12, 4×4/6×6 posts, plywood/OSB sheets, pressure-treated
+  variants), **Masonry & Concrete** (CMU block, brick, pads, piers), **Fencing**
+  (chain-link, dog-ear pickets/panels, privacy, gates), Structural,
+  Architectural, Site & Landscape, Furniture, Annotation. All real dimensions.
+  Symbols are pure data (`src/symbols.js`), so adding more is trivial.
+- **Collapsible panels** — click any side-panel section header to fold it; hit
+  **Tab** (or the Panel button) to hide the whole sidebar for a clean canvas.
 - **Exact dimensions & position** — select any shape and type its precise
   X/Y, Width × Height, Diameter, or Length (to 1/8″). Arrow keys nudge by the
   grid step (Shift = ×12). Design parts to spec, not by eyeballing.

@@ -14,12 +14,26 @@
 
 export const CATEGORIES = [
   "Geometric",
+  "Lumber",
+  "Masonry & Concrete",
+  "Fencing",
   "Structural",
   "Architectural",
   "Site & Landscape",
   "Furniture",
   "Annotation",
 ];
+
+// Grain lines for a lumber cross-section (a few lines along the length).
+function grain(along = "h") {
+  const p = [];
+  if (along === "h") {
+    for (const y of [0.3, 0.5, 0.7]) p.push({ t: "line", x1: 0.04, y1: y, x2: 0.96, y2: y });
+  } else {
+    for (const x of [0.3, 0.5, 0.7]) p.push({ t: "line", x1: x, y1: 0.04, x2: x, y2: 0.96 });
+  }
+  return p;
+}
 
 export const SYMBOLS = [
   // ---- Geometric ----------------------------------------------------------
@@ -117,6 +131,69 @@ export const SYMBOLS = [
     prims: [{ t: "circle", cx: 0.5, cy: 0.5, r: 0.4 },
             { t: "line", x1: 0.5, y1: 0.0, x2: 0.5, y2: 1.0 },
             { t: "line", x1: 0.0, y1: 0.5, x2: 1.0, y2: 0.5 }] },
+
+  // ---- Lumber (actual dimensions in inches; stretch to the length you need) --
+  { id: "2x4", name: "2×4", category: "Lumber", w: 3.5, h: 1.5, label: "2×4",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...grain("h")] },
+  { id: "2x6", name: "2×6", category: "Lumber", w: 5.5, h: 1.5, label: "2×6",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...grain("h")] },
+  { id: "2x8", name: "2×8", category: "Lumber", w: 7.25, h: 1.5, label: "2×8",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...grain("h")] },
+  { id: "2x10", name: "2×10", category: "Lumber", w: 9.25, h: 1.5, label: "2×10",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...grain("h")] },
+  { id: "2x12", name: "2×12", category: "Lumber", w: 11.25, h: 1.5, label: "2×12",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...grain("h")] },
+  { id: "4x4", name: "4×4 Post", category: "Lumber", w: 3.5, h: 3.5, label: "4×4",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0, x2: 1, y2: 1 }, { t: "line", x1: 1, y1: 0, x2: 0, y2: 1 }] },
+  { id: "6x6", name: "6×6 Post", category: "Lumber", w: 5.5, h: 5.5, label: "6×6",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0, x2: 1, y2: 1 }, { t: "line", x1: 1, y1: 0, x2: 0, y2: 1 }] },
+  { id: "1x6", name: "1×6 Board", category: "Lumber", w: 5.5, h: 0.75, label: "1×6",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...grain("h")] },
+  { id: "deckpt", name: "5/4×6 Deck (PT)", category: "Lumber", w: 5.5, h: 1, label: "5/4 PT", color: "#3f7d20",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, ...grain("h")] },
+  { id: "4x4pt", name: "4×4 Post (PT)", category: "Lumber", w: 3.5, h: 3.5, label: "4×4 PT", color: "#3f7d20",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0, x2: 1, y2: 1 }, { t: "line", x1: 1, y1: 0, x2: 0, y2: 1 }] },
+  { id: "6x6pt", name: "6×6 Post (PT)", category: "Lumber", w: 5.5, h: 5.5, label: "6×6 PT", color: "#3f7d20",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0, x2: 1, y2: 1 }, { t: "line", x1: 1, y1: 0, x2: 0, y2: 1 }] },
+  { id: "plywood", name: "Plywood 4×8", category: "Lumber", w: 48, h: 96, label: "Plywood 4×8",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0, x2: 1, y2: 0.06 }] },
+  { id: "osb", name: "OSB 4×8", category: "Lumber", w: 48, h: 96, label: "OSB 4×8",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0.5, x2: 1, y2: 0.55 }, { t: "line", x1: 0, y1: 0.25, x2: 1, y2: 0.2 }] },
+
+  // ---- Masonry & concrete ----------------------------------------------------
+  { id: "cmu16", name: "CMU 8×16", category: "Masonry & Concrete", w: 15.625, h: 7.625, label: "CMU",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 },
+            { t: "rect", x: 0.08, y: 0.18, w: 0.38, h: 0.64 },
+            { t: "rect", x: 0.54, y: 0.18, w: 0.38, h: 0.64 }] },
+  { id: "cmu8", name: "CMU Half 8×8", category: "Masonry & Concrete", w: 7.625, h: 7.625, label: "CMU½",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "rect", x: 0.18, y: 0.18, w: 0.64, h: 0.64 }] },
+  { id: "brick", name: "Brick", category: "Masonry & Concrete", w: 7.625, h: 3.625, label: "Brick", color: "#9a3412",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }] },
+  { id: "concpad", name: "Concrete Pad 24″", category: "Masonry & Concrete", w: 24, h: 24, label: "Conc. pad", color: "#6b7280",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 0, x2: 1, y2: 1 }, { t: "line", x1: 1, y1: 0, x2: 0, y2: 1 }] },
+  { id: "pier12", name: "Pier 12″", category: "Masonry & Concrete", w: 12, h: 12, label: "Pier 12″", color: "#6b7280",
+    prims: [{ t: "circle", cx: 0.5, cy: 0.5, r: 0.48 }, { t: "circle", cx: 0.5, cy: 0.5, r: 0.12, fill: true }] },
+
+  // ---- Fencing ---------------------------------------------------------------
+  { id: "chainlink", name: "Chain-link (8′)", category: "Fencing", w: 96, h: 48, label: "Chain-link", color: "#64748b",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 },
+            { t: "line", x1: 0, y1: 0.5, x2: 0.25, y2: 0 }, { t: "line", x1: 0.25, y1: 1, x2: 0.75, y2: 0 },
+            { t: "line", x1: 0.75, y1: 1, x2: 1, y2: 0.5 },
+            { t: "line", x1: 0, y1: 0.5, x2: 0.25, y2: 1 }, { t: "line", x1: 0.25, y1: 0, x2: 0.75, y2: 1 },
+            { t: "line", x1: 0.75, y1: 0, x2: 1, y2: 0.5 }] },
+  { id: "dogear", name: "Dog-ear Picket", category: "Fencing", w: 5.5, h: 72, label: "Dog-ear", color: "#3f7d20",
+    prims: [{ t: "poly", closed: true, pts: [[0.12, 1], [0.12, 0.12], [0.3, 0.02], [0.7, 0.02], [0.88, 0.12], [0.88, 1]] }] },
+  { id: "dogearpanel", name: "Dog-ear Panel (8′)", category: "Fencing", w: 96, h: 72, label: "Dog-ear panel", color: "#3f7d20",
+    prims: [{ t: "line", x1: 0, y1: 0.25, x2: 1, y2: 0.25 }, { t: "line", x1: 0, y1: 0.8, x2: 1, y2: 0.8 },
+            { t: "line", x1: 0.1, y1: 0.05, x2: 0.1, y2: 1 }, { t: "line", x1: 0.3, y1: 0.05, x2: 0.3, y2: 1 },
+            { t: "line", x1: 0.5, y1: 0.05, x2: 0.5, y2: 1 }, { t: "line", x1: 0.7, y1: 0.05, x2: 0.7, y2: 1 },
+            { t: "line", x1: 0.9, y1: 0.05, x2: 0.9, y2: 1 }] },
+  { id: "privacy", name: "Privacy Panel (8′)", category: "Fencing", w: 96, h: 72, label: "Privacy panel", color: "#3f7d20",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 },
+            { t: "line", x1: 0.2, y1: 0, x2: 0.2, y2: 1 }, { t: "line", x1: 0.4, y1: 0, x2: 0.4, y2: 1 },
+            { t: "line", x1: 0.6, y1: 0, x2: 0.6, y2: 1 }, { t: "line", x1: 0.8, y1: 0, x2: 0.8, y2: 1 }] },
+  { id: "gate", name: "Gate", category: "Fencing", w: 48, h: 72, label: "Gate",
+    prims: [{ t: "rect", x: 0, y: 0, w: 1, h: 1 }, { t: "line", x1: 0, y1: 1, x2: 1, y2: 0 }] },
 ];
 
 export function symbolById(id) {
