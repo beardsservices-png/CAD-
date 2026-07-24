@@ -108,7 +108,14 @@
     <div id="view3d" class="overlay hidden">
       <canvas id="canvas3d"></canvas>
       <div class="overlay-bar">
-        <div><strong>3D Preview</strong> · massing model (extruded from your plan)</div>
+        <div><strong>3D Preview</strong> · massing model</div>
+        <div class="o-views">
+          <button class="ghost" data-view="top">Top</button>
+          <button class="ghost" data-view="front">Front</button>
+          <button class="ghost" data-view="right">Right</button>
+          <button class="ghost" data-view="left">Left</button>
+          <button class="ghost" data-view="iso">Iso</button>
+        </div>
         <div class="o-right">
           <span class="o-hint">drag to orbit · scroll to zoom</span>
           <button id="btn-3d-fit" class="ghost">Recenter</button>

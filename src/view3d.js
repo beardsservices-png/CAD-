@@ -50,6 +50,22 @@ export class View3D {
     this.cam.scale = Math.max(0.2, Math.min(40, this.cam.scale * f));
   }
 
+  // Snap the camera to a standard orthographic view.
+  setView(name) {
+    const P = Math.PI;
+    const views = {
+      top: { az: -P / 2, el: 1.45 },   // plan (looking down)
+      front: { az: -P / 2, el: 0.08 }, // looking north
+      back: { az: P / 2, el: 0.08 },
+      left: { az: P, el: 0.08 },
+      right: { az: 0, el: 0.08 },
+      iso: { az: -0.9, el: 0.62 },     // SE isometric
+    };
+    const vw = views[name] || views.iso;
+    this.cam.az = vw.az;
+    this.cam.el = vw.el;
+  }
+
   // Camera basis from spherical angles; orthographic projection.
   _basis() {
     const { az, el } = this.cam;
@@ -253,6 +269,42 @@ export class View3D {
       ctx.lineWidth = 0.6;
       ctx.stroke();
     }
+
+    this._drawGizmo(ctx, basis, 54, H - 54);
+  }
+
+  // Orientation triad (bottom-left): which way is up / north / east.
+  _drawGizmo(ctx, basis, ox, oy) {
+    const axes = [
+      { v: { x: 1, y: 0, z: 0 }, c: "#dc2626", label: "E" },
+      { v: { x: 0, y: 1, z: 0 }, c: "#16a34a", label: "N" },
+      { v: { x: 0, y: 0, z: 1 }, c: "#2563eb", label: "Up" },
+    ];
+    const L = 30;
+    ctx.save();
+    ctx.font = "11px system-ui, sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.lineWidth = 2;
+    for (const a of axes) {
+      const sx = ox + dot3(a.v, basis.right) * L;
+      const sy = oy - dot3(a.v, basis.up) * L;
+      ctx.strokeStyle = a.c;
+      ctx.fillStyle = a.c;
+      ctx.beginPath();
+      ctx.moveTo(ox, oy);
+      ctx.lineTo(sx, sy);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(sx, sy, 8, 0, Math.PI * 2);
+      ctx.fillStyle = "#fff";
+      ctx.fill();
+      ctx.strokeStyle = a.c;
+      ctx.stroke();
+      ctx.fillStyle = a.c;
+      ctx.fillText(a.label, sx, sy + 0.5);
+    }
+    ctx.restore();
   }
 
   // A faint ground grid so the massing reads against a plane.

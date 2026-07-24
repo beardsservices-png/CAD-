@@ -526,6 +526,9 @@ class App {
       this.view3d.fit();
       this.view3d.render();
     };
+    document.querySelectorAll("[data-view]").forEach((btn) => {
+      btn.onclick = () => { this.view3d.setView(btn.dataset.view); this.view3d.render(); };
+    });
 
     let last = null;
     canvas3d.addEventListener("pointerdown", (ev) => {
