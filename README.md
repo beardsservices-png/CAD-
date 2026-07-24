@@ -76,11 +76,17 @@ also works for the drawing UI, but without cloud project storage.)
 - **Snapping** — grid, endpoint/midpoint, and ortho lock (or hold Shift).
 - **Layers** — add / rename / recolor / delete, reassign selected shapes, plus
   visibility and active-layer control.
-- **3D Preview** — one click extrudes your plan into an orbitable 3D massing
-  model (drag to orbit, scroll to zoom). Walls become solid boxes at their
+- **3D Preview** — one click extrudes your plan into an orbitable 3D model
+  (drag to orbit, scroll to zoom) with **view presets** (Top/Front/Right/Left/
+  Iso) and an orientation gizmo (Up / N / E). Walls become solid boxes at their
   thickness; closed shapes and symbols become prisms; circles become cylinders.
   Every shape carries a `height`/`elevation`, editable in Properties — so 2D
   and 3D are the *same* model.
+- **Materials & textured render** — assign a Material (Wood, Plywood,
+  Pressure-treated, Metal, Concrete, Brick, Drywall, Glass, Shingle) to any
+  shape and the 3D view renders it with procedural grain/coursing/speckle,
+  gradient shading, and a soft ground shadow — so a "plywood shelf" looks like
+  one. Library materials (lumber, CMU, brick, metal roof…) are auto-detected.
 - **Export** — vector **SVG**, **PNG**, or a `.json` project file.
 - **Cloud projects** — when deployed with a storage volume, save/open drawings
   on the server, shared across devices.

@@ -53,6 +53,21 @@ export const SYMBOL_HEIGHTS = {
   north: 0, arrow: 0, target: 0,
 };
 
+// 3D materials — base color + a procedural texture hint used by the renderer.
+export const MATERIALS = [
+  { id: "auto", name: "Auto (by object)", color: null, tex: null },
+  { id: "wood", name: "Wood", color: "#c39a5f", tex: "grain" },
+  { id: "ply", name: "Plywood", color: "#d8b57e", tex: "grain" },
+  { id: "pt", name: "Pressure-treated", color: "#7c9b5b", tex: "grain" },
+  { id: "metal", name: "Metal", color: "#9aa4b0", tex: "sheen" },
+  { id: "concrete", name: "Concrete", color: "#9ca3af", tex: "speckle" },
+  { id: "brick", name: "Brick", color: "#a1543b", tex: "courses" },
+  { id: "drywall", name: "Drywall / Paint", color: "#e9e7e2", tex: null },
+  { id: "glass", name: "Glass", color: "#8fd0e6", tex: "glass" },
+  { id: "shingle", name: "Shingle", color: "#4b5563", tex: "courses" },
+];
+export const MATERIAL_BY_ID = Object.fromEntries(MATERIALS.map((m) => [m.id, m]));
+
 export function shapeHeight(shape) {
   if (shape.height != null) return shape.height;
   if (shape.type === "symbol") return SYMBOL_HEIGHTS[shape.symbol] ?? 36;

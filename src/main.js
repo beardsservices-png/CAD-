@@ -4,7 +4,7 @@ import {
   setUnitMode, getUnitMode, toDisplay, fromDisplay, unitLabel, displayStep, roundDisplay,
 } from "./geometry.js";
 import { Viewport } from "./viewport.js";
-import { Document, shapeMetrics, shapeClosed, makeShape } from "./model.js";
+import { Document, shapeMetrics, shapeClosed, makeShape, MATERIALS } from "./model.js";
 import { resolveSnap } from "./snap.js";
 import { renderShapes } from "./render.js";
 import { createTool } from "./tools.js";
@@ -1065,6 +1065,10 @@ class App {
         <option value="light" ${fsel("light")}>Light</option>
         <option value="solid" ${fsel("solid")}>Solid</option></select></label>`;
     }
+    // 3D material (drives the textured render).
+    const curMat = sel.every((s) => (s.material || "auto") === (s0.material || "auto")) ? (s0.material || "auto") : "auto";
+    const matOpts = MATERIALS.map((m) => `<option value="${m.id}" ${m.id === curMat ? "selected" : ""}>${m.name}</option>`).join("");
+    html += `<label class="opt inline">Material<select id="p-material">${matOpts}</select></label>`;
     return html;
   }
   _bindStyle(sel) {
@@ -1084,6 +1088,10 @@ class App {
     const fill = document.getElementById("p-fill");
     if (fill) fill.onchange = () => this.commit(() => sel.forEach((s) => {
       s.fill = fill.value === "none" ? false : fill.value === "solid" ? "solid" : true;
+    }));
+    const mat = document.getElementById("p-material");
+    if (mat) mat.onchange = () => this.commit(() => sel.forEach((s) => {
+      if (mat.value === "auto") delete s.material; else s.material = mat.value;
     }));
   }
 
