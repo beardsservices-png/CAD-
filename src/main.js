@@ -1,5 +1,8 @@
 // main.js — application orchestrator: wiring, input, render loop, file I/O.
-import { v, dist, formatFeetInches, formatArea } from "./geometry.js";
+import {
+  v, dist, formatFeetInches, formatArea,
+  setUnitMode, getUnitMode, toDisplay, fromDisplay, unitLabel, displayStep, roundDisplay,
+} from "./geometry.js";
 import { Viewport } from "./viewport.js";
 import { Document, shapeMetrics, shapeClosed, makeShape } from "./model.js";
 import { resolveSnap } from "./snap.js";
@@ -270,7 +273,7 @@ class App {
   _bindKeys() {
     const map = {
       v: "select", l: "line", w: "wall", r: "rect", c: "circle",
-      p: "polygon", d: "dimension", t: "text", a: "arc",
+      p: "polygon", d: "dimension", t: "text", a: "arc", m: "measure",
     };
     window.addEventListener("keydown", (ev) => {
       if (ev.target.tagName === "INPUT" || ev.target.tagName === "TEXTAREA") return;
@@ -287,6 +290,7 @@ class App {
         this.doc.shapes.forEach((s) => this.doc.selection.add(s.id));
         this.refreshPanel(); return;
       }
+      if (meta && ev.key.toLowerCase() === "g") { ev.preventDefault(); if (ev.shiftKey) this._ungroup(); else this._group(); return; }
       if (meta && ev.key.toLowerCase() === "d") { ev.preventDefault(); this._duplicate(); return; }
       if (meta && ev.key.toLowerCase() === "c") { ev.preventDefault(); this._copy(); return; }
       if (meta && ev.key.toLowerCase() === "v") { ev.preventDefault(); this._paste(); return; }
@@ -361,6 +365,17 @@ class App {
       this.doc.selection = new Set(ids);
     });
   }
+  _group() {
+    const ids = this._selIds();
+    if (ids.length < 2) return;
+    const gid = `g_${Date.now().toString(36)}`;
+    this.commit(() => ids.forEach((id) => { const s = this.doc.get(id); if (s) s.group = gid; }));
+  }
+  _ungroup() {
+    const ids = this._selIds();
+    if (!ids.length) return;
+    this.commit(() => ids.forEach((id) => { const s = this.doc.get(id); if (s) delete s.group; }));
+  }
   _copy() {
     this.clipboard = this._selIds().map((id) => cloneShape(this.doc.get(id))).filter(Boolean);
   }
@@ -414,12 +429,22 @@ class App {
     bind("snap-ortho", "ortho");
 
     const gridStep = document.getElementById("grid-step");
-    gridStep.value = this.snap.gridStep;
-    gridStep.onchange = () => (this.snap.gridStep = Math.max(0.25, parseFloat(gridStep.value) || 1));
+    gridStep.onchange = () => (this.snap.gridStep = Math.max(0.01, fromDisplay(parseFloat(gridStep.value) || 1)));
 
     const wt = document.getElementById("wall-thick");
-    wt.value = this.wallThickness;
-    wt.onchange = () => (this.wallThickness = Math.max(0.5, parseFloat(wt.value) || 3.5));
+    wt.onchange = () => (this.wallThickness = Math.max(0.1, fromDisplay(parseFloat(wt.value) || 3.5)));
+
+    // units toggle (persisted separately from the document)
+    const unitSel = document.getElementById("unit-mode");
+    try { const su = localStorage.getItem("draftstudio.unit"); if (su) setUnitMode(su); } catch (e) {}
+    unitSel.value = getUnitMode();
+    unitSel.onchange = () => {
+      setUnitMode(unitSel.value);
+      try { localStorage.setItem("draftstudio.unit", unitSel.value); } catch (e) {}
+      this._refreshUnitsUI();
+      this.refreshPanel();
+    };
+    this._refreshUnitsUI();
 
     const search = document.getElementById("shape-search");
     if (search) search.oninput = () => this._buildShapeLibrary(search.value);
@@ -861,38 +886,43 @@ class App {
       rows += this._layerSelectHTML(sel);
 
       // Exact position + size — the core of designing a part precisely.
+      const u = unitLabel();
+      const st = displayStep();
+      const dn = (inches) => this._dispNum(inches);
       rows += `<div class="prop-sep"></div>`;
-      rows += `<label class="opt inline">X (in)<input id="p-x" type="number" step="0.125" value="${round3(bb.min.x)}"></label>`;
-      rows += `<label class="opt inline">Y (in)<input id="p-y" type="number" step="0.125" value="${round3(bb.min.y)}"></label>`;
+      rows += `<label class="opt inline">X (${u})<input id="p-x" type="number" step="${st}" value="${dn(bb.min.x)}"></label>`;
+      rows += `<label class="opt inline">Y (${u})<input id="p-y" type="number" step="${st}" value="${dn(bb.min.y)}"></label>`;
       if (s.type === "rect") {
-        rows += `<label class="opt inline">Width (in)<input id="p-w" type="number" min="0.1" step="0.125" value="${round3(bb.max.x - bb.min.x)}"></label>`;
-        rows += `<label class="opt inline">Height (in)<input id="p-h" type="number" min="0.1" step="0.125" value="${round3(bb.max.y - bb.min.y)}"></label>`;
+        rows += `<label class="opt inline">Width (${u})<input id="p-w" type="number" min="0" step="${st}" value="${dn(bb.max.x - bb.min.x)}"></label>`;
+        rows += `<label class="opt inline">Height (${u})<input id="p-h" type="number" min="0" step="${st}" value="${dn(bb.max.y - bb.min.y)}"></label>`;
       } else if (s.type === "circle") {
-        rows += `<label class="opt inline">Diameter (in)<input id="p-d" type="number" min="0.1" step="0.125" value="${round3(bb.max.x - bb.min.x)}"></label>`;
+        rows += `<label class="opt inline">Diameter (${u})<input id="p-d" type="number" min="0" step="${st}" value="${dn(bb.max.x - bb.min.x)}"></label>`;
       } else if ((s.type === "line" || s.type === "wall") && s.pts.length === 2) {
-        rows += `<label class="opt inline">Length (in)<input id="p-len" type="number" min="0.1" step="0.125" value="${round3(m.length)}"></label>`;
+        rows += `<label class="opt inline">Length (${u})<input id="p-len" type="number" min="0" step="${st}" value="${dn(m.length)}"></label>`;
       }
 
       if (s.type !== "dimension" && s.type !== "text") {
         rows += `<div class="prop-sep"></div>`;
-        rows += `<label class="opt inline">3D height (in)<input id="p-height" type="number" min="0" step="1" value="${round3(shapeHeight(s))}"></label>`;
-        rows += `<label class="opt inline">Base elev. (in)<input id="p-elev" type="number" step="1" value="${round3(shapeElevation(s))}"></label>`;
+        rows += `<label class="opt inline">3D height (${u})<input id="p-height" type="number" min="0" step="${st}" value="${dn(shapeHeight(s))}"></label>`;
+        rows += `<label class="opt inline">Base elev. (${u})<input id="p-elev" type="number" step="${st}" value="${dn(shapeElevation(s))}"></label>`;
       }
     } else {
       rows += `<div class="prop-row"><span>Selected</span><b>${sel.length} shapes</b></div>`;
       rows += this._layerSelectHTML(sel);
     }
 
+    const hasGroup = sel.some((s) => s.group);
     rows += this._styleHTML(sel);
-    rows += this._modifyHTML(sel.length);
+    rows += this._modifyHTML(sel.length, hasGroup);
     host.innerHTML = rows;
 
     // ---- single-shape numeric binds ----
     if (single) {
       const s = single;
+      // fn always receives inches (display units are converted here).
       const bind = (id, fn) => {
         const el = document.getElementById(id);
-        if (el) el.onchange = () => { this.doc.snapshot(); fn(parseFloat(el.value)); this._save(); this.refreshPanel(); };
+        if (el) el.onchange = () => { this.doc.snapshot(); fn(fromDisplay(parseFloat(el.value) || 0)); this._save(); this.refreshPanel(); };
       };
       bind("p-x", (val) => setPosition(this.doc, s.id, val, shapeBBox(s).min.y));
       bind("p-y", (val) => setPosition(this.doc, s.id, shapeBBox(s).min.x, val));
@@ -902,14 +932,33 @@ class App {
       bind("p-len", (val) => setSegmentLength(s, Math.max(0.1, val)));
       const hEl = document.getElementById("p-height");
       const eEl = document.getElementById("p-elev");
-      if (hEl) hEl.onchange = () => { s.height = Math.max(0, parseFloat(hEl.value) || 0); this._save(); };
-      if (eEl) eEl.onchange = () => { s.elevation = parseFloat(eEl.value) || 0; this._save(); };
+      if (hEl) hEl.onchange = () => { s.height = Math.max(0, fromDisplay(parseFloat(hEl.value) || 0)); this._save(); };
+      if (eEl) eEl.onchange = () => { s.elevation = fromDisplay(parseFloat(eEl.value) || 0); this._save(); };
     }
 
     this._bindLayerSelect(sel);
     this._bindStyle(sel);
     this._bindModify();
     this._updateTakeoff();
+  }
+
+  // Refresh unit-dependent labels and input values in the settings panel.
+  _refreshUnitsUI() {
+    const u = unitLabel();
+    const gsLabel = document.getElementById("grid-step-label");
+    const wtLabel = document.getElementById("wall-thick-label");
+    const gs = document.getElementById("grid-step");
+    const wt = document.getElementById("wall-thick");
+    if (gsLabel) gsLabel.textContent = `Grid step (${u})`;
+    if (wtLabel) wtLabel.textContent = `Wall thickness (${u})`;
+    if (gs) { gs.step = displayStep(); gs.value = this._dispNum(this.snap.gridStep); }
+    if (wt) { wt.step = displayStep(); wt.value = this._dispNum(this.wallThickness); }
+  }
+
+  // Convert an internal inch value to a rounded number in the display unit.
+  _dispNum(inches) {
+    const d = toDisplay(inches);
+    return getUnitMode() === "metric" ? Math.round(d * 10) / 10 : Math.round(d * 8) / 8;
   }
 
   _layerSelectHTML(sel) {
@@ -978,7 +1027,7 @@ class App {
     }));
   }
 
-  _modifyHTML(count) {
+  _modifyHTML(count, hasGroup) {
     let html =
       `<div class="prop-sep"></div>` +
       `<div class="modify-grid">` +
@@ -990,6 +1039,12 @@ class App {
       `<button data-mod="del">Delete</button>` +
       `</div>` +
       `<label class="opt inline">Rotate by°<input id="p-rot" type="number" step="1" value="0"></label>`;
+    if (count > 1 || hasGroup) {
+      html += `<div class="modify-grid">`;
+      if (count > 1) html += `<button data-mod="group">Group</button>`;
+      if (hasGroup) html += `<button data-mod="ungroup">Ungroup</button>`;
+      html += `</div>`;
+    }
     if (count > 1) {
       html += `<div class="prop-sep"></div><div class="style-label">Align</div>`;
       html += `<div class="align-grid">` +
@@ -1018,6 +1073,8 @@ class App {
           case "rot-ccw": this._rotate(-90); break;
           case "mirror-h": this._mirror("h"); break;
           case "mirror-v": this._mirror("v"); break;
+          case "group": this._group(); break;
+          case "ungroup": this._ungroup(); break;
           case "del": this.commit(() => this.doc.remove(this._selIds())); break;
         }
       };
@@ -1061,6 +1118,7 @@ class App {
       rect: "Click one corner, then the opposite corner · Shift = square",
       circle: "Click the center, then click to set the radius",
       arc: "Click the start, then the end, then a point on the curve",
+      measure: "Click two points to measure · click again to start a new measurement",
       polygon: "Click points · click the start point to close · Enter to finish",
       dimension: "Click two points to place a dimension",
       text: "Click to place a text note",

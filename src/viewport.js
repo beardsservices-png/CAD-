@@ -1,5 +1,9 @@
 // viewport.js — camera (pan/zoom) and world<->screen transforms + grid.
-import { v } from "./geometry.js";
+import { v, getUnitMode } from "./geometry.js";
+
+// Metric grid candidates (mm) converted to inches for the internal system.
+const METRIC_CANDIDATES = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000].map((mm) => mm / 25.4);
+const IMPERIAL_CANDIDATES = [1, 3, 6, 12, 24, 60, 120, 240, 600, 1200];
 
 export class Viewport {
   constructor(canvas) {
@@ -57,7 +61,7 @@ export class Viewport {
 
   // Choose a "nice" grid spacing (in inches) so major lines sit ~60-140px apart.
   gridSpacing() {
-    const candidates = [1, 3, 6, 12, 24, 60, 120, 240, 600, 1200];
+    const candidates = getUnitMode() === "metric" ? METRIC_CANDIDATES : IMPERIAL_CANDIDATES;
     for (const c of candidates) {
       if (c * this.scale >= 60) return c;
     }
@@ -80,8 +84,9 @@ export class Viewport {
     ctx.save();
     ctx.lineWidth = 1;
 
-    // Minor grid: subdivide the major spacing into a "foot-ish" sub-grid.
-    const sub = spacing >= 12 ? spacing / 12 : spacing; // ~1 ft major -> 1 in minor
+    // Minor grid: subdivide the major spacing (÷10 metric, ÷12 imperial).
+    const div = getUnitMode() === "metric" ? 10 : 12;
+    const sub = spacing >= div ? spacing / div : spacing;
     if (sub * this.scale >= 6) {
       ctx.strokeStyle = theme.gridMinor;
       ctx.beginPath();

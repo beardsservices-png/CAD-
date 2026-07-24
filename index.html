@@ -52,6 +52,7 @@
         <button class="tool-btn" data-tool="polygon" title="Polygon (P)"><span>⬠</span><small>Polygon</small></button>
         <button class="tool-btn" data-tool="dimension" title="Dimension (D)"><span>↔</span><small>Dim</small></button>
         <button class="tool-btn" data-tool="text" title="Text (T)"><span>T</span><small>Text</small></button>
+        <button class="tool-btn" data-tool="measure" title="Measure (M)"><span>⟺</span><small>Measure</small></button>
       </nav>
 
       <main class="canvas-wrap">
@@ -82,13 +83,19 @@
         </section>
 
         <section>
-          <h3>Snapping</h3>
+          <h3>Settings</h3>
           <div class="card">
+            <label class="opt inline">Units
+              <select id="unit-mode">
+                <option value="imperial">Imperial (ft/in)</option>
+                <option value="metric">Metric (mm)</option>
+              </select>
+            </label>
             <label class="opt"><input id="snap-grid" type="checkbox" /> Grid snap</label>
             <label class="opt"><input id="snap-endpoint" type="checkbox" /> Endpoint / midpoint</label>
             <label class="opt"><input id="snap-ortho" type="checkbox" /> Ortho lock</label>
-            <label class="opt inline">Grid step (in) <input id="grid-step" type="number" min="0.25" step="0.25" /></label>
-            <label class="opt inline">Wall thickness (in) <input id="wall-thick" type="number" min="0.5" step="0.5" /></label>
+            <label class="opt inline"><span id="grid-step-label">Grid step (in)</span> <input id="grid-step" type="number" min="0.1" step="0.25" /></label>
+            <label class="opt inline"><span id="wall-thick-label">Wall thickness (in)</span> <input id="wall-thick" type="number" min="0.5" step="0.5" /></label>
           </div>
         </section>
       </aside>

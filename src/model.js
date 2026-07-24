@@ -209,6 +209,23 @@ export class Document {
     return null;
   }
 
+  // ---- groups ----
+  // All shape ids in `shape`'s group (or just itself if ungrouped).
+  groupIds(shape) {
+    if (!shape.group) return [shape.id];
+    return this.shapes.filter((s) => s.group === shape.group).map((s) => s.id);
+  }
+  // Expand the current selection to include every member of any touched group.
+  expandGroups() {
+    const groups = new Set();
+    for (const id of this.selection) {
+      const s = this.get(id);
+      if (s && s.group) groups.add(s.group);
+    }
+    if (!groups.size) return;
+    for (const s of this.shapes) if (s.group && groups.has(s.group)) this.selection.add(s.id);
+  }
+
   // ---- Undo / redo (snapshot based; simple and robust) ----
   snapshot() {
     this._undo.push(this._serializeShapes());

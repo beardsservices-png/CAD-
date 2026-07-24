@@ -373,6 +373,57 @@ class TextTool {
   }
 }
 
+// ---- Measure tool: temporary tape measure (creates no geometry) ------------
+class MeasureTool {
+  constructor(app) {
+    this.app = app;
+    this.a = null;
+    this.b = null;
+    this.cursor = null;
+  }
+  reset() {
+    this.a = null;
+    this.b = null;
+    this.cursor = null;
+  }
+  onDown(sp) {
+    if (!this.a) { this.a = { ...sp }; this.b = null; }
+    else if (!this.b) { this.b = { ...sp }; }
+    else { this.a = { ...sp }; this.b = null; } // start a fresh measurement
+    this.cursor = { ...sp };
+  }
+  onMove(sp) {
+    this.cursor = { ...sp };
+  }
+  cancel() {
+    this.reset();
+  }
+  draw(ctx, vp, theme) {
+    const end = this.b || this.cursor;
+    if (!this.a || !end) return;
+    const a = vp.worldToScreen(this.a);
+    const e = vp.worldToScreen(end);
+    ctx.save();
+    ctx.strokeStyle = "#0891b2";
+    ctx.fillStyle = "#0891b2";
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([6, 4]);
+    ctx.beginPath();
+    ctx.moveTo(a.x, a.y);
+    ctx.lineTo(e.x, e.y);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    // endpoint dots
+    for (const p of [a, e]) { ctx.beginPath(); ctx.arc(p.x, p.y, 3, 0, Math.PI * 2); ctx.fill(); }
+    const d = sub(end, this.a);
+    const mid = v((a.x + e.x) / 2, (a.y + e.y) / 2);
+    label(ctx, `${formatFeetInches(len(d))}  ·  ${Math.round(angleDeg(d))}°`, mid.x, mid.y - 14, theme, {
+      bg: "#0e7490", color: "#ffffff",
+    });
+    ctx.restore();
+  }
+}
+
 // ---- Select / move / edit tool ---------------------------------------------
 class SelectTool {
   constructor(app) {
@@ -412,15 +463,17 @@ class SelectTool {
       }
     }
 
-    // 2) click on a shape -> select (+move on drag)
+    // 2) click on a shape -> select (+move on drag). Grouped shapes select
+    //    together as one unit.
     const hit = doc.hitTest(rawWorld, tolWorld);
     if (hit) {
+      const ids = doc.groupIds(hit);
       if (ev.shiftKey) {
-        if (doc.selection.has(hit.id)) doc.selection.delete(hit.id);
-        else doc.selection.add(hit.id);
-      } else if (!doc.selection.has(hit.id)) {
+        const allIn = ids.every((id) => doc.selection.has(id));
+        ids.forEach((id) => (allIn ? doc.selection.delete(id) : doc.selection.add(id)));
+      } else if (!ids.every((id) => doc.selection.has(id))) {
         doc.selection.clear();
-        doc.selection.add(hit.id);
+        ids.forEach((id) => doc.selection.add(id));
       }
       this.app.doc.snapshot();
       this.mode = "move";
@@ -478,6 +531,7 @@ class SelectTool {
           if (b.min.x >= box.min.x && b.max.x <= box.max.x && b.min.y >= box.min.y && b.max.y <= box.max.y)
             this.app.doc.selection.add(s.id);
         }
+        this.app.doc.expandGroups();
       }
       this.app.refreshPanel();
     }
@@ -526,6 +580,8 @@ export function createTool(app, name) {
       return new TextTool(app);
     case "arc":
       return new ArcTool(app);
+    case "measure":
+      return new MeasureTool(app);
     default:
       return new SelectTool(app);
   }

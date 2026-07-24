@@ -48,7 +48,11 @@ also works for the drawing UI, but without cloud project storage.)
 - **Pan / zoom** — mouse wheel to zoom, space-drag or middle-drag to pan,
   two-finger pinch/pan on touch.
 - **Drawing tools:** Line, Wall (real thickness), Rectangle, Circle/Ellipse,
-  3-point Arc, Polygon, Dimension, Text notes.
+  3-point Arc, Polygon, Dimension, Text notes, and a Measure tape.
+- **Units** — switch the whole app between Imperial (ft/in) and Metric (mm/cm/m);
+  labels, takeoff, grid, and all numeric fields update together.
+- **Groups** — group shapes so they select and move as one unit (Ctrl/⌘+G,
+  ungroup with Shift).
 - **Shape Library** — a searchable, categorized palette of symbols (Geometric,
   Structural, Architectural, Site & Landscape, Furniture, Annotation). Symbols
   are pure data (`src/symbols.js`), so adding more is trivial.
@@ -85,6 +89,7 @@ also works for the drawing UI, but without cloud project storage.)
 | R | Rectangle | Enter | Finish line/wall |
 | C | Circle | Del | Delete selection |
 | A | Arc | Arrows | Nudge selection (Shift = ×12) |
+| M | Measure | Ctrl/⌘+G | Group (Shift = ungroup) |
 | P | Polygon | Ctrl/⌘+Z | Undo (Shift = redo) |
 | Shift (drag) | Ortho lock | Ctrl/⌘+S | Save (cloud if available) |
 | Ctrl/⌘+D | Duplicate | Ctrl/⌘+C / V | Copy / Paste |

@@ -74,9 +74,35 @@ function reduce(n, d) {
   return [n / k, d / k];
 }
 
-// Format inches as feet + inches with a fractional inch to `denom` (e.g. 16).
-// e.g. 30.5 -> `2' 6 1/2"`
+// ---- Units -----------------------------------------------------------------
+// World units are always inches internally; the display unit is switchable.
+const MM_PER_IN = 25.4;
+let _unit = "imperial"; // "imperial" | "metric"
+export function setUnitMode(m) { _unit = m === "metric" ? "metric" : "imperial"; }
+export function getUnitMode() { return _unit; }
+export function unitLabel() { return _unit === "metric" ? "mm" : "in"; }
+export function displayStep() { return _unit === "metric" ? 1 : 0.125; }
+// Convert an internal inch value to the current display unit and back.
+export function toDisplay(inches) { return _unit === "metric" ? inches * MM_PER_IN : inches; }
+export function fromDisplay(val) { return _unit === "metric" ? val / MM_PER_IN : val; }
+// Round to display precision (1 mm, or 1/8").
+export function roundDisplay(inches) {
+  return _unit === "metric" ? Math.round(inches * MM_PER_IN) / MM_PER_IN : Math.round(inches * 8) / 8;
+}
+
+// Format a metric length from inches, choosing mm / cm / m sensibly.
+function formatMetric(inches) {
+  const mm = inches * MM_PER_IN;
+  const a = Math.abs(mm);
+  if (a >= 1000) return `${(mm / 1000).toLocaleString(undefined, { maximumFractionDigits: 2 })} m`;
+  if (a >= 10) return `${(mm / 10).toLocaleString(undefined, { maximumFractionDigits: 1 })} cm`;
+  return `${Math.round(mm)} mm`;
+}
+
+// Format inches as feet + inches with a fractional inch to `denom` (e.g. 16),
+// or in metric when the display unit is metric. e.g. 30.5 -> `2' 6 1/2"`.
 export function formatFeetInches(inches, denom = 16) {
+  if (_unit === "metric") return formatMetric(inches);
   const neg = inches < 0;
   let total = Math.abs(inches);
   const feet = Math.floor(total / 12);
@@ -109,8 +135,12 @@ export function formatFeetInches(inches, denom = 16) {
   return (neg ? "-" : "") + parts.join(" ");
 }
 
-// Format an area given in square inches as square feet.
+// Format an area given in square inches, as square feet or square metres.
 export function formatArea(sqInches) {
+  if (_unit === "metric") {
+    const sqm = (sqInches * MM_PER_IN * MM_PER_IN) / 1e6;
+    return `${sqm.toLocaleString(undefined, { maximumFractionDigits: 2 })} m²`;
+  }
   const sqft = sqInches / 144;
   return `${sqft.toLocaleString(undefined, { maximumFractionDigits: 1 })} sq ft`;
 }
