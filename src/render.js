@@ -1,6 +1,6 @@
 // render.js — draws the document (shapes, dimensions, selection) to the canvas.
-import { v, sub, len, angle, formatFeetInches, formatArea } from "./geometry.js";
-import { shapePoints, shapeClosed, shapeBBox, shapeMetrics } from "./model.js";
+import { v, sub, len, angle, formatFeetInches, formatArea, arcThrough } from "./geometry.js";
+import { shapePoints, shapeClosed, shapeBBox, shapeMetrics, lineWeightPx, dashArray } from "./model.js";
 import { symbolById, drawSymbolDef } from "./symbols.js";
 
 // Draw a text label with a rounded background pill, centered at screen point.
@@ -79,23 +79,29 @@ function drawShape(ctx, shape, vp, theme, color, selected) {
     if (selected) outline(ctx, shape, vp, theme);
     drawSegmentLengths(ctx, shape, vp, theme);
   } else if (shape.type === "line") {
-    ctx.lineWidth = selected ? 3 : 2;
+    ctx.lineWidth = lineWeightPx(shape, selected);
     ctx.strokeStyle = stroke;
+    ctx.setLineDash(dashArray(shape));
     screenPath(ctx, vp, shape.pts, false);
     ctx.stroke();
+    ctx.setLineDash([]);
     drawSegmentLengths(ctx, shape, vp, theme);
+  } else if (shape.type === "arc") {
+    drawArc(ctx, shape, vp, theme, stroke, selected, color);
   } else if (shape.type === "rect" || shape.type === "polygon") {
     const pts = shapePoints(shape);
     const closed = shapeClosed(shape);
-    ctx.lineWidth = selected ? 3 : 2;
+    ctx.lineWidth = lineWeightPx(shape, selected);
     ctx.strokeStyle = stroke;
+    ctx.setLineDash(dashArray(shape));
     if (closed && shape.fill !== false) {
-      ctx.fillStyle = hexA(color, 0.08);
+      ctx.fillStyle = hexA(color, shape.fill === "solid" ? 0.35 : 0.08);
       screenPath(ctx, vp, pts, true);
       ctx.fill();
     }
     screenPath(ctx, vp, pts, closed);
     ctx.stroke();
+    ctx.setLineDash([]);
     if (closed) drawAreaLabel(ctx, shape, vp, theme);
     drawSegmentLengths(ctx, shape, vp, theme);
   } else if (shape.type === "circle") {
@@ -104,15 +110,17 @@ function drawShape(ctx, shape, vp, theme, color, selected) {
     const p1 = vp.worldToScreen(b.max);
     const cx = (p0.x + p1.x) / 2;
     const cy = (p0.y + p1.y) / 2;
-    ctx.lineWidth = selected ? 3 : 2;
+    ctx.lineWidth = lineWeightPx(shape, selected);
     ctx.strokeStyle = stroke;
+    ctx.setLineDash(dashArray(shape));
     ctx.beginPath();
     ctx.ellipse(cx, cy, Math.abs(p1.x - p0.x) / 2, Math.abs(p1.y - p0.y) / 2, 0, 0, Math.PI * 2);
     if (shape.fill !== false) {
-      ctx.fillStyle = hexA(color, 0.08);
+      ctx.fillStyle = hexA(color, shape.fill === "solid" ? 0.35 : 0.08);
       ctx.fill();
     }
     ctx.stroke();
+    ctx.setLineDash([]);
     drawAreaLabel(ctx, shape, vp, theme);
   } else if (shape.type === "text") {
     drawText(ctx, shape, vp, stroke);
@@ -135,6 +143,36 @@ function drawText(ctx, shape, vp, stroke) {
   ctx.fillStyle = stroke;
   const lines = (shape.text || "").split("\n");
   lines.forEach((ln, i) => ctx.fillText(ln, p.x, p.y + i * size * 1.25));
+  ctx.restore();
+}
+
+function drawArc(ctx, shape, vp, theme, stroke, selected, color) {
+  const [a, b, c] = shape.pts;
+  ctx.save();
+  ctx.lineWidth = lineWeightPx(shape, selected);
+  ctx.strokeStyle = stroke;
+  ctx.setLineDash(dashArray(shape));
+  ctx.lineCap = "round";
+  const arc = a && b && c ? arcThrough(a, b, c) : null;
+  ctx.beginPath();
+  if (!arc) {
+    // collinear -> straight chord
+    if (a) { const s = vp.worldToScreen(a); ctx.moveTo(s.x, s.y); }
+    if (c) { const e = vp.worldToScreen(c); ctx.lineTo(e.x, e.y); }
+  } else {
+    const ctr = vp.worldToScreen(arc.center);
+    ctx.arc(ctr.x, ctr.y, arc.r * vp.scale, arc.a0, arc.a1, !arc.ccw);
+  }
+  ctx.stroke();
+  ctx.setLineDash([]);
+  // length label at the mid point (the "through" point)
+  if (b) {
+    const m = vp.worldToScreen(b);
+    const met = shapeMetrics(shape);
+    label(ctx, formatFeetInches(met.length || 0), m.x, m.y - 12, theme, {
+      bg: theme.dimBg, color: theme.dimText,
+    });
+  }
   ctx.restore();
 }
 

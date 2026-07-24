@@ -6,6 +6,7 @@
 // CAD: one model, viewed in plan (2D) or in 3D — no separate modeling step.
 import { shapePoints, shapeBBox, shapeClosed, shapeHeight, shapeElevation } from "./model.js";
 import { hexA } from "./render.js";
+import { arcPoints } from "./geometry.js";
 
 // ---- minimal 3D vector helpers (z is up) ----
 const sub3 = (a, b) => ({ x: a.x - b.x, y: a.y - b.y, z: a.z - b.z });
@@ -83,9 +84,18 @@ export class View3D {
       const z0 = shapeElevation(s);
       const z1 = z0 + shapeHeight(s);
 
-      if (s.type === "wall" || s.type === "line") {
-        // vertical ribbons along the path
+      if (s.type === "wall") {
+        // solid walls: each segment becomes a box at the wall's thickness
         const pts = s.pts;
+        const t = (s.thickness || 3.5) / 2;
+        for (let i = 0; i < pts.length - 1; i++) {
+          this._segmentBox(faces, pts[i], pts[i + 1], t, z0, z1, color);
+        }
+      } else if (s.type === "line" || s.type === "arc") {
+        // thin vertical ribbons along the path
+        const pts = s.type === "arc" && s.pts.length === 3
+          ? this._outline(s)
+          : s.pts;
         for (let i = 0; i < pts.length - 1; i++) {
           faces.push(this._quad(pts[i], pts[i + 1], z0, z1, color, 0.9));
         }
@@ -126,9 +136,29 @@ export class View3D {
     return faces;
   }
 
+  // Build a box (4 sides + top) for one wall segment at half-thickness `t`.
+  _segmentBox(faces, a, b, t, z0, z1, color) {
+    const dx = b.x - a.x, dy = b.y - a.y;
+    const l = Math.hypot(dx, dy) || 1;
+    const nx = (-dy / l) * t, ny = (dx / l) * t;
+    const corners = [
+      { x: a.x + nx, y: a.y + ny },
+      { x: b.x + nx, y: b.y + ny },
+      { x: b.x - nx, y: b.y - ny },
+      { x: a.x - nx, y: a.y - ny },
+    ];
+    for (let i = 0; i < 4; i++) {
+      faces.push(this._quad(corners[i], corners[(i + 1) % 4], z0, z1, color, 1));
+    }
+    faces.push({ verts: corners.map((p) => ({ x: p.x, y: p.y, z: z1 })), color, shadeBias: 1.15 });
+  }
+
   // For circles, approximate the outline with an N-gon so it extrudes to a
-  // cylinder; otherwise use the shape's polygon points.
+  // cylinder; for arcs, sample the curve; otherwise use polygon points.
   _outline(s) {
+    if (s.type === "arc" && s.pts.length === 3) {
+      return arcPoints(s.pts[0], s.pts[1], s.pts[2], 24);
+    }
     if (s.type === "circle") {
       const p = shapePoints(s);
       const cx = (p[0].x + p[2].x) / 2;

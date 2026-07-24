@@ -122,3 +122,60 @@ export function setSegmentLength(shape, length) {
   const l = Math.hypot(dx, dy) || 1;
   shape.pts[shape.pts.length - 1] = v(a.x + (dx / l) * length, a.y + (dy / l) * length);
 }
+
+// ---- translation & positioning --------------------------------------------
+
+export function translateShapes(doc, ids, dx, dy) {
+  for (const id of ids) {
+    const s = doc.get(id);
+    if (s) s.pts = s.pts.map((p) => v(p.x + dx, p.y + dy));
+  }
+}
+
+// Move a single shape so its bbox min corner sits at (x, y).
+export function setPosition(doc, id, x, y) {
+  const s = doc.get(id);
+  if (!s) return;
+  const b = shapeBBox(s);
+  translateShapes(doc, [id], x - b.min.x, y - b.min.y);
+}
+
+// ---- align & distribute (multi-selection) ---------------------------------
+
+// edge ∈ left|hcenter|right|top|vmiddle|bottom
+export function alignSelection(doc, ids, edge) {
+  const boxes = ids.map((id) => ({ id, b: shapeBBox(doc.get(id)) })).filter((x) => x.b);
+  if (boxes.length < 2) return;
+  const all = boxes.map((x) => x.b);
+  const minX = Math.min(...all.map((b) => b.min.x));
+  const maxX = Math.max(...all.map((b) => b.max.x));
+  const minY = Math.min(...all.map((b) => b.min.y));
+  const maxY = Math.max(...all.map((b) => b.max.y));
+  for (const { id, b } of boxes) {
+    let dx = 0, dy = 0;
+    if (edge === "left") dx = minX - b.min.x;
+    else if (edge === "right") dx = maxX - b.max.x;
+    else if (edge === "hcenter") dx = (minX + maxX) / 2 - (b.min.x + b.max.x) / 2;
+    else if (edge === "top") dy = minY - b.min.y;
+    else if (edge === "bottom") dy = maxY - b.max.y;
+    else if (edge === "vmiddle") dy = (minY + maxY) / 2 - (b.min.y + b.max.y) / 2;
+    translateShapes(doc, [id], dx, dy);
+  }
+}
+
+// Evenly space selected shapes along an axis ("h" or "v") by their centers.
+export function distributeSelection(doc, ids, axis) {
+  const items = ids
+    .map((id) => ({ id, b: shapeBBox(doc.get(id)) }))
+    .filter((x) => x.b)
+    .map((x) => ({ ...x, c: axis === "h" ? (x.b.min.x + x.b.max.x) / 2 : (x.b.min.y + x.b.max.y) / 2 }))
+    .sort((a, b) => a.c - b.c);
+  if (items.length < 3) return;
+  const first = items[0].c, last = items[items.length - 1].c;
+  const step = (last - first) / (items.length - 1);
+  items.forEach((it, i) => {
+    const target = first + step * i;
+    const d = target - it.c;
+    translateShapes(doc, [it.id], axis === "h" ? d : 0, axis === "h" ? 0 : d);
+  });
+}

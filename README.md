@@ -48,26 +48,32 @@ also works for the drawing UI, but without cloud project storage.)
 - **Pan / zoom** — mouse wheel to zoom, space-drag or middle-drag to pan,
   two-finger pinch/pan on touch.
 - **Drawing tools:** Line, Wall (real thickness), Rectangle, Circle/Ellipse,
-  Polygon, Dimension, Text notes.
+  3-point Arc, Polygon, Dimension, Text notes.
 - **Shape Library** — a searchable, categorized palette of symbols (Geometric,
   Structural, Architectural, Site & Landscape, Furniture, Annotation). Symbols
   are pure data (`src/symbols.js`), so adding more is trivial.
-- **Exact dimensions** — select any shape and type its precise Width × Height,
-  Diameter, or Length (to 1/8″). Design parts to spec, not by eyeballing.
+- **Exact dimensions & position** — select any shape and type its precise
+  X/Y, Width × Height, Diameter, or Length (to 1/8″). Arrow keys nudge by the
+  grid step (Shift = ×12). Design parts to spec, not by eyeballing.
+- **Styling** — per-shape stroke color (palette, custom, or by-layer), fill
+  (none / light / solid), line weight, and line style (solid / dashed / dotted).
 - **Editing tools** — Duplicate, Rotate (±90° or a typed angle), Mirror ↔/↕,
-  Copy/Paste, plus drag-to-move and vertex handles.
+  Copy/Paste, Align (6 edges) & Distribute, drag-to-move and vertex handles.
 - **Live dimensions** — length + angle while drawing, segment lengths, area and
   perimeter on closed shapes, square footage.
 - **Snapping** — grid, endpoint/midpoint, and ortho lock (or hold Shift).
-- **Select / move / edit** — drag shapes, drag vertex handles, marquee-select,
-  delete.
+- **Layers** — add / rename / recolor / delete, reassign selected shapes, plus
+  visibility and active-layer control.
 - **3D Preview** — one click extrudes your plan into an orbitable 3D massing
-  model (drag to orbit, scroll to zoom). Every shape carries a `height` and
-  `elevation`, editable in Properties — so 2D and 3D are the *same* model.
-- **Layers** — Walls, Structure, Objects, Detail, Dimensions (toggle + active).
-- **Undo / redo**, autosave to the browser, save/open `.json`, export PNG.
-- **Takeoff panel** — running totals of length, area, and object counts —
-  the seed of the estimating feature.
+  model (drag to orbit, scroll to zoom). Walls become solid boxes at their
+  thickness; closed shapes and symbols become prisms; circles become cylinders.
+  Every shape carries a `height`/`elevation`, editable in Properties — so 2D
+  and 3D are the *same* model.
+- **Export** — vector **SVG**, **PNG**, or a `.json` project file.
+- **Cloud projects** — when deployed with a storage volume, save/open drawings
+  on the server, shared across devices.
+- **Undo / redo**, autosave to the browser.
+- **Takeoff panel** — running totals of length, area, and object counts.
 
 ## Keyboard
 
@@ -78,8 +84,9 @@ also works for the drawing UI, but without cloud project storage.)
 | W | Wall | Esc | Cancel current tool |
 | R | Rectangle | Enter | Finish line/wall |
 | C | Circle | Del | Delete selection |
+| A | Arc | Arrows | Nudge selection (Shift = ×12) |
 | P | Polygon | Ctrl/⌘+Z | Undo (Shift = redo) |
-| Shift (drag) | Ortho lock | Ctrl/⌘+S | Save file |
+| Shift (drag) | Ortho lock | Ctrl/⌘+S | Save (cloud if available) |
 | Ctrl/⌘+D | Duplicate | Ctrl/⌘+C / V | Copy / Paste |
 | [ / ] | Rotate −90° / +90° | Ctrl/⌘+A | Select all |
 
@@ -94,9 +101,12 @@ src/model.js       document, shapes, layers, undo/redo, persistence
 src/snap.js        cursor snap resolution
 src/symbols.js     the shape/symbol library (data-driven)
 src/view3d.js      software 3D renderer (extrudes the plan into a massing model)
-src/transforms.js  precise editing: duplicate, rotate, mirror, exact resizing
+src/transforms.js  precise editing: duplicate, rotate, mirror, align, resize
 src/render.js      shape + dimension + selection rendering
-src/tools.js       interactive tools (select/line/wall/rect/circle/poly/dim/text/stamps)
+src/tools.js       interactive tools (select/line/wall/rect/circle/arc/poly/dim/text/stamps)
+src/svg.js         vector SVG export
+src/cloud.js       client for the server storage API
+server.js          static server + JSON storage API
 src/main.js        app wiring, input, file I/O
 ```
 

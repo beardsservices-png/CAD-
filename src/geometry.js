@@ -133,3 +133,56 @@ export function pathLength(pts, closed = false) {
   if (closed && pts.length > 2) total += dist(pts[pts.length - 1], pts[0]);
   return total;
 }
+
+// ---- Arcs ------------------------------------------------------------------
+// A 3-point arc is defined by start (a), a point it passes through (b), and
+// end (c). Compute the circle through the three points, plus the swept angles.
+// Returns null when the points are (nearly) collinear — caller draws a line.
+export function arcThrough(a, b, c) {
+  const d = 2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y));
+  if (Math.abs(d) < 1e-9) return null;
+  const a2 = a.x * a.x + a.y * a.y;
+  const b2 = b.x * b.x + b.y * b.y;
+  const c2 = c.x * c.x + c.y * c.y;
+  const ux = (a2 * (b.y - c.y) + b2 * (c.y - a.y) + c2 * (a.y - b.y)) / d;
+  const uy = (a2 * (c.x - b.x) + b2 * (a.x - c.x) + c2 * (b.x - a.x)) / d;
+  const center = v(ux, uy);
+  const r = dist(center, a);
+  const a0 = Math.atan2(a.y - uy, a.x - ux);
+  const a1 = Math.atan2(b.y - uy, b.x - ux);
+  const a2e = Math.atan2(c.y - uy, c.x - ux);
+  // Determine sweep direction so the arc passes through b.
+  const ccw = arcContains(a0, a2e, a1, false);
+  return { center, r, a0, a1: a2e, ccw };
+}
+
+// Is angle `t` on the arc from `a0` to `a1` going CCW (or CW if ccw=false)?
+function arcContains(a0, a1, t, ccw) {
+  const norm = (x) => ((x % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+  const sweep = ccw ? norm(a1 - a0) : norm(a0 - a1);
+  const rel = ccw ? norm(t - a0) : norm(a0 - t);
+  return rel <= sweep;
+}
+
+// Sample points along a 3-point arc (fallback: the straight chord).
+export function arcPoints(a, b, c, n = 24) {
+  const arc = arcThrough(a, b, c);
+  if (!arc) return [a, c];
+  const norm = (x) => ((x % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+  let sweep = arc.ccw ? norm(arc.a1 - arc.a0) : -norm(arc.a0 - arc.a1);
+  const out = [];
+  for (let i = 0; i <= n; i++) {
+    const ang = arc.a0 + (sweep * i) / n;
+    out.push(v(arc.center.x + Math.cos(ang) * arc.r, arc.center.y + Math.sin(ang) * arc.r));
+  }
+  return out;
+}
+
+// Length of a 3-point arc.
+export function arcLength(a, b, c) {
+  const arc = arcThrough(a, b, c);
+  if (!arc) return dist(a, c);
+  const norm = (x) => ((x % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+  const sweep = arc.ccw ? norm(arc.a1 - arc.a0) : norm(arc.a0 - arc.a1);
+  return arc.r * sweep;
+}

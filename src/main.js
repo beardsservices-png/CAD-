@@ -15,8 +15,13 @@ import {
   setRectSize,
   setCircleDiameter,
   setSegmentLength,
+  translateShapes,
+  setPosition,
+  alignSelection,
+  distributeSelection,
 } from "./transforms.js";
 import * as cloud from "./cloud.js";
+import { toSVG } from "./svg.js";
 
 const theme = {
   gridMinor: "#eef2f7",
@@ -41,6 +46,12 @@ const STORAGE_KEY = "draftstudio.autosave.v1";
 
 // Round to 1/8" precision for display in numeric fields.
 const round3 = (n) => Math.round((n || 0) * 8) / 8;
+
+// Stroke color palette offered in the style controls.
+const PALETTE = [
+  "#1e3a8a", "#0ea5e9", "#0f766e", "#16a34a",
+  "#c2410c", "#dc2626", "#6d28d9", "#334155", "#000000",
+];
 
 class App {
   constructor() {
@@ -200,7 +211,17 @@ class App {
     };
     c.addEventListener("pointerup", end);
     c.addEventListener("pointercancel", (ev) => this.pointers.delete(ev.pointerId));
-    c.addEventListener("dblclick", () => {
+    c.addEventListener("dblclick", (ev) => {
+      // Double-click a text shape to edit it in place.
+      if (this.activeToolName === "select") {
+        const world = this.vp.screenToWorld(this._screenPt(ev));
+        const hit = this.doc.hitTest(world, 12 / this.vp.scale);
+        if (hit && hit.type === "text") {
+          const t = window.prompt("Edit text:", hit.text || "");
+          if (t != null) this.commit(() => (hit.text = t.trim()));
+          return;
+        }
+      }
       this.tool.onDblClick && this.tool.onDblClick();
     });
   }
@@ -249,7 +270,7 @@ class App {
   _bindKeys() {
     const map = {
       v: "select", l: "line", w: "wall", r: "rect", c: "circle",
-      p: "polygon", d: "dimension", t: "text",
+      p: "polygon", d: "dimension", t: "text", a: "arc",
     };
     window.addEventListener("keydown", (ev) => {
       if (ev.target.tagName === "INPUT" || ev.target.tagName === "TEXTAREA") return;
@@ -271,6 +292,14 @@ class App {
       if (meta && ev.key.toLowerCase() === "v") { ev.preventDefault(); this._paste(); return; }
       if (!meta && (ev.key === "[" || ev.key === "]")) {
         if (this.doc.selection.size) { ev.preventDefault(); this._rotate(ev.key === "[" ? -90 : 90); }
+        return;
+      }
+      if (ev.key.startsWith("Arrow") && this.doc.selection.size) {
+        ev.preventDefault();
+        const step = ev.shiftKey ? this.snap.gridStep * 12 : this.snap.gridStep || 1;
+        const dx = ev.key === "ArrowRight" ? step : ev.key === "ArrowLeft" ? -step : 0;
+        const dy = ev.key === "ArrowDown" ? step : ev.key === "ArrowUp" ? -step : 0;
+        this.commit(() => translateShapes(this.doc, [...this.doc.selection], dx, dy));
         return;
       }
       if (ev.key === "Escape") { this.tool.cancel && this.tool.cancel(); return; }
@@ -369,6 +398,7 @@ class App {
     document.getElementById("btn-open").onclick = () => document.getElementById("file-input").click();
     document.getElementById("file-input").onchange = (e) => this._openFile(e);
     document.getElementById("btn-png").onclick = () => this._exportPNG();
+    document.getElementById("btn-svg").onclick = () => this._exportSVG();
     document.getElementById("btn-fit").onclick = () => this._fit();
     this._setupCloud();
     this._setup3D();
@@ -655,26 +685,79 @@ class App {
     const host = document.getElementById("layers");
     host.innerHTML = "";
     this.doc.layers.forEach((layer) => {
-      const row = document.createElement("label");
+      const row = document.createElement("div");
       row.className = "layer-row";
+
       const vis = document.createElement("input");
       vis.type = "checkbox";
       vis.checked = layer.visible;
-      vis.onchange = () => (layer.visible = vis.checked);
-      const swatch = document.createElement("span");
-      swatch.className = "swatch";
-      swatch.style.background = layer.color;
+      vis.title = "Visible";
+      vis.onchange = () => { layer.visible = vis.checked; this._save(); };
+
+      // color swatch doubles as a color picker
+      const swatch = document.createElement("input");
+      swatch.type = "color";
+      swatch.className = "swatch-input";
+      swatch.value = layer.color;
+      swatch.title = "Layer color";
+      swatch.onchange = () => { layer.color = swatch.value; this._save(); };
+
       const radio = document.createElement("input");
       radio.type = "radio";
       radio.name = "activeLayer";
       radio.checked = this.doc.activeLayer === layer.id;
+      radio.title = "Draw on this layer";
       radio.onchange = () => (this.doc.activeLayer = layer.id);
+
       const name = document.createElement("span");
       name.textContent = layer.name;
       name.className = "layer-name";
-      row.append(vis, swatch, name, radio);
+      name.title = "Double-click to rename";
+      name.ondblclick = () => {
+        const n = prompt("Layer name:", layer.name);
+        if (n && n.trim()) { layer.name = n.trim(); this._buildLayers(); this.refreshPanel(); this._save(); }
+      };
+
+      const del = document.createElement("button");
+      del.className = "layer-del";
+      del.textContent = "×";
+      del.title = "Delete layer";
+      del.onclick = () => this._deleteLayer(layer.id);
+
+      row.append(vis, swatch, name, radio, del);
       host.appendChild(row);
     });
+
+    const add = document.createElement("button");
+    add.className = "layer-add";
+    add.textContent = "＋ Add layer";
+    add.onclick = () => this._addLayer();
+    host.appendChild(add);
+  }
+
+  _addLayer() {
+    const n = prompt("New layer name:", `Layer ${this.doc.layers.length + 1}`);
+    if (!n || !n.trim()) return;
+    const id = `layer_${Date.now().toString(36)}`;
+    const palette = ["#0891b2", "#be123c", "#4d7c0f", "#a16207", "#7c3aed"];
+    const color = palette[this.doc.layers.length % palette.length];
+    this.doc.layers.push({ id, name: n.trim(), color, visible: true });
+    this.doc.activeLayer = id;
+    this._buildLayers();
+    this._save();
+  }
+
+  _deleteLayer(id) {
+    if (this.doc.layers.length <= 1) { alert("Keep at least one layer."); return; }
+    const used = this.doc.shapes.some((s) => s.layer === id);
+    const fallback = this.doc.layers.find((l) => l.id !== id).id;
+    if (used && !confirm("Delete this layer? Its shapes move to another layer.")) return;
+    this.commit(() => {
+      this.doc.shapes.forEach((s) => { if (s.layer === id) s.layer = fallback; });
+      this.doc.layers = this.doc.layers.filter((l) => l.id !== id);
+      if (this.doc.activeLayer === id) this.doc.activeLayer = fallback;
+    });
+    this._buildLayers();
   }
 
   refreshPanel() {
@@ -685,26 +768,29 @@ class App {
       this._updateTakeoff();
       return;
     }
-    if (sel.length === 1) {
-      const s = sel[0];
+    let rows = "";
+    const single = sel.length === 1 ? sel[0] : null;
+
+    if (single) {
+      const s = single;
       const m = shapeMetrics(s);
-      let rows = `<div class="prop-row"><span>Type</span><b>${s.type}</b></div>`;
-      rows += `<div class="prop-row"><span>Layer</span><b>${this.doc.layer(s.layer).name}</b></div>`;
+      const bb = shapeBBox(s);
+      rows += `<div class="prop-row"><span>Type</span><b>${s.type}</b></div>`;
       if (m.length != null) rows += `<div class="prop-row"><span>Length</span><b>${formatFeetInches(m.length)}</b></div>`;
       if (m.perimeter != null) rows += `<div class="prop-row"><span>Perimeter</span><b>${formatFeetInches(m.perimeter)}</b></div>`;
       if (m.area != null) rows += `<div class="prop-row"><span>Area</span><b>${formatArea(m.area)}</b></div>`;
+      rows += this._layerSelectHTML(sel);
 
-      // Exact numeric size — the core of designing a part precisely.
-      const bb = shapeBBox(s);
+      // Exact position + size — the core of designing a part precisely.
+      rows += `<div class="prop-sep"></div>`;
+      rows += `<label class="opt inline">X (in)<input id="p-x" type="number" step="0.125" value="${round3(bb.min.x)}"></label>`;
+      rows += `<label class="opt inline">Y (in)<input id="p-y" type="number" step="0.125" value="${round3(bb.min.y)}"></label>`;
       if (s.type === "rect") {
-        rows += `<div class="prop-sep"></div>`;
         rows += `<label class="opt inline">Width (in)<input id="p-w" type="number" min="0.1" step="0.125" value="${round3(bb.max.x - bb.min.x)}"></label>`;
         rows += `<label class="opt inline">Height (in)<input id="p-h" type="number" min="0.1" step="0.125" value="${round3(bb.max.y - bb.min.y)}"></label>`;
       } else if (s.type === "circle") {
-        rows += `<div class="prop-sep"></div>`;
         rows += `<label class="opt inline">Diameter (in)<input id="p-d" type="number" min="0.1" step="0.125" value="${round3(bb.max.x - bb.min.x)}"></label>`;
       } else if ((s.type === "line" || s.type === "wall") && s.pts.length === 2) {
-        rows += `<div class="prop-sep"></div>`;
         rows += `<label class="opt inline">Length (in)<input id="p-len" type="number" min="0.1" step="0.125" value="${round3(m.length)}"></label>`;
       }
 
@@ -713,14 +799,24 @@ class App {
         rows += `<label class="opt inline">3D height (in)<input id="p-height" type="number" min="0" step="1" value="${round3(shapeHeight(s))}"></label>`;
         rows += `<label class="opt inline">Base elev. (in)<input id="p-elev" type="number" step="1" value="${round3(shapeElevation(s))}"></label>`;
       }
+    } else {
+      rows += `<div class="prop-row"><span>Selected</span><b>${sel.length} shapes</b></div>`;
+      rows += this._layerSelectHTML(sel);
+    }
 
-      rows += this._modifyHTML();
-      host.innerHTML = rows;
+    rows += this._styleHTML(sel);
+    rows += this._modifyHTML(sel.length);
+    host.innerHTML = rows;
 
+    // ---- single-shape numeric binds ----
+    if (single) {
+      const s = single;
       const bind = (id, fn) => {
         const el = document.getElementById(id);
         if (el) el.onchange = () => { this.doc.snapshot(); fn(parseFloat(el.value)); this._save(); this.refreshPanel(); };
       };
+      bind("p-x", (val) => setPosition(this.doc, s.id, val, shapeBBox(s).min.y));
+      bind("p-y", (val) => setPosition(this.doc, s.id, shapeBBox(s).min.x, val));
       bind("p-w", (val) => setRectSize(s, Math.max(0.1, val), shapeBBox(s).max.y - shapeBBox(s).min.y));
       bind("p-h", (val) => setRectSize(s, shapeBBox(s).max.x - shapeBBox(s).min.x, Math.max(0.1, val)));
       bind("p-d", (val) => setCircleDiameter(s, Math.max(0.1, val)));
@@ -729,18 +825,82 @@ class App {
       const eEl = document.getElementById("p-elev");
       if (hEl) hEl.onchange = () => { s.height = Math.max(0, parseFloat(hEl.value) || 0); this._save(); };
       if (eEl) eEl.onchange = () => { s.elevation = parseFloat(eEl.value) || 0; this._save(); };
-      this._bindModify();
-    } else {
-      host.innerHTML =
-        `<div class="prop-row"><span>Selected</span><b>${sel.length} shapes</b></div>` +
-        this._modifyHTML();
-      this._bindModify();
     }
+
+    this._bindLayerSelect(sel);
+    this._bindStyle(sel);
+    this._bindModify();
     this._updateTakeoff();
   }
 
-  _modifyHTML() {
-    return (
+  _layerSelectHTML(sel) {
+    const common = sel.every((s) => s.layer === sel[0].layer) ? sel[0].layer : "";
+    const opts = this.doc.layers
+      .map((l) => `<option value="${l.id}" ${l.id === common ? "selected" : ""}>${l.name}</option>`)
+      .join("");
+    return `<label class="opt inline">Layer<select id="p-layer">${common ? "" : `<option value="" selected>—</option>`}${opts}</select></label>`;
+  }
+  _bindLayerSelect(sel) {
+    const el = document.getElementById("p-layer");
+    if (el) el.onchange = () => { if (el.value) this.commit(() => sel.forEach((s) => (s.layer = el.value))); };
+  }
+
+  // Color / fill / weight / line-style controls (single or multi selection).
+  _styleHTML(sel) {
+    const s0 = sel[0];
+    const anyClosed = sel.some((s) => shapeClosed(s));
+    let html = `<div class="prop-sep"></div><div class="style-label">Style</div>`;
+    html += `<div class="swatches">`;
+    html += `<button class="sw bylayer ${sel.every((s) => !s.color) ? "on" : ""}" data-color="" title="By layer">L</button>`;
+    for (const c of PALETTE) {
+      const on = sel.every((s) => s.color === c) ? "on" : "";
+      html += `<button class="sw ${on}" data-color="${c}" style="background:${c}" title="${c}"></button>`;
+    }
+    html += `<input type="color" id="p-color" class="sw-custom" value="${s0.color || "#1e3a8a"}" title="Custom color">`;
+    html += `</div>`;
+    const wsel = (val) => (Number(s0.weight || 1) === val ? "selected" : "");
+    html += `<label class="opt inline">Weight<select id="p-weight">
+      <option value="0.5" ${wsel(0.5)}>Thin</option>
+      <option value="1" ${wsel(1)}>Medium</option>
+      <option value="2" ${wsel(2)}>Thick</option>
+      <option value="3" ${wsel(3)}>Heavy</option></select></label>`;
+    const dsel = (val) => ((s0.dash || "solid") === val ? "selected" : "");
+    html += `<label class="opt inline">Line<select id="p-dash">
+      <option value="solid" ${dsel("solid")}>Solid</option>
+      <option value="dashed" ${dsel("dashed")}>Dashed</option>
+      <option value="dotted" ${dsel("dotted")}>Dotted</option></select></label>`;
+    if (anyClosed) {
+      const cur = s0.fill === false ? "none" : s0.fill === "solid" ? "solid" : "light";
+      const fsel = (val) => (cur === val ? "selected" : "");
+      html += `<label class="opt inline">Fill<select id="p-fill">
+        <option value="none" ${fsel("none")}>None</option>
+        <option value="light" ${fsel("light")}>Light</option>
+        <option value="solid" ${fsel("solid")}>Solid</option></select></label>`;
+    }
+    return html;
+  }
+  _bindStyle(sel) {
+    const host = document.getElementById("props");
+    host.querySelectorAll(".sw[data-color]").forEach((b) => {
+      b.onclick = () => this.commit(() => {
+        const c = b.dataset.color;
+        sel.forEach((s) => { if (c) s.color = c; else delete s.color; });
+      });
+    });
+    const col = document.getElementById("p-color");
+    if (col) col.onchange = () => this.commit(() => sel.forEach((s) => (s.color = col.value)));
+    const wt = document.getElementById("p-weight");
+    if (wt) wt.onchange = () => this.commit(() => sel.forEach((s) => (s.weight = parseFloat(wt.value))));
+    const dash = document.getElementById("p-dash");
+    if (dash) dash.onchange = () => this.commit(() => sel.forEach((s) => (s.dash = dash.value)));
+    const fill = document.getElementById("p-fill");
+    if (fill) fill.onchange = () => this.commit(() => sel.forEach((s) => {
+      s.fill = fill.value === "none" ? false : fill.value === "solid" ? "solid" : true;
+    }));
+  }
+
+  _modifyHTML(count) {
+    let html =
       `<div class="prop-sep"></div>` +
       `<div class="modify-grid">` +
       `<button data-mod="dup">Duplicate</button>` +
@@ -750,8 +910,23 @@ class App {
       `<button data-mod="rot-cw">Rotate ⟳</button>` +
       `<button data-mod="del">Delete</button>` +
       `</div>` +
-      `<label class="opt inline">Rotate by°<input id="p-rot" type="number" step="1" value="0"></label>`
-    );
+      `<label class="opt inline">Rotate by°<input id="p-rot" type="number" step="1" value="0"></label>`;
+    if (count > 1) {
+      html += `<div class="prop-sep"></div><div class="style-label">Align</div>`;
+      html += `<div class="align-grid">` +
+        `<button data-align="left">⤙ Left</button>` +
+        `<button data-align="hcenter">⋮ Center</button>` +
+        `<button data-align="right">Right ⤚</button>` +
+        `<button data-align="top">⤒ Top</button>` +
+        `<button data-align="vmiddle">⋯ Middle</button>` +
+        `<button data-align="bottom">Bottom ⤓</button>` +
+        `</div>`;
+      html += `<div class="align-grid">` +
+        `<button data-dist="h">Distribute →</button>` +
+        `<button data-dist="v">Distribute ↓</button>` +
+        `</div>`;
+    }
+    return html;
   }
 
   _bindModify() {
@@ -767,6 +942,12 @@ class App {
           case "del": this.commit(() => this.doc.remove(this._selIds())); break;
         }
       };
+    });
+    host.querySelectorAll("[data-align]").forEach((btn) => {
+      btn.onclick = () => this.commit(() => alignSelection(this.doc, this._selIds(), btn.dataset.align));
+    });
+    host.querySelectorAll("[data-dist]").forEach((btn) => {
+      btn.onclick = () => this.commit(() => distributeSelection(this.doc, this._selIds(), btn.dataset.dist));
     });
     const rot = document.getElementById("p-rot");
     if (rot) rot.onchange = () => { const d = parseFloat(rot.value) || 0; if (d) this._rotate(d); };
@@ -800,6 +981,7 @@ class App {
       wall: "Click points to run walls · double-click or Enter to finish · Shift = ortho",
       rect: "Click one corner, then the opposite corner · Shift = square",
       circle: "Click the center, then click to set the radius",
+      arc: "Click the start, then the end, then a point on the curve",
       polygon: "Click points · click the start point to close · Enter to finish",
       dimension: "Click two points to place a dimension",
       text: "Click to place a text note",
@@ -881,6 +1063,16 @@ class App {
     link.download = `${this.doc.name || "drawing"}.png`;
     link.href = this.canvas.toDataURL("image/png");
     link.click();
+  }
+
+  _exportSVG() {
+    const svg = toSVG(this.doc);
+    const blob = new Blob([svg], { type: "image/svg+xml" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `${this.doc.name || "drawing"}.svg`;
+    a.click();
+    URL.revokeObjectURL(a.href);
   }
 }
 

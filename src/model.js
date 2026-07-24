@@ -6,6 +6,8 @@ import {
   bboxOfPoints,
   polygonArea,
   pathLength,
+  arcPoints,
+  arcLength,
 } from "./geometry.js";
 
 let _id = 1;
@@ -81,12 +83,34 @@ export function shapeClosed(shape) {
 }
 
 export function shapeBBox(shape) {
+  if (shape.type === "arc" && shape.pts.length === 3) {
+    return bboxOfPoints(arcPoints(shape.pts[0], shape.pts[1], shape.pts[2], 16));
+  }
   return bboxOfPoints(shapePoints(shape));
+}
+
+// Line weight (px) and dash pattern from a shape's style props.
+export function lineWeightPx(shape, selected) {
+  const base = shape.weight || 1;
+  return (selected ? 1 : 0) + base * 2;
+}
+export function dashArray(shape) {
+  if (shape.dash === "dashed") return [8, 5];
+  if (shape.dash === "dotted") return [1.5, 4];
+  return [];
 }
 
 // Distance from world point to a shape (for selection). Small = close.
 export function shapeDistance(shape, p) {
   const pts = shapePoints(shape);
+  if (shape.type === "arc" && shape.pts.length === 3) {
+    const sampled = arcPoints(shape.pts[0], shape.pts[1], shape.pts[2], 24);
+    let best = Infinity;
+    for (let i = 0; i < sampled.length - 1; i++) {
+      best = Math.min(best, pointToSegment(p, sampled[i], sampled[i + 1]).dist);
+    }
+    return best;
+  }
   if (shape.type === "symbol" || shape.type === "text") {
     // symbols/text hit-test by their bbox center proximity
     const b = shapeBBox(shape);
@@ -128,6 +152,10 @@ export function shapeMetrics(shape) {
     // Ramanujan ellipse perimeter approximation
     const h = Math.pow((rx - ry) / (rx + ry || 1), 2);
     out.perimeter = Math.PI * (rx + ry) * (1 + (3 * h) / (10 + Math.sqrt(4 - 3 * h)));
+    return out;
+  }
+  if (shape.type === "arc" && shape.pts.length === 3) {
+    out.length = arcLength(shape.pts[0], shape.pts[1], shape.pts[2]);
     return out;
   }
   if (shape.type === "dimension") {

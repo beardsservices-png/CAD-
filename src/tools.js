@@ -8,6 +8,8 @@ import {
   constrainAngle,
   formatFeetInches,
   angleDeg,
+  arcThrough,
+  arcLength,
 } from "./geometry.js";
 import {
   makeShape,
@@ -228,6 +230,75 @@ class TwoPointTool {
 }
 
 // ---- Symbol stamp tool (places a library symbol at its default size) -------
+// ---- Arc tool: click start, click end, then click a point on the arc -------
+class ArcTool {
+  constructor(app) {
+    this.app = app;
+    this.start = null;
+    this.end = null;
+    this.cursor = null;
+  }
+  reset() {
+    this.start = null;
+    this.end = null;
+    this.cursor = null;
+  }
+  onDown(sp) {
+    if (!this.start) this.start = { ...sp };
+    else if (!this.end) this.end = { ...sp };
+    else {
+      // pts order = [start, through, end]
+      this.app.commit(() =>
+        this.app.doc.add(
+          makeShape("arc", {
+            pts: [this.start, { ...sp }, this.end],
+            layer: this.app.doc.activeLayer,
+          })
+        )
+      );
+      this.reset();
+    }
+  }
+  onMove(sp) {
+    this.cursor = { ...sp };
+  }
+  cancel() {
+    this.reset();
+  }
+  draw(ctx, vp, theme) {
+    if (!this.start || !this.cursor) return;
+    ctx.save();
+    ctx.strokeStyle = theme.selection;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([6, 4]);
+    ctx.beginPath();
+    if (!this.end) {
+      const a = vp.worldToScreen(this.start);
+      const b = vp.worldToScreen(this.cursor);
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.stroke();
+    } else {
+      const arc = arcThrough(this.start, this.cursor, this.end);
+      if (arc) {
+        const c = vp.worldToScreen(arc.center);
+        ctx.arc(c.x, c.y, arc.r * vp.scale, arc.a0, arc.a1, !arc.ccw);
+      } else {
+        const a = vp.worldToScreen(this.start);
+        const e = vp.worldToScreen(this.end);
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(e.x, e.y);
+      }
+      ctx.stroke();
+      const m = vp.worldToScreen(this.cursor);
+      label(ctx, formatFeetInches(arcLength(this.start, this.cursor, this.end)), m.x, m.y - 14, theme, {
+        bg: theme.dimBg, color: theme.dimText,
+      });
+    }
+    ctx.restore();
+  }
+}
+
 class SymbolTool {
   constructor(app, symbolId) {
     this.app = app;
@@ -459,6 +530,8 @@ export function createTool(app, name) {
       return new TwoPointTool(app, name);
     case "text":
       return new TextTool(app);
+    case "arc":
+      return new ArcTool(app);
     default:
       return new SelectTool(app);
   }
