@@ -158,6 +158,12 @@ export class View3D {
         faces[k].mat = mat;
         faces[k].z0 = z0;
         faces[k].z1 = z1;
+        // Existing/reference geometry ghosts so new work reads against it.
+        if (s.existing) {
+          faces[k].color = "#94a3b8";
+          faces[k].alpha = 0.3;
+          faces[k].mat = null;
+        }
       }
     }
     return faces;

@@ -134,9 +134,18 @@ export function lineWeightPx(shape, selected) {
   return (selected ? 1 : 0) + base * 2;
 }
 export function dashArray(shape) {
+  if (shape.existing) return [7, 5]; // reference geometry always reads dashed
   if (shape.dash === "dashed") return [8, 5];
   if (shape.dash === "dotted") return [1.5, 4];
   return [];
+}
+
+// "Existing" / reference geometry: context you draw to work against — the
+// house wall a deck ties into, a patio surface, a property line. It draws
+// greyed-out, is excluded from materials and takeoff totals, but still snaps
+// so you can pull real geometry off it.
+export function isReference(shape) {
+  return !!shape.existing;
 }
 
 // Distance from world point to a shape (for selection). Small = close.

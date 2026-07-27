@@ -85,6 +85,11 @@ export function refreshPanel(app) {
   const commonStep = sel.every((x) => (x.step || 0) === (sel[0].step || 0)) ? (sel[0].step || 0) : "";
   rows += `<label class="opt inline">Build step<input id="p-step" type="number" min="0" step="1" value="${commonStep}" placeholder="—"></label>`;
 
+  // Existing / reference geometry — context to draw against, never counted.
+  const allRef = sel.every((x) => x.existing);
+  rows += `<label class="opt" title="Draw it greyed out as context (an existing house wall, patio, property line). Still snaps, but is never counted in materials or takeoff.">` +
+    `<input id="p-existing" type="checkbox" ${allRef ? "checked" : ""}> Existing (reference only)</label>`;
+
   const hasGroup = sel.some((s) => s.group);
   const anyLocked = sel.some((s) => s.locked);
   rows += styleHTML(sel);
@@ -124,6 +129,14 @@ export function refreshPanel(app) {
   if (stepEl) stepEl.onchange = () => app.commit(() => sel.forEach((x) => {
     const n = parseInt(stepEl.value, 10);
     if (!n || n <= 0) delete x.step; else x.step = n;
+  }));
+
+  // Marking something "existing" also locks it — it's context, not work — and
+  // unmarking releases it again.
+  const refEl = document.getElementById("p-existing");
+  if (refEl) refEl.onchange = () => app.commit(() => sel.forEach((x) => {
+    if (refEl.checked) { x.existing = true; x.locked = true; }
+    else { delete x.existing; delete x.locked; }
   }));
 
   bindLayerSelect(app, sel);
@@ -412,6 +425,7 @@ export function updateTakeoff(app) {
   if (!host) return;
   let wallLen = 0, lineLen = 0, area = 0, objects = 0, notes = 0;
   for (const s of app.doc.shapes) {
+    if (s.existing) continue; // reference geometry isn't part of the build
     const m = shapeMetrics(s);
     if (s.type === "wall") wallLen += m.length || 0;
     else if (s.type === "line") lineLen += m.length || 0;

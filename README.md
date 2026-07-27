@@ -105,6 +105,11 @@ also works for the drawing UI, but without cloud project storage.)
 - **Build steps** — give shapes a step number (1, 2, 3…) and play the build
   back with the ‹ › control in the status bar, in 2D and 3D — walk the whole
   assembly before making real-world mistakes.
+- **Existing (reference only)** — tick it in Properties to turn any shape into
+  greyed-out context: the house wall a deck ties into, a patio slab, a property
+  line. It draws faded and dashed, is locked so it can't be nudged, and is
+  excluded from the materials list, hardware suggestions, and takeoff — but it
+  still **snaps**, so you can pull joists and layouts right off it.
 - **Undo / redo**, autosave to the browser.
 - **Takeoff panel** — running totals of length, area, and object counts.
 

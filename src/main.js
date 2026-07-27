@@ -31,6 +31,7 @@ const theme = {
   areaBg: "rgba(5,150,105,0.94)",
   areaText: "#ffffff",
   symbol: "#c2410c",
+  reference: "#94a3b8",
   rulerBg: "rgba(248,250,252,0.96)",
   rulerText: "#64748b",
   snap: {

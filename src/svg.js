@@ -35,9 +35,9 @@ export function toSVG(doc) {
 }
 
 function shapeSVG(s, doc, baseW) {
-  const color = s.color || doc.layer(s.layer).color;
+  const color = s.existing ? "#94a3b8" : (s.color || doc.layer(s.layer).color);
   const w = baseW * (s.weight || 1);
-  const dash =
+  const dash = s.existing ? ` stroke-dasharray="${n(w * 3.5)} ${n(w * 2.5)}"` :
     s.dash === "dashed" ? ` stroke-dasharray="${n(w * 4)} ${n(w * 3)}"` :
     s.dash === "dotted" ? ` stroke-dasharray="${n(w)} ${n(w * 3)}"` : "";
   const stroke = `stroke="${color}" stroke-width="${n(w)}" fill="none" stroke-linejoin="round" stroke-linecap="round"${dash}`;

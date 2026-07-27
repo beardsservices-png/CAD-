@@ -23,6 +23,7 @@ export function buildMaterialsList(doc) {
     const layer = doc.layer(s.layer);
     if (!layer || !layer.visible) continue;
     if (s.type === "dimension" || s.type === "text") continue;
+    if (s.existing) continue; // reference geometry isn't bought or built
     const m = shapeMetrics(s);
 
     if (s.type === "symbol") {
@@ -97,6 +98,7 @@ export function buildHardwareSuggestions(doc) {
   for (const s of doc.shapes) {
     const layer = doc.layer(s.layer);
     if (!layer || !layer.visible) continue;
+    if (s.existing) continue; // don't spec hardware for existing structure
     if (s.type === "symbol") {
       if (isPost(s.symbol)) posts++;
       else if (isFooting(s.symbol)) footings++;

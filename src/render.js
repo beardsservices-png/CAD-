@@ -54,9 +54,13 @@ export function renderShapes(ctx, doc, vp, theme) {
     const layer = doc.layer(shape.layer);
     if (!layer.visible) continue;
     if (hiddenByStep(shape, doc)) continue;
-    const color = shape.color || layer.color;
+    const ref = shape.existing;
+    const color = ref ? theme.reference : (shape.color || layer.color);
     const selected = doc.selection.has(shape.id);
+    // Reference geometry draws faded so new work reads on top of it.
+    if (ref) { ctx.save(); ctx.globalAlpha = 0.55; }
     drawShape(ctx, shape, vp, theme, color, selected);
+    if (ref) ctx.restore();
   }
   // Selection handles drawn on top.
   for (const shape of doc.shapes) {
