@@ -44,8 +44,8 @@ export function buildMaterialsList(doc, onlyStep = null) {
       wallGroups.set(t, g);
     } else if (s.type === "line" || s.type === "arc") {
       const mat = materialFor(s);
-      if (mat) {
-        const desc = `${mat.name} — length ${formatFeetInches(m.length || 0)}`;
+      if (mat || s.label) {
+        const desc = `${s.label || mat.name} — length ${formatFeetInches(m.length || 0)}`;
         pieces.set(desc, (pieces.get(desc) || 0) + 1);
       } else {
         looseLineLen += m.length || 0;
@@ -54,9 +54,12 @@ export function buildMaterialsList(doc, onlyStep = null) {
       const mat = materialFor(s);
       const b = shapeBBox(s);
       const w = b.max.x - b.min.x, h = b.max.y - b.min.y;
+      // A shape can carry its own `label` ("2×6 double joist") so the list
+      // reads like a real takeoff instead of "Wood × 9".
+      const name = s.label || (mat ? mat.name : "Cut piece");
       const desc = s.type === "circle"
-        ? `${mat ? mat.name : "Cut piece"} — ⌀ ${formatFeetInches(w)}`
-        : `${mat ? mat.name : "Cut piece"} — ${formatFeetInches(w)} × ${formatFeetInches(h)}`;
+        ? `${name} — ⌀ ${formatFeetInches(w)}`
+        : `${name} — ${formatFeetInches(w)} × ${formatFeetInches(h)}`;
       pieces.set(desc, (pieces.get(desc) || 0) + 1);
       if (mat && SHEET_MATERIALS[mat.id]) {
         sheetAreas.set(mat.id, (sheetAreas.get(mat.id) || 0) + (m.area || w * h));
@@ -92,7 +95,7 @@ export function buildMaterialsList(doc, onlyStep = null) {
 // hurricane ties, decking wants screws. Estimates only — check local code.
 export function buildHardwareSuggestions(doc) {
   const out = [];
-  let posts = 0, footings = 0, beamLen = 0, deckArea = 0, joistLayouts = 0;
+  let posts = 0, footings = 0, beamLen = 0, deckArea = 0, joistLayouts = 0, joists = 0;
 
   const isPost = (id) => /^(post|4x4|6x6|4x4pt|6x6pt|4x4elev|6x6elev|pier)$/.test(id);
   const isFooting = (id) => /^(footing|concpad|pier12)$/.test(id);
@@ -118,6 +121,17 @@ export function buildHardwareSuggestions(doc) {
       if ((s.thickness || 3.5) >= 4.5 || layer.id === "structure") {
         beamLen += shapeMetrics(s).length || 0;
       }
+    } else if (s.label && (s.type === "rect" || s.type === "polygon")) {
+      // Members you drew and named yourself ("2×6 double joist", "beam",
+      // "4×4 post") count the same as library symbols.
+      const lab = s.label.toLowerCase();
+      const b = shapeBBox(s);
+      const long = Math.max(b.max.x - b.min.x, b.max.y - b.min.y);
+      if (/\bpost\b|\bcolumn\b/.test(lab)) posts++;
+      else if (/\bbeam\b|\bheader\b|\bledger\b/.test(lab)) beamLen += long;
+      else if (/\bjoist\b|\brafter\b/.test(lab)) joists++;
+      else if (/\bfooting\b|\bpier\b|\bpad\b/.test(lab)) footings++;
+      else if (/\bdeck(ing)?\b/.test(lab)) deckArea += (b.max.x - b.min.x) * (b.max.y - b.min.y);
     }
   }
 
@@ -127,9 +141,15 @@ export function buildHardwareSuggestions(doc) {
   if (posts > 0 && beamLen > 0) {
     out.push({ qty: posts, item: "Post cap / beam connector", detail: "post-to-beam connection at each post top" });
   }
-  if (beamLen > 0 && (joistLayouts > 0 || deckArea > 0)) {
+  if (beamLen > 0 && joists > 0) {
+    // We know the actual joist count, so tie count is exact rather than a guess.
+    out.push({ qty: joists, item: "Hurricane tie / joist clip", detail: `one per joist-to-beam seat (${joists} joists)` });
+  } else if (beamLen > 0 && (joistLayouts > 0 || deckArea > 0)) {
     const seats = Math.max(2, Math.ceil(beamLen / 16));
     out.push({ qty: seats, item: "Hurricane tie / joist clip", detail: "est. one per 16″ o.c. seat along beams — verify with joist count" });
+  }
+  if (joists > 0) {
+    out.push({ qty: joists, item: "Joist hanger (house side)", detail: "one per joist if hanging off a ledger rather than bearing on it" });
   }
   if (footings > 0) {
     out.push({ qty: footings, item: "J-bolt or wedge anchor", detail: "one per footing/pad" });
