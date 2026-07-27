@@ -1,0 +1,1856 @@
+{
+  "version": 1,
+  "name": "Covered Patio — Plan",
+  "viewMode": "plan",
+  "layers": [
+    {
+      "id": "walls",
+      "name": "Existing",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "structure",
+      "name": "Structure",
+      "color": "#c2410c",
+      "visible": true
+    },
+    {
+      "id": "ceiling",
+      "name": "Ceiling (T&G)",
+      "color": "#a16207",
+      "visible": true
+    },
+    {
+      "id": "roofing",
+      "name": "Roofing",
+      "color": "#0f766e",
+      "visible": true
+    },
+    {
+      "id": "trim",
+      "name": "Trim & Gutter",
+      "color": "#7c2d12",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#6d28d9",
+      "visible": true
+    }
+  ],
+  "activeLayer": "structure",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -6
+        },
+        {
+          "x": 288,
+          "y": 0
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "locked": true,
+      "material": "drywall",
+      "fill": "light"
+    },
+    {
+      "id": "s2",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 4,
+          "y": -9
+        }
+      ],
+      "text": "EXISTING HOUSE WALL — porch ties in here",
+      "size": 10,
+      "existing": true
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 92.5
+        },
+        {
+          "x": 288,
+          "y": 99.5
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "locked": true,
+      "material": "concrete",
+      "fill": "light"
+    },
+    {
+      "id": "s4",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 4,
+          "y": 107
+        }
+      ],
+      "text": "EXISTING ROCK WALL — 3 ft high, 7\" cap",
+      "size": 10,
+      "existing": true
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 6,
+          "y": 94.25
+        },
+        {
+          "x": 9.5,
+          "y": 97.75
+        }
+      ],
+      "layer": "structure",
+      "step": 1,
+      "material": "pt",
+      "color": "#3f7d20",
+      "fill": "solid",
+      "label": "4×4 × 5 ft post (PT)"
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 98,
+          "y": 94.25
+        },
+        {
+          "x": 101.5,
+          "y": 97.75
+        }
+      ],
+      "layer": "structure",
+      "step": 1,
+      "material": "pt",
+      "color": "#3f7d20",
+      "fill": "solid",
+      "label": "4×4 × 5 ft post (PT)"
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 190,
+          "y": 94.25
+        },
+        {
+          "x": 193.5,
+          "y": 97.75
+        }
+      ],
+      "layer": "structure",
+      "step": 1,
+      "material": "pt",
+      "color": "#3f7d20",
+      "fill": "solid",
+      "label": "4×4 × 5 ft post (PT)"
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 282,
+          "y": 94.25
+        },
+        {
+          "x": 285.5,
+          "y": 97.75
+        }
+      ],
+      "layer": "structure",
+      "step": 1,
+      "material": "pt",
+      "color": "#3f7d20",
+      "fill": "solid",
+      "label": "4×4 × 5 ft post (PT)"
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 94.5
+        },
+        {
+          "x": 190,
+          "y": 96
+        }
+      ],
+      "layer": "structure",
+      "step": 2,
+      "material": "wood",
+      "color": "#a16207",
+      "fill": "solid",
+      "label": "Beam ply A — 2×6"
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 190,
+          "y": 94.5
+        },
+        {
+          "x": 288,
+          "y": 96
+        }
+      ],
+      "layer": "structure",
+      "step": 2,
+      "material": "wood",
+      "color": "#a16207",
+      "fill": "solid",
+      "label": "Beam ply A — 2×6"
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 96
+        },
+        {
+          "x": 98,
+          "y": 97.5
+        }
+      ],
+      "layer": "structure",
+      "step": 2,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "label": "Beam ply B — 2×6"
+    },
+    {
+      "id": "s12",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 98,
+          "y": 96
+        },
+        {
+          "x": 288,
+          "y": 97.5
+        }
+      ],
+      "layer": "structure",
+      "step": 2,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "label": "Beam ply B — 2×6"
+    },
+    {
+      "id": "s13",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 120,
+          "y": 118
+        }
+      ],
+      "text": "Beam = doubled 2×6. Butt joints STAGGERED (ply A at 15'-10\", ply B at 8'-2\") — both land on posts.",
+      "size": 9
+    },
+    {
+      "id": "s14",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 114
+        }
+      ],
+      "layer": "structure",
+      "step": 3,
+      "material": "wood",
+      "fill": "light",
+      "label": "2×6 double joist"
+    },
+    {
+      "id": "s15",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 47.5,
+          "y": 0
+        },
+        {
+          "x": 50.5,
+          "y": 114
+        }
+      ],
+      "layer": "structure",
+      "step": 3,
+      "material": "wood",
+      "fill": "light",
+      "label": "2×6 double joist"
+    },
+    {
+      "id": "s16",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 95,
+          "y": 0
+        },
+        {
+          "x": 98,
+          "y": 114
+        }
+      ],
+      "layer": "structure",
+      "step": 3,
+      "material": "wood",
+      "fill": "light",
+      "label": "2×6 double joist"
+    },
+    {
+      "id": "s17",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 142.5,
+          "y": 0
+        },
+        {
+          "x": 145.5,
+          "y": 114
+        }
+      ],
+      "layer": "structure",
+      "step": 3,
+      "material": "wood",
+      "fill": "light",
+      "label": "2×6 double joist"
+    },
+    {
+      "id": "s18",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 190,
+          "y": 0
+        },
+        {
+          "x": 193,
+          "y": 114
+        }
+      ],
+      "layer": "structure",
+      "step": 3,
+      "material": "wood",
+      "fill": "light",
+      "label": "2×6 double joist"
+    },
+    {
+      "id": "s19",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 237.5,
+          "y": 0
+        },
+        {
+          "x": 240.5,
+          "y": 114
+        }
+      ],
+      "layer": "structure",
+      "step": 3,
+      "material": "wood",
+      "fill": "light",
+      "label": "2×6 double joist"
+    },
+    {
+      "id": "s20",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 285,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 114
+        }
+      ],
+      "layer": "structure",
+      "step": 3,
+      "material": "wood",
+      "fill": "light",
+      "label": "2×6 double joist"
+    },
+    {
+      "id": "s21",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 6,
+          "y": 14
+        }
+      ],
+      "text": "House end: ties into EXISTING exposed joist ends — hidden hangers ALREADY INSTALLED.",
+      "size": 9
+    },
+    {
+      "id": "s22",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 5.25
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s23",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 5.25
+        },
+        {
+          "x": 288,
+          "y": 10.5
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s24",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 10.5
+        },
+        {
+          "x": 288,
+          "y": 15.75
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s25",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 15.75
+        },
+        {
+          "x": 288,
+          "y": 21
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s26",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 21
+        },
+        {
+          "x": 288,
+          "y": 26.25
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s27",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 26.25
+        },
+        {
+          "x": 288,
+          "y": 31.5
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s28",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 31.5
+        },
+        {
+          "x": 288,
+          "y": 36.75
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s29",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 36.75
+        },
+        {
+          "x": 288,
+          "y": 42
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s30",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 42
+        },
+        {
+          "x": 288,
+          "y": 47.25
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s31",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 47.25
+        },
+        {
+          "x": 288,
+          "y": 52.5
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s32",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 52.5
+        },
+        {
+          "x": 288,
+          "y": 57.75
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s33",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 57.75
+        },
+        {
+          "x": 288,
+          "y": 63
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s34",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 63
+        },
+        {
+          "x": 288,
+          "y": 68.25
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s35",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 68.25
+        },
+        {
+          "x": 288,
+          "y": 73.5
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s36",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 73.5
+        },
+        {
+          "x": 288,
+          "y": 78.75
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s37",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 78.75
+        },
+        {
+          "x": 288,
+          "y": 84
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s38",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 84
+        },
+        {
+          "x": 288,
+          "y": 89.25
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s39",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 89.25
+        },
+        {
+          "x": 288,
+          "y": 94.5
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s40",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 94.5
+        },
+        {
+          "x": 288,
+          "y": 99.75
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s41",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 99.75
+        },
+        {
+          "x": 288,
+          "y": 105
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s42",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 105
+        },
+        {
+          "x": 288,
+          "y": 110.25
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s43",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 110.25
+        },
+        {
+          "x": 288,
+          "y": 114
+        }
+      ],
+      "layer": "ceiling",
+      "step": 4,
+      "material": "wood",
+      "color": "#c8a06a",
+      "fill": "light",
+      "label": "T&G pine ceiling 3/4\" × 6\" (face down)"
+    },
+    {
+      "id": "s44",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 48
+        }
+      ],
+      "layer": "roofing",
+      "step": 5,
+      "color": "#334155",
+      "fill": false,
+      "dash": "dashed",
+      "label": "Underlayment — 4 ft wide, lapped"
+    },
+    {
+      "id": "s45",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 44
+        },
+        {
+          "x": 288,
+          "y": 92
+        }
+      ],
+      "layer": "roofing",
+      "step": 5,
+      "color": "#334155",
+      "fill": false,
+      "dash": "dashed",
+      "label": "Underlayment — 4 ft wide, lapped"
+    },
+    {
+      "id": "s46",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 88
+        },
+        {
+          "x": 288,
+          "y": 114
+        }
+      ],
+      "layer": "roofing",
+      "step": 5,
+      "color": "#334155",
+      "fill": false,
+      "dash": "dashed",
+      "label": "Underlayment — 4 ft wide, lapped"
+    },
+    {
+      "id": "s47",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 3.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 6,
+      "material": "wood",
+      "color": "#92400e",
+      "fill": "solid",
+      "label": "1×4 skip board"
+    },
+    {
+      "id": "s48",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 24
+        },
+        {
+          "x": 288,
+          "y": 27.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 6,
+      "material": "wood",
+      "color": "#92400e",
+      "fill": "solid",
+      "label": "1×4 skip board"
+    },
+    {
+      "id": "s49",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 48
+        },
+        {
+          "x": 288,
+          "y": 51.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 6,
+      "material": "wood",
+      "color": "#92400e",
+      "fill": "solid",
+      "label": "1×4 skip board"
+    },
+    {
+      "id": "s50",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 72
+        },
+        {
+          "x": 288,
+          "y": 75.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 6,
+      "material": "wood",
+      "color": "#92400e",
+      "fill": "solid",
+      "label": "1×4 skip board"
+    },
+    {
+      "id": "s51",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 96
+        },
+        {
+          "x": 288,
+          "y": 99.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 6,
+      "material": "wood",
+      "color": "#92400e",
+      "fill": "solid",
+      "label": "1×4 skip board"
+    },
+    {
+      "id": "s52",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 16,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s53",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 16,
+          "y": 0
+        },
+        {
+          "x": 32,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s54",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 32,
+          "y": 0
+        },
+        {
+          "x": 48,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s55",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 48,
+          "y": 0
+        },
+        {
+          "x": 64,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s56",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 64,
+          "y": 0
+        },
+        {
+          "x": 80,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s57",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 80,
+          "y": 0
+        },
+        {
+          "x": 96,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s58",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 96,
+          "y": 0
+        },
+        {
+          "x": 112,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s59",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 112,
+          "y": 0
+        },
+        {
+          "x": 128,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s60",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 128,
+          "y": 0
+        },
+        {
+          "x": 144,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s61",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 144,
+          "y": 0
+        },
+        {
+          "x": 160,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s62",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 160,
+          "y": 0
+        },
+        {
+          "x": 176,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s63",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 176,
+          "y": 0
+        },
+        {
+          "x": 192,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s64",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 192,
+          "y": 0
+        },
+        {
+          "x": 208,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s65",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 208,
+          "y": 0
+        },
+        {
+          "x": 224,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s66",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 224,
+          "y": 0
+        },
+        {
+          "x": 240,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s67",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 240,
+          "y": 0
+        },
+        {
+          "x": 256,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s68",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 256,
+          "y": 0
+        },
+        {
+          "x": 272,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s69",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 272,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 115.5
+        }
+      ],
+      "layer": "roofing",
+      "step": 7,
+      "material": "metal",
+      "fill": "light",
+      "label": "Metal roof panel — snap-lock standing seam, hidden fastener, 16\" coverage"
+    },
+    {
+      "id": "s70",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 6,
+          "y": 100
+        }
+      ],
+      "text": "Panels: HIDDEN FASTENER snap-lock — clips screwed to skip boards, next panel covers the clip. No seamer.",
+      "size": 9
+    },
+    {
+      "id": "s71",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 114
+        },
+        {
+          "x": 288,
+          "y": 115.5
+        }
+      ],
+      "layer": "trim",
+      "step": 8,
+      "material": "wood",
+      "color": "#7c2d12",
+      "fill": "solid",
+      "label": "2×6 fascia board"
+    },
+    {
+      "id": "s72",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 115.5
+        },
+        {
+          "x": 288,
+          "y": 120.5
+        }
+      ],
+      "layer": "trim",
+      "step": 8,
+      "material": "metal",
+      "fill": "light",
+      "label": "Gutter — slopes left"
+    },
+    {
+      "id": "s73",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -4,
+          "y": 115.5
+        },
+        {
+          "x": 0,
+          "y": 120.5
+        }
+      ],
+      "layer": "trim",
+      "step": 8,
+      "material": "metal",
+      "fill": "solid",
+      "label": "Downspout"
+    },
+    {
+      "id": "s74",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 6,
+          "y": 130
+        }
+      ],
+      "text": "Gutter slopes LEFT → downspout at the house end",
+      "size": 10
+    },
+    {
+      "id": "s75",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 115.5
+        },
+        {
+          "x": 288,
+          "y": 118.5
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "material": "metal",
+      "color": "#475569",
+      "fill": "solid",
+      "label": "Eave trim / drip edge"
+    },
+    {
+      "id": "s76",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 118.5
+        },
+        {
+          "x": 288,
+          "y": 124.5
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "material": "metal",
+      "color": "#94a3b8",
+      "fill": "light",
+      "label": "Fascia metal"
+    },
+    {
+      "id": "s77",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 112.5
+        },
+        {
+          "x": 288,
+          "y": 114
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "color": "#a855f7",
+      "fill": "solid",
+      "label": "Outside closure strip (eave)"
+    },
+    {
+      "id": "s78",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -4
+        },
+        {
+          "x": 288,
+          "y": 0
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "material": "metal",
+      "color": "#475569",
+      "fill": "solid",
+      "label": "Headwall / apron flashing"
+    },
+    {
+      "id": "s79",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 1.5
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "color": "#a855f7",
+      "fill": "solid",
+      "label": "Inside closure strip (headwall)"
+    },
+    {
+      "id": "s80",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -3,
+          "y": -4
+        },
+        {
+          "x": 0,
+          "y": 115.5
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "material": "metal",
+      "color": "#475569",
+      "fill": "solid",
+      "label": "Rake / gable trim"
+    },
+    {
+      "id": "s81",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 288,
+          "y": -4
+        },
+        {
+          "x": 291,
+          "y": 115.5
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "material": "metal",
+      "color": "#475569",
+      "fill": "solid",
+      "label": "Rake / gable trim"
+    },
+    {
+      "id": "s82",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -6,
+          "y": -4
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "material": "metal",
+      "color": "#0891b2",
+      "fill": "solid",
+      "label": "Kickout flashing"
+    },
+    {
+      "id": "s83",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 288,
+          "y": -4
+        },
+        {
+          "x": 294,
+          "y": 4
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "material": "metal",
+      "color": "#0891b2",
+      "fill": "solid",
+      "label": "Kickout flashing"
+    },
+    {
+      "id": "s84",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 115.5
+        },
+        {
+          "x": 288,
+          "y": 120.5
+        }
+      ],
+      "layer": "trim",
+      "step": 9,
+      "color": "#0f766e",
+      "fill": false,
+      "dash": "dotted",
+      "label": "Gutter guard"
+    },
+    {
+      "id": "s85",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 288,
+          "y": 0
+        },
+        {
+          "x": 306,
+          "y": 114
+        }
+      ],
+      "layer": "trim",
+      "step": 10,
+      "color": "#0891b2",
+      "fill": "light",
+      "label": "Soffit — 18\" deep, solid / perforated alternating"
+    },
+    {
+      "id": "s86",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 287,
+          "y": 0
+        },
+        {
+          "x": 288,
+          "y": 114
+        }
+      ],
+      "layer": "trim",
+      "step": 10,
+      "material": "metal",
+      "color": "#0e7490",
+      "fill": "solid",
+      "label": "J-channel (wall side)"
+    },
+    {
+      "id": "s87",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 306,
+          "y": 0
+        },
+        {
+          "x": 307,
+          "y": 114
+        }
+      ],
+      "layer": "trim",
+      "step": 10,
+      "material": "metal",
+      "color": "#0e7490",
+      "fill": "solid",
+      "label": "J-channel (fascia side)"
+    },
+    {
+      "id": "s88",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 292,
+          "y": 130
+        }
+      ],
+      "text": "18\" soffit — J-channel both edges,",
+      "size": 9
+    },
+    {
+      "id": "s89",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 292,
+          "y": 140
+        }
+      ],
+      "text": "solid & perforated alternated.",
+      "size": 9
+    },
+    {
+      "id": "s90",
+      "type": "dimension",
+      "layer": "dims",
+      "pts": [
+        {
+          "x": 0,
+          "y": -20
+        },
+        {
+          "x": 288,
+          "y": -20
+        }
+      ]
+    },
+    {
+      "id": "s91",
+      "type": "dimension",
+      "layer": "dims",
+      "pts": [
+        {
+          "x": 308,
+          "y": 0
+        },
+        {
+          "x": 308,
+          "y": 96
+        }
+      ]
+    },
+    {
+      "id": "s92",
+      "type": "dimension",
+      "layer": "dims",
+      "pts": [
+        {
+          "x": 308,
+          "y": 96
+        },
+        {
+          "x": 308,
+          "y": 114
+        }
+      ]
+    },
+    {
+      "id": "s93",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 314,
+          "y": 48
+        }
+      ],
+      "text": "8 ft — house to beam",
+      "size": 10
+    },
+    {
+      "id": "s94",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 314,
+          "y": 106
+        }
+      ],
+      "text": "1'-6\" overhang",
+      "size": 10
+    },
+    {
+      "id": "s95",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 4,
+          "y": -20
+        }
+      ],
+      "text": "24 ft total",
+      "size": 12
+    },
+    {
+      "id": "s96",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 314,
+          "y": 144
+        }
+      ],
+      "text": "2/12 slope — house (high) to beam (low).",
+      "size": 10
+    },
+    {
+      "id": "s97",
+      "type": "text",
+      "layer": "detail",
+      "pts": [
+        {
+          "x": 314,
+          "y": 156
+        }
+      ],
+      "text": "Joist/panel lengths shown are SLOPE lengths.",
+      "size": 10
+    }
+  ]
+}

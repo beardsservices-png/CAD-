@@ -146,6 +146,15 @@ body.hide-panel .panel { display: none; }
 .project-row button.danger:hover { background: #fef2f2; border-color: #fecaca; color: #dc2626; }
 .projects-empty { padding: 24px 12px; text-align: center; color: var(--muted); }
 
+/* Example cards */
+.example-card { padding: 14px; }
+.example-card .p-name { font-size: 15px; margin-bottom: 2px; }
+.example-card .teaches {
+  margin: 0 0 12px; padding-left: 18px;
+  font-size: 12.5px; color: var(--muted); line-height: 1.7;
+}
+.example-card .teaches li::marker { color: var(--accent); }
+
 /* Toast */
 .toast {
   position: fixed;

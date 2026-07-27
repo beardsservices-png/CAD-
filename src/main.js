@@ -14,6 +14,7 @@ import * as cloud from "./cloud.js";
 import { toSVG } from "./svg.js";
 import { toSTL, toOBJ } from "./exporters.js";
 import { buildMaterialsList, buildHardwareSuggestions, materialsText } from "./materials.js";
+import { EXAMPLES } from "./examples.js";
 import { installPointer } from "./app/pointer.js";
 import { installKeyboard, hideDimInput } from "./app/keyboard.js";
 import * as panel from "./app/panel.js";
@@ -330,6 +331,9 @@ class App {
     document.getElementById("btn-redo").onclick = () => { this.doc.redo(); this.refreshPanel(); this._save(); };
     document.getElementById("btn-panel").onclick = () => this._togglePanel();
     document.getElementById("btn-materials").onclick = () => this._openMaterials();
+    document.getElementById("btn-examples").onclick = () => this._openExamples();
+    document.getElementById("btn-examples-close").onclick = () =>
+      document.getElementById("examples-modal").classList.add("hidden");
     document.getElementById("btn-materials-close").onclick = () =>
       document.getElementById("materials-modal").classList.add("hidden");
     document.getElementById("btn-materials-copy").onclick = () => this._copyMaterials();
@@ -397,6 +401,56 @@ class App {
     // canvas width changed — keep the backing store crisp
     this.vp.resize();
     this.ctx.setTransform(this.vp.dpr, 0, 0, this.vp.dpr, 0, 0);
+  }
+
+  // ---- examples / tutorials ----
+  _openExamples() {
+    const host = document.getElementById("examples-list");
+    host.innerHTML = "";
+    for (const ex of EXAMPLES) {
+      const card = document.createElement("div");
+      card.className = "example-card";
+      const h = document.createElement("div");
+      h.className = "p-name";
+      h.textContent = ex.name;
+      const p = document.createElement("p");
+      p.className = "muted";
+      p.style.margin = "4px 0 8px";
+      p.textContent = ex.blurb;
+      const ul = document.createElement("ul");
+      ul.className = "teaches";
+      for (const t of ex.teaches) {
+        const li = document.createElement("li");
+        li.textContent = t;
+        ul.appendChild(li);
+      }
+      const btn = document.createElement("button");
+      btn.className = "ghost primary";
+      btn.textContent = "Open this example";
+      btn.onclick = () => this._loadExample(ex);
+      card.append(h, p, ul, btn);
+      host.appendChild(card);
+    }
+    document.getElementById("examples-modal").classList.remove("hidden");
+  }
+
+  async _loadExample(ex) {
+    try {
+      const res = await fetch(ex.file, { cache: "no-store" });
+      if (!res.ok) throw new Error("Example not found");
+      this.doc = Document.fromJSON(await res.json());
+      this.projectId = null; // it's a copy to play with, not a saved project
+      this._syncViewMode();
+      this._buildLayers();
+      this.refreshPanel();
+      this._fit();
+      this._save();
+      this._setProjectName();
+      document.getElementById("examples-modal").classList.add("hidden");
+      this._toast("Example loaded — try the ‹ › build steps, bottom right");
+    } catch (e) {
+      this._alert("Could not load the example", e.message || "");
+    }
   }
 
   // ---- materials list ----
