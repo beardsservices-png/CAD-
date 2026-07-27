@@ -1,5 +1,5 @@
 // viewport.js — camera (pan/zoom) and world<->screen transforms + grid.
-import { v, getUnitMode } from "./geometry.js";
+import { v, getUnitMode, formatFeetInches } from "./geometry.js";
 
 // Metric grid candidates (mm) converted to inches for the internal system.
 const METRIC_CANDIDATES = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000].map((mm) => mm / 25.4);
@@ -131,5 +131,78 @@ export class Viewport {
 
     ctx.restore();
     return spacing;
+  }
+
+  // Rulers along the top and left edges with real-world coordinate labels, so
+  // scale is readable point-to-point without drawing a measure line. `cursor`
+  // (screen px) draws position markers on both rulers.
+  drawRulers(ctx, theme, cursor) {
+    const RS = 22; // ruler thickness in px
+    const spacing = this.gridSpacing();
+    const w = this.width, h = this.height;
+    const topLeft = this.screenToWorld(v(0, 0));
+    const bottomRight = this.screenToWorld(v(w, h));
+
+    ctx.save();
+    // strips
+    ctx.fillStyle = theme.rulerBg;
+    ctx.fillRect(0, 0, w, RS);
+    ctx.fillRect(0, 0, RS, h);
+    ctx.strokeStyle = theme.gridMajor;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, RS + 0.5); ctx.lineTo(w, RS + 0.5);
+    ctx.moveTo(RS + 0.5, 0); ctx.lineTo(RS + 0.5, h);
+    ctx.stroke();
+
+    ctx.fillStyle = theme.rulerText;
+    ctx.strokeStyle = theme.rulerText;
+    ctx.font = "9px system-ui, sans-serif";
+
+    // top ruler (X)
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    const startX = Math.floor(topLeft.x / spacing) * spacing;
+    for (let x = startX; x <= bottomRight.x; x += spacing) {
+      const sx = Math.round(this.worldToScreen(v(x, 0)).x) + 0.5;
+      if (sx < RS + 2) continue;
+      ctx.beginPath();
+      ctx.moveTo(sx, RS - 6); ctx.lineTo(sx, RS);
+      ctx.stroke();
+      ctx.fillText(formatFeetInches(x), sx + 3, 3);
+    }
+
+    // left ruler (Y)
+    const startY = Math.floor(topLeft.y / spacing) * spacing;
+    for (let y = startY; y <= bottomRight.y; y += spacing) {
+      const sy = Math.round(this.worldToScreen(v(0, y)).y) + 0.5;
+      if (sy < RS + 2) continue;
+      ctx.beginPath();
+      ctx.moveTo(RS - 6, sy); ctx.lineTo(RS, sy);
+      ctx.stroke();
+      ctx.save();
+      ctx.translate(4, sy + 3);
+      ctx.rotate(-Math.PI / 2);
+      ctx.textAlign = "right";
+      ctx.fillText(formatFeetInches(y), 0, 0);
+      ctx.restore();
+    }
+
+    // cursor position markers
+    if (cursor && (cursor.x || cursor.y)) {
+      ctx.strokeStyle = theme.selection;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(cursor.x, 0); ctx.lineTo(cursor.x, RS);
+      ctx.moveTo(0, cursor.y); ctx.lineTo(RS, cursor.y);
+      ctx.stroke();
+    }
+
+    // corner cap
+    ctx.fillStyle = theme.rulerBg;
+    ctx.fillRect(0, 0, RS, RS);
+    ctx.strokeStyle = theme.gridMajor;
+    ctx.strokeRect(0.5, 0.5, RS, RS);
+    ctx.restore();
   }
 }

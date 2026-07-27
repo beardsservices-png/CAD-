@@ -119,21 +119,26 @@ also works for the drawing UI, but without cloud project storage.)
 ## Structure
 
 ```
-index.html         layout + panels
-styles/main.css    UI styling
-src/geometry.js    vector math, feet-inch formatting, snapping math
-src/viewport.js    camera (pan/zoom) + grid rendering
-src/model.js       document, shapes, layers, undo/redo, persistence
-src/snap.js        cursor snap resolution
-src/symbols.js     the shape/symbol library (data-driven)
-src/view3d.js      software 3D renderer (extrudes the plan into a massing model)
-src/transforms.js  precise editing: duplicate, rotate, mirror, align, resize
-src/render.js      shape + dimension + selection rendering
-src/tools.js       interactive tools (select/line/wall/rect/circle/arc/poly/dim/text/stamps)
-src/svg.js         vector SVG export
-src/cloud.js       client for the server storage API
-server.js          static server + JSON storage API
-src/main.js        app wiring, input, file I/O
+index.html          layout + panels
+styles/main.css     UI styling
+src/geometry.js     vector math, units, feet-inch formatting, snapping math
+src/viewport.js     camera (pan/zoom), grid + ruler rendering
+src/model.js        document, shapes, layers, materials, undo/redo
+src/snap.js         cursor snap resolution + alignment inference
+src/symbols.js      the shape/symbol library (data-driven)
+src/view3d.js       software 3D renderer (textured massing model + mesh)
+src/transforms.js   precise editing: duplicate, rotate, mirror, align, offset
+src/render.js       shape + dimension + selection rendering, hatch fills
+src/tools.js        interactive tools (select/line/wall/rect/circle/arc/…)
+src/svg.js          vector SVG export
+src/exporters.js    STL / OBJ mesh export
+src/cloud.js        client for the server storage API
+src/app/pointer.js  canvas input: draw/select dispatch, pan, pinch, wheel, hover
+src/app/keyboard.js shortcuts + type-a-dimension capture
+src/app/panel.js    side panel: properties, style, layers, library, takeoff
+src/app/dialogs.js  non-blocking modal dialogs + toasts
+src/main.js         app core: render loop, snapping, tools, commands, files
+server.js           static server + JSON storage API
 ```
 
 ## Roadmap
