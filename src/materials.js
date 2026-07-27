@@ -158,6 +158,69 @@ export function buildHardwareSuggestions(doc) {
     const sqft = deckArea / 144;
     out.push({ qty: Math.ceil(sqft * 3.5), item: "Deck screws (2½″)", detail: `~350 per 100 sq ft over ${Math.round(sqft)} sq ft` });
   }
+  out.push(...metalRoofTrim(doc));
+  return out;
+}
+
+// When the drawing contains metal roof panels, spec the trim, flashing,
+// closures and fasteners that finish the roof. Lengths come from the panel
+// field's extents; trim is ordered in 10 ft stock lengths.
+function metalRoofTrim(doc) {
+  const out = [];
+  let min = { x: Infinity, y: Infinity }, max = { x: -Infinity, y: -Infinity };
+  let found = false;
+  let gutterLen = 0, downspouts = 0;
+
+  for (const s of doc.shapes) {
+    const layer = doc.layer(s.layer);
+    if (!layer || !layer.visible || s.existing) continue;
+    const lab = (s.label || "").toLowerCase();
+    const isPanel = s.symbol === "metalroof" ||
+      (/panel/.test(lab) && /metal|roof/.test(lab)) ||
+      (s.material === "metal" && /roof/.test(lab));
+    if (isPanel) {
+      const b = shapeBBox(s);
+      min.x = Math.min(min.x, b.min.x); min.y = Math.min(min.y, b.min.y);
+      max.x = Math.max(max.x, b.max.x); max.y = Math.max(max.y, b.max.y);
+      found = true;
+    }
+    if (/gutter/.test(lab) && !/guard/.test(lab)) {
+      const b = shapeBBox(s);
+      gutterLen += Math.max(b.max.x - b.min.x, b.max.y - b.min.y);
+    }
+    if (/downspout/.test(lab)) downspouts++;
+  }
+  if (!found) return out;
+
+  const eave = max.x - min.x;   // along the eave
+  const slope = max.y - min.y;  // up the slope (already slope length if drawn so)
+  const sqft = (eave * slope) / 144;
+  const ft = (inches) => inches / 12;
+  const sticks = (inches) => Math.max(1, Math.ceil(ft(inches) / 10)); // 10 ft stock
+  const lf = (inches) => `${ft(inches).toFixed(1)} lf`;
+
+  out.push({ qty: sticks(eave), item: "Eave trim / drip edge (10 ft)", detail: `${lf(eave)} along the eave` });
+  out.push({ qty: sticks(eave), item: "Fascia metal (10 ft)", detail: `${lf(eave)} over the wood fascia` });
+  out.push({ qty: sticks(slope * 2), item: "Rake / gable trim (10 ft)", detail: `2 rakes × ${ft(slope).toFixed(1)} ft` });
+  out.push({ qty: sticks(eave), item: "Headwall / apron flashing (10 ft)", detail: `${lf(eave)} where the roof meets the house` });
+  out.push({ qty: 2, item: "Kickout flashing", detail: "one at each end where the roof edge meets the wall" });
+  out.push({ qty: sticks(eave), item: "Outside closure strip", detail: `${lf(eave)} at the eave — fills under the ribs` });
+  out.push({ qty: sticks(eave), item: "Inside closure strip", detail: `${lf(eave)} at the headwall — fills over the flats` });
+  out.push({ qty: Math.ceil(ft(eave * 2 + slope * 2) / 45), item: "Butyl sealant tape (45 ft roll)", detail: "closures, laps and flashing seams" });
+  out.push({ qty: Math.ceil((sqft / 100) * 80), item: "Panel screws w/ washer", detail: `~80 per square over ${Math.round(sqft)} sq ft` });
+  out.push({ qty: Math.ceil(ft(slope) * 2 * (eave / 36)), item: "Stitch screws (side laps)", detail: "~2 per ft of panel side lap" });
+  out.push({ qty: 1, item: "Touch-up paint / sealant", detail: "cut edges and fastener touch-ups" });
+
+  if (gutterLen > 0) {
+    out.push({ qty: sticks(gutterLen), item: "Gutter guard (10 ft)", detail: `${lf(gutterLen)} over the gutter` });
+    out.push({ qty: Math.max(2, Math.ceil(ft(gutterLen) / 2.5)), item: "Gutter hanger / bracket", detail: "one every ~30 in" });
+    out.push({ qty: 1, item: "Gutter end cap pair", detail: "left + right" });
+  }
+  if (downspouts > 0) {
+    out.push({ qty: downspouts * 3, item: "Downspout elbow", detail: "2 at the gutter, 1 at grade per downspout" });
+    out.push({ qty: downspouts * 2, item: "Downspout strap", detail: "secures the downspout to the wall" });
+    out.push({ qty: downspouts, item: "Downspout outlet / drop", detail: "gutter-to-downspout connection" });
+  }
   return out;
 }
 
