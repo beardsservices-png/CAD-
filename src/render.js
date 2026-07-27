@@ -44,17 +44,23 @@ function screenPath(ctx, vp, pts, closed) {
   if (closed) ctx.closePath();
 }
 
+// A shape is hidden while build-step playback sits below its step number.
+function hiddenByStep(shape, doc) {
+  return shape.step && doc.stepFilter != null && shape.step > doc.stepFilter;
+}
+
 export function renderShapes(ctx, doc, vp, theme) {
   for (const shape of doc.shapes) {
     const layer = doc.layer(shape.layer);
     if (!layer.visible) continue;
+    if (hiddenByStep(shape, doc)) continue;
     const color = shape.color || layer.color;
     const selected = doc.selection.has(shape.id);
     drawShape(ctx, shape, vp, theme, color, selected);
   }
   // Selection handles drawn on top.
   for (const shape of doc.shapes) {
-    if (doc.selection.has(shape.id)) drawHandles(ctx, shape, vp, theme);
+    if (doc.selection.has(shape.id) && !hiddenByStep(shape, doc)) drawHandles(ctx, shape, vp, theme);
   }
 }
 

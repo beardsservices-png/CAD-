@@ -214,6 +214,9 @@ export class Document {
     this.layers = DEFAULT_LAYERS.map((l) => ({ ...l }));
     this.activeLayer = "walls";
     this.selection = new Set();
+    // Build-step playback: shapes with step > stepFilter are hidden.
+    // Infinity = show everything. Transient (not serialized).
+    this.stepFilter = Infinity;
     this._undo = [];
     this._redo = [];
     this.name = "Untitled";

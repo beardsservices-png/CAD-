@@ -80,6 +80,11 @@ export function refreshPanel(app) {
     rows += layerSelectHTML(app, sel);
   }
 
+  // Build step (1, 2, 3… — 0/blank means "always shown"). Works for any
+  // selection; drives the step-playback control in the status bar.
+  const commonStep = sel.every((x) => (x.step || 0) === (sel[0].step || 0)) ? (sel[0].step || 0) : "";
+  rows += `<label class="opt inline">Build step<input id="p-step" type="number" min="0" step="1" value="${commonStep}" placeholder="—"></label>`;
+
   const hasGroup = sel.some((s) => s.group);
   const anyLocked = sel.some((s) => s.locked);
   rows += styleHTML(sel);
@@ -114,6 +119,12 @@ export function refreshPanel(app) {
       app.commit(() => { app.doc.add(ns); app.doc.selection = new Set([ns.id]); });
     };
   }
+
+  const stepEl = document.getElementById("p-step");
+  if (stepEl) stepEl.onchange = () => app.commit(() => sel.forEach((x) => {
+    const n = parseInt(stepEl.value, 10);
+    if (!n || n <= 0) delete x.step; else x.step = n;
+  }));
 
   bindLayerSelect(app, sel);
   bindStyle(app, sel);

@@ -13,6 +13,7 @@ import { rotateSelection, mirrorSelection, duplicateShapes } from "./transforms.
 import * as cloud from "./cloud.js";
 import { toSVG } from "./svg.js";
 import { toSTL, toOBJ } from "./exporters.js";
+import { buildMaterialsList, buildHardwareSuggestions, materialsText } from "./materials.js";
 import { installPointer } from "./app/pointer.js";
 import { installKeyboard, hideDimInput } from "./app/keyboard.js";
 import * as panel from "./app/panel.js";
@@ -275,7 +276,7 @@ class App {
   }
 
   // ---- panel delegates (implementation in app/panel.js) ----
-  refreshPanel() { panel.refreshPanel(this); }
+  refreshPanel() { panel.refreshPanel(this); this._updateStepUI(); }
   _buildLayers() { panel.buildLayers(this); }
   _buildShapeLibrary(filter = "") { panel.buildShapeLibrary(this, filter); }
   _refreshUnitsUI() { panel.refreshUnitsUI(this); }
@@ -324,6 +325,12 @@ class App {
     document.getElementById("btn-undo").onclick = () => { this.doc.undo(); this.refreshPanel(); this._save(); };
     document.getElementById("btn-redo").onclick = () => { this.doc.redo(); this.refreshPanel(); this._save(); };
     document.getElementById("btn-panel").onclick = () => this._togglePanel();
+    document.getElementById("btn-materials").onclick = () => this._openMaterials();
+    document.getElementById("btn-materials-close").onclick = () =>
+      document.getElementById("materials-modal").classList.add("hidden");
+    document.getElementById("btn-materials-copy").onclick = () => this._copyMaterials();
+    document.getElementById("step-prev").onclick = () => this._stepBy(-1);
+    document.getElementById("step-next").onclick = () => this._stepBy(1);
     this._setupCloud();
     this._setup3D();
     panel.setupPanelCollapse();
@@ -371,6 +378,85 @@ class App {
     // canvas width changed — keep the backing store crisp
     this.vp.resize();
     this.ctx.setTransform(this.vp.dpr, 0, 0, this.vp.dpr, 0, 0);
+  }
+
+  // ---- materials list ----
+  _openMaterials() {
+    const rows = buildMaterialsList(this.doc);
+    const hw = buildHardwareSuggestions(this.doc);
+    const host = document.getElementById("materials-list");
+    host.innerHTML = "";
+    const makeTable = (items) => {
+      const table = document.createElement("table");
+      table.className = "mat-table";
+      const head = table.insertRow();
+      for (const t of ["Qty", "Item", "Size / notes"]) {
+        const th = document.createElement("th");
+        th.textContent = t;
+        head.appendChild(th);
+      }
+      for (const r of items) {
+        const tr = table.insertRow();
+        tr.insertCell().textContent = r.qty;
+        tr.insertCell().textContent = r.item;
+        tr.insertCell().textContent = r.detail;
+      }
+      return table;
+    };
+    if (!rows.length) {
+      host.innerHTML = `<div class="projects-empty">Nothing to count yet — draw something first.</div>`;
+    } else {
+      host.appendChild(makeTable(rows));
+      if (hw.length) {
+        const h = document.createElement("div");
+        h.className = "style-label";
+        h.style.margin = "14px 8px 4px";
+        h.textContent = "Suggested hardware";
+        host.appendChild(h);
+        host.appendChild(makeTable(hw));
+        const note = document.createElement("p");
+        note.className = "muted";
+        note.style.margin = "8px";
+        note.textContent = "Estimates from the drawing (posts, beams, footings, decking) — verify sizes and counts against local code.";
+        host.appendChild(note);
+      }
+    }
+    document.getElementById("materials-modal").classList.remove("hidden");
+  }
+
+  async _copyMaterials() {
+    const text = materialsText(this.doc, buildMaterialsList(this.doc), buildHardwareSuggestions(this.doc));
+    try {
+      await navigator.clipboard.writeText(text);
+      this._toast("Materials list copied");
+    } catch (e) {
+      // clipboard blocked (e.g. http) — fall back to a download
+      this._download(text, "materials.txt", "text/plain");
+    }
+  }
+
+  // ---- build-step playback ----
+  _maxStep() {
+    return this.doc.shapes.reduce((mx, s) => Math.max(mx, s.step || 0), 0);
+  }
+  _stepBy(d) {
+    const max = this._maxStep();
+    if (!max) return;
+    let cur = this.doc.stepFilter === Infinity ? max + 1 : this.doc.stepFilter;
+    cur += d;
+    this.doc.stepFilter = cur > max ? Infinity : Math.max(1, cur);
+    this._updateStepUI();
+    if (this.view3dOpen) this.view3d.render();
+  }
+  _updateStepUI() {
+    const ctl = document.getElementById("step-ctl");
+    if (!ctl) return;
+    const max = this._maxStep();
+    ctl.hidden = !max;
+    if (!max) { this.doc.stepFilter = Infinity; return; }
+    if (this.doc.stepFilter !== Infinity && this.doc.stepFilter > max) this.doc.stepFilter = Infinity;
+    document.getElementById("step-label").textContent =
+      this.doc.stepFilter === Infinity ? `All (${max})` : `${this.doc.stepFilter} / ${max}`;
   }
 
   // ---- 3D preview ----

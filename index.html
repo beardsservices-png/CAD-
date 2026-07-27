@@ -24,6 +24,7 @@
         <button id="btn-save" class="ghost">Export JSON</button>
         <button id="btn-png" class="ghost">PNG</button>
         <button id="btn-svg" class="ghost">SVG</button>
+        <button id="btn-materials" class="ghost">Materials</button>
         <button id="btn-fit" class="ghost">Fit</button>
         <button id="btn-3d" class="ghost primary">3D View</button>
         <button id="btn-panel" class="ghost" title="Show/hide side panel (Tab)">⇥ Panel</button>
@@ -42,6 +43,20 @@
           <span id="storage-note" class="muted"></span>
         </div>
         <div id="projects-list" class="projects-list"></div>
+      </div>
+    </div>
+
+    <div id="materials-modal" class="modal hidden">
+      <div class="modal-card">
+        <div class="modal-head">
+          <h2>Materials List</h2>
+          <button id="btn-materials-close" class="ghost">Close</button>
+        </div>
+        <div class="modal-actions">
+          <button id="btn-materials-copy" class="ghost primary">Copy as text</button>
+          <span class="muted">Counts reflect visible layers</span>
+        </div>
+        <div id="materials-list" class="projects-list"></div>
       </div>
     </div>
 
@@ -130,6 +145,12 @@
     <footer class="statusbar">
       <span id="coords">X 0"   Y 0"</span>
       <span class="spacer"></span>
+      <div id="step-ctl" class="step-ctl" hidden>
+        <span class="step-title">Build step</span>
+        <button id="step-prev" title="Previous step">‹</button>
+        <span id="step-label">All</span>
+        <button id="step-next" title="Next step">›</button>
+      </div>
       <span id="zoom">100%</span>
     </footer>
 

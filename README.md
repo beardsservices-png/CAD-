@@ -97,6 +97,14 @@ also works for the drawing UI, but without cloud project storage.)
   from the 3D overlay).
 - **Cloud projects** — when deployed with a storage volume, save/open drawings
   on the server, shared across devices.
+- **Materials List** — one click itemizes the drawing like a graph-paper tally:
+  symbols counted by size, wall runs totaled, every cut piece with dimensions,
+  sheet-goods estimated in 4×8 sheets. Includes **suggested hardware** (post
+  bases, post caps, hurricane ties, anchors, screw counts) inferred from the
+  posts/beams/footings/decking in the drawing. Copy as text for the lumber run.
+- **Build steps** — give shapes a step number (1, 2, 3…) and play the build
+  back with the ‹ › control in the status bar, in 2D and 3D — walk the whole
+  assembly before making real-world mistakes.
 - **Undo / redo**, autosave to the browser.
 - **Takeoff panel** — running totals of length, area, and object counts.
 

@@ -399,6 +399,28 @@ body.hide-panel .panel { display: none; }
 }
 .statusbar .spacer { flex: 1 1 auto; }
 
+/* Build-step playback control */
+.step-ctl { display: flex; align-items: center; gap: 6px; margin-right: 16px; }
+.step-ctl[hidden] { display: none; }
+.step-ctl .step-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; }
+.step-ctl button {
+  border: 1px solid var(--line); background: #fff; border-radius: 6px;
+  width: 22px; height: 20px; line-height: 1; font-size: 14px; cursor: pointer;
+  color: var(--ink); padding: 0;
+}
+.step-ctl button:hover { background: var(--accent-soft); border-color: #bfd3ff; color: var(--accent); }
+#step-label { font-weight: 600; color: var(--ink); min-width: 52px; text-align: center; }
+
+/* Materials list table */
+.mat-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.mat-table th {
+  text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px;
+  color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line);
+}
+.mat-table td { padding: 7px 8px; border-bottom: 1px solid var(--bg); }
+.mat-table td:first-child { font-weight: 700; text-align: right; width: 40px; }
+.mat-table tr:hover td { background: var(--bg); }
+
 @media (max-width: 720px) {
   .panel { display: none; }
   .toolbar { width: 62px; }

@@ -96,6 +96,7 @@ export class View3D {
     for (const s of this.doc.shapes) {
       if (s.type === "dimension" || s.type === "text") continue;
       if (!this.doc.layer(s.layer).visible) continue;
+      if (s.step && this.doc.stepFilter != null && s.step > this.doc.stepFilter) continue;
       const mat = materialFor(s);
       const color = (mat && mat.color) || s.color || this.doc.layer(s.layer).color;
       const z0 = shapeElevation(s);
