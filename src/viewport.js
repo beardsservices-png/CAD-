@@ -133,6 +133,52 @@ export class Viewport {
     return spacing;
   }
 
+  // Isometric graph paper: three families of parallel lines (two receding at
+  // 30°, plus verticals) — the grid you'd sketch a 3D view on by hand.
+  drawIsoGrid(ctx, theme) {
+    const spacing = this.gridSpacing();
+    ctx.save();
+    ctx.lineWidth = 1;
+    const sub = spacing / 2;
+    if (sub * this.scale >= 10) {
+      ctx.strokeStyle = theme.gridMinor;
+      ctx.beginPath();
+      for (const a of [Math.PI / 6, -Math.PI / 6, Math.PI / 2]) this._family(ctx, a, sub);
+      ctx.stroke();
+    }
+    ctx.strokeStyle = theme.gridMajor;
+    ctx.beginPath();
+    for (const a of [Math.PI / 6, -Math.PI / 6, Math.PI / 2]) this._family(ctx, a, spacing);
+    ctx.stroke();
+    ctx.restore();
+    return spacing;
+  }
+
+  // One family of parallel world-space lines at `angle`, `step` apart, clipped
+  // to the visible area. Path only — caller strokes.
+  _family(ctx, angle, step) {
+    const dir = { x: Math.cos(angle), y: Math.sin(angle) };
+    const perp = { x: -dir.y, y: dir.x };
+    const corners = [
+      this.screenToWorld(v(0, 0)),
+      this.screenToWorld(v(this.width, 0)),
+      this.screenToWorld(v(0, this.height)),
+      this.screenToWorld(v(this.width, this.height)),
+    ];
+    const ds = corners.map((p) => p.x * perp.x + p.y * perp.y);
+    const kMin = Math.floor(Math.min(...ds) / step);
+    const kMax = Math.ceil(Math.max(...ds) / step);
+    if (kMax - kMin > 400) return; // too dense to be useful
+    const L = (Math.hypot(this.width, this.height) / this.scale) * 1.2;
+    for (let k = kMin; k <= kMax; k++) {
+      const bx = perp.x * k * step, by = perp.y * k * step;
+      const a = this.worldToScreen(v(bx - dir.x * L, by - dir.y * L));
+      const b = this.worldToScreen(v(bx + dir.x * L, by + dir.y * L));
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+    }
+  }
+
   // Rulers along the top and left edges with real-world coordinate labels, so
   // scale is readable point-to-point without drawing a measure line. `cursor`
   // (screen px) draws position markers on both rulers.

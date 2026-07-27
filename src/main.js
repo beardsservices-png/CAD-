@@ -100,7 +100,8 @@ class App {
     const ctx = this.ctx;
     ctx.setTransform(this.vp.dpr, 0, 0, this.vp.dpr, 0, 0);
     ctx.clearRect(0, 0, this.vp.width, this.vp.height);
-    this.vp.drawGrid(ctx, theme);
+    if (this.doc.viewMode === "iso") this.vp.drawIsoGrid(ctx, theme);
+    else this.vp.drawGrid(ctx, theme);
     this._drawHover(ctx);
     renderShapes(ctx, this.doc, this.vp, theme);
     if (this.tool.draw) this.tool.draw(ctx, this.vp, theme);
@@ -361,7 +362,11 @@ class App {
       this.doc.viewMode = viewSel.value;
       this._save();
       if (this.view3dOpen) { this.view3d.fit(); this.view3d.render(); }
-      this._toast(viewSel.value === "elevation" ? "Elevation view — canvas Y is height" : "Plan view — looking down");
+      this._toast(
+        viewSel.value === "elevation" ? "Elevation view — canvas Y is height"
+        : viewSel.value === "iso" ? "Isometric — ortho locks to the 30° / 150° / vertical axes"
+        : "Plan view — looking down"
+      );
     };
     this._syncViewMode = () => { viewSel.value = this.doc.viewMode || "plan"; };
     this._syncViewMode();

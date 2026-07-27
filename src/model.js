@@ -328,7 +328,7 @@ export class Document {
   static fromJSON(data) {
     const doc = new Document();
     doc.name = data.name || "Untitled";
-    doc.viewMode = data.viewMode === "elevation" ? "elevation" : "plan";
+    doc.viewMode = ["elevation", "iso"].includes(data.viewMode) ? data.viewMode : "plan";
     if (data.layers) doc.layers = data.layers;
     if (data.activeLayer) doc.activeLayer = data.activeLayer;
     doc.shapes = data.shapes || [];

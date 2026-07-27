@@ -76,9 +76,12 @@ also works for the drawing UI, but without cloud project storage.)
   members: joists/studs at 12/16/24″ o.c., balusters at a 4″ gap, or deck
   boards. They're real geometry, so they land in the materials list with their
   true lengths.
-- **Drawing view (plan / elevation)** — tell it whether you're looking down or
-  from the side, and the 3D view extrudes the right way: plan drawings rise
-  upward, elevation drawings (a railing, a toolbox side) push back into depth.
+- **Drawing view (plan / elevation / isometric)** — tell it how you're looking
+  at the job. **Plan** drawings extrude upward in 3D; **elevation** drawings (a
+  railing, a toolbox side) push back into depth; **isometric** switches the
+  canvas to 3D graph paper — a diamond grid with ortho locked to the 30° / 150°
+  / vertical axes, so you can sketch depth receding at an angle the way you
+  would by hand.
 - **Live dimensions** — length + angle while drawing, segment lengths, area and
   perimeter on closed shapes, square footage.
 - **Snapping** — grid, endpoint/midpoint, and ortho lock (or hold Shift).

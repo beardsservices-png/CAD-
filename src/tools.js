@@ -23,11 +23,14 @@ import { screenHandles, selectionBounds, scaleAnchor, HANDLE_HIT, ROTATE_HIT } f
 import { rotateSelection, scaleSelection } from "./transforms.js";
 
 // Apply ortho / angle-lock relative to an anchor point when appropriate.
-function maybeConstrain(anchor, pt, ev, settings) {
+// On an isometric drawing "ortho" means the three iso axes (30° / 150° /
+// vertical), which is what you actually want when sketching in 3D.
+function maybeConstrain(anchor, pt, ev, settings, doc) {
   if (!anchor) return pt;
   const d = sub(pt, anchor);
-  if (ev && ev.shiftKey) return add(anchor, constrainAngle(d, 90));
-  if (settings.ortho) return add(anchor, constrainAngle(d, 90));
+  const step = doc && doc.viewMode === "iso" ? 30 : 90;
+  if (ev && ev.shiftKey) return add(anchor, constrainAngle(d, step));
+  if (settings.ortho) return add(anchor, constrainAngle(d, step));
   if (settings.angleLock) return add(anchor, constrainAngle(d, 15));
   return pt;
 }
@@ -50,7 +53,8 @@ class PolyTool {
         this.pts[this.pts.length - 1],
         sp,
         this._ev,
-        this.app.snap
+        this.app.snap,
+        this.app.doc
       );
       // Close polygon if clicking near the start.
       if (
@@ -73,7 +77,8 @@ class PolyTool {
       this.pts[this.pts.length - 1],
       sp,
       ev,
-      this.app.snap
+      this.app.snap,
+      this.app.doc
     );
   }
   // Place the next vertex at an exact distance along the current direction.
@@ -178,7 +183,7 @@ class TwoPointTool {
       this.reset();
     } else {
       const p1 =
-        this.type === "rect" ? maybeConstrain(this.p0, sp, ev, this.app.snap) : sp;
+        this.type === "rect" ? maybeConstrain(this.p0, sp, ev, this.app.snap, this.app.doc) : sp;
       if (dist(this.p0, p1) > 0.5) {
         const type = this.type === "dimension" ? "dimension" : "rect";
         const layer = this.type === "dimension" ? "dims" : this.app.doc.activeLayer;
@@ -190,7 +195,7 @@ class TwoPointTool {
     }
   }
   onMove(sp, ev) {
-    if (this.p0) this.cursor = this.type === "rect" ? maybeConstrain(this.p0, sp, ev, this.app.snap) : { ...sp };
+    if (this.p0) this.cursor = this.type === "rect" ? maybeConstrain(this.p0, sp, ev, this.app.snap, this.app.doc) : { ...sp };
   }
   cancel() {
     this.reset();
@@ -553,7 +558,7 @@ class SelectTool {
       if (shape) {
         let np = sp;
         if (shape.pts.length && this.vertexRef.index > 0) {
-          np = maybeConstrain(shape.pts[this.vertexRef.index - 1], sp, ev, this.app.snap);
+          np = maybeConstrain(shape.pts[this.vertexRef.index - 1], sp, ev, this.app.snap, this.app.doc);
         }
         shape.pts[this.vertexRef.index] = { ...np };
       }
