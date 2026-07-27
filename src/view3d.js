@@ -128,7 +128,7 @@ export class View3D {
         }
         // top cap
         faces.push({
-          verts: poly.map((p) => ({ x: p.x, y: p.y, z: z1 })),
+          verts: poly.map((p) => this._pt3(p.x, p.y, z1)),
           color,
           shadeBias: 1.15,
           top: true,
@@ -147,7 +147,7 @@ export class View3D {
           faces.push(this._quad(box[i], box[(i + 1) % 4], z0, z1, color, 1));
         }
         faces.push({
-          verts: box.map((p) => ({ x: p.x, y: p.y, z: z1 })),
+          verts: box.map((p) => this._pt3(p.x, p.y, z1)),
           color,
           shadeBias: 1.15,
           top: true,
@@ -195,7 +195,7 @@ export class View3D {
     for (let i = 0; i < 4; i++) {
       faces.push(this._quad(corners[i], corners[(i + 1) % 4], z0, z1, color, 1));
     }
-    faces.push({ verts: corners.map((p) => ({ x: p.x, y: p.y, z: z1 })), color, shadeBias: 1.15, top: true });
+    faces.push({ verts: corners.map((p) => this._pt3(p.x, p.y, z1)), color, shadeBias: 1.15, top: true });
   }
 
   // For circles, approximate the outline with an N-gon so it extrudes to a
@@ -224,13 +224,22 @@ export class View3D {
     return shapePoints(s);
   }
 
+  // Map a 2D canvas point + its extrusion depth into 3D. In a plan drawing the
+  // canvas is the ground and thickness rises (Z). In an elevation drawing the
+  // canvas is a vertical face — canvas Y *is* height — and thickness goes back
+  // into the drawing (Y).
+  _pt3(px, py, d) {
+    if (this.doc && this.doc.viewMode === "elevation") return { x: px, y: d, z: -py };
+    return { x: px, y: py, z: d };
+  }
+
   _quad(a, b, z0, z1, color, alpha) {
     return {
       verts: [
-        { x: a.x, y: a.y, z: z0 },
-        { x: b.x, y: b.y, z: z0 },
-        { x: b.x, y: b.y, z: z1 },
-        { x: a.x, y: a.y, z: z1 },
+        this._pt3(a.x, a.y, z0),
+        this._pt3(b.x, b.y, z0),
+        this._pt3(b.x, b.y, z1),
+        this._pt3(a.x, a.y, z1),
       ],
       color,
       alpha,
@@ -250,7 +259,10 @@ export class View3D {
       maxZ = Math.max(maxZ, shapeElevation(s) + shapeHeight(s));
     }
     if (min.x === Infinity) return;
-    this.cam.target = { x: (min.x + max.x) / 2, y: (min.y + max.y) / 2, z: maxZ / 2 };
+    const cx = (min.x + max.x) / 2, cy = (min.y + max.y) / 2;
+    this.cam.target = this.doc.viewMode === "elevation"
+      ? { x: cx, y: maxZ / 2, z: -cy }
+      : { x: cx, y: cy, z: maxZ / 2 };
     const spanX = (max.x - min.x) || 240;
     const spanY = (max.y - min.y) || 240;
     const span = Math.max(spanX, spanY, maxZ) * 1.5;

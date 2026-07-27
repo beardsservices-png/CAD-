@@ -47,6 +47,12 @@ export const DEFAULT_HEIGHTS = {
   circle: 6,
 };
 export const SYMBOL_HEIGHTS = {
+  // boards lying flat extrude by their thickness; on-edge boards by their depth
+  "2x4": 1.5, "2x6": 1.5, "2x8": 1.5, "2x10": 1.5, "2x12": 1.5,
+  "2x4edge": 3.5, "2x8edge": 7.25, "2x10edge": 9.25,
+  "1x6": 0.75, deckpt: 1,
+  "4x4": 96, "6x6": 96, "4x4pt": 96, "6x6pt": 96,
+  "4x4elev": 3.5, "6x6elev": 5.5, // drawn in elevation, so shallow in plan
   post: 96, pier: 96, footing: 8, beam: 12, hanger: 6,
   door: 80, window: 48, stairs: 6, railing: 36,
   tree: 144, shrub: 30, bollard: 30, parking: 0,
@@ -72,7 +78,8 @@ export const MATERIAL_BY_ID = Object.fromEntries(MATERIALS.map((m) => [m.id, m])
 // Infer a material from a symbol when the shape doesn't set one explicitly.
 const SYMBOL_MATERIAL = {
   plywood: "ply", osb: "ply", ply34: "ply", "1x6": "wood",
-  deckpt: "pt", "4x4pt": "pt", "6x6pt": "pt", dogear: "pt", dogearpanel: "pt", privacy: "pt", deckrun: "wood",
+  deckpt: "pt", "4x4pt": "pt", "6x6pt": "pt", "4x4elev": "pt", "6x6elev": "pt",
+  dogear: "pt", dogearpanel: "pt", privacy: "pt", deckrun: "wood",
   cmu16: "concrete", cmu8: "concrete", concpad: "concrete", pier12: "concrete", brick: "brick", brickveneer: "brick",
   metalroof: "metal", chainlink: "metal", anglebracket: "metal", postbase: "metal", hurricanetie: "metal",
   lagbolt: "metal", carriagebolt: "metal", deckscrew: "metal", nailplate: "metal", furnace: "metal", minisplit: "metal",
@@ -226,6 +233,11 @@ export class Document {
     // Build-step playback: shapes with step > stepFilter are hidden.
     // Infinity = show everything. Transient (not serialized).
     this.stepFilter = Infinity;
+    // Which way you're looking at the drawing. "plan" = from above (canvas Y
+    // is depth, thickness rises toward you); "elevation" = from the side
+    // (canvas Y is height, thickness goes back into the drawing). Drives how
+    // the 3D view builds the model.
+    this.viewMode = "plan";
     this._undo = [];
     this._redo = [];
     this.name = "Untitled";
@@ -306,6 +318,7 @@ export class Document {
     return {
       version: 1,
       name: this.name,
+      viewMode: this.viewMode,
       layers: this.layers,
       activeLayer: this.activeLayer,
       shapes: this.shapes,
@@ -315,6 +328,7 @@ export class Document {
   static fromJSON(data) {
     const doc = new Document();
     doc.name = data.name || "Untitled";
+    doc.viewMode = data.viewMode === "elevation" ? "elevation" : "plan";
     if (data.layers) doc.layers = data.layers;
     if (data.activeLayer) doc.activeLayer = data.activeLayer;
     doc.shapes = data.shapes || [];

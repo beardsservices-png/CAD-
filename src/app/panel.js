@@ -9,7 +9,7 @@ import {
 } from "../model.js";
 import {
   setRectSize, setCircleDiameter, setSegmentLength, setPosition,
-  alignSelection, distributeSelection, offsetShape,
+  alignSelection, distributeSelection, offsetShape, generateFraming,
 } from "../transforms.js";
 import { symbolsByCategory, SYMBOLS, drawSymbolDef } from "../symbols.js";
 
@@ -70,6 +70,24 @@ export function refreshPanel(app) {
       rows += `<div class="modify-grid"><button id="btn-offset">Offset copy</button></div>`;
     }
 
+    // Fill a closed shape with evenly spaced members — joists, studs,
+    // balusters, deck boards — counted in the materials list.
+    if (shapeClosed(s)) {
+      rows += `<div class="prop-sep"></div><div class="style-label">Framing layout</div>`;
+      rows += `<label class="opt inline">Preset<select id="p-frame-preset">
+        <option value="16,1.5">Joists / studs 16″ o.c.</option>
+        <option value="24,1.5">Joists / studs 24″ o.c.</option>
+        <option value="12,1.5">Joists 12″ o.c.</option>
+        <option value="5.5,1.5">Balusters (4″ gap)</option>
+        <option value="5.75,5.5">Deck boards (¼″ gap)</option>
+      </select></label>`;
+      rows += `<label class="opt inline">Direction<select id="p-frame-dir">
+        <option value="v">↕ run vertical</option>
+        <option value="h">↔ run horizontal</option>
+      </select></label>`;
+      rows += `<div class="modify-grid"><button id="btn-frame">Fill with members</button></div>`;
+    }
+
     if (s.type !== "dimension" && s.type !== "text") {
       rows += `<div class="prop-sep"></div>`;
       rows += `<label class="opt inline">3D height (${u})<input id="p-height" type="number" min="0" step="${st}" value="${dn(shapeHeight(s))}"></label>`;
@@ -115,6 +133,20 @@ export function refreshPanel(app) {
     const eEl = document.getElementById("p-elev");
     if (hEl) hEl.onchange = () => { s.height = Math.max(0, fromDisplay(parseFloat(hEl.value) || 0)); app._save(); };
     if (eEl) eEl.onchange = () => { s.elevation = fromDisplay(parseFloat(eEl.value) || 0); app._save(); };
+    const frameBtn = document.getElementById("btn-frame");
+    if (frameBtn) frameBtn.onclick = () => {
+      const [spacing, thickness] = document.getElementById("p-frame-preset").value.split(",").map(Number);
+      const dir = document.getElementById("p-frame-dir").value;
+      const members = generateFraming(s, { spacing, thickness, dir, layer: app.doc.activeLayer });
+      if (!members.length) { app._toast("Nothing to fill"); return; }
+      app.commit(() => {
+        const ids = [];
+        for (const m of members) { app.doc.add(m); ids.push(m.id); }
+        app.doc.selection = new Set(ids);
+      });
+      app._toast(`Placed ${members.length} members`);
+    };
+
     const offBtn = document.getElementById("btn-offset");
     if (offBtn) offBtn.onclick = () => {
       const d = fromDisplay(parseFloat(document.getElementById("p-offset").value) || 0);

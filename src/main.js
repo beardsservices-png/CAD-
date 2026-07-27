@@ -72,6 +72,7 @@ class App {
     installKeyboard(this);
     this._buildUI();
     this._restore();
+    if (this._syncViewMode) this._syncViewMode();
     this._loop();
   }
 
@@ -312,6 +313,7 @@ class App {
         this.doc = new Document();
         this.projectId = null;
         this._save();
+        this._syncViewMode();
         this._buildLayers();
         this.refreshPanel();
         this._setProjectName();
@@ -353,6 +355,17 @@ class App {
     const wt = document.getElementById("wall-thick");
     wt.onchange = () => (this.wallThickness = Math.max(0.1, fromDisplay(parseFloat(wt.value) || 3.5)));
 
+    // drawing view mode (saved with the document)
+    const viewSel = document.getElementById("view-mode");
+    viewSel.onchange = () => {
+      this.doc.viewMode = viewSel.value;
+      this._save();
+      if (this.view3dOpen) { this.view3d.fit(); this.view3d.render(); }
+      this._toast(viewSel.value === "elevation" ? "Elevation view — canvas Y is height" : "Plan view — looking down");
+    };
+    this._syncViewMode = () => { viewSel.value = this.doc.viewMode || "plan"; };
+    this._syncViewMode();
+
     // units toggle (persisted separately from the document)
     const unitSel = document.getElementById("unit-mode");
     try { const su = localStorage.getItem("draftstudio.unit"); if (su) setUnitMode(su); } catch (e) {}
@@ -383,8 +396,26 @@ class App {
 
   // ---- materials list ----
   _openMaterials() {
-    const rows = buildMaterialsList(this.doc);
-    const hw = buildHardwareSuggestions(this.doc);
+    // Populate the step filter from whatever steps exist in the drawing.
+    const sel = document.getElementById("mat-step");
+    const max = this._maxStep();
+    const keep = sel.value;
+    sel.innerHTML = `<option value="">All steps</option>` +
+      Array.from({ length: max }, (_, i) => `<option value="${i + 1}">Step ${i + 1}</option>`).join("");
+    sel.value = keep && Number(keep) <= max ? keep : "";
+    sel.hidden = !max;
+    sel.parentElement.style.display = max ? "" : "none";
+    sel.onchange = () => this._renderMaterials();
+    this._renderMaterials();
+    document.getElementById("materials-modal").classList.remove("hidden");
+  }
+
+  _renderMaterials() {
+    const stepVal = document.getElementById("mat-step").value;
+    const onlyStep = stepVal ? Number(stepVal) : null;
+    const rows = buildMaterialsList(this.doc, onlyStep);
+    // Hardware is whole-project advice, so only show it on the full list.
+    const hw = onlyStep ? [] : buildHardwareSuggestions(this.doc);
     const host = document.getElementById("materials-list");
     host.innerHTML = "";
     const makeTable = (items) => {
@@ -405,7 +436,7 @@ class App {
       return table;
     };
     if (!rows.length) {
-      host.innerHTML = `<div class="projects-empty">Nothing to count yet — draw something first.</div>`;
+      host.innerHTML = `<div class="projects-empty">Nothing to count for this step yet.</div>`;
     } else {
       host.appendChild(makeTable(rows));
       if (hw.length) {
@@ -422,11 +453,16 @@ class App {
         host.appendChild(note);
       }
     }
-    document.getElementById("materials-modal").classList.remove("hidden");
   }
 
   async _copyMaterials() {
-    const text = materialsText(this.doc, buildMaterialsList(this.doc), buildHardwareSuggestions(this.doc));
+    const stepVal = document.getElementById("mat-step").value;
+    const onlyStep = stepVal ? Number(stepVal) : null;
+    const text = materialsText(
+      this.doc,
+      buildMaterialsList(this.doc, onlyStep),
+      onlyStep ? [] : buildHardwareSuggestions(this.doc)
+    );
     try {
       await navigator.clipboard.writeText(text);
       this._toast("Materials list copied");
@@ -621,6 +657,7 @@ class App {
       this.doc = Document.fromJSON(rec.doc || {});
       this.doc.name = rec.name || "Untitled";
       this.projectId = rec.id;
+      this._syncViewMode();
       this._buildLayers();
       this.refreshPanel();
       this._fit();
@@ -689,6 +726,7 @@ class App {
     reader.onload = () => {
       try {
         this.doc = Document.fromJSON(JSON.parse(reader.result));
+        this._syncViewMode();
         this._buildLayers();
         this.refreshPanel();
         this._fit();

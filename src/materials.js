@@ -11,7 +11,8 @@ const SHEET_MATERIALS = {
 };
 
 // Returns rows of { qty, item, detail }, sorted by item name.
-export function buildMaterialsList(doc) {
+// `onlyStep` (a number) narrows the list to a single build step.
+export function buildMaterialsList(doc, onlyStep = null) {
   const rows = [];
   const symGroups = new Map();   // symbol name+size -> qty
   const wallGroups = new Map();  // thickness -> { len, qty }
@@ -24,6 +25,7 @@ export function buildMaterialsList(doc) {
     if (!layer || !layer.visible) continue;
     if (s.type === "dimension" || s.type === "text") continue;
     if (s.existing) continue; // reference geometry isn't bought or built
+    if (onlyStep != null && (s.step || 0) !== onlyStep) continue;
     const m = shapeMetrics(s);
 
     if (s.type === "symbol") {
@@ -92,7 +94,7 @@ export function buildHardwareSuggestions(doc) {
   const out = [];
   let posts = 0, footings = 0, beamLen = 0, deckArea = 0, joistLayouts = 0;
 
-  const isPost = (id) => /^(post|4x4|6x6|4x4pt|6x6pt|pier)$/.test(id);
+  const isPost = (id) => /^(post|4x4|6x6|4x4pt|6x6pt|4x4elev|6x6elev|pier)$/.test(id);
   const isFooting = (id) => /^(footing|concpad|pier12)$/.test(id);
 
   for (const s of doc.shapes) {

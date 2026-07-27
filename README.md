@@ -68,9 +68,17 @@ also works for the drawing UI, but without cloud project storage.)
   grid step (Shift = ×12). Design parts to spec, not by eyeballing.
 - **Styling** — per-shape stroke color (palette, custom, or by-layer), fill
   (none / light / solid), line weight, and line style (solid / dashed / dotted).
-- **Editing tools** — Duplicate, Rotate (±90° or a typed angle), Mirror ↔/↕,
-  Copy/Paste, Align (6 edges) & Distribute, Offset (parallel copy), Lock/Unlock,
-  drag-to-move and vertex handles.
+- **Editing tools** — grab any **edge or corner handle to resize**, spin the
+  **rotate grip** at the corner (Shift snaps to 15°), plus Duplicate, Mirror
+  ↔/↕, Copy/Paste, Align (6 edges) & Distribute, Offset (parallel copy),
+  Lock/Unlock, drag-to-move and vertex handles on lines/polylines.
+- **Framing layout** — select any closed shape and fill it with evenly spaced
+  members: joists/studs at 12/16/24″ o.c., balusters at a 4″ gap, or deck
+  boards. They're real geometry, so they land in the materials list with their
+  true lengths.
+- **Drawing view (plan / elevation)** — tell it whether you're looking down or
+  from the side, and the 3D view extrudes the right way: plan drawings rise
+  upward, elevation drawings (a railing, a toolbox side) push back into depth.
 - **Live dimensions** — length + angle while drawing, segment lengths, area and
   perimeter on closed shapes, square footage.
 - **Snapping** — grid, endpoint/midpoint, and ortho lock (or hold Shift).
@@ -101,7 +109,8 @@ also works for the drawing UI, but without cloud project storage.)
   symbols counted by size, wall runs totaled, every cut piece with dimensions,
   sheet-goods estimated in 4×8 sheets. Includes **suggested hardware** (post
   bases, post caps, hurricane ties, anchors, screw counts) inferred from the
-  posts/beams/footings/decking in the drawing. Copy as text for the lumber run.
+  posts/beams/footings/decking in the drawing. Filter it to a **single build
+  step** ("what do I need on hand for step 3?") and copy as text for the run.
 - **Build steps** — give shapes a step number (1, 2, 3…) and play the build
   back with the ‹ › control in the status bar, in 2D and 3D — walk the whole
   assembly before making real-world mistakes.

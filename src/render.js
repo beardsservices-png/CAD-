@@ -2,8 +2,19 @@
 import { v, sub, len, angle, formatFeetInches, formatArea, arcThrough, roundedRectPoints } from "./geometry.js";
 import { shapePoints, shapeClosed, shapeBBox, shapeMetrics, lineWeightPx, dashArray, materialFor } from "./model.js";
 import { symbolById, drawSymbolDef } from "./symbols.js";
+import { screenHandles } from "./handles.js";
+
+// Rectangles of labels already drawn this frame, so measurement captions can
+// skip themselves rather than pile into an unreadable bar on dense layouts.
+let _labelRects = [];
+export function resetLabelRects() { _labelRects = []; }
+function labelOverlaps(r) {
+  return _labelRects.some((o) => !(r.x2 < o.x1 || r.x1 > o.x2 || r.y2 < o.y1 || r.y1 > o.y2));
+}
 
 // Draw a text label with a rounded background pill, centered at screen point.
+// With `opts.avoid`, the label is skipped when it would collide with one
+// already drawn (returns false so callers can tell).
 export function label(ctx, text, sx, sy, theme, opts = {}) {
   ctx.save();
   ctx.font = opts.font || "12px system-ui, sans-serif";
@@ -14,6 +25,11 @@ export function label(ctx, text, sx, sy, theme, opts = {}) {
   const h = 18;
   const x = sx - w / 2;
   const y = sy - h / 2;
+  if (opts.avoid) {
+    const rect = { x1: x - 2, y1: y - 2, x2: x + w + 2, y2: y + h + 2 };
+    if (labelOverlaps(rect)) { ctx.restore(); return false; }
+    _labelRects.push(rect);
+  }
   ctx.fillStyle = opts.bg || theme.labelBg;
   roundRect(ctx, x, y, w, h, 5);
   ctx.fill();
@@ -22,6 +38,7 @@ export function label(ctx, text, sx, sy, theme, opts = {}) {
   ctx.textBaseline = "middle";
   ctx.fillText(text, sx, sy + 0.5);
   ctx.restore();
+  return true;
 }
 
 function roundRect(ctx, x, y, w, h, r) {
@@ -50,6 +67,7 @@ function hiddenByStep(shape, doc) {
 }
 
 export function renderShapes(ctx, doc, vp, theme) {
+  resetLabelRects();
   for (const shape of doc.shapes) {
     const layer = doc.layer(shape.layer);
     if (!layer.visible) continue;
@@ -63,9 +81,61 @@ export function renderShapes(ctx, doc, vp, theme) {
     if (ref) ctx.restore();
   }
   // Selection handles drawn on top.
+  const ids = [...doc.selection];
+  const H = ids.length ? screenHandles(doc, ids, vp) : null;
   for (const shape of doc.shapes) {
-    if (doc.selection.has(shape.id) && !hiddenByStep(shape, doc)) drawHandles(ctx, shape, vp, theme);
+    if (!doc.selection.has(shape.id) || hiddenByStep(shape, doc)) continue;
+    // Vertex handles only where they're the right tool (lines/walls/polys).
+    if (!H || H.mode === "points" || shape.locked) drawHandles(ctx, shape, vp, theme);
   }
+  if (H) drawTransformHandles(ctx, H, theme);
+}
+
+// Bounding-box scale handles + the rotate grip outside the top-right corner.
+function drawTransformHandles(ctx, H, theme) {
+  ctx.save();
+  const { x0, y0, x1, y1 } = H.box;
+
+  if (H.mode === "bbox") {
+    ctx.strokeStyle = "rgba(37,99,235,0.55)";
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 3]);
+    ctx.strokeRect(x0, y0, x1 - x0, y1 - y0);
+    ctx.setLineDash([]);
+    ctx.fillStyle = "#fff";
+    ctx.strokeStyle = theme.selection;
+    ctx.lineWidth = 1.5;
+    for (const hd of H.scale) {
+      ctx.beginPath();
+      ctx.rect(hd.x - 4, hd.y - 4, 8, 8);
+      ctx.fill();
+      ctx.stroke();
+    }
+  }
+
+  // rotate grip: a circle with a curved arrow
+  const r = H.rotate;
+  ctx.beginPath();
+  ctx.arc(r.x, r.y, 8, 0, Math.PI * 2);
+  ctx.fillStyle = "#fff";
+  ctx.fill();
+  ctx.strokeStyle = theme.selection;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(r.x, r.y, 4.2, -Math.PI * 0.85, Math.PI * 0.55);
+  ctx.stroke();
+  // arrowhead on the arc's end
+  const a = Math.PI * 0.55;
+  const ax = r.x + Math.cos(a) * 4.2;
+  const ay = r.y + Math.sin(a) * 4.2;
+  ctx.beginPath();
+  ctx.moveTo(ax, ay);
+  ctx.lineTo(ax - 3.4, ay - 0.6);
+  ctx.moveTo(ax, ay);
+  ctx.lineTo(ax + 0.4, ay - 3.4);
+  ctx.stroke();
+  ctx.restore();
 }
 
 function drawShape(ctx, shape, vp, theme, color, selected) {
@@ -246,23 +316,31 @@ function drawSegmentLengths(ctx, shape, vp, theme) {
     const b = pts[(i + 1) % n];
     const l = len(sub(b, a));
     if (l < 1) continue;
+    // Skip labels too short to read on screen — keeps dense layouts (joists,
+    // balusters, deck boards) legible instead of a wall of tiny numbers.
+    if (l * vp.scale < 44) continue;
     const mid = vp.worldToScreen(v((a.x + b.x) / 2, (a.y + b.y) / 2));
     label(ctx, formatFeetInches(l), mid.x, mid.y, theme, {
       bg: theme.dimBg,
       color: theme.dimText,
       font: "11px system-ui, sans-serif",
+      avoid: true,
     });
   }
 }
 
 function drawAreaLabel(ctx, shape, vp, theme) {
   const b = shapeBBox(shape);
+  const wpx = (b.max.x - b.min.x) * vp.scale;
+  const hpx = (b.max.y - b.min.y) * vp.scale;
+  if (wpx < 56 || hpx < 26) return; // too small to caption cleanly
   const c = vp.worldToScreen(v((b.min.x + b.max.x) / 2, (b.min.y + b.max.y) / 2));
   const m = shapeMetrics(shape);
   label(ctx, formatArea(m.area), c.x, c.y, theme, {
     bg: theme.areaBg,
     color: theme.areaText,
     font: "12px system-ui, sans-serif",
+    avoid: true,
   });
 }
 
@@ -365,6 +443,7 @@ function drawSymbol(ctx, shape, vp, theme, stroke, selected) {
       bg: theme.labelBg,
       color: theme.labelText,
       font: "10px system-ui, sans-serif",
+      avoid: true,
     });
   }
   ctx.restore();

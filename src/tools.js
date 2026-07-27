@@ -19,6 +19,8 @@ import {
 } from "./model.js";
 import { label } from "./render.js";
 import { symbolById, drawSymbolDef } from "./symbols.js";
+import { screenHandles, selectionBounds, scaleAnchor, HANDLE_HIT, ROTATE_HIT } from "./handles.js";
+import { rotateSelection, scaleSelection } from "./transforms.js";
 
 // Apply ortho / angle-lock relative to an anchor point when appropriate.
 function maybeConstrain(anchor, pt, ev, settings) {
@@ -451,10 +453,45 @@ class SelectTool {
     this.vertexRef = null;
     this.marquee = null;
     this.moved = false;
+    this.rotCenter = null;
+    this.rotIds = null;
+    this.scaleId = null;
+    this.scaleIds = null;
+    this.scaleAnchorPt = null;
   }
   onDown(sp, ev, rawWorld) {
     const doc = this.app.doc;
-    const tolWorld = 8 / this.app.vp.scale;
+    const vp = this.app.vp;
+    const tolWorld = 8 / vp.scale;
+
+    // 0) transform handles (rotate grip, then bbox scale handles) — these sit
+    //    on top of everything, so test them first, in screen space.
+    if (doc.selection.size) {
+      const H = screenHandles(doc, [...doc.selection], vp);
+      if (H) {
+        const scr = vp.worldToScreen(rawWorld);
+        if (Math.hypot(scr.x - H.rotate.x, scr.y - H.rotate.y) <= ROTATE_HIT) {
+          const b = selectionBounds(doc, H.ids);
+          const c = v((b.min.x + b.max.x) / 2, (b.min.y + b.max.y) / 2);
+          doc.snapshot();
+          this.mode = "rotate";
+          this.rotCenter = c;
+          this.rotLast = angleDeg(sub(rawWorld, c));
+          this.rotIds = H.ids;
+          return;
+        }
+        for (const hd of H.scale) {
+          if (Math.hypot(scr.x - hd.x, scr.y - hd.y) <= HANDLE_HIT) {
+            doc.snapshot();
+            this.mode = "scale";
+            this.scaleId = hd.id;
+            this.scaleIds = H.ids;
+            this.scaleAnchorPt = scaleAnchor(selectionBounds(doc, H.ids), hd.id);
+            return;
+          }
+        }
+      }
+    }
 
     // 1) grab a vertex handle of an already-selected shape
     for (const id of doc.selection) {
@@ -520,6 +557,28 @@ class SelectTool {
         }
         shape.pts[this.vertexRef.index] = { ...np };
       }
+    } else if (this.mode === "rotate") {
+      // Spin the selection to follow the cursor; Shift snaps to 15°.
+      let ang = angleDeg(sub(rawWorld, this.rotCenter));
+      if (ev && ev.shiftKey) ang = Math.round(ang / 15) * 15;
+      const delta = ang - this.rotLast;
+      if (delta) {
+        rotateSelection(this.app.doc, this.rotIds, delta);
+        this.rotLast = ang;
+      }
+    } else if (this.mode === "scale") {
+      const doc = this.app.doc;
+      const b = selectionBounds(doc, this.scaleIds);
+      if (!b) return;
+      const a = this.scaleAnchorPt;
+      const curW = b.max.x - b.min.x, curH = b.max.y - b.min.y;
+      const id = this.scaleId;
+      let sx = 1, sy = 1;
+      if (id.includes("e") || id.includes("w")) sx = Math.abs(rawWorld.x - a.x) / (curW || 1);
+      if (id.includes("n") || id.includes("s")) sy = Math.abs(rawWorld.y - a.y) / (curH || 1);
+      // corner drags keep proportion with Shift
+      if (ev && ev.shiftKey && id.length === 2) { const k = Math.max(sx, sy); sx = k; sy = k; }
+      scaleSelection(doc, this.scaleIds, a, sx, sy);
     } else if (this.mode === "marquee") {
       this.marquee = {
         min: v(Math.min(this.start.x, rawWorld.x), Math.min(this.start.y, rawWorld.y)),

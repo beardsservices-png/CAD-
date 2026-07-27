@@ -183,6 +183,60 @@ export function setSegmentLength(shape, length) {
   shape.pts[shape.pts.length - 1] = v(a.x + (dx / l) * length, a.y + (dy / l) * length);
 }
 
+// Scale the selection away from a fixed `anchor` point. Bounding-box shapes
+// are re-normalised so their two stored points stay min/max ordered.
+export function scaleSelection(doc, ids, anchor, sx, sy) {
+  const cx = Math.max(0.001, sx);
+  const cy = Math.max(0.001, sy);
+  for (const id of ids) {
+    const s = doc.get(id);
+    if (!s || s.locked) continue;
+    s.pts = s.pts.map((p) => v(anchor.x + (p.x - anchor.x) * cx, anchor.y + (p.y - anchor.y) * cy));
+    if (s.pts.length === 2 && (s.type === "rect" || s.type === "circle" || s.type === "symbol")) {
+      const [a, b] = s.pts;
+      s.pts = [v(Math.min(a.x, b.x), Math.min(a.y, b.y)), v(Math.max(a.x, b.x), Math.max(a.y, b.y))];
+    }
+    if (s.type === "rect" && s.radius) s.radius *= (cx + cy) / 2;
+  }
+}
+
+// ---- framing layout ---------------------------------------------------------
+// Fill a closed shape's bounding box with evenly spaced members (joists,
+// studs, rafters) at a given on-centre spacing. Returns new shape objects —
+// real geometry with a lumber material, so they land in the materials list
+// with their true lengths.
+export function generateFraming(shape, opts = {}) {
+  const {
+    spacing = 16,      // inches on centre
+    thickness = 1.5,   // actual lumber thickness (2x = 1.5")
+    dir = "v",         // "v" = members run vertically, spaced left→right
+    layer = "structure",
+    material = "wood",
+  } = opts;
+  const b = shapeBBox(shape);
+  const w = b.max.x - b.min.x;
+  const h = b.max.y - b.min.y;
+  if (w <= 0 || h <= 0 || spacing <= 0) return [];
+
+  const span = dir === "v" ? w : h;
+  const count = Math.max(2, Math.floor(span / spacing) + 1);
+  const out = [];
+  for (let i = 0; i < count; i++) {
+    let at = i * spacing;
+    // keep the final member flush inside the far edge rather than overhanging
+    if (at + thickness > span) at = span - thickness;
+    if (at < 0) at = 0;
+    const pts = dir === "v"
+      ? [v(b.min.x + at, b.min.y), v(b.min.x + at + thickness, b.max.y)]
+      : [v(b.min.x, b.min.y + at), v(b.max.x, b.min.y + at + thickness)];
+    out.push(cloneShape({
+      id: "tmp", type: "rect", layer, material, pts, fill: "light",
+    }));
+    if (at === span - thickness) break; // reached the end
+  }
+  return out;
+}
+
 // ---- translation & positioning --------------------------------------------
 
 export function translateShapes(doc, ids, dx, dy) {

@@ -2,6 +2,7 @@
 // gestures, wheel (touchpad-aware), context hover, and auto-pan at edges.
 import { v, dist } from "../geometry.js";
 import { shapePoints } from "../model.js";
+import { screenHandles, cursorForHandle, HANDLE_HIT, ROTATE_HIT } from "../handles.js";
 import { positionDimInput } from "./keyboard.js";
 
 export function installPointer(app) {
@@ -147,15 +148,36 @@ function bindWheel(app) {
 function updateHover(app, world) {
   if (app.activeToolName !== "select" || app._dragging) { app.hoverId = null; return; }
   const tol = 8 / app.vp.scale;
-  let overHandle = false;
+
+  // transform handles take priority and set a direction-specific cursor
+  if (app.doc.selection.size) {
+    const H = screenHandles(app.doc, [...app.doc.selection], app.vp);
+    if (H) {
+      const scr = app.vp.worldToScreen(world);
+      if (Math.hypot(scr.x - H.rotate.x, scr.y - H.rotate.y) <= ROTATE_HIT) {
+        app.hoverId = null;
+        app.canvas.style.cursor = "grab";
+        return;
+      }
+      for (const hd of H.scale) {
+        if (Math.hypot(scr.x - hd.x, scr.y - hd.y) <= HANDLE_HIT) {
+          app.hoverId = null;
+          app.canvas.style.cursor = cursorForHandle(hd.id);
+          return;
+        }
+      }
+    }
+  }
+
+  let overVertex = false;
   for (const id of app.doc.selection) {
     const s = app.doc.get(id);
     if (!s || s.locked) continue;
-    if (shapePoints(s).some((p) => dist(world, p) <= tol)) { overHandle = true; break; }
+    if (shapePoints(s).some((p) => dist(world, p) <= tol)) { overVertex = true; break; }
   }
   const hit = app.doc.hitTest(world, tol);
   app.hoverId = hit ? hit.id : null;
-  app.canvas.style.cursor = overHandle ? "grab" : hit ? "move" : "default";
+  app.canvas.style.cursor = overVertex ? "grab" : hit ? "move" : "default";
 }
 
 // ---- auto-pan near screen edges while drawing -------------------------------

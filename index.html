@@ -54,7 +54,10 @@
         </div>
         <div class="modal-actions">
           <button id="btn-materials-copy" class="ghost primary">Copy as text</button>
-          <span class="muted">Counts reflect visible layers</span>
+          <label class="opt inline" style="margin:0">Step
+            <select id="mat-step"><option value="">All steps</option></select>
+          </label>
+          <span class="muted">Visible layers only</span>
         </div>
         <div id="materials-list" class="projects-list"></div>
       </div>
@@ -104,6 +107,12 @@
         <section>
           <h3>Settings</h3>
           <div class="card">
+            <label class="opt inline" title="Tells the 3D view which way you're looking, so thickness extrudes the right direction.">Drawing view
+              <select id="view-mode">
+                <option value="plan">Plan (from above)</option>
+                <option value="elevation">Elevation (from the side)</option>
+              </select>
+            </label>
             <label class="opt inline">Units
               <select id="unit-mode">
                 <option value="imperial">Imperial (ft/in)</option>
