@@ -95,7 +95,7 @@ export function buildMaterialsList(doc, onlyStep = null) {
 // hurricane ties, decking wants screws. Estimates only — check local code.
 export function buildHardwareSuggestions(doc) {
   const out = [];
-  let posts = 0, footings = 0, beamLen = 0, deckArea = 0, joistLayouts = 0, joists = 0;
+  let posts = 0, footings = 0, beamLen = 0, deckArea = 0, joistLayouts = 0, joists = 0, ledgers = 0;
 
   const isPost = (id) => /^(post|4x4|6x6|4x4pt|6x6pt|4x4elev|6x6elev|pier)$/.test(id);
   const isFooting = (id) => /^(footing|concpad|pier12)$/.test(id);
@@ -128,7 +128,8 @@ export function buildHardwareSuggestions(doc) {
       const b = shapeBBox(s);
       const long = Math.max(b.max.x - b.min.x, b.max.y - b.min.y);
       if (/\bpost\b|\bcolumn\b/.test(lab)) posts++;
-      else if (/\bbeam\b|\bheader\b|\bledger\b/.test(lab)) beamLen += long;
+      else if (/\bbeam\b|\bheader\b/.test(lab)) beamLen += long;
+      else if (/\bledger\b/.test(lab)) ledgers++;
       else if (/\bjoist\b|\brafter\b/.test(lab)) joists++;
       else if (/\bfooting\b|\bpier\b|\bpad\b/.test(lab)) footings++;
       else if (/\bdeck(ing)?\b/.test(lab)) deckArea += (b.max.x - b.min.x) * (b.max.y - b.min.y);
@@ -148,8 +149,10 @@ export function buildHardwareSuggestions(doc) {
     const seats = Math.max(2, Math.ceil(beamLen / 16));
     out.push({ qty: seats, item: "Hurricane tie / joist clip", detail: "est. one per 16″ o.c. seat along beams — verify with joist count" });
   }
-  if (joists > 0) {
-    out.push({ qty: joists, item: "Joist hanger (house side)", detail: "one per joist if hanging off a ledger rather than bearing on it" });
+  // Hangers only belong here when a ledger is actually drawn — joists that
+  // bear on a beam or tie into existing framing don't need them specced.
+  if (joists > 0 && ledgers > 0) {
+    out.push({ qty: joists, item: "Joist hanger (ledger side)", detail: "one per joist into the ledger" });
   }
   if (footings > 0) {
     out.push({ qty: footings, item: "J-bolt or wedge anchor", detail: "one per footing/pad" });
@@ -169,7 +172,8 @@ function metalRoofTrim(doc) {
   const out = [];
   let min = { x: Infinity, y: Infinity }, max = { x: -Infinity, y: -Infinity };
   let found = false;
-  let gutterLen = 0, downspouts = 0;
+  let gutterLen = 0, downspouts = 0, purlins = 0, panelW = 0, panelCount = 0;
+  let hidden = false, soffitLen = 0, soffitDepth = 0;
 
   for (const s of doc.shapes) {
     const layer = doc.layer(s.layer);
@@ -182,15 +186,26 @@ function metalRoofTrim(doc) {
       const b = shapeBBox(s);
       min.x = Math.min(min.x, b.min.x); min.y = Math.min(min.y, b.min.y);
       max.x = Math.max(max.x, b.max.x); max.y = Math.max(max.y, b.max.y);
+      panelW = Math.max(panelW, Math.min(b.max.x - b.min.x, b.max.y - b.min.y));
+      panelCount++;
       found = true;
+      // Concealed-fastener systems (snap-lock / clip standing seam) take clips
+      // and pancake screws instead of exposed washer-head screws.
+      if (/standing seam|snap.?lock|hidden|concealed|clip/.test(lab)) hidden = true;
     }
+    if (/skip board|purlin|batten|strapping/.test(lab)) purlins++;
     if (/gutter/.test(lab) && !/guard/.test(lab)) {
       const b = shapeBBox(s);
       gutterLen += Math.max(b.max.x - b.min.x, b.max.y - b.min.y);
     }
     if (/downspout/.test(lab)) downspouts++;
+    if (/soffit/.test(lab)) {
+      const b = shapeBBox(s);
+      soffitLen += Math.max(b.max.x - b.min.x, b.max.y - b.min.y);
+      soffitDepth = Math.max(soffitDepth, Math.min(b.max.x - b.min.x, b.max.y - b.min.y));
+    }
   }
-  if (!found) return out;
+  if (!found) return soffitAccessories(soffitLen, soffitDepth);
 
   const eave = max.x - min.x;   // along the eave
   const slope = max.y - min.y;  // up the slope (already slope length if drawn so)
@@ -199,16 +214,29 @@ function metalRoofTrim(doc) {
   const sticks = (inches) => Math.max(1, Math.ceil(ft(inches) / 10)); // 10 ft stock
   const lf = (inches) => `${ft(inches).toFixed(1)} lf`;
 
+  if (hidden) {
+    // Concealed-fastener (snap-lock / clip) standing seam.
+    const cover = panelW > 4 ? panelW : 16;      // panel coverage width
+    const seams = Math.max(2, Math.round(eave / cover) + 1);
+    const rows = purlins || Math.max(2, Math.round(ft(slope) / 2)); // clip rows
+    const clips = seams * rows;
+    out.push({ qty: sticks(eave), item: "Eave cleat (panels hem over it)", detail: `${lf(eave)} — standing seam hems to a cleat, not face-screwed` });
+    out.push({ qty: clips, item: "Concealed panel clip", detail: `${seams} seams × ${rows} purlin rows` });
+    out.push({ qty: clips * 2, item: "Pancake screw (clip to skip board)", detail: "2 per clip" });
+    out.push({ qty: sticks(eave), item: "Z-closure at headwall", detail: `${lf(eave)} — closes the panel top under the apron` });
+    out.push({ qty: sticks(eave), item: "Offset cleat at headwall", detail: `${lf(eave)} — anchors the panel top` });
+  } else {
+    out.push({ qty: Math.ceil((sqft / 100) * 80), item: "Panel screws w/ washer", detail: `~80 per square over ${Math.round(sqft)} sq ft` });
+    out.push({ qty: Math.ceil(ft(slope) * 2 * (eave / 36)), item: "Stitch screws (side laps)", detail: "~2 per ft of panel side lap" });
+    out.push({ qty: sticks(eave), item: "Outside closure strip", detail: `${lf(eave)} at the eave — fills under the ribs` });
+    out.push({ qty: sticks(eave), item: "Inside closure strip", detail: `${lf(eave)} at the headwall — fills over the flats` });
+  }
   out.push({ qty: sticks(eave), item: "Eave trim / drip edge (10 ft)", detail: `${lf(eave)} along the eave` });
   out.push({ qty: sticks(eave), item: "Fascia metal (10 ft)", detail: `${lf(eave)} over the wood fascia` });
   out.push({ qty: sticks(slope * 2), item: "Rake / gable trim (10 ft)", detail: `2 rakes × ${ft(slope).toFixed(1)} ft` });
   out.push({ qty: sticks(eave), item: "Headwall / apron flashing (10 ft)", detail: `${lf(eave)} where the roof meets the house` });
   out.push({ qty: 2, item: "Kickout flashing", detail: "one at each end where the roof edge meets the wall" });
-  out.push({ qty: sticks(eave), item: "Outside closure strip", detail: `${lf(eave)} at the eave — fills under the ribs` });
-  out.push({ qty: sticks(eave), item: "Inside closure strip", detail: `${lf(eave)} at the headwall — fills over the flats` });
-  out.push({ qty: Math.ceil(ft(eave * 2 + slope * 2) / 45), item: "Butyl sealant tape (45 ft roll)", detail: "closures, laps and flashing seams" });
-  out.push({ qty: Math.ceil((sqft / 100) * 80), item: "Panel screws w/ washer", detail: `~80 per square over ${Math.round(sqft)} sq ft` });
-  out.push({ qty: Math.ceil(ft(slope) * 2 * (eave / 36)), item: "Stitch screws (side laps)", detail: "~2 per ft of panel side lap" });
+  out.push({ qty: Math.ceil(ft(eave * 2 + slope * 2) / 45), item: "Butyl sealant tape (45 ft roll)", detail: "closures, cleats and flashing seams" });
   out.push({ qty: 1, item: "Touch-up paint / sealant", detail: "cut edges and fastener touch-ups" });
 
   if (gutterLen > 0) {
@@ -221,6 +249,25 @@ function metalRoofTrim(doc) {
     out.push({ qty: downspouts * 2, item: "Downspout strap", detail: "secures the downspout to the wall" });
     out.push({ qty: downspouts, item: "Downspout outlet / drop", detail: "gutter-to-downspout connection" });
   }
+  out.push(...soffitAccessories(soffitLen, soffitDepth));
+  return out;
+}
+
+// Vented soffit run: panels (alternating solid / perforated), channels, fixings.
+function soffitAccessories(len, depth) {
+  const out = [];
+  if (!len) return out;
+  const ft = (i) => i / 12;
+  const runFt = ft(len);
+  const sticks = (inches) => Math.max(1, Math.ceil(ft(inches) / 12)); // 12 ft channel
+  // Soffit panels are sold in 12 ft lengths, cut to the soffit depth.
+  const perPiece = Math.max(1, Math.floor(12 / Math.max(ft(depth) || 1.5, 0.5)));
+  const pieces = Math.ceil(runFt / 1.333 / perPiece) || 1; // 16" wide panels
+  out.push({ qty: Math.ceil(pieces / 2), item: "Soffit panel — SOLID (12 ft)", detail: `alternating with vented over ${runFt.toFixed(1)} lf` });
+  out.push({ qty: Math.ceil(pieces / 2), item: "Soffit panel — PERFORATED (12 ft)", detail: "alternating with solid for intake venting" });
+  out.push({ qty: sticks(len * 2), item: "J-channel (12 ft)", detail: `both edges of the soffit — ${(runFt * 2).toFixed(1)} lf` });
+  out.push({ qty: sticks(len), item: "F-channel (12 ft)", detail: "receives the panel at the fascia side" });
+  out.push({ qty: Math.ceil(runFt * 3), item: "Soffit / trim nails", detail: "~3 per foot of channel" });
   return out;
 }
 
