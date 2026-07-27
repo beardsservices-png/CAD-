@@ -1432,11 +1432,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": -4,
+          "x": 288,
           "y": 115.5
         },
         {
-          "x": 0,
+          "x": 292,
           "y": 120.5
         }
       ],
@@ -1452,11 +1452,11 @@
       "layer": "detail",
       "pts": [
         {
-          "x": 6,
+          "x": 78,
           "y": 130
         }
       ],
-      "text": "Gutter slopes LEFT → downspout at the house end",
+      "text": "Gutter slopes to the LEFT AS YOU FACE THE HOUSE  →  downspout at that end",
       "size": 10
     },
     {
