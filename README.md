@@ -122,6 +122,10 @@ also works for the drawing UI, but without cloud project storage.)
   line. It draws faded and dashed, is locked so it can't be nudged, and is
   excluded from the materials list, hardware suggestions, and takeoff — but it
   still **snaps**, so you can pull joists and layouts right off it.
+- **Quiet (no auto captions)** — tick it in Properties to drop the automatic
+  edge-length and area labels on a shape. Section details carry their own
+  dimensions and callouts, and the auto captions bury them; the shape still
+  measures, snaps and counts in the materials list exactly as before.
 - **Undo / redo**, autosave to the browser.
 - **Takeoff panel** — running totals of length, area, and object counts.
 

@@ -307,6 +307,7 @@ function outline(ctx, shape, vp, theme) {
 
 // Draw per-segment length labels at each segment midpoint.
 function drawSegmentLengths(ctx, shape, vp, theme) {
+  if (shape.quiet) return; // captions suppressed — see the `quiet` flag
   const pts = shapePoints(shape);
   const closed = shapeClosed(shape);
   const n = pts.length;
@@ -329,7 +330,12 @@ function drawSegmentLengths(ctx, shape, vp, theme) {
   }
 }
 
+// Some drawings caption themselves. On a section detail the automatic edge
+// lengths and areas are noise — the explicit dimensions and callouts are the
+// drawing. `quiet` turns the automatic captions off for a shape without
+// touching its geometry, so it still measures, snaps and counts as normal.
 function drawAreaLabel(ctx, shape, vp, theme) {
+  if (shape.quiet) return;
   const b = shapeBBox(shape);
   const wpx = (b.max.x - b.min.x) * vp.scale;
   const hpx = (b.max.y - b.min.y) * vp.scale;

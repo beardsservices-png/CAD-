@@ -1,0 +1,3269 @@
+{
+  "version": 1,
+  "name": "Snap-Lock Trim Details \u2014 Covered Patio",
+  "viewMode": "elevation",
+  "layers": [
+    {
+      "id": "deck",
+      "name": "Structure & Deck",
+      "color": "#a16207",
+      "visible": true
+    },
+    {
+      "id": "panel",
+      "name": "Roof Panels",
+      "color": "#0f766e",
+      "visible": true
+    },
+    {
+      "id": "trim",
+      "name": "Trim & Flashing",
+      "color": "#27272a",
+      "visible": true
+    },
+    {
+      "id": "seal",
+      "name": "Closures & Sealant",
+      "color": "#be123c",
+      "visible": true
+    },
+    {
+      "id": "fast",
+      "name": "Clips & Fasteners",
+      "color": "#b45309",
+      "visible": true
+    },
+    {
+      "id": "notes",
+      "name": "Notes & Leaders",
+      "color": "#334155",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#6d28d9",
+      "visible": true
+    }
+  ],
+  "activeLayer": "trim",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": -13.5
+        }
+      ],
+      "text": "DETAIL 1   EAVE \u2014 DRIP EDGE + PANEL HEM",
+      "size": 0.95
+    },
+    {
+      "id": "s2",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": -12.15
+        }
+      ],
+      "text": "SECTION, TRUE SCALE. Shown flat; the roof actually falls 2 in 12 to the left.",
+      "size": 0.34
+    },
+    {
+      "id": "s3",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": -12.95
+        },
+        {
+          "x": -0.44,
+          "y": -12.95
+        }
+      ],
+      "color": "#334155",
+      "weight": 1.5,
+      "quiet": true
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 1.5,
+          "y": 5.5
+        }
+      ],
+      "label": "2x6 fascia board",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 1.5,
+          "y": 0.0
+        },
+        {
+          "x": 30.0,
+          "y": 5.5
+        }
+      ],
+      "label": "2x6 joist",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -0.75
+        },
+        {
+          "x": 30.0,
+          "y": 0.0
+        }
+      ],
+      "label": "3/4\" T&G deck / ceiling",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s7",
+      "type": "line",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -0.88
+        },
+        {
+          "x": 30.0,
+          "y": -0.88
+        }
+      ],
+      "color": "#7c2d12",
+      "dash": "dashed",
+      "label": "high-temp underlayment",
+      "quiet": true
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 0.5,
+          "y": -1.63
+        },
+        {
+          "x": 4.0,
+          "y": -0.88
+        }
+      ],
+      "label": "1x4 skip board at the eave",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 24.5,
+          "y": -1.63
+        },
+        {
+          "x": 28.0,
+          "y": -0.88
+        }
+      ],
+      "label": "1x4 skip board",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s10",
+      "type": "polygon",
+      "layer": "trim",
+      "closed": false,
+      "pts": [
+        {
+          "x": 2.2,
+          "y": -1.7
+        },
+        {
+          "x": -0.06,
+          "y": -1.7
+        },
+        {
+          "x": -0.06,
+          "y": 4.55
+        },
+        {
+          "x": 0.6,
+          "y": 4.55
+        },
+        {
+          "x": 0.6,
+          "y": 3.15
+        }
+      ],
+      "label": "F15H556 fascia flat, 1.5\" hem x 5.5\"",
+      "color": "#27272a",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s11",
+      "type": "polygon",
+      "layer": "trim",
+      "closed": false,
+      "pts": [
+        {
+          "x": 4.9,
+          "y": -1.78
+        },
+        {
+          "x": -0.32,
+          "y": -1.78
+        },
+        {
+          "x": -0.8,
+          "y": 0.62
+        },
+        {
+          "x": -0.22,
+          "y": 0.62
+        },
+        {
+          "x": -0.22,
+          "y": 0.1
+        }
+      ],
+      "label": "SSDE6 standing seam drip edge",
+      "color": "#27272a",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s12",
+      "type": "polygon",
+      "layer": "panel",
+      "closed": false,
+      "pts": [
+        {
+          "x": 30.0,
+          "y": -1.86
+        },
+        {
+          "x": -0.62,
+          "y": -1.86
+        },
+        {
+          "x": -1.1,
+          "y": 0.95
+        },
+        {
+          "x": -0.46,
+          "y": 0.95
+        },
+        {
+          "x": -0.46,
+          "y": -0.05
+        }
+      ],
+      "label": "Snap-lock panel 26ga, hemmed at the eave",
+      "color": "#0f766e",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s13",
+      "type": "line",
+      "layer": "seal",
+      "pts": [
+        {
+          "x": -0.72,
+          "y": 0.3
+        },
+        {
+          "x": -0.44,
+          "y": 0.3
+        }
+      ],
+      "color": "#be123c",
+      "weight": 3.5,
+      "label": "butyl tape in the hem",
+      "quiet": true
+    },
+    {
+      "id": "s14",
+      "type": "line",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 1.4,
+          "y": -1.78
+        },
+        {
+          "x": 1.4,
+          "y": -0.8
+        }
+      ],
+      "color": "#b45309",
+      "weight": 2.5,
+      "label": "1\" wafer screw (WFS1MTW)",
+      "quiet": true
+    },
+    {
+      "id": "s15",
+      "type": "line",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 13.0,
+          "y": -1.78
+        },
+        {
+          "x": 13.0,
+          "y": -0.8
+        }
+      ],
+      "color": "#b45309",
+      "weight": 2.5,
+      "label": "1\" wafer screw (WFS1MTW)",
+      "quiet": true
+    },
+    {
+      "id": "s16",
+      "type": "line",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 25.5,
+          "y": -1.78
+        },
+        {
+          "x": 25.5,
+          "y": -0.8
+        }
+      ],
+      "color": "#b45309",
+      "weight": 2.5,
+      "label": "1\" wafer screw (WFS1MTW)",
+      "quiet": true
+    },
+    {
+      "id": "s17",
+      "type": "dimension",
+      "layer": "dims",
+      "pts": [
+        {
+          "x": 2.25,
+          "y": -7.2
+        },
+        {
+          "x": 26.25,
+          "y": -7.2
+        }
+      ]
+    },
+    {
+      "id": "s18",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 9.0,
+          "y": -7.9
+        }
+      ],
+      "text": "24\" o.c. \u2014 the skip boards set your clip spacing",
+      "size": 0.34
+    },
+    {
+      "id": "s19",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": -5.2
+        }
+      ],
+      "text": "PANEL EAVE HEM \u2014 no fasteners here",
+      "size": 0.38
+    },
+    {
+      "id": "s20",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": -4.633
+        }
+      ],
+      "text": "Cut the panel 1\" long. Fold that inch",
+      "size": 0.29
+    },
+    {
+      "id": "s21",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": -4.213
+        }
+      ],
+      "text": "UNDER with a hand seamer, then hook it",
+      "size": 0.29
+    },
+    {
+      "id": "s22",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": -3.793
+        }
+      ],
+      "text": "over the drip edge hem and press home.",
+      "size": 0.29
+    },
+    {
+      "id": "s23",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": -3.373
+        }
+      ],
+      "text": "Two hooks locked together is what holds",
+      "size": 0.29
+    },
+    {
+      "id": "s24",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": -2.953
+        }
+      ],
+      "text": "the eave down in wind.",
+      "size": 0.29
+    },
+    {
+      "id": "s25",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -6.0,
+          "y": -3.0
+        },
+        {
+          "x": -0.9,
+          "y": 0.6
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s26",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -0.95,
+          "y": 0.55
+        },
+        {
+          "x": -0.85,
+          "y": 0.65
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s27",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": 2.4
+        }
+      ],
+      "text": "F15H556 HEM FLAT \u2014 goes on FIRST",
+      "size": 0.38
+    },
+    {
+      "id": "s28",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": 2.967
+        }
+      ],
+      "text": "Covers the 2x6 fascia. Its 1.5\" hem",
+      "size": 0.29
+    },
+    {
+      "id": "s29",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": 3.387
+        }
+      ],
+      "text": "means no raw cut edge shows at the",
+      "size": 0.29
+    },
+    {
+      "id": "s30",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": 3.807
+        }
+      ],
+      "text": "bottom. Top flange lands on the deck",
+      "size": 0.29
+    },
+    {
+      "id": "s31",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15.0,
+          "y": 4.227
+        }
+      ],
+      "text": "and gets buried by the drip edge.",
+      "size": 0.29
+    },
+    {
+      "id": "s32",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -6.0,
+          "y": 3.4
+        },
+        {
+          "x": -0.06,
+          "y": 2.6
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s33",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -0.11,
+          "y": 2.55
+        },
+        {
+          "x": -0.01,
+          "y": 2.65
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s34",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 6.6,
+          "y": -5.0
+        }
+      ],
+      "text": "SSDE6 DRIP EDGE",
+      "size": 0.38
+    },
+    {
+      "id": "s35",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 6.6,
+          "y": -4.433
+        }
+      ],
+      "text": "Top flange screwed to the skip board,",
+      "size": 0.29
+    },
+    {
+      "id": "s36",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 6.6,
+          "y": -4.013
+        }
+      ],
+      "text": "1\" wafers at 12\" o.c. Outer edge is",
+      "size": 0.29
+    },
+    {
+      "id": "s37",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 6.6,
+          "y": -3.593
+        }
+      ],
+      "text": "hemmed and opens up-slope \u2014 that hem",
+      "size": 0.29
+    },
+    {
+      "id": "s38",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 6.6,
+          "y": -3.173
+        }
+      ],
+      "text": "is what the panel grabs.",
+      "size": 0.29
+    },
+    {
+      "id": "s39",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 6.4,
+          "y": -4.3
+        },
+        {
+          "x": 2.6,
+          "y": -1.78
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s40",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 2.55,
+          "y": -1.83
+        },
+        {
+          "x": 2.65,
+          "y": -1.73
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s41",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 6.6,
+          "y": 1.6
+        }
+      ],
+      "text": "Butyl tape in the hem is REQUIRED on this",
+      "size": 0.29,
+      "color": "#be123c"
+    },
+    {
+      "id": "s42",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 6.6,
+          "y": 2.02
+        }
+      ],
+      "text": "roof \u2014 2:12 is below the usual 3:12 minimum.",
+      "size": 0.29,
+      "color": "#be123c"
+    },
+    {
+      "id": "s43",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 6.4,
+          "y": 1.4
+        },
+        {
+          "x": -0.55,
+          "y": 0.45
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s44",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -0.6,
+          "y": 0.4
+        },
+        {
+          "x": -0.5,
+          "y": 0.5
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s45",
+      "type": "rect",
+      "layer": "trim",
+      "pts": [
+        {
+          "x": -5.2,
+          "y": 1.2
+        },
+        {
+          "x": -0.2,
+          "y": 6.2
+        }
+      ],
+      "existing": true,
+      "locked": true,
+      "label": "5\" K gutter (hangs on the fascia, under the drip edge)",
+      "quiet": true
+    },
+    {
+      "id": "s46",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -9.6,
+          "y": 8.0
+        }
+      ],
+      "text": "gutter hangs BELOW the drip edge lip",
+      "size": 0.34
+    },
+    {
+      "id": "s47",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 32.0,
+          "y": -13.5
+        }
+      ],
+      "text": "DETAIL 2   ENDWALL \u2014 WHERE THE ROOF MEETS THE HOUSE",
+      "size": 0.95
+    },
+    {
+      "id": "s48",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 32.0,
+          "y": -12.15
+        }
+      ],
+      "text": "SECTION, TRUE SCALE. Down-slope is to the left. Highest-risk joint on the job.",
+      "size": 0.34
+    },
+    {
+      "id": "s49",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 32.0,
+          "y": -12.95
+        },
+        {
+          "x": 52.8,
+          "y": -12.95
+        }
+      ],
+      "color": "#334155",
+      "weight": 1.5,
+      "quiet": true
+    },
+    {
+      "id": "s50",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 62.0,
+          "y": -22.0
+        },
+        {
+          "x": 66.5,
+          "y": 9.0
+        }
+      ],
+      "existing": true,
+      "locked": true,
+      "label": "EXISTING house wall",
+      "material": "drywall",
+      "fill": "light",
+      "quiet": true
+    },
+    {
+      "id": "s51",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 32.0,
+          "y": 0.0
+        },
+        {
+          "x": 62.0,
+          "y": 5.5
+        }
+      ],
+      "label": "2x6 joist",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s52",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 32.0,
+          "y": -0.75
+        },
+        {
+          "x": 62.0,
+          "y": 0.0
+        }
+      ],
+      "label": "3/4\" T&G deck",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s53",
+      "type": "polygon",
+      "layer": "deck",
+      "closed": false,
+      "pts": [
+        {
+          "x": 32.0,
+          "y": -0.88
+        },
+        {
+          "x": 61.9,
+          "y": -0.88
+        },
+        {
+          "x": 61.9,
+          "y": -8.0
+        }
+      ],
+      "color": "#7c2d12",
+      "dash": "dashed",
+      "label": "underlayment, turned up the wall",
+      "quiet": true
+    },
+    {
+      "id": "s54",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 57.8,
+          "y": -1.63
+        },
+        {
+          "x": 61.3,
+          "y": -0.88
+        }
+      ],
+      "label": "1x4 skip board at the headwall",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s55",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 33.8,
+          "y": -1.63
+        },
+        {
+          "x": 37.3,
+          "y": -0.88
+        }
+      ],
+      "label": "1x4 skip board",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s56",
+      "type": "polygon",
+      "layer": "panel",
+      "closed": false,
+      "pts": [
+        {
+          "x": 32.0,
+          "y": -1.86
+        },
+        {
+          "x": 59.3,
+          "y": -1.86
+        },
+        {
+          "x": 59.3,
+          "y": -2.9
+        }
+      ],
+      "label": "Panel \u2014 upper end turned up 1\"",
+      "color": "#0f766e",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s57",
+      "type": "polygon",
+      "layer": "trim",
+      "closed": false,
+      "pts": [
+        {
+          "x": 61.5,
+          "y": -1.72
+        },
+        {
+          "x": 59.45,
+          "y": -1.72
+        },
+        {
+          "x": 59.45,
+          "y": -3.05
+        },
+        {
+          "x": 57.0,
+          "y": -3.05
+        }
+      ],
+      "label": "SS1Z6 1\" Z closure at the headwall",
+      "color": "#27272a",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s58",
+      "type": "rect",
+      "layer": "seal",
+      "pts": [
+        {
+          "x": 58.1,
+          "y": -2.85
+        },
+        {
+          "x": 59.15,
+          "y": -1.88
+        }
+      ],
+      "fill": "light",
+      "color": "#be123c",
+      "label": "EFC1925 expanding foam closure 1\"",
+      "quiet": true
+    },
+    {
+      "id": "s59",
+      "type": "polygon",
+      "layer": "trim",
+      "closed": false,
+      "pts": [
+        {
+          "x": 61.98,
+          "y": -14.0
+        },
+        {
+          "x": 61.98,
+          "y": -3.35
+        },
+        {
+          "x": 55.8,
+          "y": -3.35
+        },
+        {
+          "x": 55.4,
+          "y": -2.7
+        },
+        {
+          "x": 55.95,
+          "y": -2.7
+        }
+      ],
+      "label": "SSEW6 endwall / apron flashing",
+      "color": "#27272a",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s60",
+      "type": "line",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 60.4,
+          "y": -1.72
+        },
+        {
+          "x": 60.4,
+          "y": -0.8
+        }
+      ],
+      "color": "#b45309",
+      "weight": 2.5,
+      "label": "1\" wafer screw through the Z into the skip board",
+      "quiet": true
+    },
+    {
+      "id": "s61",
+      "type": "line",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 57.8,
+          "y": -3.05
+        },
+        {
+          "x": 57.8,
+          "y": -3.35
+        }
+      ],
+      "color": "#b45309",
+      "weight": 2.5,
+      "label": "rivet, endwall to Z",
+      "quiet": true
+    },
+    {
+      "id": "s62",
+      "type": "dimension",
+      "layer": "dims",
+      "pts": [
+        {
+          "x": 63.2,
+          "y": -14.0
+        },
+        {
+          "x": 63.2,
+          "y": -3.35
+        }
+      ]
+    },
+    {
+      "id": "s63",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 63.8,
+          "y": -8.8
+        }
+      ],
+      "text": "6\" min. up the wall",
+      "size": 0.34
+    },
+    {
+      "id": "s64",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -8.4
+        }
+      ],
+      "text": "PANEL TURN-UP \u2014 1\", the first dam",
+      "size": 0.38
+    },
+    {
+      "id": "s65",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -7.833
+        }
+      ],
+      "text": "Cut the panel 1\" long at the top and bend",
+      "size": 0.29
+    },
+    {
+      "id": "s66",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -7.413
+        }
+      ],
+      "text": "the end straight up with a turn-up tool.",
+      "size": 0.29
+    },
+    {
+      "id": "s67",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -6.993
+        }
+      ],
+      "text": "This is what stops wind-driven water from",
+      "size": 0.29
+    },
+    {
+      "id": "s68",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -6.573
+        }
+      ],
+      "text": "running back down under the panel.",
+      "size": 0.29
+    },
+    {
+      "id": "s69",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": -6.6
+        },
+        {
+          "x": 59.3,
+          "y": -2.45
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s70",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 59.25,
+          "y": -2.5
+        },
+        {
+          "x": 59.35,
+          "y": -2.4
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s71",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -5.0
+        }
+      ],
+      "text": "EFC1925 FOAM CLOSURE \u2014 check this one",
+      "size": 0.38,
+      "color": "#be123c"
+    },
+    {
+      "id": "s72",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -4.433
+        }
+      ],
+      "text": "Seats in front of the Z leg. Only 2 pcs were",
+      "size": 0.29,
+      "color": "#be123c"
+    },
+    {
+      "id": "s73",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -4.013
+        }
+      ],
+      "text": "ordered (~38 in total); a 24 ft headwall wants",
+      "size": 0.29,
+      "color": "#be123c"
+    },
+    {
+      "id": "s74",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -3.593
+        }
+      ],
+      "text": "the whole run. Call the supplier before you",
+      "size": 0.29,
+      "color": "#be123c"
+    },
+    {
+      "id": "s75",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 33.0,
+          "y": -3.173
+        }
+      ],
+      "text": "start \u2014 this is the piece to get right.",
+      "size": 0.29,
+      "color": "#be123c"
+    },
+    {
+      "id": "s76",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": -3.2
+        },
+        {
+          "x": 58.6,
+          "y": -2.4
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s77",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 58.55,
+          "y": -2.45
+        },
+        {
+          "x": 58.65,
+          "y": -2.35
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s78",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -6.2
+        }
+      ],
+      "text": "SS1Z6 \u2014 1\" Z CLOSURE",
+      "size": 0.38
+    },
+    {
+      "id": "s79",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -5.633
+        }
+      ],
+      "text": "Bottom flange screws to the SKIP BOARD,",
+      "size": 0.29
+    },
+    {
+      "id": "s80",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -5.213
+        }
+      ],
+      "text": "never through the panel. Leg stands up",
+      "size": 0.29
+    },
+    {
+      "id": "s81",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -4.793
+        }
+      ],
+      "text": "behind the turn-up as a second dam. Top",
+      "size": 0.29
+    },
+    {
+      "id": "s82",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -4.373
+        }
+      ],
+      "text": "flange gives the endwall metal a landing.",
+      "size": 0.29
+    },
+    {
+      "id": "s83",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.4,
+          "y": -5.4
+        },
+        {
+          "x": 60.2,
+          "y": -1.72
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s84",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.15,
+          "y": -1.77
+        },
+        {
+          "x": 60.25,
+          "y": -1.67
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s85",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -2.4
+        }
+      ],
+      "text": "SSEW6 ENDWALL FLASHING",
+      "size": 0.38
+    },
+    {
+      "id": "s86",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -1.833
+        }
+      ],
+      "text": "Vertical leg runs at least 6\" up the wall,",
+      "size": 0.29
+    },
+    {
+      "id": "s87",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -1.413
+        }
+      ],
+      "text": "tucked BEHIND the housewrap and siding.",
+      "size": 0.29
+    },
+    {
+      "id": "s88",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -0.993
+        }
+      ],
+      "text": "Never caulk it to the face of the siding.",
+      "size": 0.29
+    },
+    {
+      "id": "s89",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.6,
+          "y": -0.573
+        }
+      ],
+      "text": "Roof leg lands on the Z over butyl tape.",
+      "size": 0.29
+    },
+    {
+      "id": "s90",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 64.4,
+          "y": -1.6
+        },
+        {
+          "x": 58.5,
+          "y": -3.35
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s91",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 58.45,
+          "y": -3.4
+        },
+        {
+          "x": 58.55,
+          "y": -3.3
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s92",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 122.0,
+          "y": -13.5
+        }
+      ],
+      "text": "DETAIL 3   RAKE \u2014 THE GABLE EDGE",
+      "size": 0.95
+    },
+    {
+      "id": "s93",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 122.0,
+          "y": -12.15
+        }
+      ],
+      "text": "SECTION cut across the panels, TRUE SCALE. Roof field is to the right.",
+      "size": 0.34
+    },
+    {
+      "id": "s94",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 122.0,
+          "y": -12.95
+        },
+        {
+          "x": 133.0,
+          "y": -12.95
+        }
+      ],
+      "color": "#334155",
+      "weight": 1.5,
+      "quiet": true
+    },
+    {
+      "id": "s95",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 124.0,
+          "y": 0.0
+        },
+        {
+          "x": 125.5,
+          "y": 5.5
+        }
+      ],
+      "label": "2x6 rake board",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s96",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 125.5,
+          "y": 0.0
+        },
+        {
+          "x": 144.0,
+          "y": 5.5
+        }
+      ],
+      "label": "outer 2x6 joist",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s97",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 124.0,
+          "y": -0.75
+        },
+        {
+          "x": 144.0,
+          "y": 0.0
+        }
+      ],
+      "label": "3/4\" T&G deck",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s98",
+      "type": "line",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 124.0,
+          "y": -0.88
+        },
+        {
+          "x": 144.0,
+          "y": -0.88
+        }
+      ],
+      "color": "#7c2d12",
+      "dash": "dashed",
+      "label": "underlayment",
+      "quiet": true
+    },
+    {
+      "id": "s99",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": 124.4,
+          "y": -1.63
+        },
+        {
+          "x": 127.9,
+          "y": -0.88
+        }
+      ],
+      "label": "1x4 skip board (cut)",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s100",
+      "type": "polygon",
+      "layer": "panel",
+      "closed": false,
+      "pts": [
+        {
+          "x": 144.0,
+          "y": -1.86
+        },
+        {
+          "x": 125.6,
+          "y": -1.86
+        },
+        {
+          "x": 125.6,
+          "y": -2.82
+        }
+      ],
+      "label": "Last panel, cut to width, edge turned up 1\"",
+      "color": "#0f766e",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s101",
+      "type": "polygon",
+      "layer": "trim",
+      "closed": false,
+      "pts": [
+        {
+          "x": 127.7,
+          "y": -1.72
+        },
+        {
+          "x": 125.3,
+          "y": -1.72
+        },
+        {
+          "x": 125.3,
+          "y": -3.05
+        },
+        {
+          "x": 124.25,
+          "y": -3.05
+        }
+      ],
+      "label": "SS1Z6 1\" Z used as a rake cleat",
+      "color": "#27272a",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s102",
+      "type": "polygon",
+      "layer": "trim",
+      "closed": false,
+      "pts": [
+        {
+          "x": 129.2,
+          "y": -2.45
+        },
+        {
+          "x": 129.2,
+          "y": -3.2
+        },
+        {
+          "x": 123.68,
+          "y": -3.2
+        },
+        {
+          "x": 123.68,
+          "y": 4.45
+        },
+        {
+          "x": 124.34,
+          "y": 4.45
+        },
+        {
+          "x": 124.34,
+          "y": 3.05
+        }
+      ],
+      "label": "SSRK6 rake trim",
+      "color": "#27272a",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s103",
+      "type": "line",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 126.9,
+          "y": -1.72
+        },
+        {
+          "x": 126.9,
+          "y": -0.85
+        }
+      ],
+      "color": "#b45309",
+      "weight": 2.5,
+      "label": "1\" wafer screw, Z cleat to deck",
+      "quiet": true
+    },
+    {
+      "id": "s104",
+      "type": "line",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 124.8,
+          "y": -3.2
+        },
+        {
+          "x": 124.8,
+          "y": -3.05
+        }
+      ],
+      "color": "#b45309",
+      "weight": 2.5,
+      "label": "rivet, rake trim into the Z, 16\" o.c.",
+      "quiet": true
+    },
+    {
+      "id": "s105",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -8.0
+        }
+      ],
+      "text": "ORDER OF ASSEMBLY, BOTTOM UP",
+      "size": 0.38
+    },
+    {
+      "id": "s106",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -7.433
+        }
+      ],
+      "text": "1.  Cut the last panel to width, turn the cut edge up 1\".",
+      "size": 0.29
+    },
+    {
+      "id": "s107",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -7.013
+        }
+      ],
+      "text": "2.  Z cleat screwed to the deck just OUTBOARD of that",
+      "size": 0.29
+    },
+    {
+      "id": "s108",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -6.593
+        }
+      ],
+      "text": "     turn-up: leg up, top flange toward the rake edge.",
+      "size": 0.29
+    },
+    {
+      "id": "s109",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -6.173
+        }
+      ],
+      "text": "3.  Rake trim drops over and is riveted DOWN into the",
+      "size": 0.29
+    },
+    {
+      "id": "s110",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -5.753
+        }
+      ],
+      "text": "     Z's top flange \u2014 the face of the rake stays clean.",
+      "size": 0.29
+    },
+    {
+      "id": "s111",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -5.333
+        }
+      ],
+      "text": "4.  Hemmed bottom edge closes off the 2x6 rake board.",
+      "size": 0.29
+    },
+    {
+      "id": "s112",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 130.8,
+          "y": -5.0
+        },
+        {
+          "x": 126.4,
+          "y": -3.2
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s113",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 126.35,
+          "y": -3.25
+        },
+        {
+          "x": 126.45,
+          "y": -3.15
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s114",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -2.2
+        }
+      ],
+      "text": "The rake trim covers about 1\" of panel. On an 18-panel",
+      "size": 0.29,
+      "color": "#be123c"
+    },
+    {
+      "id": "s115",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -1.78
+        }
+      ],
+      "text": "exact fit, that hidden inch at each rake is your ONLY",
+      "size": 0.29,
+      "color": "#be123c"
+    },
+    {
+      "id": "s116",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 131.0,
+          "y": -1.36
+        }
+      ],
+      "text": "tolerance \u2014 roughly 2 in total across 24 ft.",
+      "size": 0.29,
+      "color": "#be123c"
+    },
+    {
+      "id": "s117",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 34.5
+        }
+      ],
+      "text": "DETAIL 4   THE SNAP-LOCK SEAM + CONCEALED CLIP",
+      "size": 0.95
+    },
+    {
+      "id": "s118",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 35.85
+        }
+      ],
+      "text": "SECTION across two panels at a skip board, TRUE SCALE.",
+      "size": 0.34
+    },
+    {
+      "id": "s119",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 35.05
+        },
+        {
+          "x": 6.2,
+          "y": 35.05
+        }
+      ],
+      "color": "#334155",
+      "weight": 1.5,
+      "quiet": true
+    },
+    {
+      "id": "s120",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 44.0
+        },
+        {
+          "x": 20.0,
+          "y": 44.75
+        }
+      ],
+      "label": "1x4 skip board (seen in length)",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s121",
+      "type": "rect",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 44.75
+        },
+        {
+          "x": 20.0,
+          "y": 45.5
+        }
+      ],
+      "label": "3/4\" T&G deck",
+      "material": "wood",
+      "fill": "light",
+      "color": "#a16207",
+      "quiet": true
+    },
+    {
+      "id": "s122",
+      "type": "line",
+      "layer": "deck",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 44.68
+        },
+        {
+          "x": 20.0,
+          "y": 44.68
+        }
+      ],
+      "color": "#7c2d12",
+      "dash": "dashed",
+      "label": "underlayment",
+      "quiet": true
+    },
+    {
+      "id": "s123",
+      "type": "polygon",
+      "layer": "panel",
+      "closed": false,
+      "pts": [
+        {
+          "x": -11.5,
+          "y": 43.94
+        },
+        {
+          "x": -0.62,
+          "y": 43.94
+        },
+        {
+          "x": -0.62,
+          "y": 42.94
+        },
+        {
+          "x": -0.28,
+          "y": 42.84
+        },
+        {
+          "x": -0.28,
+          "y": 43.24
+        }
+      ],
+      "label": "Panel A \u2014 male leg",
+      "color": "#0f766e",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s124",
+      "type": "polygon",
+      "layer": "panel",
+      "closed": false,
+      "pts": [
+        {
+          "x": 19.5,
+          "y": 43.94
+        },
+        {
+          "x": 0.36,
+          "y": 43.94
+        },
+        {
+          "x": 0.36,
+          "y": 42.68
+        },
+        {
+          "x": -0.78,
+          "y": 42.68
+        },
+        {
+          "x": -0.78,
+          "y": 43.44
+        },
+        {
+          "x": -0.5,
+          "y": 43.58
+        }
+      ],
+      "label": "Panel B \u2014 female leg",
+      "color": "#0f766e",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s125",
+      "type": "polygon",
+      "layer": "fast",
+      "closed": false,
+      "pts": [
+        {
+          "x": -2.4,
+          "y": 43.98
+        },
+        {
+          "x": -0.72,
+          "y": 43.98
+        },
+        {
+          "x": -0.72,
+          "y": 42.88
+        },
+        {
+          "x": -0.34,
+          "y": 42.76
+        },
+        {
+          "x": -0.34,
+          "y": 43.12
+        }
+      ],
+      "label": "Concealed clip",
+      "color": "#b45309",
+      "weight": 2.2,
+      "quiet": true
+    },
+    {
+      "id": "s126",
+      "type": "line",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": -1.6,
+          "y": 43.98
+        },
+        {
+          "x": -1.6,
+          "y": 44.8
+        }
+      ],
+      "color": "#b45309",
+      "weight": 2.5,
+      "label": "1\" wafer screw (WFS1MTW) through clip into skip board",
+      "quiet": true
+    },
+    {
+      "id": "s127",
+      "type": "dimension",
+      "layer": "dims",
+      "pts": [
+        {
+          "x": -0.62,
+          "y": 42.94
+        },
+        {
+          "x": -0.62,
+          "y": 43.94
+        }
+      ]
+    },
+    {
+      "id": "s128",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -2.6,
+          "y": 43.35
+        }
+      ],
+      "text": "1\" seam",
+      "size": 0.34
+    },
+    {
+      "id": "s129",
+      "type": "dimension",
+      "layer": "dims",
+      "pts": [
+        {
+          "x": 0.36,
+          "y": 47.0
+        },
+        {
+          "x": 16.36,
+          "y": 47.0
+        }
+      ]
+    },
+    {
+      "id": "s130",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 5.6,
+          "y": 47.9
+        }
+      ],
+      "text": "16\" net coverage  |  18 panels = 288\" = 24'-0\" exactly",
+      "size": 0.34
+    },
+    {
+      "id": "s131",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -11.5,
+          "y": 37.6
+        }
+      ],
+      "text": "HOW THE SEAM LOCKS",
+      "size": 0.38
+    },
+    {
+      "id": "s132",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -11.5,
+          "y": 38.167
+        }
+      ],
+      "text": "1.  Panel A is set; its MALE leg stands 1\" tall.",
+      "size": 0.29
+    },
+    {
+      "id": "s133",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -11.5,
+          "y": 38.587
+        }
+      ],
+      "text": "2.  A clip hooks over that male leg at every skip",
+      "size": 0.29
+    },
+    {
+      "id": "s134",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -11.5,
+          "y": 39.007
+        }
+      ],
+      "text": "     board and takes one 1\" wafer screw.",
+      "size": 0.29
+    },
+    {
+      "id": "s135",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 5.6,
+          "y": 37.6
+        }
+      ],
+      "text": "3.  Panel B's FEMALE leg comes down over both and",
+      "size": 0.29
+    },
+    {
+      "id": "s136",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 5.6,
+          "y": 38.02
+        }
+      ],
+      "text": "     you walk the seam closed with your palm. It SNAPS \u2014",
+      "size": 0.29
+    },
+    {
+      "id": "s137",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 5.6,
+          "y": 38.44
+        }
+      ],
+      "text": "     listen for it, the whole length, top to bottom.",
+      "size": 0.29
+    },
+    {
+      "id": "s138",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 5.6,
+          "y": 38.86
+        }
+      ],
+      "text": "4.  Nothing penetrates a panel anywhere in the field.",
+      "size": 0.29
+    },
+    {
+      "id": "s139",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -4.0,
+          "y": 39.4
+        },
+        {
+          "x": -1.4,
+          "y": 43.1
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s140",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -1.45,
+          "y": 43.05
+        },
+        {
+          "x": -1.35,
+          "y": 43.15
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s141",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 5.4,
+          "y": 39.4
+        },
+        {
+          "x": -0.6,
+          "y": 42.8
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s142",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -0.65,
+          "y": 42.75
+        },
+        {
+          "x": -0.55,
+          "y": 42.85
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s143",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 34.5
+        }
+      ],
+      "text": "DETAIL 5   TRIM END LAP",
+      "size": 0.95
+    },
+    {
+      "id": "s144",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 35.85
+        }
+      ],
+      "text": "ELEVATION \u2014 how two 10'2\" sticks of trim join. TRUE SCALE.",
+      "size": 0.34
+    },
+    {
+      "id": "s145",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 35.05
+        },
+        {
+          "x": 71.0,
+          "y": 35.05
+        }
+      ],
+      "color": "#334155",
+      "weight": 1.5,
+      "quiet": true
+    },
+    {
+      "id": "s146",
+      "type": "rect",
+      "layer": "trim",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 44.0
+        },
+        {
+          "x": 86.0,
+          "y": 49.0
+        }
+      ],
+      "color": "#27272a",
+      "weight": 2.2,
+      "label": "trim stick \u2014 DOWN-slope, goes on first",
+      "quiet": true
+    },
+    {
+      "id": "s147",
+      "type": "rect",
+      "layer": "trim",
+      "pts": [
+        {
+          "x": 80.0,
+          "y": 43.65
+        },
+        {
+          "x": 106.0,
+          "y": 48.65
+        }
+      ],
+      "color": "#27272a",
+      "weight": 2.2,
+      "fill": "light",
+      "label": "trim stick \u2014 UP-slope, laps OVER",
+      "quiet": true
+    },
+    {
+      "id": "s148",
+      "type": "rect",
+      "layer": "seal",
+      "pts": [
+        {
+          "x": 80.0,
+          "y": 43.65
+        },
+        {
+          "x": 86.0,
+          "y": 48.65
+        }
+      ],
+      "fill": "light",
+      "color": "#be123c",
+      "label": "butyl tape, full width of the lap",
+      "quiet": true
+    },
+    {
+      "id": "s149",
+      "type": "circle",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 81.27,
+          "y": 44.77
+        },
+        {
+          "x": 81.53,
+          "y": 45.03
+        }
+      ],
+      "color": "#b45309",
+      "fill": "solid",
+      "label": "rivet",
+      "quiet": true
+    },
+    {
+      "id": "s150",
+      "type": "circle",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 81.27,
+          "y": 47.37
+        },
+        {
+          "x": 81.53,
+          "y": 47.63
+        }
+      ],
+      "color": "#b45309",
+      "fill": "solid",
+      "label": "rivet",
+      "quiet": true
+    },
+    {
+      "id": "s151",
+      "type": "circle",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 82.87,
+          "y": 44.77
+        },
+        {
+          "x": 83.13,
+          "y": 45.03
+        }
+      ],
+      "color": "#b45309",
+      "fill": "solid",
+      "label": "rivet",
+      "quiet": true
+    },
+    {
+      "id": "s152",
+      "type": "circle",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 82.87,
+          "y": 47.37
+        },
+        {
+          "x": 83.13,
+          "y": 47.63
+        }
+      ],
+      "color": "#b45309",
+      "fill": "solid",
+      "label": "rivet",
+      "quiet": true
+    },
+    {
+      "id": "s153",
+      "type": "circle",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 84.47,
+          "y": 44.77
+        },
+        {
+          "x": 84.73,
+          "y": 45.03
+        }
+      ],
+      "color": "#b45309",
+      "fill": "solid",
+      "label": "rivet",
+      "quiet": true
+    },
+    {
+      "id": "s154",
+      "type": "circle",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 84.47,
+          "y": 47.37
+        },
+        {
+          "x": 84.73,
+          "y": 47.63
+        }
+      ],
+      "color": "#b45309",
+      "fill": "solid",
+      "label": "rivet",
+      "quiet": true
+    },
+    {
+      "id": "s155",
+      "type": "dimension",
+      "layer": "dims",
+      "pts": [
+        {
+          "x": 80.0,
+          "y": 50.6
+        },
+        {
+          "x": 86.0,
+          "y": 50.6
+        }
+      ]
+    },
+    {
+      "id": "s156",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 81.6,
+          "y": 51.4
+        }
+      ],
+      "text": "6\" lap",
+      "size": 0.34
+    },
+    {
+      "id": "s157",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 37.4
+        }
+      ],
+      "text": "RULES FOR EVERY LAP ON THIS ROOF",
+      "size": 0.38
+    },
+    {
+      "id": "s158",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 37.967
+        }
+      ],
+      "text": "-  The UP-SLOPE piece always laps OVER the down-slope piece.",
+      "size": 0.29
+    },
+    {
+      "id": "s159",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 38.387
+        }
+      ],
+      "text": "    Running water must never meet an upstream edge.",
+      "size": 0.29
+    },
+    {
+      "id": "s160",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 38.807
+        }
+      ],
+      "text": "-  6\" lap minimum, butyl tape the full width of the lap.",
+      "size": 0.29
+    },
+    {
+      "id": "s161",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 53.4
+        }
+      ],
+      "text": "-  Two rivets top, two bottom, through both layers.",
+      "size": 0.29
+    },
+    {
+      "id": "s162",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 53.82
+        }
+      ],
+      "text": "-  Notch the hem back 1\" on the covering piece so the two",
+      "size": 0.29
+    },
+    {
+      "id": "s163",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 54.24
+        }
+      ],
+      "text": "    hems nest instead of fighting each other.",
+      "size": 0.29
+    },
+    {
+      "id": "s164",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 54.66
+        }
+      ],
+      "text": "-  3 sticks of 10'2\" across 24 ft leaves 6'6\" for laps and waste.",
+      "size": 0.29
+    },
+    {
+      "id": "s165",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 60.0,
+          "y": 55.08
+        }
+      ],
+      "text": "    Mark both lap positions BEFORE you cut anything.",
+      "size": 0.29
+    },
+    {
+      "id": "s166",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 118.0,
+          "y": 34.5
+        }
+      ],
+      "text": "DETAIL 6   EAVE / RAKE CORNER",
+      "size": 0.95
+    },
+    {
+      "id": "s167",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 118.0,
+          "y": 35.85
+        }
+      ],
+      "text": "PLAN \u2014 the order the pieces stack. Never improvise this corner.",
+      "size": 0.34
+    },
+    {
+      "id": "s168",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 118.0,
+          "y": 35.05
+        },
+        {
+          "x": 129.0,
+          "y": 35.05
+        }
+      ],
+      "color": "#334155",
+      "weight": 1.5,
+      "quiet": true
+    },
+    {
+      "id": "s169",
+      "type": "rect",
+      "layer": "trim",
+      "pts": [
+        {
+          "x": 118.0,
+          "y": 44.0
+        },
+        {
+          "x": 144.0,
+          "y": 47.2
+        }
+      ],
+      "color": "#27272a",
+      "weight": 2.2,
+      "label": "1. fascia flat runs through the corner",
+      "quiet": true
+    },
+    {
+      "id": "s170",
+      "type": "rect",
+      "layer": "trim",
+      "pts": [
+        {
+          "x": 118.0,
+          "y": 47.2
+        },
+        {
+          "x": 144.0,
+          "y": 50.4
+        }
+      ],
+      "color": "#27272a",
+      "weight": 2.2,
+      "label": "2. eave drip edge laps over the fascia flat",
+      "quiet": true
+    },
+    {
+      "id": "s171",
+      "type": "rect",
+      "layer": "trim",
+      "pts": [
+        {
+          "x": 118.0,
+          "y": 50.4
+        },
+        {
+          "x": 121.6,
+          "y": 70.0
+        }
+      ],
+      "color": "#27272a",
+      "weight": 2.2,
+      "fill": "light",
+      "label": "3. rake trim runs DOWN over the drip edge",
+      "quiet": true
+    },
+    {
+      "id": "s172",
+      "type": "polygon",
+      "layer": "trim",
+      "closed": true,
+      "pts": [
+        {
+          "x": 118.0,
+          "y": 50.4
+        },
+        {
+          "x": 121.6,
+          "y": 50.4
+        },
+        {
+          "x": 121.6,
+          "y": 47.2
+        },
+        {
+          "x": 118.0,
+          "y": 47.2
+        }
+      ],
+      "color": "#be123c",
+      "weight": 2.2,
+      "fill": "light",
+      "label": "notch + fold-down tab",
+      "quiet": true
+    },
+    {
+      "id": "s173",
+      "type": "circle",
+      "layer": "fast",
+      "pts": [
+        {
+          "x": 119.67,
+          "y": 48.67
+        },
+        {
+          "x": 119.93,
+          "y": 48.93
+        }
+      ],
+      "color": "#b45309",
+      "fill": "solid",
+      "label": "rivet",
+      "quiet": true
+    },
+    {
+      "id": "s174",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 123.6,
+          "y": 52.2
+        }
+      ],
+      "text": "CORNER SEQUENCE",
+      "size": 0.38
+    },
+    {
+      "id": "s175",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 123.6,
+          "y": 52.767
+        }
+      ],
+      "text": "Fascia flat first, drip edge over it, rake LAST.",
+      "size": 0.29
+    },
+    {
+      "id": "s176",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 123.6,
+          "y": 53.187
+        }
+      ],
+      "text": "At the corner, run the rake trim 2\" past the drip edge,",
+      "size": 0.29
+    },
+    {
+      "id": "s177",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 123.6,
+          "y": 53.607
+        }
+      ],
+      "text": "notch the vertical leg, and fold the tab DOWN over the",
+      "size": 0.29
+    },
+    {
+      "id": "s178",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 123.6,
+          "y": 54.027
+        }
+      ],
+      "text": "drip edge face. Bed it in butyl, one rivet, done.",
+      "size": 0.29
+    },
+    {
+      "id": "s179",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 123.6,
+          "y": 54.447
+        }
+      ],
+      "text": "A cut-and-caulk corner is the number one callback on",
+      "size": 0.29
+    },
+    {
+      "id": "s180",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 123.6,
+          "y": 54.867
+        }
+      ],
+      "text": "a metal roof \u2014 caulk is a maintenance item, a fold is not.",
+      "size": 0.29
+    },
+    {
+      "id": "s181",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 123.4,
+          "y": 50.6
+        },
+        {
+          "x": 120.2,
+          "y": 48.8
+        }
+      ],
+      "color": "#64748b",
+      "weight": 0.5,
+      "quiet": true
+    },
+    {
+      "id": "s182",
+      "type": "circle",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": 120.15,
+          "y": 48.75
+        },
+        {
+          "x": 120.25,
+          "y": 48.85
+        }
+      ],
+      "color": "#64748b",
+      "fill": "solid",
+      "quiet": true
+    },
+    {
+      "id": "s183",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -34.0
+        }
+      ],
+      "text": "SNAP-LOCK STANDING SEAM \u2014 TRIM & INTERLOCK DETAILS",
+      "size": 2.2
+    },
+    {
+      "id": "s184",
+      "type": "line",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -32.4
+        },
+        {
+          "x": 56,
+          "y": -32.4
+        }
+      ],
+      "color": "#334155",
+      "weight": 2,
+      "quiet": true
+    },
+    {
+      "id": "s185",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -30.6
+        }
+      ],
+      "text": "Beard's Home Services  |  Covered patio \u2014 24'-0\" wide x 9'-3\" slope, 2:12 shed roof",
+      "size": 0.75
+    },
+    {
+      "id": "s186",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -29.2
+        }
+      ],
+      "text": "Charcoal Crinkle 26ga  |  18 panels at 16\" net coverage  |  every detail drawn TRUE SCALE, in inches",
+      "size": 0.55
+    },
+    {
+      "id": "s187",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -26.6
+        }
+      ],
+      "text": "READ THIS BEFORE THE FIRST PANEL GOES ON",
+      "size": 0.8,
+      "color": "#be123c"
+    },
+    {
+      "id": "s188",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -25.0
+        }
+      ],
+      "text": "2:12 sits BELOW the 3:12 minimum that most snap-lock profiles are rated for. Confirm with the supplier that",
+      "size": 0.55,
+      "color": "#be123c"
+    },
+    {
+      "id": "s189",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -24.2
+        }
+      ],
+      "text": "this profile is approved at 2:12. If it is not, the roof needs full self-adhered underlayment wall-to-wall plus",
+      "size": 0.55,
+      "color": "#be123c"
+    },
+    {
+      "id": "s190",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -23.4
+        }
+      ],
+      "text": "butyl in every seam and every hem \u2014 or a mechanically-seamed panel instead of snap-lock.",
+      "size": 0.55,
+      "color": "#be123c"
+    },
+    {
+      "id": "s191",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -20.6
+        }
+      ],
+      "text": "18 panels at 16\" is 288\" \u2014 exactly 24'-0\", with no spare and no cut panel. Measure the eave before you",
+      "size": 0.55
+    },
+    {
+      "id": "s192",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -19.8
+        }
+      ],
+      "text": "unload. Chalk a control line every 64\" (4 panels) and check your module at every line.",
+      "size": 0.55
+    },
+    {
+      "id": "s193",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -19.0
+        }
+      ],
+      "text": "Panels were ordered at 9'-3\"; the framing plan shows a 9'-6\" run. Verify on site \u2014 you need length for the",
+      "size": 0.55
+    },
+    {
+      "id": "s194",
+      "type": "text",
+      "layer": "notes",
+      "pts": [
+        {
+          "x": -15,
+          "y": -18.2
+        }
+      ],
+      "text": "eave hem and the headwall turn-up, and the panels as ordered may be short.",
+      "size": 0.55
+    }
+  ]
+}

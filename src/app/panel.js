@@ -108,6 +108,12 @@ export function refreshPanel(app) {
   rows += `<label class="opt" title="Draw it greyed out as context (an existing house wall, patio, property line). Still snaps, but is never counted in materials or takeoff.">` +
     `<input id="p-existing" type="checkbox" ${allRef ? "checked" : ""}> Existing (reference only)</label>`;
 
+  // Quiet — drop the automatic edge-length and area captions. Section details
+  // carry their own dimensions and callouts; the auto captions bury them.
+  const allQuiet = sel.every((x) => x.quiet);
+  rows += `<label class="opt" title="Hide the automatic edge lengths and area caption on this shape. It still measures, snaps and counts — the drawing just stops labelling itself.">` +
+    `<input id="p-quiet" type="checkbox" ${allQuiet ? "checked" : ""}> Quiet (no auto captions)</label>`;
+
   const hasGroup = sel.some((s) => s.group);
   const anyLocked = sel.some((s) => s.locked);
   rows += styleHTML(sel);
@@ -169,6 +175,11 @@ export function refreshPanel(app) {
   if (refEl) refEl.onchange = () => app.commit(() => sel.forEach((x) => {
     if (refEl.checked) { x.existing = true; x.locked = true; }
     else { delete x.existing; delete x.locked; }
+  }));
+
+  const quietEl = document.getElementById("p-quiet");
+  if (quietEl) quietEl.onchange = () => app.commit(() => sel.forEach((x) => {
+    if (quietEl.checked) x.quiet = true; else delete x.quiet;
   }));
 
   bindLayerSelect(app, sel);

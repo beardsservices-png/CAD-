@@ -18,4 +18,19 @@ export const EXAMPLES = [
       "Labels — every piece is named, which is what makes the takeoff readable",
     ],
   },
+  {
+    id: "snap-lock-trim-details",
+    file: "examples/snap-lock-trim-details.json",
+    name: "Snap-Lock Trim — Interlock Details",
+    blurb:
+      "Six true-scale section cuts through a snap-lock standing seam roof: the eave hem over the " +
+      "drip edge, the endwall Z and turn-up at the house, the rake cleat, the seam-and-clip itself, " +
+      "a trim end lap, and the eave/rake corner. Drawn for the 24 ft covered patio, in inches.",
+    teaches: [
+      "Section details — polylines traced along the real bend lines of each piece of metal",
+      "True scale — a 1\" seam is one inch, so you can measure the drawing and believe it",
+      "Layers — turn Trim, Panels or Fasteners off to see one system at a time",
+      "Elevation view mode — cut sections, not a plan",
+    ],
+  },
 ];
