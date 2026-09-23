@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "name": "L-Shaped Porch — Windows Between Posts",
+  "name": "L-Shaped Porch — Plan",
   "viewMode": "plan",
   "layers": [
     {
@@ -11,7 +11,7 @@
     },
     {
       "id": "trim",
-      "name": "Door Opening Trim",
+      "name": "Trim & Mullion",
       "color": "#b45309",
       "visible": true
     },
@@ -45,8 +45,29 @@
           "y": -6
         },
         {
-          "x": 140,
+          "x": 150,
           "y": 0
+        }
+      ],
+      "material": "drywall",
+      "fill": "light",
+      "height": 120,
+      "label": "House wall",
+      "layer": "walls",
+      "existing": true,
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 134.25,
+          "y": 0
+        },
+        {
+          "x": 150,
+          "y": -6
         }
       ],
       "material": "drywall",
@@ -57,7 +78,7 @@
       "locked": true
     },
     {
-      "id": "s2",
+      "id": "s3",
       "type": "text",
       "pts": [
         {
@@ -71,7 +92,21 @@
       "existing": true
     },
     {
-      "id": "s3",
+      "id": "s4",
+      "type": "text",
+      "pts": [
+        {
+          "x": 136,
+          "y": 6
+        }
+      ],
+      "layer": "detail",
+      "text": "house outside corner",
+      "size": 5,
+      "existing": true
+    },
+    {
+      "id": "s5",
       "type": "rect",
       "pts": [
         {
@@ -80,22 +115,23 @@
         },
         {
           "x": 0,
-          "y": 97.0
+          "y": 93.5
         }
       ],
       "material": "drywall",
       "fill": "light",
       "height": 120,
+      "label": "Existing wall (door-side corner)",
       "layer": "walls",
       "existing": true,
       "locked": true
     },
     {
-      "id": "s4",
+      "id": "s6",
       "type": "text",
       "pts": [
         {
-          "x": -50,
+          "x": -54,
           "y": 50
         }
       ],
@@ -105,16 +141,16 @@
       "existing": true
     },
     {
-      "id": "s5",
+      "id": "s7",
       "type": "rect",
       "pts": [
         {
           "x": 58,
-          "y": 89.25
+          "y": 85.75
         },
         {
           "x": 134.25,
-          "y": 101.25
+          "y": 97.75
         }
       ],
       "material": "brick",
@@ -126,7 +162,7 @@
       "locked": true
     },
     {
-      "id": "s6",
+      "id": "s8",
       "type": "rect",
       "pts": [
         {
@@ -135,7 +171,7 @@
         },
         {
           "x": 134.25,
-          "y": 89.25
+          "y": 85.75
         }
       ],
       "material": "brick",
@@ -147,73 +183,27 @@
       "locked": true
     },
     {
-      "id": "s7",
-      "type": "rect",
-      "pts": [
-        {
-          "x": 0,
-          "y": 93.5
-        },
-        {
-          "x": 130,
-          "y": 97.0
-        }
-      ],
-      "layer": "walls",
-      "existing": true,
-      "locked": true,
-      "material": "drywall",
-      "fill": false,
-      "dash": "dashed",
-      "elevation": 94,
-      "height": 7.25,
-      "label": "Existing beam overhead"
-    },
-    {
-      "id": "s8",
-      "type": "rect",
-      "pts": [
-        {
-          "x": 126.5,
-          "y": 0
-        },
-        {
-          "x": 130,
-          "y": 93.5
-        }
-      ],
-      "layer": "walls",
-      "existing": true,
-      "locked": true,
-      "material": "drywall",
-      "fill": false,
-      "dash": "dashed",
-      "elevation": 94,
-      "height": 7.25,
-      "label": "Existing beam overhead"
-    },
-    {
       "id": "s9",
       "type": "rect",
       "pts": [
         {
-          "x": 58,
-          "y": 93.5
+          "x": 0,
+          "y": 90.0
         },
         {
-          "x": 61.5,
-          "y": 97.0
+          "x": 130,
+          "y": 93.5
         }
       ],
       "layer": "walls",
       "existing": true,
       "locked": true,
-      "material": "wood",
-      "color": "#b45309",
-      "fill": "solid",
-      "elevation": 37,
-      "height": 57,
-      "label": "Existing 4×4 cedar post (3½\")"
+      "material": "drywall",
+      "fill": false,
+      "dash": "dashed",
+      "elevation": 94,
+      "height": 7.25,
+      "label": "Existing beam overhead"
     },
     {
       "id": "s10",
@@ -221,34 +211,34 @@
       "pts": [
         {
           "x": 126.5,
-          "y": 93.5
+          "y": 0
         },
         {
           "x": 130,
-          "y": 97.0
+          "y": 90.0
         }
       ],
       "layer": "walls",
       "existing": true,
       "locked": true,
-      "material": "wood",
-      "color": "#b45309",
-      "fill": "solid",
-      "elevation": 37,
-      "height": 57,
-      "label": "Existing 4×4 cedar post (3½\")"
+      "material": "drywall",
+      "fill": false,
+      "dash": "dashed",
+      "elevation": 94,
+      "height": 7.25,
+      "label": "Existing beam overhead"
     },
     {
       "id": "s11",
       "type": "rect",
       "pts": [
         {
-          "x": 126.5,
-          "y": 0
+          "x": 58,
+          "y": 90.0
         },
         {
-          "x": 130,
-          "y": 3.5
+          "x": 61.5,
+          "y": 93.5
         }
       ],
       "layer": "walls",
@@ -266,54 +256,35 @@
       "type": "rect",
       "pts": [
         {
-          "x": 61.75,
-          "y": 93.5
+          "x": 126.5,
+          "y": 90.0
         },
         {
-          "x": 126.25,
-          "y": 97.0
+          "x": 130,
+          "y": 93.5
         }
       ],
-      "label": "Window — front, 64\" × 56½\" (opening 65\" × 57\")",
-      "layer": "windows",
-      "step": 2,
-      "material": "glass",
-      "fill": "light",
-      "elevation": 37.25,
-      "height": 56.5
+      "layer": "walls",
+      "existing": true,
+      "locked": true,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "elevation": 37,
+      "height": 57,
+      "label": "Existing 4×4 cedar post (3½\")"
     },
     {
       "id": "s13",
       "type": "rect",
       "pts": [
         {
-          "x": 126.5,
-          "y": 3.75
-        },
-        {
-          "x": 130,
-          "y": 93.25
-        }
-      ],
-      "label": "Window — side, 89\" × 56½\" (opening 90\" × 57\")",
-      "layer": "windows",
-      "step": 2,
-      "material": "glass",
-      "fill": "light",
-      "elevation": 37.25,
-      "height": 56.5
-    },
-    {
-      "id": "s14",
-      "type": "rect",
-      "pts": [
-        {
           "x": 0,
-          "y": 93.5
+          "y": 90.0
         },
         {
           "x": 0.75,
-          "y": 97.0
+          "y": 93.5
         }
       ],
       "elevation": 0,
@@ -326,57 +297,142 @@
       "fill": "solid"
     },
     {
+      "id": "s14",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 44.25
+        },
+        {
+          "x": 130,
+          "y": 45.75
+        }
+      ],
+      "elevation": 37,
+      "height": 57,
+      "label": "2×4 cedar mullion between side windows",
+      "layer": "trim",
+      "step": 2,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
+    },
+    {
       "id": "s15",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 61.75,
+          "y": 90.0
+        },
+        {
+          "x": 126.25,
+          "y": 93.5
+        }
+      ],
+      "label": "Window — front, 64\" × 56½\" (opening 65\" × 57\")",
+      "layer": "windows",
+      "step": 3,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 37.25,
+      "height": 56.5
+    },
+    {
+      "id": "s16",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 46
+        },
+        {
+          "x": 130,
+          "y": 89.75
+        }
+      ],
+      "label": "Window — side, 43¾\" × 56½\" (opening 44¼\" × 57\")",
+      "layer": "windows",
+      "step": 3,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 37.25,
+      "height": 56.5
+    },
+    {
+      "id": "s17",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 0.25
+        },
+        {
+          "x": 130,
+          "y": 44
+        }
+      ],
+      "label": "Window — side, 43¾\" × 56½\" (opening 44¼\" × 57\")",
+      "layer": "windows",
+      "step": 3,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 37.25,
+      "height": 56.5
+    },
+    {
+      "id": "s18",
       "type": "dimension",
       "pts": [
         {
           "x": 0,
-          "y": 113.25
+          "y": 109.75
         },
         {
           "x": 58,
-          "y": 113.25
+          "y": 109.75
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s16",
+      "id": "s19",
       "type": "dimension",
       "pts": [
         {
           "x": 61.5,
-          "y": 113.25
+          "y": 109.75
         },
         {
           "x": 126.5,
-          "y": 113.25
+          "y": 109.75
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s17",
+      "id": "s20",
       "type": "dimension",
       "pts": [
         {
           "x": 150,
-          "y": 3.5
+          "y": 0
         },
         {
           "x": 150,
-          "y": 93.5
+          "y": 90.0
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s18",
+      "id": "s21",
       "type": "text",
       "pts": [
         {
           "x": 8,
-          "y": 123.25
+          "y": 119.75
         }
       ],
       "layer": "detail",
@@ -384,12 +440,12 @@
       "size": 7
     },
     {
-      "id": "s19",
+      "id": "s22",
       "type": "text",
       "pts": [
         {
           "x": 76,
-          "y": 123.25
+          "y": 119.75
         }
       ],
       "layer": "detail",
@@ -397,82 +453,43 @@
       "size": 7
     },
     {
-      "id": "s20",
-      "type": "text",
-      "pts": [
-        {
-          "x": 156,
-          "y": 40
-        }
-      ],
-      "layer": "detail",
-      "text": "90\" window",
-      "size": 7
-    },
-    {
-      "id": "s21",
-      "type": "text",
-      "pts": [
-        {
-          "x": 156,
-          "y": 48
-        }
-      ],
-      "layer": "detail",
-      "text": "opening",
-      "size": 7
-    },
-    {
-      "id": "s22",
-      "type": "text",
-      "pts": [
-        {
-          "x": 8,
-          "y": 137.25
-        }
-      ],
-      "layer": "detail",
-      "text": "DOOR OPENING 58\" wide × 91\" high, left open.",
-      "size": 5
-    },
-    {
       "id": "s23",
       "type": "text",
       "pts": [
         {
-          "x": 8,
-          "y": 144.25
+          "x": 156,
+          "y": 36
         }
       ],
       "layer": "detail",
-      "text": "¾\" cedar jamb board on the siding side only — clears 57¼\".",
-      "size": 5
+      "text": "90\" — 2 windows",
+      "size": 7
     },
     {
       "id": "s24",
       "type": "text",
       "pts": [
         {
-          "x": 8,
-          "y": 151.25
+          "x": 156,
+          "y": 44
         }
       ],
       "layer": "detail",
-      "text": "The post side is already finished wood.",
-      "size": 5
+      "text": "+ triangle above",
+      "size": 7
     },
     {
       "id": "s25",
       "type": "text",
       "pts": [
         {
-          "x": 8,
-          "y": 158.25
+          "x": 156,
+          "y": 52
         }
       ],
       "layer": "detail",
-      "text": "WINDOWS: 57\" tall, cap to beam, no framing.",
-      "size": 5
+      "text": "(see elevation)",
+      "size": 7
     },
     {
       "id": "s26",
@@ -480,11 +497,11 @@
       "pts": [
         {
           "x": 8,
-          "y": 165.25
+          "y": 133.75
         }
       ],
       "layer": "detail",
-      "text": "Order each window ½\" under its opening (shim + seal):",
+      "text": "DOOR OPENING 58\" wide × 91\" high, left open.",
       "size": 5
     },
     {
@@ -493,11 +510,11 @@
       "pts": [
         {
           "x": 8,
-          "y": 172.25
+          "y": 140.75
         }
       ],
       "layer": "detail",
-      "text": "front 64\" × 56½\",  side 89\" × 56½\".",
+      "text": "¾\" cedar jamb board on the siding side only — clears 57¼\".",
       "size": 5
     },
     {
@@ -506,11 +523,11 @@
       "pts": [
         {
           "x": 8,
-          "y": 179.25
+          "y": 147.75
         }
       ],
       "layer": "detail",
-      "text": "Side can be one unit or two mulled at 44½\" each.",
+      "text": "FRONT: one window, 64\" × 56½\" in a 65\" × 57\" opening.",
       "size": 5
     },
     {
@@ -519,11 +536,63 @@
       "pts": [
         {
           "x": 8,
-          "y": 186.25
+          "y": 154.75
         }
       ],
       "layer": "detail",
-      "text": "Stone wall 37\" high, ~12\" cap. House at top.",
+      "text": "LONG SIDE: 90\" to the house corner, no post there.",
+      "size": 5
+    },
+    {
+      "id": "s30",
+      "type": "text",
+      "pts": [
+        {
+          "x": 8,
+          "y": 161.75
+        }
+      ],
+      "layer": "detail",
+      "text": "2×4 cedar mullion in the middle → two 44¼\" openings,",
+      "size": 5
+    },
+    {
+      "id": "s31",
+      "type": "text",
+      "pts": [
+        {
+          "x": 8,
+          "y": 168.75
+        }
+      ],
+      "layer": "detail",
+      "text": "two windows 43¾\" × 56½\". Mullion lines up with the triangle above.",
+      "size": 5
+    },
+    {
+      "id": "s32",
+      "type": "text",
+      "pts": [
+        {
+          "x": 8,
+          "y": 175.75
+        }
+      ],
+      "layer": "detail",
+      "text": "Order windows ½\" under the opening (shim + seal).",
+      "size": 5
+    },
+    {
+      "id": "s33",
+      "type": "text",
+      "pts": [
+        {
+          "x": 8,
+          "y": 182.75
+        }
+      ],
+      "layer": "detail",
+      "text": "Triangle over the long side: open the 'elevation' example.",
       "size": 5
     }
   ]

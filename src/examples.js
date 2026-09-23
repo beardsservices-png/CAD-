@@ -21,14 +21,27 @@ export const EXAMPLES = [
   {
     id: "l-shaped-porch-windows",
     file: "examples/l-shaped-porch-windows.json",
-    name: "L-Shaped Porch — windows between posts",
+    name: "L-Shaped Porch — plan (overhead)",
     blurb:
-      "Overhead view of an L-shaped porch on a 37\" stone wall: a 58\" × 91\" open doorway against the " +
-      "wall corner, then 65\" and 90\" window openings (57\" tall) between 3½\" cedar posts.",
+      "Overhead view of the stone-wall porch: a 58\" × 91\" open doorway at the wall corner, one 65\" " +
+      "window on the front, and two windows split by a cedar mullion on the 90\" long side.",
     teaches: [
       "Existing (reference only) — house, stone wall, posts and beam are ghosted and never counted",
-      "Build steps — ‹ › shows the doorway trim first, then the windows",
+      "Build steps — ‹ › shows the doorway trim, the mullion, then the windows",
       "3D Preview — windows sit on the cap at 37\" and stop at the beam",
+    ],
+  },
+  {
+    id: "l-shaped-porch-long-side",
+    file: "examples/l-shaped-porch-long-side.json",
+    name: "L-Shaped Porch — long side (elevation)",
+    blurb:
+      "The 90\" side seen from outside: two windows on the stone cap, and the triangle between the beam " +
+      "and the roof framed in 2×4, wrapped in cedar and glazed with fixed glass.",
+    teaches: [
+      "Elevation view — canvas up is height, so this is how the wall will actually look",
+      "Build steps — mullion, triangle framing, windows, then the triangle glass",
+      "Materials — itemises the framing and glass for this side",
     ],
   },
 ];
