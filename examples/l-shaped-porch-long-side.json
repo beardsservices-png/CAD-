@@ -152,11 +152,11 @@
         },
         {
           "x": 93.5,
-          "y": -132.25
+          "y": -143.25
         },
         {
           "x": 93.5,
-          "y": -137.75
+          "y": -148.75
         },
         {
           "x": 0,
@@ -224,11 +224,11 @@
         },
         {
           "x": 92.0,
-          "y": -131.753
+          "y": -142.576
         },
         {
           "x": 92.0,
-          "y": -130.253
+          "y": -141.076
         },
         {
           "x": 0,
@@ -254,7 +254,7 @@
         },
         {
           "x": 93.5,
-          "y": -132.25
+          "y": -143.25
         }
       ],
       "step": 2,
@@ -275,7 +275,7 @@
         },
         {
           "x": 49.25,
-          "y": -116.079
+          "y": -121.873
         }
       ],
       "step": 2,
@@ -331,7 +331,7 @@
       "type": "polygon",
       "pts": [
         {
-          "x": 10.048,
+          "x": 7.679,
           "y": -102.75
         },
         {
@@ -340,7 +340,7 @@
         },
         {
           "x": 47.5,
-          "y": -115.249
+          "y": -120.837
         }
       ],
       "closed": true,
@@ -365,11 +365,11 @@
         },
         {
           "x": 91.75,
-          "y": -129.92
+          "y": -140.714
         },
         {
           "x": 49.5,
-          "y": -115.912
+          "y": -121.735
         }
       ],
       "closed": true,
@@ -435,7 +435,7 @@
         },
         {
           "x": 123.5,
-          "y": -132.25
+          "y": -143.25
         }
       ],
       "layer": "dims"
@@ -459,11 +459,11 @@
       "pts": [
         {
           "x": 129.5,
-          "y": -116.75
+          "y": -122.25
         }
       ],
       "layer": "detail",
-      "text": "~31\" — MEASURE",
+      "text": "42\" (measured)",
       "size": 6
     },
     {
@@ -554,7 +554,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Tall end drawn at ~31\" (estimated from the photos). Measure beam-top",
+      "text": "Triangle is 42\" tall at the house end (10 siding laps at ~4\"),",
       "size": 5
     },
     {
@@ -567,7 +567,46 @@
         }
       ],
       "layer": "detail",
-      "text": "to rafter-bottom at the house and I'll correct every piece to it.",
+      "text": "tapering to nothing at the corner post.",
+      "size": 5
+    },
+    {
+      "id": "s30",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": 80
+        }
+      ],
+      "layer": "detail",
+      "text": "GLASS (measure the framed hole before ordering; cut ¼\" under it):",
+      "size": 5
+    },
+    {
+      "id": "s31",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": 87
+        }
+      ],
+      "layer": "detail",
+      "text": "small triangle ~39.8\" long × 18.1\" tall at the mullion;",
+      "size": 5
+    },
+    {
+      "id": "s32",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": 94
+        }
+      ],
+      "layer": "detail",
+      "text": "trapezoid ~42.2\" wide, 19.0\" tall at the mullion, 38.0\" at the house.",
       "size": 5
     }
   ]
