@@ -301,19 +301,19 @@
       "type": "rect",
       "pts": [
         {
-          "x": 126.5,
-          "y": 44.25
+          "x": 61.5,
+          "y": 90.0
         },
         {
-          "x": 130,
-          "y": 45.75
+          "x": 126.5,
+          "y": 93.5
         }
       ],
       "elevation": 37,
-      "height": 57,
-      "label": "2×4 cedar mullion between side windows",
-      "layer": "trim",
+      "height": 1.5,
       "step": 2,
+      "label": "2×4 sill plate on cap — front",
+      "layer": "trim",
       "material": "wood",
       "color": "#b45309",
       "fill": "solid"
@@ -323,66 +323,242 @@
       "type": "rect",
       "pts": [
         {
-          "x": 61.75,
+          "x": 61.5,
           "y": 90.0
         },
         {
-          "x": 126.25,
+          "x": 126.5,
           "y": 93.5
         }
       ],
-      "label": "Window — front, 64\" × 56½\" (opening 65\" × 57\")",
-      "layer": "windows",
-      "step": 3,
-      "material": "glass",
-      "fill": "light",
-      "elevation": 37.25,
-      "height": 56.5
+      "elevation": 92.5,
+      "height": 1.5,
+      "step": 2,
+      "label": "2×4 top plate under beam — front",
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
     },
     {
       "id": "s16",
       "type": "rect",
       "pts": [
         {
-          "x": 126.5,
-          "y": 46
+          "x": 61.5,
+          "y": 90.0
         },
         {
-          "x": 130,
-          "y": 89.75
+          "x": 63,
+          "y": 93.5
         }
       ],
-      "label": "Window — side, 43¾\" × 56½\" (opening 44¼\" × 57\")",
-      "layer": "windows",
-      "step": 3,
-      "material": "glass",
-      "fill": "light",
-      "elevation": 37.25,
-      "height": 56.5
+      "label": "2×4 jack stud",
+      "elevation": 38.5,
+      "height": 54.0,
+      "step": 2,
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
     },
     {
       "id": "s17",
       "type": "rect",
       "pts": [
         {
+          "x": 125,
+          "y": 90.0
+        },
+        {
           "x": 126.5,
-          "y": 0.25
+          "y": 93.5
+        }
+      ],
+      "label": "2×4 jack stud",
+      "elevation": 38.5,
+      "height": 54.0,
+      "step": 2,
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
+    },
+    {
+      "id": "s18",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 0
+        },
+        {
+          "x": 130.0,
+          "y": 90
+        }
+      ],
+      "elevation": 37,
+      "height": 1.5,
+      "step": 2,
+      "label": "2×4 sill plate on cap — long side",
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
+    },
+    {
+      "id": "s19",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 0
+        },
+        {
+          "x": 130.0,
+          "y": 90
+        }
+      ],
+      "elevation": 92.5,
+      "height": 1.5,
+      "step": 2,
+      "label": "2×4 top plate under beam — long side",
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
+    },
+    {
+      "id": "s20",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 0
         },
         {
           "x": 130,
-          "y": 44
+          "y": 1.5
         }
       ],
-      "label": "Window — side, 43¾\" × 56½\" (opening 44¼\" × 57\")",
+      "label": "2×4 jack stud",
+      "elevation": 38.5,
+      "height": 54.0,
+      "step": 2,
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
+    },
+    {
+      "id": "s21",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 88.5
+        },
+        {
+          "x": 130,
+          "y": 90
+        }
+      ],
+      "label": "2×4 jack stud",
+      "elevation": 38.5,
+      "height": 54.0,
+      "step": 2,
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
+    },
+    {
+      "id": "s22",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 43.5
+        },
+        {
+          "x": 130,
+          "y": 46.5
+        }
+      ],
+      "label": "Double 2×4 mullion between side windows",
+      "elevation": 38.5,
+      "height": 54.0,
+      "step": 2,
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
+    },
+    {
+      "id": "s23",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 63.25,
+          "y": 90.0
+        },
+        {
+          "x": 124.75,
+          "y": 93.5
+        }
+      ],
+      "label": "Window — front, 61½\" × 53½\" (framed opening 62\" × 54\")",
       "layer": "windows",
       "step": 3,
       "material": "glass",
       "fill": "light",
-      "elevation": 37.25,
-      "height": 56.5
+      "elevation": 38.75,
+      "height": 53.5
     },
     {
-      "id": "s18",
+      "id": "s24",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 46.75
+        },
+        {
+          "x": 130,
+          "y": 88.25
+        }
+      ],
+      "label": "Window — side, 41½\" × 53½\" (framed opening 42\" × 54\")",
+      "layer": "windows",
+      "step": 3,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 38.75,
+      "height": 53.5
+    },
+    {
+      "id": "s25",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 1.75
+        },
+        {
+          "x": 130,
+          "y": 43.25
+        }
+      ],
+      "label": "Window — side, 41½\" × 53½\" (framed opening 42\" × 54\")",
+      "layer": "windows",
+      "step": 3,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 38.75,
+      "height": 53.5
+    },
+    {
+      "id": "s26",
       "type": "dimension",
       "pts": [
         {
@@ -397,7 +573,7 @@
       "layer": "dims"
     },
     {
-      "id": "s19",
+      "id": "s27",
       "type": "dimension",
       "pts": [
         {
@@ -412,7 +588,7 @@
       "layer": "dims"
     },
     {
-      "id": "s20",
+      "id": "s28",
       "type": "dimension",
       "pts": [
         {
@@ -427,7 +603,7 @@
       "layer": "dims"
     },
     {
-      "id": "s21",
+      "id": "s29",
       "type": "text",
       "pts": [
         {
@@ -440,7 +616,7 @@
       "size": 7
     },
     {
-      "id": "s22",
+      "id": "s30",
       "type": "text",
       "pts": [
         {
@@ -453,7 +629,7 @@
       "size": 7
     },
     {
-      "id": "s23",
+      "id": "s31",
       "type": "text",
       "pts": [
         {
@@ -466,7 +642,7 @@
       "size": 7
     },
     {
-      "id": "s24",
+      "id": "s32",
       "type": "text",
       "pts": [
         {
@@ -479,7 +655,7 @@
       "size": 7
     },
     {
-      "id": "s25",
+      "id": "s33",
       "type": "text",
       "pts": [
         {
@@ -492,7 +668,7 @@
       "size": 7
     },
     {
-      "id": "s26",
+      "id": "s34",
       "type": "text",
       "pts": [
         {
@@ -505,7 +681,7 @@
       "size": 5
     },
     {
-      "id": "s27",
+      "id": "s35",
       "type": "text",
       "pts": [
         {
@@ -518,7 +694,7 @@
       "size": 5
     },
     {
-      "id": "s28",
+      "id": "s36",
       "type": "text",
       "pts": [
         {
@@ -527,11 +703,11 @@
         }
       ],
       "layer": "detail",
-      "text": "FRONT: one window, 64\" × 56½\" in a 65\" × 57\" opening.",
+      "text": "FRAMING (every window opening): 2×4 flat on the cap, 2×4 flat under",
       "size": 5
     },
     {
-      "id": "s29",
+      "id": "s37",
       "type": "text",
       "pts": [
         {
@@ -540,11 +716,11 @@
         }
       ],
       "layer": "detail",
-      "text": "LONG SIDE: 90\" to the house corner, no post there.",
+      "text": "the beam, a 2×4 jack each side. Framed opening = 54\" tall.",
       "size": 5
     },
     {
-      "id": "s30",
+      "id": "s38",
       "type": "text",
       "pts": [
         {
@@ -553,11 +729,11 @@
         }
       ],
       "layer": "detail",
-      "text": "2×4 cedar mullion in the middle → two 44¼\" openings,",
+      "text": "FRONT: 65\" → 62\" framed → window 61½\" × 53½\".",
       "size": 5
     },
     {
-      "id": "s31",
+      "id": "s39",
       "type": "text",
       "pts": [
         {
@@ -566,11 +742,11 @@
         }
       ],
       "layer": "detail",
-      "text": "two windows 43¾\" × 56½\". Mullion lines up with the triangle above.",
+      "text": "LONG SIDE: 90\" to the house corner, no post there. Double 2×4 in the",
       "size": 5
     },
     {
-      "id": "s32",
+      "id": "s40",
       "type": "text",
       "pts": [
         {
@@ -579,16 +755,29 @@
         }
       ],
       "layer": "detail",
-      "text": "Order windows ½\" under the opening (shim + seal).",
+      "text": "middle → two 42\" framed openings → windows 41½\" × 53½\".",
       "size": 5
     },
     {
-      "id": "s33",
+      "id": "s41",
       "type": "text",
       "pts": [
         {
           "x": 8,
           "y": 182.75
+        }
+      ],
+      "layer": "detail",
+      "text": "Trim: cedar ripped + beveled — sloped sill, casing, stops.",
+      "size": 5
+    },
+    {
+      "id": "s42",
+      "type": "text",
+      "pts": [
+        {
+          "x": 8,
+          "y": 189.75
         }
       ],
       "layer": "detail",

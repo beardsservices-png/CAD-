@@ -177,16 +177,16 @@
       "type": "rect",
       "pts": [
         {
-          "x": 47.75,
+          "x": 3.5,
           "y": -37
         },
         {
-          "x": 49.25,
-          "y": -94
+          "x": 93.5,
+          "y": -38.5
         }
       ],
       "step": 1,
-      "label": "2×4 cedar mullion between windows",
+      "label": "2×4 sill plate on cap",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -195,6 +195,90 @@
     },
     {
       "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 3.5,
+          "y": -92.5
+        },
+        {
+          "x": 93.5,
+          "y": -94
+        }
+      ],
+      "step": 1,
+      "label": "2×4 top plate under beam",
+      "layer": "frame",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 3.5
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 3.5,
+          "y": -38.5
+        },
+        {
+          "x": 5,
+          "y": -92.5
+        }
+      ],
+      "step": 1,
+      "label": "2×4 jack stud",
+      "layer": "frame",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 3.5
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 92,
+          "y": -38.5
+        },
+        {
+          "x": 93.5,
+          "y": -92.5
+        }
+      ],
+      "step": 1,
+      "label": "2×4 jack stud",
+      "layer": "frame",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 3.5
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 47,
+          "y": -38.5
+        },
+        {
+          "x": 50,
+          "y": -92.5
+        }
+      ],
+      "step": 1,
+      "label": "Double 2×4 mullion between windows",
+      "layer": "frame",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 3.5
+    },
+    {
+      "id": "s12",
       "type": "rect",
       "pts": [
         {
@@ -215,7 +299,7 @@
       "height": 3.5
     },
     {
-      "id": "s9",
+      "id": "s13",
       "type": "polygon",
       "pts": [
         {
@@ -245,7 +329,7 @@
       "height": 3.5
     },
     {
-      "id": "s10",
+      "id": "s14",
       "type": "rect",
       "pts": [
         {
@@ -266,7 +350,7 @@
       "height": 3.5
     },
     {
-      "id": "s11",
+      "id": "s15",
       "type": "rect",
       "pts": [
         {
@@ -287,47 +371,47 @@
       "height": 3.5
     },
     {
-      "id": "s12",
+      "id": "s16",
       "type": "rect",
       "pts": [
         {
-          "x": 3.75,
-          "y": -37.25
+          "x": 5.25,
+          "y": -38.75
         },
         {
-          "x": 47.5,
-          "y": -93.75
+          "x": 46.75,
+          "y": -92.25
         }
       ],
       "step": 3,
-      "label": "Window 43¾\" × 56½\"",
+      "label": "Window 41½\" × 53½\"",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
       "height": 1
     },
     {
-      "id": "s13",
+      "id": "s17",
       "type": "rect",
       "pts": [
         {
-          "x": 49.5,
-          "y": -37.25
+          "x": 50.25,
+          "y": -38.75
         },
         {
-          "x": 93.25,
-          "y": -93.75
+          "x": 91.75,
+          "y": -92.25
         }
       ],
       "step": 3,
-      "label": "Window 43¾\" × 56½\"",
+      "label": "Window 41½\" × 53½\"",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
       "height": 1
     },
     {
-      "id": "s14",
+      "id": "s18",
       "type": "polygon",
       "pts": [
         {
@@ -352,7 +436,7 @@
       "height": 1
     },
     {
-      "id": "s15",
+      "id": "s19",
       "type": "polygon",
       "pts": [
         {
@@ -381,52 +465,52 @@
       "height": 1
     },
     {
-      "id": "s16",
+      "id": "s20",
       "type": "dimension",
       "pts": [
         {
-          "x": 3.5,
+          "x": 5,
           "y": 12
         },
         {
-          "x": 47.75,
+          "x": 47,
           "y": 12
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s17",
+      "id": "s21",
       "type": "dimension",
       "pts": [
         {
-          "x": 49.25,
+          "x": 50,
           "y": 12
         },
         {
-          "x": 93.5,
+          "x": 92,
           "y": 12
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s18",
+      "id": "s22",
       "type": "dimension",
       "pts": [
         {
           "x": 123.5,
-          "y": -37
+          "y": -38.5
         },
         {
           "x": 123.5,
-          "y": -94
+          "y": -92.5
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s19",
+      "id": "s23",
       "type": "dimension",
       "pts": [
         {
@@ -441,7 +525,7 @@
       "layer": "dims"
     },
     {
-      "id": "s20",
+      "id": "s24",
       "type": "text",
       "pts": [
         {
@@ -450,11 +534,11 @@
         }
       ],
       "layer": "detail",
-      "text": "57\" windows",
+      "text": "54\" framed",
       "size": 6
     },
     {
-      "id": "s21",
+      "id": "s25",
       "type": "text",
       "pts": [
         {
@@ -467,7 +551,7 @@
       "size": 6
     },
     {
-      "id": "s22",
+      "id": "s26",
       "type": "text",
       "pts": [
         {
@@ -480,7 +564,7 @@
       "size": 5
     },
     {
-      "id": "s23",
+      "id": "s27",
       "type": "text",
       "pts": [
         {
@@ -489,59 +573,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Windows: two 43¾\" × 56½\" in 44¼\" openings, 2×4 cedar mullion between.",
-      "size": 5
-    },
-    {
-      "id": "s24",
-      "type": "text",
-      "pts": [
-        {
-          "x": -4,
-          "y": 38
-        }
-      ],
-      "layer": "detail",
-      "text": "TRIANGLE: frame with 2×4 — plate on the beam, nailer under the rafter,",
-      "size": 5
-    },
-    {
-      "id": "s25",
-      "type": "text",
-      "pts": [
-        {
-          "x": -4,
-          "y": 45
-        }
-      ],
-      "layer": "detail",
-      "text": "one against the house, and a mullion right over the window mullion.",
-      "size": 5
-    },
-    {
-      "id": "s26",
-      "type": "text",
-      "pts": [
-        {
-          "x": -4,
-          "y": 52
-        }
-      ],
-      "layer": "detail",
-      "text": "Wrap it in cedar to match the posts. Fixed tempered glass in cedar stops:",
-      "size": 5
-    },
-    {
-      "id": "s27",
-      "type": "text",
-      "pts": [
-        {
-          "x": -4,
-          "y": 59
-        }
-      ],
-      "layer": "detail",
-      "text": "a small triangle at the front, a trapezoid at the house end.",
+      "text": "WINDOWS: 90\" frames to two 42\" × 54\" openings — 2×4 plates top and bottom,",
       "size": 5
     },
     {
@@ -550,11 +582,11 @@
       "pts": [
         {
           "x": -4,
-          "y": 66
+          "y": 38
         }
       ],
       "layer": "detail",
-      "text": "Triangle is 42\" tall at the house end (10 siding laps at ~4\"),",
+      "text": "a jack each end, double 2×4 in the middle. Windows 41½\" × 53½\".",
       "size": 5
     },
     {
@@ -563,11 +595,11 @@
       "pts": [
         {
           "x": -4,
-          "y": 73
+          "y": 45
         }
       ],
       "layer": "detail",
-      "text": "tapering to nothing at the corner post.",
+      "text": "Trim: cedar ripped + beveled — sloped sill on the plate, casing, stops.",
       "size": 5
     },
     {
@@ -576,11 +608,11 @@
       "pts": [
         {
           "x": -4,
-          "y": 80
+          "y": 52
         }
       ],
       "layer": "detail",
-      "text": "GLASS (measure the framed hole before ordering; cut ¼\" under it):",
+      "text": "TRIANGLE: frame with 2×4 — plate on the beam, nailer under the rafter,",
       "size": 5
     },
     {
@@ -589,11 +621,11 @@
       "pts": [
         {
           "x": -4,
-          "y": 87
+          "y": 59
         }
       ],
       "layer": "detail",
-      "text": "small triangle ~39.8\" long × 18.1\" tall at the mullion;",
+      "text": "one against the house, and a mullion right over the window mullion.",
       "size": 5
     },
     {
@@ -602,7 +634,85 @@
       "pts": [
         {
           "x": -4,
+          "y": 66
+        }
+      ],
+      "layer": "detail",
+      "text": "Wrap it in cedar to match the posts. Fixed tempered glass in cedar stops:",
+      "size": 5
+    },
+    {
+      "id": "s33",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": 73
+        }
+      ],
+      "layer": "detail",
+      "text": "a small triangle at the front, a trapezoid at the house end.",
+      "size": 5
+    },
+    {
+      "id": "s34",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": 80
+        }
+      ],
+      "layer": "detail",
+      "text": "Triangle is 42\" tall at the house end (10 siding laps at ~4\"),",
+      "size": 5
+    },
+    {
+      "id": "s35",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": 87
+        }
+      ],
+      "layer": "detail",
+      "text": "tapering to nothing at the corner post.",
+      "size": 5
+    },
+    {
+      "id": "s36",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
           "y": 94
+        }
+      ],
+      "layer": "detail",
+      "text": "GLASS (measure the framed hole before ordering; cut ¼\" under it):",
+      "size": 5
+    },
+    {
+      "id": "s37",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": 101
+        }
+      ],
+      "layer": "detail",
+      "text": "small triangle ~39.8\" long × 18.1\" tall at the mullion;",
+      "size": 5
+    },
+    {
+      "id": "s38",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": 108
         }
       ],
       "layer": "detail",
