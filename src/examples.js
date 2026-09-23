@@ -21,9 +21,9 @@ export const EXAMPLES = [
   {
     id: "l-shaped-porch-windows",
     file: "examples/l-shaped-porch-windows.json",
-    name: "L-Shaped Porch — plan (overhead)",
+    name: "Giles Porch — plan (overhead)",
     blurb:
-      "Overhead view of the stone-wall porch: a 58\" × 91\" open doorway at the wall corner, one 65\" " +
+      "Jesse & Doree Giles, Phase 3 porch enclosure. Overhead view of the stone-wall porch: a 58\" × 91\" open doorway at the wall corner, one 65\" " +
       "window on the front, and two windows split by a cedar mullion on the 90\" long side.",
     teaches: [
       "Existing (reference only) — house, stone wall, posts and beam are ghosted and never counted",
@@ -34,9 +34,9 @@ export const EXAMPLES = [
   {
     id: "l-shaped-porch-long-side",
     file: "examples/l-shaped-porch-long-side.json",
-    name: "L-Shaped Porch — long side (elevation)",
+    name: "Giles Porch — long side (elevation)",
     blurb:
-      "The 90\" side seen from outside: two windows on the stone cap, and the triangle between the beam " +
+      "Jesse & Doree Giles, Phase 3 porch enclosure. The 90\" side seen from outside: two windows on the stone cap, and the triangle between the beam " +
       "and the roof framed in 2×4, wrapped in cedar and glazed with fixed glass.",
     teaches: [
       "Elevation view — canvas up is height, so this is how the wall will actually look",
