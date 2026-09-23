@@ -18,4 +18,17 @@ export const EXAMPLES = [
       "Labels — every piece is named, which is what makes the takeoff readable",
     ],
   },
+  {
+    id: "l-shaped-porch-windows",
+    file: "examples/l-shaped-porch-windows.json",
+    name: "L-Shaped Porch — windows between posts",
+    blurb:
+      "Overhead view of an L-shaped porch on a 37\" stone wall: a 58\" × 91\" open doorway against the " +
+      "wall corner, then 65\" and 90\" window openings (57\" tall) between 3½\" cedar posts.",
+    teaches: [
+      "Existing (reference only) — house, stone wall, posts and beam are ghosted and never counted",
+      "Build steps — ‹ › shows the doorway trim first, then the windows",
+      "3D Preview — windows sit on the cap at 37\" and stop at the beam",
+    ],
+  },
 ];
