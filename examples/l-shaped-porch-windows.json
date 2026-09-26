@@ -289,7 +289,7 @@
       ],
       "elevation": 0,
       "height": 91,
-      "label": "1×4 cedar jamb board on siding (door opening)",
+      "label": "1×4 cedar jamb board on siding (walkway opening)",
       "layer": "trim",
       "step": 1,
       "material": "wood",
@@ -677,7 +677,7 @@
         }
       ],
       "layer": "detail",
-      "text": "DOOR OPENING 58\" wide × 91\" high, left open.",
+      "text": "WALKWAY OPENING 58\" wide × 91\" high, left open — no door.",
       "size": 5
     },
     {
