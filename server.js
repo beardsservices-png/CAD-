@@ -155,3 +155,15 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
   console.log(`Draft Studio running on port ${PORT}`);
 });
+
+// Railway stops the old deployment with SIGTERM every time a new one goes live.
+// Without a handler Node dies of the signal, npm reports it as an error, and
+// Railway marks the replaced deployment "Crashed" -- a clean redeploy that looks
+// like an outage. Finish in-flight requests, then exit 0.
+function shutdown(signal) {
+  console.log(`${signal} received, shutting down`);
+  server.close(() => process.exit(0));
+  setTimeout(() => process.exit(0), 5000).unref();
+}
+process.on("SIGTERM", () => shutdown("SIGTERM"));
+process.on("SIGINT", () => shutdown("SIGINT"));
