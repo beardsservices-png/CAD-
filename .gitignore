@@ -4,3 +4,4 @@ node_modules/
 _pop.js
 _test.html
 .data/
+__pycache__/
