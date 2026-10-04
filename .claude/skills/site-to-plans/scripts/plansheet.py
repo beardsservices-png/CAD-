@@ -210,7 +210,7 @@ def _page(n, total, sh, customer, project, date, logo):
   <header>{img}
     <div class="biz"><div class="name">Beard's Home Services</div>
       <div>Mountain Home, AR &nbsp;|&nbsp; Baxter County &amp; Twin Lakes Area</div>
-      <div>870-321-1072 &nbsp;|&nbsp; brianb@beardsservices.com</div></div>
+      <div>870-321-1072 &nbsp;|&nbsp; brianb@beardshomeservices.com</div></div>
     <div class="client"><div class="lbl">Prepared for</div><div class="cname">{html.escape(customer['name'])}</div>
       <div>{html.escape(customer.get('address', ''))}</div></div>
   </header>
