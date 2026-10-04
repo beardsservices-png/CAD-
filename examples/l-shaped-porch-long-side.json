@@ -429,7 +429,7 @@
       ],
       "closed": true,
       "step": 4,
-      "label": "Fixed tempered glass — small triangle, set in cedar stops",
+      "label": "Plexiglass, 2 layers + air space — small triangle, in cedar stops",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -458,7 +458,7 @@
       ],
       "closed": true,
       "step": 4,
-      "label": "Fixed tempered glass — trapezoid, set in cedar stops",
+      "label": "Plexiglass, 2 layers + air space — trapezoid, in cedar stops",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -638,7 +638,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Wrap it in cedar to match the posts. Fixed tempered glass in cedar stops:",
+      "text": "Wrap it in cedar to match the posts. Two layers of ¼\" clear plexiglass",
       "size": 5
     },
     {
@@ -651,7 +651,7 @@
         }
       ],
       "layer": "detail",
-      "text": "a small triangle at the front, a trapezoid at the house end.",
+      "text": "with an air space, in cedar stops: small triangle front, trapezoid at house.",
       "size": 5
     },
     {
@@ -690,7 +690,7 @@
         }
       ],
       "layer": "detail",
-      "text": "GLASS (measure the framed hole before ordering; cut ¼\" under it):",
+      "text": "PLEXIGLASS — one 4×8 sheet makes all 4 pieces. Cut on site ¼\" under the hole:",
       "size": 5
     },
     {
