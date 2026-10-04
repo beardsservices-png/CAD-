@@ -23,8 +23,8 @@ export const EXAMPLES = [
     file: "examples/l-shaped-porch-windows.json",
     name: "Giles Porch — plan (overhead)",
     blurb:
-      "Jesse & Doree Giles, Phase 3 porch enclosure. Overhead view of the stone-wall porch: a 58\" × 91\" open walkway (no door) at the wall corner, one 65\" " +
-      "window on the front, and two windows split by a cedar mullion on the 90\" long side.",
+      "Jesse & Doree Giles, Phase 3 porch enclosure. Overhead view of the stone-wall porch: a 58\" × 91\" open walkway (no door) at the wall corner, two windows split by a cedar mullion in the 65\" " +
+      "front opening, and two more the same way on the 90\" long side.",
     teaches: [
       "Existing (reference only) — house, stone wall, posts and beam are ghosted and never counted",
       "Build steps — ‹ › shows the walkway trim, the mullion, then the windows",

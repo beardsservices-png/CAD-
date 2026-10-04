@@ -495,6 +495,28 @@
       "fill": "solid"
     },
     {
+      "id": "s43",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 92.5,
+          "y": 90.0
+        },
+        {
+          "x": 95.5,
+          "y": 93.5
+        }
+      ],
+      "label": "Double 2×4 mullion between front windows",
+      "elevation": 38.5,
+      "height": 54.0,
+      "step": 2,
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
+    },
+    {
       "id": "s23",
       "type": "rect",
       "pts": [
@@ -503,11 +525,32 @@
           "y": 90.0
         },
         {
+          "x": 92.25,
+          "y": 93.5
+        }
+      ],
+      "label": "Window — front, 29\" × 53½\" (framed opening 29½\" × 54\")",
+      "layer": "windows",
+      "step": 3,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 38.75,
+      "height": 53.5
+    },
+    {
+      "id": "s44",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 95.75,
+          "y": 90.0
+        },
+        {
           "x": 124.75,
           "y": 93.5
         }
       ],
-      "label": "Window — front, 61½\" × 53½\" (framed opening 62\" × 54\")",
+      "label": "Window — front, 29\" × 53½\" (framed opening 29½\" × 54\")",
       "layer": "windows",
       "step": 3,
       "material": "glass",
@@ -625,7 +668,7 @@
         }
       ],
       "layer": "detail",
-      "text": "65\" window opening",
+      "text": "65\" — 2 windows",
       "size": 7
     },
     {
@@ -729,7 +772,7 @@
         }
       ],
       "layer": "detail",
-      "text": "FRONT: 65\" → 62\" framed → window 61½\" × 53½\".",
+      "text": "FRONT: 65\", double 2×4 in the middle → two 29½\" framed → windows 29\" × 53½\".",
       "size": 5
     },
     {
