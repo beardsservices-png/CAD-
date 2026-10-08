@@ -1,0 +1,798 @@
+{
+  "version": 1,
+  "name": "Collins Picket Fence — plan (overhead)",
+  "viewMode": "plan",
+  "layers": [
+    {
+      "id": "existing",
+      "name": "Existing",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "posts",
+      "name": "Posts",
+      "color": "#7c4a1e",
+      "visible": true
+    },
+    {
+      "id": "fence",
+      "name": "Picket sections",
+      "color": "#b45309",
+      "visible": true
+    },
+    {
+      "id": "gate",
+      "name": "Tractor gate",
+      "color": "#15803d",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#64748b",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    }
+  ],
+  "activeLayer": "existing",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -120
+        },
+        {
+          "x": 528,
+          "y": 0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "height": 30,
+      "label": "Back deck (existing)",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "text",
+      "pts": [
+        {
+          "x": 204.0,
+          "y": -60
+        }
+      ],
+      "layer": "detail",
+      "text": "BACK DECK (existing)",
+      "size": 7
+    },
+    {
+      "id": "s3",
+      "type": "line",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 288
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "dash": "dashed",
+      "height": 1,
+      "label": "Old picket fence (removed)",
+      "locked": true
+    },
+    {
+      "id": "s4",
+      "type": "line",
+      "pts": [
+        {
+          "x": 0,
+          "y": 288
+        },
+        {
+          "x": 456,
+          "y": 288
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "dash": "dashed",
+      "height": 1,
+      "label": "Old picket fence (removed)",
+      "locked": true
+    },
+    {
+      "id": "s5",
+      "type": "line",
+      "pts": [
+        {
+          "x": 456,
+          "y": 288
+        },
+        {
+          "x": 456,
+          "y": 0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "dash": "dashed",
+      "height": 1,
+      "label": "Old picket fence (removed)",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "text",
+      "pts": [
+        {
+          "x": 464,
+          "y": 90
+        }
+      ],
+      "layer": "detail",
+      "text": "old side (38 ft wide) — comes out",
+      "size": 5
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.75,
+          "y": -1.75
+        },
+        {
+          "x": 1.75,
+          "y": 1.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT post (line/end)"
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 526.25,
+          "y": -1.75
+        },
+        {
+          "x": 529.75,
+          "y": 1.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT post (line/end)"
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.75,
+          "y": 94.25
+        },
+        {
+          "x": 1.75,
+          "y": 97.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT post (line/end)"
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 526.25,
+          "y": 94.25
+        },
+        {
+          "x": 529.75,
+          "y": 97.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT post (line/end)"
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.75,
+          "y": 190.25
+        },
+        {
+          "x": 1.75,
+          "y": 193.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT post (line/end)"
+    },
+    {
+      "id": "s12",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 526.25,
+          "y": 190.25
+        },
+        {
+          "x": 529.75,
+          "y": 193.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT post (line/end)"
+    },
+    {
+      "id": "s13",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.75,
+          "y": 286.25
+        },
+        {
+          "x": 1.75,
+          "y": 289.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT corner post"
+    },
+    {
+      "id": "s14",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 94.25,
+          "y": 286.25
+        },
+        {
+          "x": 97.75,
+          "y": 289.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT post (line)"
+    },
+    {
+      "id": "s15",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 190.25,
+          "y": 286.25
+        },
+        {
+          "x": 193.75,
+          "y": 289.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT post (line)"
+    },
+    {
+      "id": "s16",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 286.25,
+          "y": 286.25
+        },
+        {
+          "x": 289.75,
+          "y": 289.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 8 ft PT gate post"
+    },
+    {
+      "id": "s17",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 382.25,
+          "y": 286.25
+        },
+        {
+          "x": 385.75,
+          "y": 289.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 8 ft PT gate post"
+    },
+    {
+      "id": "s18",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 478.25,
+          "y": 286.25
+        },
+        {
+          "x": 481.75,
+          "y": 289.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT post (line)"
+    },
+    {
+      "id": "s19",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 526.25,
+          "y": 286.25
+        },
+        {
+          "x": 529.75,
+          "y": 289.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 68,
+      "label": "4×4 × 6 ft PT corner post"
+    },
+    {
+      "id": "s20",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.5,
+          "y": 1.75
+        },
+        {
+          "x": 1.5,
+          "y": 94.25
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s21",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.5,
+          "y": 97.75
+        },
+        {
+          "x": 1.5,
+          "y": 190.25
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s22",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.5,
+          "y": 193.75
+        },
+        {
+          "x": 1.5,
+          "y": 286.25
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s23",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 526.5,
+          "y": 1.75
+        },
+        {
+          "x": 529.5,
+          "y": 94.25
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s24",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 526.5,
+          "y": 97.75
+        },
+        {
+          "x": 529.5,
+          "y": 190.25
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s25",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 526.5,
+          "y": 193.75
+        },
+        {
+          "x": 529.5,
+          "y": 286.25
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s26",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.75,
+          "y": 286.5
+        },
+        {
+          "x": 94.25,
+          "y": 289.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s27",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 97.75,
+          "y": 286.5
+        },
+        {
+          "x": 190.25,
+          "y": 289.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s28",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 193.75,
+          "y": 286.5
+        },
+        {
+          "x": 286.25,
+          "y": 289.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s29",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 385.75,
+          "y": 286.5
+        },
+        {
+          "x": 478.25,
+          "y": 289.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section 8 ft (pre-assembled)"
+    },
+    {
+      "id": "s30",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 481.75,
+          "y": 286.5
+        },
+        {
+          "x": 526.25,
+          "y": 289.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 42,
+      "label": "Picket section cut to 4 ft"
+    },
+    {
+      "id": "s31",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 290.25,
+          "y": 286.5
+        },
+        {
+          "x": 336,
+          "y": 289.5
+        }
+      ],
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 2,
+      "height": 42,
+      "label": "Gate leaf 4 ft (left)"
+    },
+    {
+      "id": "s32",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 336,
+          "y": 286.5
+        },
+        {
+          "x": 381.75,
+          "y": 289.5
+        }
+      ],
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 2,
+      "height": 42,
+      "label": "Gate leaf 4 ft (right)"
+    },
+    {
+      "id": "s33",
+      "type": "text",
+      "pts": [
+        {
+          "x": 292,
+          "y": 268
+        }
+      ],
+      "layer": "detail",
+      "text": "8 ft double gate (tractor)",
+      "size": 5
+    },
+    {
+      "id": "s34",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 0,
+          "y": 348
+        },
+        {
+          "x": 528,
+          "y": 348
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s35",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -40,
+          "y": 0
+        },
+        {
+          "x": -40,
+          "y": 288
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s36",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 568,
+          "y": 0
+        },
+        {
+          "x": 568,
+          "y": 288
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s37",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 288,
+          "y": 318
+        },
+        {
+          "x": 384,
+          "y": 318
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s38",
+      "type": "text",
+      "pts": [
+        {
+          "x": 462,
+          "y": 144.0
+        }
+      ],
+      "layer": "detail",
+      "text": "+6 ft wider",
+      "size": 6
+    },
+    {
+      "id": "s39",
+      "type": "text",
+      "pts": [
+        {
+          "x": 40,
+          "y": 383
+        }
+      ],
+      "layer": "detail",
+      "text": "Picket fence ~3½ ft, 8 ft pre-assembled sections on 4×4 posts. Gate location to confirm on site.",
+      "size": 5
+    }
+  ]
+}

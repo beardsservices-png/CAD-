@@ -1,0 +1,3262 @@
+{
+  "version": 1,
+  "name": "Collins Picket Fence — back run (elevation)",
+  "viewMode": "elevation",
+  "layers": [
+    {
+      "id": "existing",
+      "name": "Grade",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "posts",
+      "name": "Posts",
+      "color": "#7c4a1e",
+      "visible": true
+    },
+    {
+      "id": "fence",
+      "name": "Picket sections",
+      "color": "#b45309",
+      "visible": true
+    },
+    {
+      "id": "gate",
+      "name": "Tractor gate",
+      "color": "#15803d",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#64748b",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    }
+  ],
+  "activeLayer": "existing",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "line",
+      "pts": [
+        {
+          "x": -24,
+          "y": 0
+        },
+        {
+          "x": 552,
+          "y": 0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "label": "Grade",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.75,
+          "y": 0
+        },
+        {
+          "x": 1.75,
+          "y": -44
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "height": 3.5,
+      "label": "4×4 PT post"
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 94.25,
+          "y": 0
+        },
+        {
+          "x": 97.75,
+          "y": -44
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "height": 3.5,
+      "label": "4×4 PT post"
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 190.25,
+          "y": 0
+        },
+        {
+          "x": 193.75,
+          "y": -44
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "height": 3.5,
+      "label": "4×4 PT post"
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 286.25,
+          "y": 0
+        },
+        {
+          "x": 289.75,
+          "y": -44
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "height": 3.5,
+      "label": "4×4 × 8 ft PT gate post"
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 382.25,
+          "y": 0
+        },
+        {
+          "x": 385.75,
+          "y": -44
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "height": 3.5,
+      "label": "4×4 × 8 ft PT gate post"
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 478.25,
+          "y": 0
+        },
+        {
+          "x": 481.75,
+          "y": -44
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "height": 3.5,
+      "label": "4×4 PT post"
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 526.25,
+          "y": 0
+        },
+        {
+          "x": 529.75,
+          "y": -44
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "height": 3.5,
+      "label": "4×4 PT post"
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.75,
+          "y": -6
+        },
+        {
+          "x": 94.25,
+          "y": -9.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.75,
+          "y": -30
+        },
+        {
+          "x": 94.25,
+          "y": -33.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s11",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 2.75,
+          "y": -2
+        },
+        {
+          "x": 6.25,
+          "y": -2
+        },
+        {
+          "x": 6.25,
+          "y": -40
+        },
+        {
+          "x": 4.5,
+          "y": -42
+        },
+        {
+          "x": 2.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s12",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 8.75,
+          "y": -2
+        },
+        {
+          "x": 12.25,
+          "y": -2
+        },
+        {
+          "x": 12.25,
+          "y": -40
+        },
+        {
+          "x": 10.5,
+          "y": -42
+        },
+        {
+          "x": 8.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s13",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 14.75,
+          "y": -2
+        },
+        {
+          "x": 18.25,
+          "y": -2
+        },
+        {
+          "x": 18.25,
+          "y": -40
+        },
+        {
+          "x": 16.5,
+          "y": -42
+        },
+        {
+          "x": 14.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s14",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 20.75,
+          "y": -2
+        },
+        {
+          "x": 24.25,
+          "y": -2
+        },
+        {
+          "x": 24.25,
+          "y": -40
+        },
+        {
+          "x": 22.5,
+          "y": -42
+        },
+        {
+          "x": 20.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s15",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 26.75,
+          "y": -2
+        },
+        {
+          "x": 30.25,
+          "y": -2
+        },
+        {
+          "x": 30.25,
+          "y": -40
+        },
+        {
+          "x": 28.5,
+          "y": -42
+        },
+        {
+          "x": 26.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s16",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 32.75,
+          "y": -2
+        },
+        {
+          "x": 36.25,
+          "y": -2
+        },
+        {
+          "x": 36.25,
+          "y": -40
+        },
+        {
+          "x": 34.5,
+          "y": -42
+        },
+        {
+          "x": 32.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s17",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 38.75,
+          "y": -2
+        },
+        {
+          "x": 42.25,
+          "y": -2
+        },
+        {
+          "x": 42.25,
+          "y": -40
+        },
+        {
+          "x": 40.5,
+          "y": -42
+        },
+        {
+          "x": 38.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s18",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 44.75,
+          "y": -2
+        },
+        {
+          "x": 48.25,
+          "y": -2
+        },
+        {
+          "x": 48.25,
+          "y": -40
+        },
+        {
+          "x": 46.5,
+          "y": -42
+        },
+        {
+          "x": 44.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s19",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 50.75,
+          "y": -2
+        },
+        {
+          "x": 54.25,
+          "y": -2
+        },
+        {
+          "x": 54.25,
+          "y": -40
+        },
+        {
+          "x": 52.5,
+          "y": -42
+        },
+        {
+          "x": 50.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s20",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 56.75,
+          "y": -2
+        },
+        {
+          "x": 60.25,
+          "y": -2
+        },
+        {
+          "x": 60.25,
+          "y": -40
+        },
+        {
+          "x": 58.5,
+          "y": -42
+        },
+        {
+          "x": 56.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s21",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 62.75,
+          "y": -2
+        },
+        {
+          "x": 66.25,
+          "y": -2
+        },
+        {
+          "x": 66.25,
+          "y": -40
+        },
+        {
+          "x": 64.5,
+          "y": -42
+        },
+        {
+          "x": 62.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s22",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 68.75,
+          "y": -2
+        },
+        {
+          "x": 72.25,
+          "y": -2
+        },
+        {
+          "x": 72.25,
+          "y": -40
+        },
+        {
+          "x": 70.5,
+          "y": -42
+        },
+        {
+          "x": 68.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s23",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 74.75,
+          "y": -2
+        },
+        {
+          "x": 78.25,
+          "y": -2
+        },
+        {
+          "x": 78.25,
+          "y": -40
+        },
+        {
+          "x": 76.5,
+          "y": -42
+        },
+        {
+          "x": 74.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s24",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 80.75,
+          "y": -2
+        },
+        {
+          "x": 84.25,
+          "y": -2
+        },
+        {
+          "x": 84.25,
+          "y": -40
+        },
+        {
+          "x": 82.5,
+          "y": -42
+        },
+        {
+          "x": 80.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s25",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 86.75,
+          "y": -2
+        },
+        {
+          "x": 90.25,
+          "y": -2
+        },
+        {
+          "x": 90.25,
+          "y": -40
+        },
+        {
+          "x": 88.5,
+          "y": -42
+        },
+        {
+          "x": 86.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s26",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 97.75,
+          "y": -6
+        },
+        {
+          "x": 190.25,
+          "y": -9.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s27",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 97.75,
+          "y": -30
+        },
+        {
+          "x": 190.25,
+          "y": -33.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s28",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 98.75,
+          "y": -2
+        },
+        {
+          "x": 102.25,
+          "y": -2
+        },
+        {
+          "x": 102.25,
+          "y": -40
+        },
+        {
+          "x": 100.5,
+          "y": -42
+        },
+        {
+          "x": 98.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s29",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 104.75,
+          "y": -2
+        },
+        {
+          "x": 108.25,
+          "y": -2
+        },
+        {
+          "x": 108.25,
+          "y": -40
+        },
+        {
+          "x": 106.5,
+          "y": -42
+        },
+        {
+          "x": 104.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s30",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 110.75,
+          "y": -2
+        },
+        {
+          "x": 114.25,
+          "y": -2
+        },
+        {
+          "x": 114.25,
+          "y": -40
+        },
+        {
+          "x": 112.5,
+          "y": -42
+        },
+        {
+          "x": 110.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s31",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 116.75,
+          "y": -2
+        },
+        {
+          "x": 120.25,
+          "y": -2
+        },
+        {
+          "x": 120.25,
+          "y": -40
+        },
+        {
+          "x": 118.5,
+          "y": -42
+        },
+        {
+          "x": 116.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s32",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 122.75,
+          "y": -2
+        },
+        {
+          "x": 126.25,
+          "y": -2
+        },
+        {
+          "x": 126.25,
+          "y": -40
+        },
+        {
+          "x": 124.5,
+          "y": -42
+        },
+        {
+          "x": 122.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s33",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 128.75,
+          "y": -2
+        },
+        {
+          "x": 132.25,
+          "y": -2
+        },
+        {
+          "x": 132.25,
+          "y": -40
+        },
+        {
+          "x": 130.5,
+          "y": -42
+        },
+        {
+          "x": 128.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s34",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 134.75,
+          "y": -2
+        },
+        {
+          "x": 138.25,
+          "y": -2
+        },
+        {
+          "x": 138.25,
+          "y": -40
+        },
+        {
+          "x": 136.5,
+          "y": -42
+        },
+        {
+          "x": 134.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s35",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 140.75,
+          "y": -2
+        },
+        {
+          "x": 144.25,
+          "y": -2
+        },
+        {
+          "x": 144.25,
+          "y": -40
+        },
+        {
+          "x": 142.5,
+          "y": -42
+        },
+        {
+          "x": 140.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s36",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 146.75,
+          "y": -2
+        },
+        {
+          "x": 150.25,
+          "y": -2
+        },
+        {
+          "x": 150.25,
+          "y": -40
+        },
+        {
+          "x": 148.5,
+          "y": -42
+        },
+        {
+          "x": 146.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s37",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 152.75,
+          "y": -2
+        },
+        {
+          "x": 156.25,
+          "y": -2
+        },
+        {
+          "x": 156.25,
+          "y": -40
+        },
+        {
+          "x": 154.5,
+          "y": -42
+        },
+        {
+          "x": 152.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s38",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 158.75,
+          "y": -2
+        },
+        {
+          "x": 162.25,
+          "y": -2
+        },
+        {
+          "x": 162.25,
+          "y": -40
+        },
+        {
+          "x": 160.5,
+          "y": -42
+        },
+        {
+          "x": 158.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s39",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 164.75,
+          "y": -2
+        },
+        {
+          "x": 168.25,
+          "y": -2
+        },
+        {
+          "x": 168.25,
+          "y": -40
+        },
+        {
+          "x": 166.5,
+          "y": -42
+        },
+        {
+          "x": 164.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s40",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 170.75,
+          "y": -2
+        },
+        {
+          "x": 174.25,
+          "y": -2
+        },
+        {
+          "x": 174.25,
+          "y": -40
+        },
+        {
+          "x": 172.5,
+          "y": -42
+        },
+        {
+          "x": 170.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s41",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 176.75,
+          "y": -2
+        },
+        {
+          "x": 180.25,
+          "y": -2
+        },
+        {
+          "x": 180.25,
+          "y": -40
+        },
+        {
+          "x": 178.5,
+          "y": -42
+        },
+        {
+          "x": 176.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s42",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 182.75,
+          "y": -2
+        },
+        {
+          "x": 186.25,
+          "y": -2
+        },
+        {
+          "x": 186.25,
+          "y": -40
+        },
+        {
+          "x": 184.5,
+          "y": -42
+        },
+        {
+          "x": 182.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s43",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 193.75,
+          "y": -6
+        },
+        {
+          "x": 286.25,
+          "y": -9.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s44",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 193.75,
+          "y": -30
+        },
+        {
+          "x": 286.25,
+          "y": -33.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s45",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 194.75,
+          "y": -2
+        },
+        {
+          "x": 198.25,
+          "y": -2
+        },
+        {
+          "x": 198.25,
+          "y": -40
+        },
+        {
+          "x": 196.5,
+          "y": -42
+        },
+        {
+          "x": 194.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s46",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 200.75,
+          "y": -2
+        },
+        {
+          "x": 204.25,
+          "y": -2
+        },
+        {
+          "x": 204.25,
+          "y": -40
+        },
+        {
+          "x": 202.5,
+          "y": -42
+        },
+        {
+          "x": 200.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s47",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 206.75,
+          "y": -2
+        },
+        {
+          "x": 210.25,
+          "y": -2
+        },
+        {
+          "x": 210.25,
+          "y": -40
+        },
+        {
+          "x": 208.5,
+          "y": -42
+        },
+        {
+          "x": 206.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s48",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 212.75,
+          "y": -2
+        },
+        {
+          "x": 216.25,
+          "y": -2
+        },
+        {
+          "x": 216.25,
+          "y": -40
+        },
+        {
+          "x": 214.5,
+          "y": -42
+        },
+        {
+          "x": 212.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s49",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 218.75,
+          "y": -2
+        },
+        {
+          "x": 222.25,
+          "y": -2
+        },
+        {
+          "x": 222.25,
+          "y": -40
+        },
+        {
+          "x": 220.5,
+          "y": -42
+        },
+        {
+          "x": 218.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s50",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 224.75,
+          "y": -2
+        },
+        {
+          "x": 228.25,
+          "y": -2
+        },
+        {
+          "x": 228.25,
+          "y": -40
+        },
+        {
+          "x": 226.5,
+          "y": -42
+        },
+        {
+          "x": 224.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s51",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 230.75,
+          "y": -2
+        },
+        {
+          "x": 234.25,
+          "y": -2
+        },
+        {
+          "x": 234.25,
+          "y": -40
+        },
+        {
+          "x": 232.5,
+          "y": -42
+        },
+        {
+          "x": 230.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s52",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 236.75,
+          "y": -2
+        },
+        {
+          "x": 240.25,
+          "y": -2
+        },
+        {
+          "x": 240.25,
+          "y": -40
+        },
+        {
+          "x": 238.5,
+          "y": -42
+        },
+        {
+          "x": 236.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s53",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 242.75,
+          "y": -2
+        },
+        {
+          "x": 246.25,
+          "y": -2
+        },
+        {
+          "x": 246.25,
+          "y": -40
+        },
+        {
+          "x": 244.5,
+          "y": -42
+        },
+        {
+          "x": 242.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s54",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 248.75,
+          "y": -2
+        },
+        {
+          "x": 252.25,
+          "y": -2
+        },
+        {
+          "x": 252.25,
+          "y": -40
+        },
+        {
+          "x": 250.5,
+          "y": -42
+        },
+        {
+          "x": 248.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s55",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 254.75,
+          "y": -2
+        },
+        {
+          "x": 258.25,
+          "y": -2
+        },
+        {
+          "x": 258.25,
+          "y": -40
+        },
+        {
+          "x": 256.5,
+          "y": -42
+        },
+        {
+          "x": 254.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s56",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 260.75,
+          "y": -2
+        },
+        {
+          "x": 264.25,
+          "y": -2
+        },
+        {
+          "x": 264.25,
+          "y": -40
+        },
+        {
+          "x": 262.5,
+          "y": -42
+        },
+        {
+          "x": 260.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s57",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 266.75,
+          "y": -2
+        },
+        {
+          "x": 270.25,
+          "y": -2
+        },
+        {
+          "x": 270.25,
+          "y": -40
+        },
+        {
+          "x": 268.5,
+          "y": -42
+        },
+        {
+          "x": 266.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s58",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 272.75,
+          "y": -2
+        },
+        {
+          "x": 276.25,
+          "y": -2
+        },
+        {
+          "x": 276.25,
+          "y": -40
+        },
+        {
+          "x": 274.5,
+          "y": -42
+        },
+        {
+          "x": 272.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s59",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 278.75,
+          "y": -2
+        },
+        {
+          "x": 282.25,
+          "y": -2
+        },
+        {
+          "x": 282.25,
+          "y": -40
+        },
+        {
+          "x": 280.5,
+          "y": -42
+        },
+        {
+          "x": 278.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s60",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 385.75,
+          "y": -6
+        },
+        {
+          "x": 478.25,
+          "y": -9.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s61",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 385.75,
+          "y": -30
+        },
+        {
+          "x": 478.25,
+          "y": -33.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s62",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 386.75,
+          "y": -2
+        },
+        {
+          "x": 390.25,
+          "y": -2
+        },
+        {
+          "x": 390.25,
+          "y": -40
+        },
+        {
+          "x": 388.5,
+          "y": -42
+        },
+        {
+          "x": 386.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s63",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 392.75,
+          "y": -2
+        },
+        {
+          "x": 396.25,
+          "y": -2
+        },
+        {
+          "x": 396.25,
+          "y": -40
+        },
+        {
+          "x": 394.5,
+          "y": -42
+        },
+        {
+          "x": 392.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s64",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 398.75,
+          "y": -2
+        },
+        {
+          "x": 402.25,
+          "y": -2
+        },
+        {
+          "x": 402.25,
+          "y": -40
+        },
+        {
+          "x": 400.5,
+          "y": -42
+        },
+        {
+          "x": 398.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s65",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 404.75,
+          "y": -2
+        },
+        {
+          "x": 408.25,
+          "y": -2
+        },
+        {
+          "x": 408.25,
+          "y": -40
+        },
+        {
+          "x": 406.5,
+          "y": -42
+        },
+        {
+          "x": 404.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s66",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 410.75,
+          "y": -2
+        },
+        {
+          "x": 414.25,
+          "y": -2
+        },
+        {
+          "x": 414.25,
+          "y": -40
+        },
+        {
+          "x": 412.5,
+          "y": -42
+        },
+        {
+          "x": 410.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s67",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 416.75,
+          "y": -2
+        },
+        {
+          "x": 420.25,
+          "y": -2
+        },
+        {
+          "x": 420.25,
+          "y": -40
+        },
+        {
+          "x": 418.5,
+          "y": -42
+        },
+        {
+          "x": 416.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s68",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 422.75,
+          "y": -2
+        },
+        {
+          "x": 426.25,
+          "y": -2
+        },
+        {
+          "x": 426.25,
+          "y": -40
+        },
+        {
+          "x": 424.5,
+          "y": -42
+        },
+        {
+          "x": 422.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s69",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 428.75,
+          "y": -2
+        },
+        {
+          "x": 432.25,
+          "y": -2
+        },
+        {
+          "x": 432.25,
+          "y": -40
+        },
+        {
+          "x": 430.5,
+          "y": -42
+        },
+        {
+          "x": 428.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s70",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 434.75,
+          "y": -2
+        },
+        {
+          "x": 438.25,
+          "y": -2
+        },
+        {
+          "x": 438.25,
+          "y": -40
+        },
+        {
+          "x": 436.5,
+          "y": -42
+        },
+        {
+          "x": 434.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s71",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 440.75,
+          "y": -2
+        },
+        {
+          "x": 444.25,
+          "y": -2
+        },
+        {
+          "x": 444.25,
+          "y": -40
+        },
+        {
+          "x": 442.5,
+          "y": -42
+        },
+        {
+          "x": 440.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s72",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 446.75,
+          "y": -2
+        },
+        {
+          "x": 450.25,
+          "y": -2
+        },
+        {
+          "x": 450.25,
+          "y": -40
+        },
+        {
+          "x": 448.5,
+          "y": -42
+        },
+        {
+          "x": 446.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s73",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 452.75,
+          "y": -2
+        },
+        {
+          "x": 456.25,
+          "y": -2
+        },
+        {
+          "x": 456.25,
+          "y": -40
+        },
+        {
+          "x": 454.5,
+          "y": -42
+        },
+        {
+          "x": 452.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s74",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 458.75,
+          "y": -2
+        },
+        {
+          "x": 462.25,
+          "y": -2
+        },
+        {
+          "x": 462.25,
+          "y": -40
+        },
+        {
+          "x": 460.5,
+          "y": -42
+        },
+        {
+          "x": 458.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s75",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 464.75,
+          "y": -2
+        },
+        {
+          "x": 468.25,
+          "y": -2
+        },
+        {
+          "x": 468.25,
+          "y": -40
+        },
+        {
+          "x": 466.5,
+          "y": -42
+        },
+        {
+          "x": 464.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s76",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 470.75,
+          "y": -2
+        },
+        {
+          "x": 474.25,
+          "y": -2
+        },
+        {
+          "x": 474.25,
+          "y": -40
+        },
+        {
+          "x": 472.5,
+          "y": -42
+        },
+        {
+          "x": 470.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s77",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 481.75,
+          "y": -6
+        },
+        {
+          "x": 526.25,
+          "y": -9.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s78",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 481.75,
+          "y": -30
+        },
+        {
+          "x": 526.25,
+          "y": -33.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Section rail"
+    },
+    {
+      "id": "s79",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 482.75,
+          "y": -2
+        },
+        {
+          "x": 486.25,
+          "y": -2
+        },
+        {
+          "x": 486.25,
+          "y": -40
+        },
+        {
+          "x": 484.5,
+          "y": -42
+        },
+        {
+          "x": 482.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s80",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 488.75,
+          "y": -2
+        },
+        {
+          "x": 492.25,
+          "y": -2
+        },
+        {
+          "x": 492.25,
+          "y": -40
+        },
+        {
+          "x": 490.5,
+          "y": -42
+        },
+        {
+          "x": 488.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s81",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 494.75,
+          "y": -2
+        },
+        {
+          "x": 498.25,
+          "y": -2
+        },
+        {
+          "x": 498.25,
+          "y": -40
+        },
+        {
+          "x": 496.5,
+          "y": -42
+        },
+        {
+          "x": 494.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s82",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 500.75,
+          "y": -2
+        },
+        {
+          "x": 504.25,
+          "y": -2
+        },
+        {
+          "x": 504.25,
+          "y": -40
+        },
+        {
+          "x": 502.5,
+          "y": -42
+        },
+        {
+          "x": 500.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s83",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 506.75,
+          "y": -2
+        },
+        {
+          "x": 510.25,
+          "y": -2
+        },
+        {
+          "x": 510.25,
+          "y": -40
+        },
+        {
+          "x": 508.5,
+          "y": -42
+        },
+        {
+          "x": 506.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s84",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 512.75,
+          "y": -2
+        },
+        {
+          "x": 516.25,
+          "y": -2
+        },
+        {
+          "x": 516.25,
+          "y": -40
+        },
+        {
+          "x": 514.5,
+          "y": -42
+        },
+        {
+          "x": 512.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s85",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 518.75,
+          "y": -2
+        },
+        {
+          "x": 522.25,
+          "y": -2
+        },
+        {
+          "x": 522.25,
+          "y": -40
+        },
+        {
+          "x": 520.5,
+          "y": -42
+        },
+        {
+          "x": 518.75,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Section picket"
+    },
+    {
+      "id": "s86",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 290.25,
+          "y": -6
+        },
+        {
+          "x": 335.75,
+          "y": -9.5
+        }
+      ],
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Gate rail"
+    },
+    {
+      "id": "s87",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 290.25,
+          "y": -30
+        },
+        {
+          "x": 335.75,
+          "y": -33.5
+        }
+      ],
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Gate rail"
+    },
+    {
+      "id": "s88",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 291.25,
+          "y": -2
+        },
+        {
+          "x": 294.75,
+          "y": -2
+        },
+        {
+          "x": 294.75,
+          "y": -40
+        },
+        {
+          "x": 293.0,
+          "y": -42
+        },
+        {
+          "x": 291.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s89",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 297.25,
+          "y": -2
+        },
+        {
+          "x": 300.75,
+          "y": -2
+        },
+        {
+          "x": 300.75,
+          "y": -40
+        },
+        {
+          "x": 299.0,
+          "y": -42
+        },
+        {
+          "x": 297.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s90",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 303.25,
+          "y": -2
+        },
+        {
+          "x": 306.75,
+          "y": -2
+        },
+        {
+          "x": 306.75,
+          "y": -40
+        },
+        {
+          "x": 305.0,
+          "y": -42
+        },
+        {
+          "x": 303.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s91",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 309.25,
+          "y": -2
+        },
+        {
+          "x": 312.75,
+          "y": -2
+        },
+        {
+          "x": 312.75,
+          "y": -40
+        },
+        {
+          "x": 311.0,
+          "y": -42
+        },
+        {
+          "x": 309.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s92",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 315.25,
+          "y": -2
+        },
+        {
+          "x": 318.75,
+          "y": -2
+        },
+        {
+          "x": 318.75,
+          "y": -40
+        },
+        {
+          "x": 317.0,
+          "y": -42
+        },
+        {
+          "x": 315.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s93",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 321.25,
+          "y": -2
+        },
+        {
+          "x": 324.75,
+          "y": -2
+        },
+        {
+          "x": 324.75,
+          "y": -40
+        },
+        {
+          "x": 323.0,
+          "y": -42
+        },
+        {
+          "x": 321.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s94",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 327.25,
+          "y": -2
+        },
+        {
+          "x": 330.75,
+          "y": -2
+        },
+        {
+          "x": 330.75,
+          "y": -40
+        },
+        {
+          "x": 329.0,
+          "y": -42
+        },
+        {
+          "x": 327.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s95",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 336.25,
+          "y": -6
+        },
+        {
+          "x": 381.75,
+          "y": -9.5
+        }
+      ],
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Gate rail"
+    },
+    {
+      "id": "s96",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 336.25,
+          "y": -30
+        },
+        {
+          "x": 381.75,
+          "y": -33.5
+        }
+      ],
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "solid",
+      "height": 1.5,
+      "label": "Gate rail"
+    },
+    {
+      "id": "s97",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 337.25,
+          "y": -2
+        },
+        {
+          "x": 340.75,
+          "y": -2
+        },
+        {
+          "x": 340.75,
+          "y": -40
+        },
+        {
+          "x": 339.0,
+          "y": -42
+        },
+        {
+          "x": 337.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s98",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 343.25,
+          "y": -2
+        },
+        {
+          "x": 346.75,
+          "y": -2
+        },
+        {
+          "x": 346.75,
+          "y": -40
+        },
+        {
+          "x": 345.0,
+          "y": -42
+        },
+        {
+          "x": 343.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s99",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 349.25,
+          "y": -2
+        },
+        {
+          "x": 352.75,
+          "y": -2
+        },
+        {
+          "x": 352.75,
+          "y": -40
+        },
+        {
+          "x": 351.0,
+          "y": -42
+        },
+        {
+          "x": 349.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s100",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 355.25,
+          "y": -2
+        },
+        {
+          "x": 358.75,
+          "y": -2
+        },
+        {
+          "x": 358.75,
+          "y": -40
+        },
+        {
+          "x": 357.0,
+          "y": -42
+        },
+        {
+          "x": 355.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s101",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 361.25,
+          "y": -2
+        },
+        {
+          "x": 364.75,
+          "y": -2
+        },
+        {
+          "x": 364.75,
+          "y": -40
+        },
+        {
+          "x": 363.0,
+          "y": -42
+        },
+        {
+          "x": 361.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s102",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 367.25,
+          "y": -2
+        },
+        {
+          "x": 370.75,
+          "y": -2
+        },
+        {
+          "x": 370.75,
+          "y": -40
+        },
+        {
+          "x": 369.0,
+          "y": -42
+        },
+        {
+          "x": 367.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s103",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 373.25,
+          "y": -2
+        },
+        {
+          "x": 376.75,
+          "y": -2
+        },
+        {
+          "x": 376.75,
+          "y": -40
+        },
+        {
+          "x": 375.0,
+          "y": -42
+        },
+        {
+          "x": 373.25,
+          "y": -40
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.75,
+      "label": "Gate picket"
+    },
+    {
+      "id": "s104",
+      "type": "line",
+      "pts": [
+        {
+          "x": 292.25,
+          "y": -9.5
+        },
+        {
+          "x": 333.75,
+          "y": -30
+        }
+      ],
+      "layer": "gate",
+      "step": 3,
+      "label": "Gate diagonal brace"
+    },
+    {
+      "id": "s105",
+      "type": "line",
+      "pts": [
+        {
+          "x": 338.25,
+          "y": -9.5
+        },
+        {
+          "x": 379.75,
+          "y": -30
+        }
+      ],
+      "layer": "gate",
+      "step": 3,
+      "label": "Gate diagonal brace"
+    },
+    {
+      "id": "s106",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 0,
+          "y": 30
+        },
+        {
+          "x": 528,
+          "y": 30
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s107",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 288,
+          "y": 14
+        },
+        {
+          "x": 384,
+          "y": 14
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s108",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -20,
+          "y": 0
+        },
+        {
+          "x": -20,
+          "y": -42
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s109",
+      "type": "text",
+      "pts": [
+        {
+          "x": 298,
+          "y": -56
+        }
+      ],
+      "layer": "detail",
+      "text": "8 ft double gate — drop rod + latch",
+      "size": 5
+    },
+    {
+      "id": "s110",
+      "type": "text",
+      "pts": [
+        {
+          "x": 0,
+          "y": 58
+        }
+      ],
+      "layer": "detail",
+      "text": "Back run seen from the yard. 44 ft = 36 ft of fence + 8 ft gate.",
+      "size": 5
+    }
+  ]
+}

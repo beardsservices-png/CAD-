@@ -44,4 +44,30 @@ export const EXAMPLES = [
       "Materials — itemises the framing, windows and plexiglass for this side",
     ],
   },
+  {
+    id: "collins-picket-fence-plan",
+    file: "examples/collins-picket-fence-plan.json",
+    name: "Collins Picket Fence — plan (overhead)",
+    blurb:
+      "Charlotte Collins, back-yard picket fence replacement. Two 24 ft sides and a back run widened " +
+      "from 38 ft to 44 ft to match the deck, 8 ft pre-assembled sections on 4×4 posts, and an 8 ft " +
+      "double gate wide enough for a tractor. The old fence line is ghosted.",
+    teaches: [
+      "Existing (reference only) — the deck and the old 38 ft fence line are ghosted and never counted",
+      "Build steps — posts, then the sections, then the gate leaves",
+      "Materials — counts the posts, sections and gate leaves for the homeowner's shopping list",
+    ],
+  },
+  {
+    id: "collins-picket-fence-back",
+    file: "examples/collins-picket-fence-back.json",
+    name: "Collins Picket Fence — back run (elevation)",
+    blurb:
+      "Charlotte Collins. The 44 ft back run seen from the yard: dog-ear pickets on two rails, " +
+      "posts every 8 ft, a 4 ft cut section at the end, and the 8 ft double tractor gate with braces.",
+    teaches: [
+      "Elevation view — canvas up is height, so this is how the fence will actually look",
+      "Build steps — posts, sections, then the gate",
+    ],
+  },
 ];
