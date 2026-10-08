@@ -49,7 +49,7 @@ export const EXAMPLES = [
     file: "examples/collins-picket-fence-plan.json",
     name: "Collins Picket Fence — plan (overhead)",
     blurb:
-      "Charlotte Collins, back-yard picket fence replacement, 3 ft tall, 88 ft. Four 6 ft bays down each " +
+      "Charlotte Collins, back-yard picket fence replacement, 3 ft tall, 92 ft with the gate. Four 6 ft bays down each " +
       "24 ft side; the back widened from 38 ft to 44 ft to match the deck — three 6 ft bays each side of " +
       "an 8 ft double tractor gate. Bays built on site from 2×4 rails and cut pickets. Old fence line ghosted.",
     teaches: [
