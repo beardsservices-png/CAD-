@@ -746,27 +746,6 @@
           "y": 286.5
         },
         {
-          "x": 264,
-          "y": 289.5
-        }
-      ],
-      "layer": "gate",
-      "step": 3,
-      "material": "pt",
-      "fill": "solid",
-      "elevation": 2,
-      "height": 36,
-      "label": "Gate leaf 4 ft (left)"
-    },
-    {
-      "id": "s36",
-      "type": "rect",
-      "pts": [
-        {
-          "x": 264,
-          "y": 286.5
-        },
-        {
           "x": 309.75,
           "y": 289.5
         }
@@ -777,10 +756,10 @@
       "fill": "solid",
       "elevation": 2,
       "height": 36,
-      "label": "Gate leaf 4 ft (right)"
+      "label": "Gate 8 ft (single)"
     },
     {
-      "id": "s37",
+      "id": "s36",
       "type": "text",
       "pts": [
         {
@@ -789,11 +768,11 @@
         }
       ],
       "layer": "detail",
-      "text": "8 ft double gate (tractor)",
+      "text": "8 ft gate (tractor)",
       "size": 5
     },
     {
-      "id": "s38",
+      "id": "s37",
       "type": "dimension",
       "pts": [
         {
@@ -808,7 +787,7 @@
       "layer": "dims"
     },
     {
-      "id": "s39",
+      "id": "s38",
       "type": "dimension",
       "pts": [
         {
@@ -817,6 +796,21 @@
         },
         {
           "x": -40,
+          "y": 288
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s39",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 568,
+          "y": 0
+        },
+        {
+          "x": 568,
           "y": 288
         }
       ],
@@ -824,21 +818,6 @@
     },
     {
       "id": "s40",
-      "type": "dimension",
-      "pts": [
-        {
-          "x": 568,
-          "y": 0
-        },
-        {
-          "x": 568,
-          "y": 288
-        }
-      ],
-      "layer": "dims"
-    },
-    {
-      "id": "s41",
       "type": "dimension",
       "pts": [
         {
@@ -853,7 +832,7 @@
       "layer": "dims"
     },
     {
-      "id": "s42",
+      "id": "s41",
       "type": "text",
       "pts": [
         {
@@ -866,7 +845,7 @@
       "size": 6
     },
     {
-      "id": "s43",
+      "id": "s42",
       "type": "text",
       "pts": [
         {
