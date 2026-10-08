@@ -17,7 +17,7 @@
     },
     {
       "id": "fence",
-      "name": "Picket sections",
+      "name": "Picket fence",
       "color": "#b45309",
       "visible": true
     },
@@ -70,7 +70,7 @@
         },
         {
           "x": 1.75,
-          "y": -44
+          "y": -42
         }
       ],
       "layer": "posts",
@@ -85,12 +85,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 94.25,
+          "x": 70.25,
           "y": 0
         },
         {
-          "x": 97.75,
-          "y": -44
+          "x": 73.75,
+          "y": -42
         }
       ],
       "layer": "posts",
@@ -105,12 +105,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 190.25,
+          "x": 142.25,
           "y": 0
         },
         {
-          "x": 193.75,
-          "y": -44
+          "x": 145.75,
+          "y": -42
         }
       ],
       "layer": "posts",
@@ -125,12 +125,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 286.25,
+          "x": 214.25,
           "y": 0
         },
         {
-          "x": 289.75,
-          "y": -44
+          "x": 217.75,
+          "y": -42
         }
       ],
       "layer": "posts",
@@ -145,12 +145,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 382.25,
+          "x": 310.25,
           "y": 0
         },
         {
-          "x": 385.75,
-          "y": -44
+          "x": 313.75,
+          "y": -42
         }
       ],
       "layer": "posts",
@@ -165,12 +165,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 478.25,
+          "x": 382.25,
           "y": 0
         },
         {
-          "x": 481.75,
-          "y": -44
+          "x": 385.75,
+          "y": -42
         }
       ],
       "layer": "posts",
@@ -185,12 +185,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 526.25,
+          "x": 454.25,
           "y": 0
         },
         {
-          "x": 529.75,
-          "y": -44
+          "x": 457.75,
+          "y": -42
         }
       ],
       "layer": "posts",
@@ -205,20 +205,20 @@
       "type": "rect",
       "pts": [
         {
-          "x": 1.75,
-          "y": -6
+          "x": 526.25,
+          "y": 0
         },
         {
-          "x": 94.25,
-          "y": -9.5
+          "x": 529.75,
+          "y": -42
         }
       ],
-      "layer": "fence",
-      "step": 2,
+      "layer": "posts",
+      "step": 1,
       "material": "pt",
       "fill": "solid",
-      "height": 1.5,
-      "label": "Section rail"
+      "height": 3.5,
+      "label": "4×4 PT post"
     },
     {
       "id": "s10",
@@ -226,11 +226,11 @@
       "pts": [
         {
           "x": 1.75,
-          "y": -30
+          "y": -6
         },
         {
-          "x": 94.25,
-          "y": -33.5
+          "x": 70.25,
+          "y": -9.5
         }
       ],
       "layer": "fence",
@@ -238,64 +238,55 @@
       "material": "pt",
       "fill": "solid",
       "height": 1.5,
-      "label": "Section rail"
+      "label": "2×4 rail"
     },
     {
       "id": "s11",
-      "type": "polygon",
+      "type": "rect",
       "pts": [
         {
-          "x": 2.75,
-          "y": -2
+          "x": 1.75,
+          "y": -28
         },
         {
-          "x": 6.25,
-          "y": -2
-        },
-        {
-          "x": 6.25,
-          "y": -40
-        },
-        {
-          "x": 4.5,
-          "y": -42
-        },
-        {
-          "x": 2.75,
-          "y": -40
+          "x": 70.25,
+          "y": -31.5
         }
       ],
-      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "fill": "solid",
+      "height": 1.5,
+      "label": "2×4 rail"
     },
     {
       "id": "s12",
       "type": "polygon",
       "pts": [
         {
-          "x": 8.75,
+          "x": 2.75,
           "y": -2
         },
         {
-          "x": 12.25,
+          "x": 6.25,
           "y": -2
         },
         {
-          "x": 12.25,
-          "y": -40
+          "x": 6.25,
+          "y": -36.5
         },
         {
-          "x": 10.5,
-          "y": -42
+          "x": 5.25,
+          "y": -38
         },
         {
-          "x": 8.75,
-          "y": -40
+          "x": 3.75,
+          "y": -38
+        },
+        {
+          "x": 2.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -303,32 +294,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s13",
       "type": "polygon",
       "pts": [
         {
-          "x": 14.75,
+          "x": 8.75,
           "y": -2
         },
         {
-          "x": 18.25,
+          "x": 12.25,
           "y": -2
         },
         {
-          "x": 18.25,
-          "y": -40
+          "x": 12.25,
+          "y": -36.5
         },
         {
-          "x": 16.5,
-          "y": -42
+          "x": 11.25,
+          "y": -38
         },
         {
-          "x": 14.75,
-          "y": -40
+          "x": 9.75,
+          "y": -38
+        },
+        {
+          "x": 8.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -336,32 +331,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s14",
       "type": "polygon",
       "pts": [
         {
-          "x": 20.75,
+          "x": 14.75,
           "y": -2
         },
         {
-          "x": 24.25,
+          "x": 18.25,
           "y": -2
         },
         {
-          "x": 24.25,
-          "y": -40
+          "x": 18.25,
+          "y": -36.5
         },
         {
-          "x": 22.5,
-          "y": -42
+          "x": 17.25,
+          "y": -38
         },
         {
-          "x": 20.75,
-          "y": -40
+          "x": 15.75,
+          "y": -38
+        },
+        {
+          "x": 14.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -369,32 +368,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s15",
       "type": "polygon",
       "pts": [
         {
-          "x": 26.75,
+          "x": 20.75,
           "y": -2
         },
         {
-          "x": 30.25,
+          "x": 24.25,
           "y": -2
         },
         {
-          "x": 30.25,
-          "y": -40
+          "x": 24.25,
+          "y": -36.5
         },
         {
-          "x": 28.5,
-          "y": -42
+          "x": 23.25,
+          "y": -38
         },
         {
-          "x": 26.75,
-          "y": -40
+          "x": 21.75,
+          "y": -38
+        },
+        {
+          "x": 20.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -402,32 +405,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s16",
       "type": "polygon",
       "pts": [
         {
-          "x": 32.75,
+          "x": 26.75,
           "y": -2
         },
         {
-          "x": 36.25,
+          "x": 30.25,
           "y": -2
         },
         {
-          "x": 36.25,
-          "y": -40
+          "x": 30.25,
+          "y": -36.5
         },
         {
-          "x": 34.5,
-          "y": -42
+          "x": 29.25,
+          "y": -38
         },
         {
-          "x": 32.75,
-          "y": -40
+          "x": 27.75,
+          "y": -38
+        },
+        {
+          "x": 26.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -435,32 +442,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s17",
       "type": "polygon",
       "pts": [
         {
-          "x": 38.75,
+          "x": 32.75,
           "y": -2
         },
         {
-          "x": 42.25,
+          "x": 36.25,
           "y": -2
         },
         {
-          "x": 42.25,
-          "y": -40
+          "x": 36.25,
+          "y": -36.5
         },
         {
-          "x": 40.5,
-          "y": -42
+          "x": 35.25,
+          "y": -38
         },
         {
-          "x": 38.75,
-          "y": -40
+          "x": 33.75,
+          "y": -38
+        },
+        {
+          "x": 32.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -468,32 +479,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s18",
       "type": "polygon",
       "pts": [
         {
-          "x": 44.75,
+          "x": 38.75,
           "y": -2
         },
         {
-          "x": 48.25,
+          "x": 42.25,
           "y": -2
         },
         {
-          "x": 48.25,
-          "y": -40
+          "x": 42.25,
+          "y": -36.5
         },
         {
-          "x": 46.5,
-          "y": -42
+          "x": 41.25,
+          "y": -38
         },
         {
-          "x": 44.75,
-          "y": -40
+          "x": 39.75,
+          "y": -38
+        },
+        {
+          "x": 38.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -501,32 +516,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s19",
       "type": "polygon",
       "pts": [
         {
-          "x": 50.75,
+          "x": 44.75,
           "y": -2
         },
         {
-          "x": 54.25,
+          "x": 48.25,
           "y": -2
         },
         {
-          "x": 54.25,
-          "y": -40
+          "x": 48.25,
+          "y": -36.5
         },
         {
-          "x": 52.5,
-          "y": -42
+          "x": 47.25,
+          "y": -38
         },
         {
-          "x": 50.75,
-          "y": -40
+          "x": 45.75,
+          "y": -38
+        },
+        {
+          "x": 44.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -534,32 +553,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s20",
       "type": "polygon",
       "pts": [
         {
-          "x": 56.75,
+          "x": 50.75,
           "y": -2
         },
         {
-          "x": 60.25,
+          "x": 54.25,
           "y": -2
         },
         {
-          "x": 60.25,
-          "y": -40
+          "x": 54.25,
+          "y": -36.5
         },
         {
-          "x": 58.5,
-          "y": -42
+          "x": 53.25,
+          "y": -38
         },
         {
-          "x": 56.75,
-          "y": -40
+          "x": 51.75,
+          "y": -38
+        },
+        {
+          "x": 50.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -567,32 +590,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s21",
       "type": "polygon",
       "pts": [
         {
-          "x": 62.75,
+          "x": 56.75,
           "y": -2
         },
         {
-          "x": 66.25,
+          "x": 60.25,
           "y": -2
         },
         {
-          "x": 66.25,
-          "y": -40
+          "x": 60.25,
+          "y": -36.5
         },
         {
-          "x": 64.5,
-          "y": -42
+          "x": 59.25,
+          "y": -38
         },
         {
-          "x": 62.75,
-          "y": -40
+          "x": 57.75,
+          "y": -38
+        },
+        {
+          "x": 56.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -600,32 +627,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s22",
       "type": "polygon",
       "pts": [
         {
-          "x": 68.75,
+          "x": 62.75,
           "y": -2
         },
         {
-          "x": 72.25,
+          "x": 66.25,
           "y": -2
         },
         {
-          "x": 72.25,
-          "y": -40
+          "x": 66.25,
+          "y": -36.5
         },
         {
-          "x": 70.5,
-          "y": -42
+          "x": 65.25,
+          "y": -38
         },
         {
-          "x": 68.75,
-          "y": -40
+          "x": 63.75,
+          "y": -38
+        },
+        {
+          "x": 62.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -633,98 +664,76 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s23",
-      "type": "polygon",
+      "type": "rect",
       "pts": [
         {
-          "x": 74.75,
-          "y": -2
+          "x": 73.75,
+          "y": -6
         },
         {
-          "x": 78.25,
-          "y": -2
-        },
-        {
-          "x": 78.25,
-          "y": -40
-        },
-        {
-          "x": 76.5,
-          "y": -42
-        },
-        {
-          "x": 74.75,
-          "y": -40
+          "x": 142.25,
+          "y": -9.5
         }
       ],
-      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "fill": "solid",
+      "height": 1.5,
+      "label": "2×4 rail"
     },
     {
       "id": "s24",
-      "type": "polygon",
+      "type": "rect",
       "pts": [
         {
-          "x": 80.75,
-          "y": -2
+          "x": 73.75,
+          "y": -28
         },
         {
-          "x": 84.25,
-          "y": -2
-        },
-        {
-          "x": 84.25,
-          "y": -40
-        },
-        {
-          "x": 82.5,
-          "y": -42
-        },
-        {
-          "x": 80.75,
-          "y": -40
+          "x": 142.25,
+          "y": -31.5
         }
       ],
-      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "fill": "solid",
+      "height": 1.5,
+      "label": "2×4 rail"
     },
     {
       "id": "s25",
       "type": "polygon",
       "pts": [
         {
-          "x": 86.75,
+          "x": 74.75,
           "y": -2
         },
         {
-          "x": 90.25,
+          "x": 78.25,
           "y": -2
         },
         {
-          "x": 90.25,
-          "y": -40
+          "x": 78.25,
+          "y": -36.5
         },
         {
-          "x": 88.5,
-          "y": -42
+          "x": 77.25,
+          "y": -38
         },
         {
-          "x": 86.75,
-          "y": -40
+          "x": 75.75,
+          "y": -38
+        },
+        {
+          "x": 74.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -732,72 +741,110 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s26",
-      "type": "rect",
+      "type": "polygon",
       "pts": [
         {
-          "x": 97.75,
-          "y": -6
+          "x": 80.75,
+          "y": -2
         },
         {
-          "x": 190.25,
-          "y": -9.5
+          "x": 84.25,
+          "y": -2
+        },
+        {
+          "x": 84.25,
+          "y": -36.5
+        },
+        {
+          "x": 83.25,
+          "y": -38
+        },
+        {
+          "x": 81.75,
+          "y": -38
+        },
+        {
+          "x": 80.75,
+          "y": -36.5
         }
       ],
+      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "solid",
-      "height": 1.5,
-      "label": "Section rail"
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s27",
-      "type": "rect",
+      "type": "polygon",
       "pts": [
         {
-          "x": 97.75,
-          "y": -30
+          "x": 86.75,
+          "y": -2
         },
         {
-          "x": 190.25,
-          "y": -33.5
+          "x": 90.25,
+          "y": -2
+        },
+        {
+          "x": 90.25,
+          "y": -36.5
+        },
+        {
+          "x": 89.25,
+          "y": -38
+        },
+        {
+          "x": 87.75,
+          "y": -38
+        },
+        {
+          "x": 86.75,
+          "y": -36.5
         }
       ],
+      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "solid",
-      "height": 1.5,
-      "label": "Section rail"
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s28",
       "type": "polygon",
       "pts": [
         {
-          "x": 98.75,
+          "x": 92.75,
           "y": -2
         },
         {
-          "x": 102.25,
+          "x": 96.25,
           "y": -2
         },
         {
-          "x": 102.25,
-          "y": -40
+          "x": 96.25,
+          "y": -36.5
         },
         {
-          "x": 100.5,
-          "y": -42
+          "x": 95.25,
+          "y": -38
         },
         {
-          "x": 98.75,
-          "y": -40
+          "x": 93.75,
+          "y": -38
+        },
+        {
+          "x": 92.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -805,32 +852,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s29",
       "type": "polygon",
       "pts": [
         {
-          "x": 104.75,
+          "x": 98.75,
           "y": -2
         },
         {
-          "x": 108.25,
+          "x": 102.25,
           "y": -2
         },
         {
-          "x": 108.25,
-          "y": -40
+          "x": 102.25,
+          "y": -36.5
         },
         {
-          "x": 106.5,
-          "y": -42
+          "x": 101.25,
+          "y": -38
         },
         {
-          "x": 104.75,
-          "y": -40
+          "x": 99.75,
+          "y": -38
+        },
+        {
+          "x": 98.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -838,32 +889,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s30",
       "type": "polygon",
       "pts": [
         {
-          "x": 110.75,
+          "x": 104.75,
           "y": -2
         },
         {
-          "x": 114.25,
+          "x": 108.25,
           "y": -2
         },
         {
-          "x": 114.25,
-          "y": -40
+          "x": 108.25,
+          "y": -36.5
         },
         {
-          "x": 112.5,
-          "y": -42
+          "x": 107.25,
+          "y": -38
         },
         {
-          "x": 110.75,
-          "y": -40
+          "x": 105.75,
+          "y": -38
+        },
+        {
+          "x": 104.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -871,32 +926,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s31",
       "type": "polygon",
       "pts": [
         {
-          "x": 116.75,
+          "x": 110.75,
           "y": -2
         },
         {
-          "x": 120.25,
+          "x": 114.25,
           "y": -2
         },
         {
-          "x": 120.25,
-          "y": -40
+          "x": 114.25,
+          "y": -36.5
         },
         {
-          "x": 118.5,
-          "y": -42
+          "x": 113.25,
+          "y": -38
         },
         {
-          "x": 116.75,
-          "y": -40
+          "x": 111.75,
+          "y": -38
+        },
+        {
+          "x": 110.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -904,32 +963,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s32",
       "type": "polygon",
       "pts": [
         {
-          "x": 122.75,
+          "x": 116.75,
           "y": -2
         },
         {
-          "x": 126.25,
+          "x": 120.25,
           "y": -2
         },
         {
-          "x": 126.25,
-          "y": -40
+          "x": 120.25,
+          "y": -36.5
         },
         {
-          "x": 124.5,
-          "y": -42
+          "x": 119.25,
+          "y": -38
         },
         {
-          "x": 122.75,
-          "y": -40
+          "x": 117.75,
+          "y": -38
+        },
+        {
+          "x": 116.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -937,32 +1000,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s33",
       "type": "polygon",
       "pts": [
         {
-          "x": 128.75,
+          "x": 122.75,
           "y": -2
         },
         {
-          "x": 132.25,
+          "x": 126.25,
           "y": -2
         },
         {
-          "x": 132.25,
-          "y": -40
+          "x": 126.25,
+          "y": -36.5
         },
         {
-          "x": 130.5,
-          "y": -42
+          "x": 125.25,
+          "y": -38
         },
         {
-          "x": 128.75,
-          "y": -40
+          "x": 123.75,
+          "y": -38
+        },
+        {
+          "x": 122.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -970,32 +1037,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s34",
       "type": "polygon",
       "pts": [
         {
-          "x": 134.75,
+          "x": 128.75,
           "y": -2
         },
         {
-          "x": 138.25,
+          "x": 132.25,
           "y": -2
         },
         {
-          "x": 138.25,
-          "y": -40
+          "x": 132.25,
+          "y": -36.5
         },
         {
-          "x": 136.5,
-          "y": -42
+          "x": 131.25,
+          "y": -38
         },
         {
-          "x": 134.75,
-          "y": -40
+          "x": 129.75,
+          "y": -38
+        },
+        {
+          "x": 128.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1003,32 +1074,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s35",
       "type": "polygon",
       "pts": [
         {
-          "x": 140.75,
+          "x": 134.75,
           "y": -2
         },
         {
-          "x": 144.25,
+          "x": 138.25,
           "y": -2
         },
         {
-          "x": 144.25,
-          "y": -40
+          "x": 138.25,
+          "y": -36.5
         },
         {
-          "x": 142.5,
-          "y": -42
+          "x": 137.25,
+          "y": -38
         },
         {
-          "x": 140.75,
-          "y": -40
+          "x": 135.75,
+          "y": -38
+        },
+        {
+          "x": 134.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1036,98 +1111,76 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s36",
-      "type": "polygon",
+      "type": "rect",
       "pts": [
         {
-          "x": 146.75,
-          "y": -2
+          "x": 145.75,
+          "y": -6
         },
         {
-          "x": 150.25,
-          "y": -2
-        },
-        {
-          "x": 150.25,
-          "y": -40
-        },
-        {
-          "x": 148.5,
-          "y": -42
-        },
-        {
-          "x": 146.75,
-          "y": -40
+          "x": 214.25,
+          "y": -9.5
         }
       ],
-      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "fill": "solid",
+      "height": 1.5,
+      "label": "2×4 rail"
     },
     {
       "id": "s37",
-      "type": "polygon",
+      "type": "rect",
       "pts": [
         {
-          "x": 152.75,
-          "y": -2
+          "x": 145.75,
+          "y": -28
         },
         {
-          "x": 156.25,
-          "y": -2
-        },
-        {
-          "x": 156.25,
-          "y": -40
-        },
-        {
-          "x": 154.5,
-          "y": -42
-        },
-        {
-          "x": 152.75,
-          "y": -40
+          "x": 214.25,
+          "y": -31.5
         }
       ],
-      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "fill": "solid",
+      "height": 1.5,
+      "label": "2×4 rail"
     },
     {
       "id": "s38",
       "type": "polygon",
       "pts": [
         {
-          "x": 158.75,
+          "x": 146.75,
           "y": -2
         },
         {
-          "x": 162.25,
+          "x": 150.25,
           "y": -2
         },
         {
-          "x": 162.25,
-          "y": -40
+          "x": 150.25,
+          "y": -36.5
         },
         {
-          "x": 160.5,
-          "y": -42
+          "x": 149.25,
+          "y": -38
         },
         {
-          "x": 158.75,
-          "y": -40
+          "x": 147.75,
+          "y": -38
+        },
+        {
+          "x": 146.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1135,32 +1188,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s39",
       "type": "polygon",
       "pts": [
         {
-          "x": 164.75,
+          "x": 152.75,
           "y": -2
         },
         {
-          "x": 168.25,
+          "x": 156.25,
           "y": -2
         },
         {
-          "x": 168.25,
-          "y": -40
+          "x": 156.25,
+          "y": -36.5
         },
         {
-          "x": 166.5,
-          "y": -42
+          "x": 155.25,
+          "y": -38
         },
         {
-          "x": 164.75,
-          "y": -40
+          "x": 153.75,
+          "y": -38
+        },
+        {
+          "x": 152.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1168,32 +1225,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s40",
       "type": "polygon",
       "pts": [
         {
-          "x": 170.75,
+          "x": 158.75,
           "y": -2
         },
         {
-          "x": 174.25,
+          "x": 162.25,
           "y": -2
         },
         {
-          "x": 174.25,
-          "y": -40
+          "x": 162.25,
+          "y": -36.5
         },
         {
-          "x": 172.5,
-          "y": -42
+          "x": 161.25,
+          "y": -38
         },
         {
-          "x": 170.75,
-          "y": -40
+          "x": 159.75,
+          "y": -38
+        },
+        {
+          "x": 158.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1201,32 +1262,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s41",
       "type": "polygon",
       "pts": [
         {
-          "x": 176.75,
+          "x": 164.75,
           "y": -2
         },
         {
-          "x": 180.25,
+          "x": 168.25,
           "y": -2
         },
         {
-          "x": 180.25,
-          "y": -40
+          "x": 168.25,
+          "y": -36.5
         },
         {
-          "x": 178.5,
-          "y": -42
+          "x": 167.25,
+          "y": -38
         },
         {
-          "x": 176.75,
-          "y": -40
+          "x": 165.75,
+          "y": -38
+        },
+        {
+          "x": 164.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1234,32 +1299,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s42",
       "type": "polygon",
       "pts": [
         {
-          "x": 182.75,
+          "x": 170.75,
           "y": -2
         },
         {
-          "x": 186.25,
+          "x": 174.25,
           "y": -2
         },
         {
-          "x": 186.25,
-          "y": -40
+          "x": 174.25,
+          "y": -36.5
         },
         {
-          "x": 184.5,
-          "y": -42
+          "x": 173.25,
+          "y": -38
         },
         {
-          "x": 182.75,
-          "y": -40
+          "x": 171.75,
+          "y": -38
+        },
+        {
+          "x": 170.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1267,72 +1336,110 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s43",
-      "type": "rect",
+      "type": "polygon",
       "pts": [
         {
-          "x": 193.75,
-          "y": -6
+          "x": 176.75,
+          "y": -2
         },
         {
-          "x": 286.25,
-          "y": -9.5
+          "x": 180.25,
+          "y": -2
+        },
+        {
+          "x": 180.25,
+          "y": -36.5
+        },
+        {
+          "x": 179.25,
+          "y": -38
+        },
+        {
+          "x": 177.75,
+          "y": -38
+        },
+        {
+          "x": 176.75,
+          "y": -36.5
         }
       ],
+      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "solid",
-      "height": 1.5,
-      "label": "Section rail"
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s44",
-      "type": "rect",
+      "type": "polygon",
       "pts": [
         {
-          "x": 193.75,
-          "y": -30
+          "x": 182.75,
+          "y": -2
         },
         {
-          "x": 286.25,
-          "y": -33.5
+          "x": 186.25,
+          "y": -2
+        },
+        {
+          "x": 186.25,
+          "y": -36.5
+        },
+        {
+          "x": 185.25,
+          "y": -38
+        },
+        {
+          "x": 183.75,
+          "y": -38
+        },
+        {
+          "x": 182.75,
+          "y": -36.5
         }
       ],
+      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "solid",
-      "height": 1.5,
-      "label": "Section rail"
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s45",
       "type": "polygon",
       "pts": [
         {
-          "x": 194.75,
+          "x": 188.75,
           "y": -2
         },
         {
-          "x": 198.25,
+          "x": 192.25,
           "y": -2
         },
         {
-          "x": 198.25,
-          "y": -40
+          "x": 192.25,
+          "y": -36.5
         },
         {
-          "x": 196.5,
-          "y": -42
+          "x": 191.25,
+          "y": -38
         },
         {
-          "x": 194.75,
-          "y": -40
+          "x": 189.75,
+          "y": -38
+        },
+        {
+          "x": 188.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1340,32 +1447,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s46",
       "type": "polygon",
       "pts": [
         {
-          "x": 200.75,
+          "x": 194.75,
           "y": -2
         },
         {
-          "x": 204.25,
+          "x": 198.25,
           "y": -2
         },
         {
-          "x": 204.25,
-          "y": -40
+          "x": 198.25,
+          "y": -36.5
         },
         {
-          "x": 202.5,
-          "y": -42
+          "x": 197.25,
+          "y": -38
         },
         {
-          "x": 200.75,
-          "y": -40
+          "x": 195.75,
+          "y": -38
+        },
+        {
+          "x": 194.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1373,32 +1484,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s47",
       "type": "polygon",
       "pts": [
         {
-          "x": 206.75,
+          "x": 200.75,
           "y": -2
         },
         {
-          "x": 210.25,
+          "x": 204.25,
           "y": -2
         },
         {
-          "x": 210.25,
-          "y": -40
+          "x": 204.25,
+          "y": -36.5
         },
         {
-          "x": 208.5,
-          "y": -42
+          "x": 203.25,
+          "y": -38
         },
         {
-          "x": 206.75,
-          "y": -40
+          "x": 201.75,
+          "y": -38
+        },
+        {
+          "x": 200.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1406,32 +1521,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s48",
       "type": "polygon",
       "pts": [
         {
-          "x": 212.75,
+          "x": 206.75,
           "y": -2
         },
         {
-          "x": 216.25,
+          "x": 210.25,
           "y": -2
         },
         {
-          "x": 216.25,
-          "y": -40
+          "x": 210.25,
+          "y": -36.5
         },
         {
-          "x": 214.5,
-          "y": -42
+          "x": 209.25,
+          "y": -38
         },
         {
-          "x": 212.75,
-          "y": -40
+          "x": 207.75,
+          "y": -38
+        },
+        {
+          "x": 206.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1439,98 +1558,76 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s49",
-      "type": "polygon",
+      "type": "rect",
       "pts": [
         {
-          "x": 218.75,
-          "y": -2
+          "x": 313.75,
+          "y": -6
         },
         {
-          "x": 222.25,
-          "y": -2
-        },
-        {
-          "x": 222.25,
-          "y": -40
-        },
-        {
-          "x": 220.5,
-          "y": -42
-        },
-        {
-          "x": 218.75,
-          "y": -40
+          "x": 382.25,
+          "y": -9.5
         }
       ],
-      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "fill": "solid",
+      "height": 1.5,
+      "label": "2×4 rail"
     },
     {
       "id": "s50",
-      "type": "polygon",
+      "type": "rect",
       "pts": [
         {
-          "x": 224.75,
-          "y": -2
+          "x": 313.75,
+          "y": -28
         },
         {
-          "x": 228.25,
-          "y": -2
-        },
-        {
-          "x": 228.25,
-          "y": -40
-        },
-        {
-          "x": 226.5,
-          "y": -42
-        },
-        {
-          "x": 224.75,
-          "y": -40
+          "x": 382.25,
+          "y": -31.5
         }
       ],
-      "closed": true,
       "layer": "fence",
       "step": 2,
       "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "fill": "solid",
+      "height": 1.5,
+      "label": "2×4 rail"
     },
     {
       "id": "s51",
       "type": "polygon",
       "pts": [
         {
-          "x": 230.75,
+          "x": 314.75,
           "y": -2
         },
         {
-          "x": 234.25,
+          "x": 318.25,
           "y": -2
         },
         {
-          "x": 234.25,
-          "y": -40
+          "x": 318.25,
+          "y": -36.5
         },
         {
-          "x": 232.5,
-          "y": -42
+          "x": 317.25,
+          "y": -38
         },
         {
-          "x": 230.75,
-          "y": -40
+          "x": 315.75,
+          "y": -38
+        },
+        {
+          "x": 314.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1538,32 +1635,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s52",
       "type": "polygon",
       "pts": [
         {
-          "x": 236.75,
+          "x": 320.75,
           "y": -2
         },
         {
-          "x": 240.25,
+          "x": 324.25,
           "y": -2
         },
         {
-          "x": 240.25,
-          "y": -40
+          "x": 324.25,
+          "y": -36.5
         },
         {
-          "x": 238.5,
-          "y": -42
+          "x": 323.25,
+          "y": -38
         },
         {
-          "x": 236.75,
-          "y": -40
+          "x": 321.75,
+          "y": -38
+        },
+        {
+          "x": 320.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1571,32 +1672,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s53",
       "type": "polygon",
       "pts": [
         {
-          "x": 242.75,
+          "x": 326.75,
           "y": -2
         },
         {
-          "x": 246.25,
+          "x": 330.25,
           "y": -2
         },
         {
-          "x": 246.25,
-          "y": -40
+          "x": 330.25,
+          "y": -36.5
         },
         {
-          "x": 244.5,
-          "y": -42
+          "x": 329.25,
+          "y": -38
         },
         {
-          "x": 242.75,
-          "y": -40
+          "x": 327.75,
+          "y": -38
+        },
+        {
+          "x": 326.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1604,32 +1709,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s54",
       "type": "polygon",
       "pts": [
         {
-          "x": 248.75,
+          "x": 332.75,
           "y": -2
         },
         {
-          "x": 252.25,
+          "x": 336.25,
           "y": -2
         },
         {
-          "x": 252.25,
-          "y": -40
+          "x": 336.25,
+          "y": -36.5
         },
         {
-          "x": 250.5,
-          "y": -42
+          "x": 335.25,
+          "y": -38
         },
         {
-          "x": 248.75,
-          "y": -40
+          "x": 333.75,
+          "y": -38
+        },
+        {
+          "x": 332.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1637,32 +1746,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s55",
       "type": "polygon",
       "pts": [
         {
-          "x": 254.75,
+          "x": 338.75,
           "y": -2
         },
         {
-          "x": 258.25,
+          "x": 342.25,
           "y": -2
         },
         {
-          "x": 258.25,
-          "y": -40
+          "x": 342.25,
+          "y": -36.5
         },
         {
-          "x": 256.5,
-          "y": -42
+          "x": 341.25,
+          "y": -38
         },
         {
-          "x": 254.75,
-          "y": -40
+          "x": 339.75,
+          "y": -38
+        },
+        {
+          "x": 338.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1670,32 +1783,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s56",
       "type": "polygon",
       "pts": [
         {
-          "x": 260.75,
+          "x": 344.75,
           "y": -2
         },
         {
-          "x": 264.25,
+          "x": 348.25,
           "y": -2
         },
         {
-          "x": 264.25,
-          "y": -40
+          "x": 348.25,
+          "y": -36.5
         },
         {
-          "x": 262.5,
-          "y": -42
+          "x": 347.25,
+          "y": -38
         },
         {
-          "x": 260.75,
-          "y": -40
+          "x": 345.75,
+          "y": -38
+        },
+        {
+          "x": 344.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1703,32 +1820,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s57",
       "type": "polygon",
       "pts": [
         {
-          "x": 266.75,
+          "x": 350.75,
           "y": -2
         },
         {
-          "x": 270.25,
+          "x": 354.25,
           "y": -2
         },
         {
-          "x": 270.25,
-          "y": -40
+          "x": 354.25,
+          "y": -36.5
         },
         {
-          "x": 268.5,
-          "y": -42
+          "x": 353.25,
+          "y": -38
         },
         {
-          "x": 266.75,
-          "y": -40
+          "x": 351.75,
+          "y": -38
+        },
+        {
+          "x": 350.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1736,32 +1857,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s58",
       "type": "polygon",
       "pts": [
         {
-          "x": 272.75,
+          "x": 356.75,
           "y": -2
         },
         {
-          "x": 276.25,
+          "x": 360.25,
           "y": -2
         },
         {
-          "x": 276.25,
-          "y": -40
+          "x": 360.25,
+          "y": -36.5
         },
         {
-          "x": 274.5,
-          "y": -42
+          "x": 359.25,
+          "y": -38
         },
         {
-          "x": 272.75,
-          "y": -40
+          "x": 357.75,
+          "y": -38
+        },
+        {
+          "x": 356.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1769,32 +1894,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s59",
       "type": "polygon",
       "pts": [
         {
-          "x": 278.75,
+          "x": 362.75,
           "y": -2
         },
         {
-          "x": 282.25,
+          "x": 366.25,
           "y": -2
         },
         {
-          "x": 282.25,
-          "y": -40
+          "x": 366.25,
+          "y": -36.5
         },
         {
-          "x": 280.5,
-          "y": -42
+          "x": 365.25,
+          "y": -38
         },
         {
-          "x": 278.75,
-          "y": -40
+          "x": 363.75,
+          "y": -38
+        },
+        {
+          "x": 362.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1802,11 +1931,85 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s60",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 368.75,
+          "y": -2
+        },
+        {
+          "x": 372.25,
+          "y": -2
+        },
+        {
+          "x": 372.25,
+          "y": -36.5
+        },
+        {
+          "x": 371.25,
+          "y": -38
+        },
+        {
+          "x": 369.75,
+          "y": -38
+        },
+        {
+          "x": 368.75,
+          "y": -36.5
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
+    },
+    {
+      "id": "s61",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 374.75,
+          "y": -2
+        },
+        {
+          "x": 378.25,
+          "y": -2
+        },
+        {
+          "x": 378.25,
+          "y": -36.5
+        },
+        {
+          "x": 377.25,
+          "y": -38
+        },
+        {
+          "x": 375.75,
+          "y": -38
+        },
+        {
+          "x": 374.75,
+          "y": -36.5
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
+    },
+    {
+      "id": "s62",
       "type": "rect",
       "pts": [
         {
@@ -1814,7 +2017,7 @@
           "y": -6
         },
         {
-          "x": 478.25,
+          "x": 454.25,
           "y": -9.5
         }
       ],
@@ -1823,19 +2026,19 @@
       "material": "pt",
       "fill": "solid",
       "height": 1.5,
-      "label": "Section rail"
+      "label": "2×4 rail"
     },
     {
-      "id": "s61",
+      "id": "s63",
       "type": "rect",
       "pts": [
         {
           "x": 385.75,
-          "y": -30
+          "y": -28
         },
         {
-          "x": 478.25,
-          "y": -33.5
+          "x": 454.25,
+          "y": -31.5
         }
       ],
       "layer": "fence",
@@ -1843,97 +2046,35 @@
       "material": "pt",
       "fill": "solid",
       "height": 1.5,
-      "label": "Section rail"
-    },
-    {
-      "id": "s62",
-      "type": "polygon",
-      "pts": [
-        {
-          "x": 386.75,
-          "y": -2
-        },
-        {
-          "x": 390.25,
-          "y": -2
-        },
-        {
-          "x": 390.25,
-          "y": -40
-        },
-        {
-          "x": 388.5,
-          "y": -42
-        },
-        {
-          "x": 386.75,
-          "y": -40
-        }
-      ],
-      "closed": true,
-      "layer": "fence",
-      "step": 2,
-      "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
-    },
-    {
-      "id": "s63",
-      "type": "polygon",
-      "pts": [
-        {
-          "x": 392.75,
-          "y": -2
-        },
-        {
-          "x": 396.25,
-          "y": -2
-        },
-        {
-          "x": 396.25,
-          "y": -40
-        },
-        {
-          "x": 394.5,
-          "y": -42
-        },
-        {
-          "x": 392.75,
-          "y": -40
-        }
-      ],
-      "closed": true,
-      "layer": "fence",
-      "step": 2,
-      "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "label": "2×4 rail"
     },
     {
       "id": "s64",
       "type": "polygon",
       "pts": [
         {
-          "x": 398.75,
+          "x": 386.75,
           "y": -2
         },
         {
-          "x": 402.25,
+          "x": 390.25,
           "y": -2
         },
         {
-          "x": 402.25,
-          "y": -40
+          "x": 390.25,
+          "y": -36.5
         },
         {
-          "x": 400.5,
-          "y": -42
+          "x": 389.25,
+          "y": -38
         },
         {
-          "x": 398.75,
-          "y": -40
+          "x": 387.75,
+          "y": -38
+        },
+        {
+          "x": 386.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1941,32 +2082,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s65",
       "type": "polygon",
       "pts": [
         {
-          "x": 404.75,
+          "x": 392.75,
           "y": -2
         },
         {
-          "x": 408.25,
+          "x": 396.25,
           "y": -2
         },
         {
-          "x": 408.25,
-          "y": -40
+          "x": 396.25,
+          "y": -36.5
         },
         {
-          "x": 406.5,
-          "y": -42
+          "x": 395.25,
+          "y": -38
         },
         {
-          "x": 404.75,
-          "y": -40
+          "x": 393.75,
+          "y": -38
+        },
+        {
+          "x": 392.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -1974,32 +2119,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s66",
       "type": "polygon",
       "pts": [
         {
-          "x": 410.75,
+          "x": 398.75,
           "y": -2
         },
         {
-          "x": 414.25,
+          "x": 402.25,
           "y": -2
         },
         {
-          "x": 414.25,
-          "y": -40
+          "x": 402.25,
+          "y": -36.5
         },
         {
-          "x": 412.5,
-          "y": -42
+          "x": 401.25,
+          "y": -38
         },
         {
-          "x": 410.75,
-          "y": -40
+          "x": 399.75,
+          "y": -38
+        },
+        {
+          "x": 398.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2007,32 +2156,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s67",
       "type": "polygon",
       "pts": [
         {
-          "x": 416.75,
+          "x": 404.75,
           "y": -2
         },
         {
-          "x": 420.25,
+          "x": 408.25,
           "y": -2
         },
         {
-          "x": 420.25,
-          "y": -40
+          "x": 408.25,
+          "y": -36.5
         },
         {
-          "x": 418.5,
-          "y": -42
+          "x": 407.25,
+          "y": -38
         },
         {
-          "x": 416.75,
-          "y": -40
+          "x": 405.75,
+          "y": -38
+        },
+        {
+          "x": 404.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2040,32 +2193,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s68",
       "type": "polygon",
       "pts": [
         {
-          "x": 422.75,
+          "x": 410.75,
           "y": -2
         },
         {
-          "x": 426.25,
+          "x": 414.25,
           "y": -2
         },
         {
-          "x": 426.25,
-          "y": -40
+          "x": 414.25,
+          "y": -36.5
         },
         {
-          "x": 424.5,
-          "y": -42
+          "x": 413.25,
+          "y": -38
         },
         {
-          "x": 422.75,
-          "y": -40
+          "x": 411.75,
+          "y": -38
+        },
+        {
+          "x": 410.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2073,32 +2230,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s69",
       "type": "polygon",
       "pts": [
         {
-          "x": 428.75,
+          "x": 416.75,
           "y": -2
         },
         {
-          "x": 432.25,
+          "x": 420.25,
           "y": -2
         },
         {
-          "x": 432.25,
-          "y": -40
+          "x": 420.25,
+          "y": -36.5
         },
         {
-          "x": 430.5,
-          "y": -42
+          "x": 419.25,
+          "y": -38
         },
         {
-          "x": 428.75,
-          "y": -40
+          "x": 417.75,
+          "y": -38
+        },
+        {
+          "x": 416.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2106,32 +2267,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s70",
       "type": "polygon",
       "pts": [
         {
-          "x": 434.75,
+          "x": 422.75,
           "y": -2
         },
         {
-          "x": 438.25,
+          "x": 426.25,
           "y": -2
         },
         {
-          "x": 438.25,
-          "y": -40
+          "x": 426.25,
+          "y": -36.5
         },
         {
-          "x": 436.5,
-          "y": -42
+          "x": 425.25,
+          "y": -38
         },
         {
-          "x": 434.75,
-          "y": -40
+          "x": 423.75,
+          "y": -38
+        },
+        {
+          "x": 422.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2139,32 +2304,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s71",
       "type": "polygon",
       "pts": [
         {
-          "x": 440.75,
+          "x": 428.75,
           "y": -2
         },
         {
-          "x": 444.25,
+          "x": 432.25,
           "y": -2
         },
         {
-          "x": 444.25,
-          "y": -40
+          "x": 432.25,
+          "y": -36.5
         },
         {
-          "x": 442.5,
-          "y": -42
+          "x": 431.25,
+          "y": -38
         },
         {
-          "x": 440.75,
-          "y": -40
+          "x": 429.75,
+          "y": -38
+        },
+        {
+          "x": 428.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2172,32 +2341,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s72",
       "type": "polygon",
       "pts": [
         {
-          "x": 446.75,
+          "x": 434.75,
           "y": -2
         },
         {
-          "x": 450.25,
+          "x": 438.25,
           "y": -2
         },
         {
-          "x": 450.25,
-          "y": -40
+          "x": 438.25,
+          "y": -36.5
         },
         {
-          "x": 448.5,
-          "y": -42
+          "x": 437.25,
+          "y": -38
         },
         {
-          "x": 446.75,
-          "y": -40
+          "x": 435.75,
+          "y": -38
+        },
+        {
+          "x": 434.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2205,32 +2378,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s73",
       "type": "polygon",
       "pts": [
         {
-          "x": 452.75,
+          "x": 440.75,
           "y": -2
         },
         {
-          "x": 456.25,
+          "x": 444.25,
           "y": -2
         },
         {
-          "x": 456.25,
-          "y": -40
+          "x": 444.25,
+          "y": -36.5
         },
         {
-          "x": 454.5,
-          "y": -42
+          "x": 443.25,
+          "y": -38
         },
         {
-          "x": 452.75,
-          "y": -40
+          "x": 441.75,
+          "y": -38
+        },
+        {
+          "x": 440.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2238,32 +2415,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s74",
       "type": "polygon",
       "pts": [
         {
-          "x": 458.75,
+          "x": 446.75,
           "y": -2
         },
         {
-          "x": 462.25,
+          "x": 450.25,
           "y": -2
         },
         {
-          "x": 462.25,
-          "y": -40
+          "x": 450.25,
+          "y": -36.5
         },
         {
-          "x": 460.5,
-          "y": -42
+          "x": 449.25,
+          "y": -38
         },
         {
-          "x": 458.75,
-          "y": -40
+          "x": 447.75,
+          "y": -38
+        },
+        {
+          "x": 446.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2271,81 +2452,15 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s75",
-      "type": "polygon",
-      "pts": [
-        {
-          "x": 464.75,
-          "y": -2
-        },
-        {
-          "x": 468.25,
-          "y": -2
-        },
-        {
-          "x": 468.25,
-          "y": -40
-        },
-        {
-          "x": 466.5,
-          "y": -42
-        },
-        {
-          "x": 464.75,
-          "y": -40
-        }
-      ],
-      "closed": true,
-      "layer": "fence",
-      "step": 2,
-      "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
-    },
-    {
-      "id": "s76",
-      "type": "polygon",
-      "pts": [
-        {
-          "x": 470.75,
-          "y": -2
-        },
-        {
-          "x": 474.25,
-          "y": -2
-        },
-        {
-          "x": 474.25,
-          "y": -40
-        },
-        {
-          "x": 472.5,
-          "y": -42
-        },
-        {
-          "x": 470.75,
-          "y": -40
-        }
-      ],
-      "closed": true,
-      "layer": "fence",
-      "step": 2,
-      "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
-    },
-    {
-      "id": "s77",
       "type": "rect",
       "pts": [
         {
-          "x": 481.75,
+          "x": 457.75,
           "y": -6
         },
         {
@@ -2358,19 +2473,19 @@
       "material": "pt",
       "fill": "solid",
       "height": 1.5,
-      "label": "Section rail"
+      "label": "2×4 rail"
     },
     {
-      "id": "s78",
+      "id": "s76",
       "type": "rect",
       "pts": [
         {
-          "x": 481.75,
-          "y": -30
+          "x": 457.75,
+          "y": -28
         },
         {
           "x": 526.25,
-          "y": -33.5
+          "y": -31.5
         }
       ],
       "layer": "fence",
@@ -2378,31 +2493,109 @@
       "material": "pt",
       "fill": "solid",
       "height": 1.5,
-      "label": "Section rail"
+      "label": "2×4 rail"
+    },
+    {
+      "id": "s77",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 458.75,
+          "y": -2
+        },
+        {
+          "x": 462.25,
+          "y": -2
+        },
+        {
+          "x": 462.25,
+          "y": -36.5
+        },
+        {
+          "x": 461.25,
+          "y": -38
+        },
+        {
+          "x": 459.75,
+          "y": -38
+        },
+        {
+          "x": 458.75,
+          "y": -36.5
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
+    },
+    {
+      "id": "s78",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 464.75,
+          "y": -2
+        },
+        {
+          "x": 468.25,
+          "y": -2
+        },
+        {
+          "x": 468.25,
+          "y": -36.5
+        },
+        {
+          "x": 467.25,
+          "y": -38
+        },
+        {
+          "x": 465.75,
+          "y": -38
+        },
+        {
+          "x": 464.75,
+          "y": -36.5
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s79",
       "type": "polygon",
       "pts": [
         {
-          "x": 482.75,
+          "x": 470.75,
           "y": -2
         },
         {
-          "x": 486.25,
+          "x": 474.25,
           "y": -2
         },
         {
-          "x": 486.25,
-          "y": -40
+          "x": 474.25,
+          "y": -36.5
         },
         {
-          "x": 484.5,
-          "y": -42
+          "x": 473.25,
+          "y": -38
         },
         {
-          "x": 482.75,
-          "y": -40
+          "x": 471.75,
+          "y": -38
+        },
+        {
+          "x": 470.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2410,32 +2603,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s80",
       "type": "polygon",
       "pts": [
         {
-          "x": 488.75,
+          "x": 476.75,
           "y": -2
         },
         {
-          "x": 492.25,
+          "x": 480.25,
           "y": -2
         },
         {
-          "x": 492.25,
-          "y": -40
+          "x": 480.25,
+          "y": -36.5
         },
         {
-          "x": 490.5,
-          "y": -42
+          "x": 479.25,
+          "y": -38
         },
         {
-          "x": 488.75,
-          "y": -40
+          "x": 477.75,
+          "y": -38
+        },
+        {
+          "x": 476.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2443,32 +2640,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s81",
       "type": "polygon",
       "pts": [
         {
-          "x": 494.75,
+          "x": 482.75,
           "y": -2
         },
         {
-          "x": 498.25,
+          "x": 486.25,
           "y": -2
         },
         {
-          "x": 498.25,
-          "y": -40
+          "x": 486.25,
+          "y": -36.5
         },
         {
-          "x": 496.5,
-          "y": -42
+          "x": 485.25,
+          "y": -38
         },
         {
-          "x": 494.75,
-          "y": -40
+          "x": 483.75,
+          "y": -38
+        },
+        {
+          "x": 482.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2476,32 +2677,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s82",
       "type": "polygon",
       "pts": [
         {
-          "x": 500.75,
+          "x": 488.75,
           "y": -2
         },
         {
-          "x": 504.25,
+          "x": 492.25,
           "y": -2
         },
         {
-          "x": 504.25,
-          "y": -40
+          "x": 492.25,
+          "y": -36.5
         },
         {
-          "x": 502.5,
-          "y": -42
+          "x": 491.25,
+          "y": -38
         },
         {
-          "x": 500.75,
-          "y": -40
+          "x": 489.75,
+          "y": -38
+        },
+        {
+          "x": 488.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2509,32 +2714,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s83",
       "type": "polygon",
       "pts": [
         {
-          "x": 506.75,
+          "x": 494.75,
           "y": -2
         },
         {
-          "x": 510.25,
+          "x": 498.25,
           "y": -2
         },
         {
-          "x": 510.25,
-          "y": -40
+          "x": 498.25,
+          "y": -36.5
         },
         {
-          "x": 508.5,
-          "y": -42
+          "x": 497.25,
+          "y": -38
         },
         {
-          "x": 506.75,
-          "y": -40
+          "x": 495.75,
+          "y": -38
+        },
+        {
+          "x": 494.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2542,32 +2751,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s84",
       "type": "polygon",
       "pts": [
         {
-          "x": 512.75,
+          "x": 500.75,
           "y": -2
         },
         {
-          "x": 516.25,
+          "x": 504.25,
           "y": -2
         },
         {
-          "x": 516.25,
-          "y": -40
+          "x": 504.25,
+          "y": -36.5
         },
         {
-          "x": 514.5,
-          "y": -42
+          "x": 503.25,
+          "y": -38
         },
         {
-          "x": 512.75,
-          "y": -40
+          "x": 501.75,
+          "y": -38
+        },
+        {
+          "x": 500.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2575,32 +2788,36 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s85",
       "type": "polygon",
       "pts": [
         {
-          "x": 518.75,
+          "x": 506.75,
           "y": -2
         },
         {
-          "x": 522.25,
+          "x": 510.25,
           "y": -2
         },
         {
-          "x": 522.25,
-          "y": -40
+          "x": 510.25,
+          "y": -36.5
         },
         {
-          "x": 520.5,
-          "y": -42
+          "x": 509.25,
+          "y": -38
         },
         {
-          "x": 518.75,
-          "y": -40
+          "x": 507.75,
+          "y": -38
+        },
+        {
+          "x": 506.75,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2608,19 +2825,93 @@
       "step": 2,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Section picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s86",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 512.75,
+          "y": -2
+        },
+        {
+          "x": 516.25,
+          "y": -2
+        },
+        {
+          "x": 516.25,
+          "y": -36.5
+        },
+        {
+          "x": 515.25,
+          "y": -38
+        },
+        {
+          "x": 513.75,
+          "y": -38
+        },
+        {
+          "x": 512.75,
+          "y": -36.5
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
+    },
+    {
+      "id": "s87",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 518.75,
+          "y": -2
+        },
+        {
+          "x": 522.25,
+          "y": -2
+        },
+        {
+          "x": 522.25,
+          "y": -36.5
+        },
+        {
+          "x": 521.25,
+          "y": -38
+        },
+        {
+          "x": 519.75,
+          "y": -38
+        },
+        {
+          "x": 518.75,
+          "y": -36.5
+        }
+      ],
+      "closed": true,
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
+    },
+    {
+      "id": "s88",
       "type": "rect",
       "pts": [
         {
-          "x": 290.25,
+          "x": 218.25,
           "y": -6
         },
         {
-          "x": 335.75,
+          "x": 263.75,
           "y": -9.5
         }
       ],
@@ -2629,19 +2920,19 @@
       "material": "pt",
       "fill": "solid",
       "height": 1.5,
-      "label": "Gate rail"
+      "label": "2×4 rail"
     },
     {
-      "id": "s87",
+      "id": "s89",
       "type": "rect",
       "pts": [
         {
-          "x": 290.25,
-          "y": -30
+          "x": 218.25,
+          "y": -28
         },
         {
-          "x": 335.75,
-          "y": -33.5
+          "x": 263.75,
+          "y": -31.5
         }
       ],
       "layer": "gate",
@@ -2649,97 +2940,35 @@
       "material": "pt",
       "fill": "solid",
       "height": 1.5,
-      "label": "Gate rail"
-    },
-    {
-      "id": "s88",
-      "type": "polygon",
-      "pts": [
-        {
-          "x": 291.25,
-          "y": -2
-        },
-        {
-          "x": 294.75,
-          "y": -2
-        },
-        {
-          "x": 294.75,
-          "y": -40
-        },
-        {
-          "x": 293.0,
-          "y": -42
-        },
-        {
-          "x": 291.25,
-          "y": -40
-        }
-      ],
-      "closed": true,
-      "layer": "gate",
-      "step": 3,
-      "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
-    },
-    {
-      "id": "s89",
-      "type": "polygon",
-      "pts": [
-        {
-          "x": 297.25,
-          "y": -2
-        },
-        {
-          "x": 300.75,
-          "y": -2
-        },
-        {
-          "x": 300.75,
-          "y": -40
-        },
-        {
-          "x": 299.0,
-          "y": -42
-        },
-        {
-          "x": 297.25,
-          "y": -40
-        }
-      ],
-      "closed": true,
-      "layer": "gate",
-      "step": 3,
-      "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "label": "2×4 rail"
     },
     {
       "id": "s90",
       "type": "polygon",
       "pts": [
         {
-          "x": 303.25,
+          "x": 219.25,
           "y": -2
         },
         {
-          "x": 306.75,
+          "x": 222.75,
           "y": -2
         },
         {
-          "x": 306.75,
-          "y": -40
+          "x": 222.75,
+          "y": -36.5
         },
         {
-          "x": 305.0,
-          "y": -42
+          "x": 221.75,
+          "y": -38
         },
         {
-          "x": 303.25,
-          "y": -40
+          "x": 220.25,
+          "y": -38
+        },
+        {
+          "x": 219.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2747,32 +2976,36 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s91",
       "type": "polygon",
       "pts": [
         {
-          "x": 309.25,
+          "x": 225.25,
           "y": -2
         },
         {
-          "x": 312.75,
+          "x": 228.75,
           "y": -2
         },
         {
-          "x": 312.75,
-          "y": -40
+          "x": 228.75,
+          "y": -36.5
         },
         {
-          "x": 311.0,
-          "y": -42
+          "x": 227.75,
+          "y": -38
         },
         {
-          "x": 309.25,
-          "y": -40
+          "x": 226.25,
+          "y": -38
+        },
+        {
+          "x": 225.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2780,32 +3013,36 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s92",
       "type": "polygon",
       "pts": [
         {
-          "x": 315.25,
+          "x": 231.25,
           "y": -2
         },
         {
-          "x": 318.75,
+          "x": 234.75,
           "y": -2
         },
         {
-          "x": 318.75,
-          "y": -40
+          "x": 234.75,
+          "y": -36.5
         },
         {
-          "x": 317.0,
-          "y": -42
+          "x": 233.75,
+          "y": -38
         },
         {
-          "x": 315.25,
-          "y": -40
+          "x": 232.25,
+          "y": -38
+        },
+        {
+          "x": 231.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2813,32 +3050,36 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s93",
       "type": "polygon",
       "pts": [
         {
-          "x": 321.25,
+          "x": 237.25,
           "y": -2
         },
         {
-          "x": 324.75,
+          "x": 240.75,
           "y": -2
         },
         {
-          "x": 324.75,
-          "y": -40
+          "x": 240.75,
+          "y": -36.5
         },
         {
-          "x": 323.0,
-          "y": -42
+          "x": 239.75,
+          "y": -38
         },
         {
-          "x": 321.25,
-          "y": -40
+          "x": 238.25,
+          "y": -38
+        },
+        {
+          "x": 237.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2846,32 +3087,36 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s94",
       "type": "polygon",
       "pts": [
         {
-          "x": 327.25,
+          "x": 243.25,
           "y": -2
         },
         {
-          "x": 330.75,
+          "x": 246.75,
           "y": -2
         },
         {
-          "x": 330.75,
-          "y": -40
+          "x": 246.75,
+          "y": -36.5
         },
         {
-          "x": 329.0,
-          "y": -42
+          "x": 245.75,
+          "y": -38
         },
         {
-          "x": 327.25,
-          "y": -40
+          "x": 244.25,
+          "y": -38
+        },
+        {
+          "x": 243.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -2879,19 +3124,93 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s95",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 249.25,
+          "y": -2
+        },
+        {
+          "x": 252.75,
+          "y": -2
+        },
+        {
+          "x": 252.75,
+          "y": -36.5
+        },
+        {
+          "x": 251.75,
+          "y": -38
+        },
+        {
+          "x": 250.25,
+          "y": -38
+        },
+        {
+          "x": 249.25,
+          "y": -36.5
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
+    },
+    {
+      "id": "s96",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 255.25,
+          "y": -2
+        },
+        {
+          "x": 258.75,
+          "y": -2
+        },
+        {
+          "x": 258.75,
+          "y": -36.5
+        },
+        {
+          "x": 257.75,
+          "y": -38
+        },
+        {
+          "x": 256.25,
+          "y": -38
+        },
+        {
+          "x": 255.25,
+          "y": -36.5
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
+    },
+    {
+      "id": "s97",
       "type": "rect",
       "pts": [
         {
-          "x": 336.25,
+          "x": 264.25,
           "y": -6
         },
         {
-          "x": 381.75,
+          "x": 309.75,
           "y": -9.5
         }
       ],
@@ -2900,19 +3219,19 @@
       "material": "pt",
       "fill": "solid",
       "height": 1.5,
-      "label": "Gate rail"
+      "label": "2×4 rail"
     },
     {
-      "id": "s96",
+      "id": "s98",
       "type": "rect",
       "pts": [
         {
-          "x": 336.25,
-          "y": -30
+          "x": 264.25,
+          "y": -28
         },
         {
-          "x": 381.75,
-          "y": -33.5
+          "x": 309.75,
+          "y": -31.5
         }
       ],
       "layer": "gate",
@@ -2920,97 +3239,35 @@
       "material": "pt",
       "fill": "solid",
       "height": 1.5,
-      "label": "Gate rail"
-    },
-    {
-      "id": "s97",
-      "type": "polygon",
-      "pts": [
-        {
-          "x": 337.25,
-          "y": -2
-        },
-        {
-          "x": 340.75,
-          "y": -2
-        },
-        {
-          "x": 340.75,
-          "y": -40
-        },
-        {
-          "x": 339.0,
-          "y": -42
-        },
-        {
-          "x": 337.25,
-          "y": -40
-        }
-      ],
-      "closed": true,
-      "layer": "gate",
-      "step": 3,
-      "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
-    },
-    {
-      "id": "s98",
-      "type": "polygon",
-      "pts": [
-        {
-          "x": 343.25,
-          "y": -2
-        },
-        {
-          "x": 346.75,
-          "y": -2
-        },
-        {
-          "x": 346.75,
-          "y": -40
-        },
-        {
-          "x": 345.0,
-          "y": -42
-        },
-        {
-          "x": 343.25,
-          "y": -40
-        }
-      ],
-      "closed": true,
-      "layer": "gate",
-      "step": 3,
-      "material": "pt",
-      "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "label": "2×4 rail"
     },
     {
       "id": "s99",
       "type": "polygon",
       "pts": [
         {
-          "x": 349.25,
+          "x": 265.25,
           "y": -2
         },
         {
-          "x": 352.75,
+          "x": 268.75,
           "y": -2
         },
         {
-          "x": 352.75,
-          "y": -40
+          "x": 268.75,
+          "y": -36.5
         },
         {
-          "x": 351.0,
-          "y": -42
+          "x": 267.75,
+          "y": -38
         },
         {
-          "x": 349.25,
-          "y": -40
+          "x": 266.25,
+          "y": -38
+        },
+        {
+          "x": 265.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -3018,32 +3275,36 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s100",
       "type": "polygon",
       "pts": [
         {
-          "x": 355.25,
+          "x": 271.25,
           "y": -2
         },
         {
-          "x": 358.75,
+          "x": 274.75,
           "y": -2
         },
         {
-          "x": 358.75,
-          "y": -40
+          "x": 274.75,
+          "y": -36.5
         },
         {
-          "x": 357.0,
-          "y": -42
+          "x": 273.75,
+          "y": -38
         },
         {
-          "x": 355.25,
-          "y": -40
+          "x": 272.25,
+          "y": -38
+        },
+        {
+          "x": 271.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -3051,32 +3312,36 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s101",
       "type": "polygon",
       "pts": [
         {
-          "x": 361.25,
+          "x": 277.25,
           "y": -2
         },
         {
-          "x": 364.75,
+          "x": 280.75,
           "y": -2
         },
         {
-          "x": 364.75,
-          "y": -40
+          "x": 280.75,
+          "y": -36.5
         },
         {
-          "x": 363.0,
-          "y": -42
+          "x": 279.75,
+          "y": -38
         },
         {
-          "x": 361.25,
-          "y": -40
+          "x": 278.25,
+          "y": -38
+        },
+        {
+          "x": 277.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -3084,32 +3349,36 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s102",
       "type": "polygon",
       "pts": [
         {
-          "x": 367.25,
+          "x": 283.25,
           "y": -2
         },
         {
-          "x": 370.75,
+          "x": 286.75,
           "y": -2
         },
         {
-          "x": 370.75,
-          "y": -40
+          "x": 286.75,
+          "y": -36.5
         },
         {
-          "x": 369.0,
-          "y": -42
+          "x": 285.75,
+          "y": -38
         },
         {
-          "x": 367.25,
-          "y": -40
+          "x": 284.25,
+          "y": -38
+        },
+        {
+          "x": 283.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -3117,32 +3386,36 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s103",
       "type": "polygon",
       "pts": [
         {
-          "x": 373.25,
+          "x": 289.25,
           "y": -2
         },
         {
-          "x": 376.75,
+          "x": 292.75,
           "y": -2
         },
         {
-          "x": 376.75,
-          "y": -40
+          "x": 292.75,
+          "y": -36.5
         },
         {
-          "x": 375.0,
-          "y": -42
+          "x": 291.75,
+          "y": -38
         },
         {
-          "x": 373.25,
-          "y": -40
+          "x": 290.25,
+          "y": -38
+        },
+        {
+          "x": 289.25,
+          "y": -36.5
         }
       ],
       "closed": true,
@@ -3150,37 +3423,94 @@
       "step": 3,
       "material": "pt",
       "fill": "light",
-      "height": 0.75,
-      "label": "Gate picket"
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s104",
-      "type": "line",
+      "type": "polygon",
       "pts": [
         {
-          "x": 292.25,
-          "y": -9.5
+          "x": 295.25,
+          "y": -2
         },
         {
-          "x": 333.75,
-          "y": -30
+          "x": 298.75,
+          "y": -2
+        },
+        {
+          "x": 298.75,
+          "y": -36.5
+        },
+        {
+          "x": 297.75,
+          "y": -38
+        },
+        {
+          "x": 296.25,
+          "y": -38
+        },
+        {
+          "x": 295.25,
+          "y": -36.5
         }
       ],
+      "closed": true,
       "layer": "gate",
       "step": 3,
-      "label": "Gate diagonal brace"
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
     },
     {
       "id": "s105",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 301.25,
+          "y": -2
+        },
+        {
+          "x": 304.75,
+          "y": -2
+        },
+        {
+          "x": 304.75,
+          "y": -36.5
+        },
+        {
+          "x": 303.75,
+          "y": -38
+        },
+        {
+          "x": 302.25,
+          "y": -38
+        },
+        {
+          "x": 301.25,
+          "y": -36.5
+        }
+      ],
+      "closed": true,
+      "layer": "gate",
+      "step": 3,
+      "material": "pt",
+      "fill": "light",
+      "height": 0.625,
+      "label": "Picket 3 ft (half of a 6 ft dog-ear)"
+    },
+    {
+      "id": "s106",
       "type": "line",
       "pts": [
         {
-          "x": 338.25,
+          "x": 220.25,
           "y": -9.5
         },
         {
-          "x": 379.75,
-          "y": -30
+          "x": 261.75,
+          "y": -28
         }
       ],
       "layer": "gate",
@@ -3188,7 +3518,24 @@
       "label": "Gate diagonal brace"
     },
     {
-      "id": "s106",
+      "id": "s107",
+      "type": "line",
+      "pts": [
+        {
+          "x": 266.25,
+          "y": -9.5
+        },
+        {
+          "x": 307.75,
+          "y": -28
+        }
+      ],
+      "layer": "gate",
+      "step": 3,
+      "label": "Gate diagonal brace"
+    },
+    {
+      "id": "s108",
       "type": "dimension",
       "pts": [
         {
@@ -3203,22 +3550,22 @@
       "layer": "dims"
     },
     {
-      "id": "s107",
+      "id": "s109",
       "type": "dimension",
       "pts": [
         {
-          "x": 288,
+          "x": 216,
           "y": 14
         },
         {
-          "x": 384,
+          "x": 312,
           "y": 14
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s108",
+      "id": "s110",
       "type": "dimension",
       "pts": [
         {
@@ -3227,18 +3574,18 @@
         },
         {
           "x": -20,
-          "y": -42
+          "y": -38
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s109",
+      "id": "s111",
       "type": "text",
       "pts": [
         {
-          "x": 298,
-          "y": -56
+          "x": 226,
+          "y": -52
         }
       ],
       "layer": "detail",
@@ -3246,7 +3593,7 @@
       "size": 5
     },
     {
-      "id": "s110",
+      "id": "s112",
       "type": "text",
       "pts": [
         {
@@ -3255,7 +3602,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Back run seen from the yard. 44 ft = 36 ft of fence + 8 ft gate.",
+      "text": "Back run from the yard: three 6 ft bays, 8 ft gate, three 6 ft bays = 44 ft.",
       "size": 5
     }
   ]

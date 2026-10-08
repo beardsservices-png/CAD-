@@ -49,13 +49,13 @@ export const EXAMPLES = [
     file: "examples/collins-picket-fence-plan.json",
     name: "Collins Picket Fence — plan (overhead)",
     blurb:
-      "Charlotte Collins, back-yard picket fence replacement. Two 24 ft sides and a back run widened " +
-      "from 38 ft to 44 ft to match the deck, 8 ft pre-assembled sections on 4×4 posts, and an 8 ft " +
-      "double gate wide enough for a tractor. The old fence line is ghosted.",
+      "Charlotte Collins, back-yard picket fence replacement, 3 ft tall, 88 ft. Four 6 ft bays down each " +
+      "24 ft side; the back widened from 38 ft to 44 ft to match the deck — three 6 ft bays each side of " +
+      "an 8 ft double tractor gate. Bays built on site from 2×4 rails and cut pickets. Old fence line ghosted.",
     teaches: [
       "Existing (reference only) — the deck and the old 38 ft fence line are ghosted and never counted",
       "Build steps — posts, then the sections, then the gate leaves",
-      "Materials — counts the posts, sections and gate leaves for the homeowner's shopping list",
+      "Materials — counts the posts, bays and gate leaves for the homeowner's shopping list",
     ],
   },
   {
@@ -63,8 +63,8 @@ export const EXAMPLES = [
     file: "examples/collins-picket-fence-back.json",
     name: "Collins Picket Fence — back run (elevation)",
     blurb:
-      "Charlotte Collins. The 44 ft back run seen from the yard: dog-ear pickets on two rails, " +
-      "posts every 8 ft, a 4 ft cut section at the end, and the 8 ft double tractor gate with braces.",
+      "Charlotte Collins. The 44 ft back run seen from the yard: 3 ft pickets on two 2×4 rails, " +
+      "posts every 6 ft, and the 8 ft double tractor gate in the middle with braces.",
     teaches: [
       "Elevation view — canvas up is height, so this is how the fence will actually look",
       "Build steps — posts, sections, then the gate",

@@ -17,7 +17,7 @@
     },
     {
       "id": "fence",
-      "name": "Picket sections",
+      "name": "Picket fence",
       "color": "#b45309",
       "visible": true
     },
@@ -166,12 +166,54 @@
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT post (line/end)"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT post, house end (concrete)"
     },
     {
       "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.75,
+          "y": 70.25
+        },
+        {
+          "x": 1.75,
+          "y": 73.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT line post (5 ft, half of a 10 ft)"
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.75,
+          "y": 142.25
+        },
+        {
+          "x": 1.75,
+          "y": 145.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT line post (5 ft, half of a 10 ft)"
+    },
+    {
+      "id": "s10",
       "type": "rect",
       "pts": [
         {
@@ -187,72 +229,30 @@
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT post (line/end)"
-    },
-    {
-      "id": "s9",
-      "type": "rect",
-      "pts": [
-        {
-          "x": -1.75,
-          "y": 94.25
-        },
-        {
-          "x": 1.75,
-          "y": 97.75
-        }
-      ],
-      "layer": "posts",
-      "step": 1,
-      "material": "pt",
-      "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT post (line/end)"
-    },
-    {
-      "id": "s10",
-      "type": "rect",
-      "pts": [
-        {
-          "x": 526.25,
-          "y": 94.25
-        },
-        {
-          "x": 529.75,
-          "y": 97.75
-        }
-      ],
-      "layer": "posts",
-      "step": 1,
-      "material": "pt",
-      "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT post (line/end)"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT post, house end (concrete)"
     },
     {
       "id": "s11",
       "type": "rect",
       "pts": [
         {
-          "x": -1.75,
-          "y": 190.25
+          "x": 526.25,
+          "y": 70.25
         },
         {
-          "x": 1.75,
-          "y": 193.75
+          "x": 529.75,
+          "y": 73.75
         }
       ],
       "layer": "posts",
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT post (line/end)"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT line post (5 ft, half of a 10 ft)"
     },
     {
       "id": "s12",
@@ -260,20 +260,20 @@
       "pts": [
         {
           "x": 526.25,
-          "y": 190.25
+          "y": 142.25
         },
         {
           "x": 529.75,
-          "y": 193.75
+          "y": 145.75
         }
       ],
       "layer": "posts",
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT post (line/end)"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT line post (5 ft, half of a 10 ft)"
     },
     {
       "id": "s13",
@@ -292,20 +292,20 @@
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT corner post"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT corner post (concrete)"
     },
     {
       "id": "s14",
       "type": "rect",
       "pts": [
         {
-          "x": 94.25,
+          "x": 70.25,
           "y": 286.25
         },
         {
-          "x": 97.75,
+          "x": 73.75,
           "y": 289.75
         }
       ],
@@ -313,20 +313,20 @@
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT post (line)"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT line post (5 ft, half of a 10 ft)"
     },
     {
       "id": "s15",
       "type": "rect",
       "pts": [
         {
-          "x": 190.25,
+          "x": 142.25,
           "y": 286.25
         },
         {
-          "x": 193.75,
+          "x": 145.75,
           "y": 289.75
         }
       ],
@@ -334,20 +334,20 @@
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT post (line)"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT line post (5 ft, half of a 10 ft)"
     },
     {
       "id": "s16",
       "type": "rect",
       "pts": [
         {
-          "x": 286.25,
+          "x": 214.25,
           "y": 286.25
         },
         {
-          "x": 289.75,
+          "x": 217.75,
           "y": 289.75
         }
       ],
@@ -355,12 +355,33 @@
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 8 ft PT gate post"
+      "elevation": -30,
+      "height": 72,
+      "label": "4×4 × 8 ft PT gate post (concrete)"
     },
     {
       "id": "s17",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 310.25,
+          "y": 286.25
+        },
+        {
+          "x": 313.75,
+          "y": 289.75
+        }
+      ],
+      "layer": "posts",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": -30,
+      "height": 72,
+      "label": "4×4 × 8 ft PT gate post (concrete)"
+    },
+    {
+      "id": "s18",
       "type": "rect",
       "pts": [
         {
@@ -376,20 +397,20 @@
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 8 ft PT gate post"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT line post (5 ft, half of a 10 ft)"
     },
     {
-      "id": "s18",
+      "id": "s19",
       "type": "rect",
       "pts": [
         {
-          "x": 478.25,
+          "x": 454.25,
           "y": 286.25
         },
         {
-          "x": 481.75,
+          "x": 457.75,
           "y": 289.75
         }
       ],
@@ -397,12 +418,12 @@
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT post (line)"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT line post (5 ft, half of a 10 ft)"
     },
     {
-      "id": "s19",
+      "id": "s20",
       "type": "rect",
       "pts": [
         {
@@ -418,30 +439,9 @@
       "step": 1,
       "material": "pt",
       "fill": "solid",
-      "elevation": -24,
-      "height": 68,
-      "label": "4×4 × 6 ft PT corner post"
-    },
-    {
-      "id": "s20",
-      "type": "rect",
-      "pts": [
-        {
-          "x": -1.5,
-          "y": 1.75
-        },
-        {
-          "x": 1.5,
-          "y": 94.25
-        }
-      ],
-      "layer": "fence",
-      "step": 2,
-      "material": "pt",
-      "fill": "light",
-      "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "elevation": -18,
+      "height": 60,
+      "label": "4×4 PT corner post (concrete)"
     },
     {
       "id": "s21",
@@ -449,11 +449,11 @@
       "pts": [
         {
           "x": -1.5,
-          "y": 97.75
+          "y": 1.75
         },
         {
           "x": 1.5,
-          "y": 190.25
+          "y": 70.25
         }
       ],
       "layer": "fence",
@@ -461,8 +461,8 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
       "id": "s22",
@@ -470,7 +470,49 @@
       "pts": [
         {
           "x": -1.5,
-          "y": 193.75
+          "y": 73.75
+        },
+        {
+          "x": 1.5,
+          "y": 142.25
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
+    },
+    {
+      "id": "s23",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.5,
+          "y": 145.75
+        },
+        {
+          "x": 1.5,
+          "y": 214.25
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
+    },
+    {
+      "id": "s24",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -1.5,
+          "y": 217.75
         },
         {
           "x": 1.5,
@@ -482,11 +524,11 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
-      "id": "s23",
+      "id": "s25",
       "type": "rect",
       "pts": [
         {
@@ -495,7 +537,7 @@
         },
         {
           "x": 529.5,
-          "y": 94.25
+          "y": 70.25
         }
       ],
       "layer": "fence",
@@ -503,20 +545,20 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
-      "id": "s24",
+      "id": "s26",
       "type": "rect",
       "pts": [
         {
           "x": 526.5,
-          "y": 97.75
+          "y": 73.75
         },
         {
           "x": 529.5,
-          "y": 190.25
+          "y": 142.25
         }
       ],
       "layer": "fence",
@@ -524,16 +566,37 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
-      "id": "s25",
+      "id": "s27",
       "type": "rect",
       "pts": [
         {
           "x": 526.5,
-          "y": 193.75
+          "y": 145.75
+        },
+        {
+          "x": 529.5,
+          "y": 214.25
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
+    },
+    {
+      "id": "s28",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 526.5,
+          "y": 217.75
         },
         {
           "x": 529.5,
@@ -545,11 +608,11 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
-      "id": "s26",
+      "id": "s29",
       "type": "rect",
       "pts": [
         {
@@ -557,7 +620,7 @@
           "y": 286.5
         },
         {
-          "x": 94.25,
+          "x": 70.25,
           "y": 289.5
         }
       ],
@@ -566,19 +629,19 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
-      "id": "s27",
+      "id": "s30",
       "type": "rect",
       "pts": [
         {
-          "x": 97.75,
+          "x": 73.75,
           "y": 286.5
         },
         {
-          "x": 190.25,
+          "x": 142.25,
           "y": 289.5
         }
       ],
@@ -587,19 +650,19 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
-      "id": "s28",
+      "id": "s31",
       "type": "rect",
       "pts": [
         {
-          "x": 193.75,
+          "x": 145.75,
           "y": 286.5
         },
         {
-          "x": 286.25,
+          "x": 214.25,
           "y": 289.5
         }
       ],
@@ -608,11 +671,32 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
-      "id": "s29",
+      "id": "s32",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 313.75,
+          "y": 286.5
+        },
+        {
+          "x": 382.25,
+          "y": 289.5
+        }
+      ],
+      "layer": "fence",
+      "step": 2,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 2,
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
+    },
+    {
+      "id": "s33",
       "type": "rect",
       "pts": [
         {
@@ -620,7 +704,7 @@
           "y": 286.5
         },
         {
-          "x": 478.25,
+          "x": 454.25,
           "y": 289.5
         }
       ],
@@ -629,15 +713,15 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section 8 ft (pre-assembled)"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
-      "id": "s30",
+      "id": "s34",
       "type": "rect",
       "pts": [
         {
-          "x": 481.75,
+          "x": 457.75,
           "y": 286.5
         },
         {
@@ -650,19 +734,19 @@
       "material": "pt",
       "fill": "light",
       "elevation": 2,
-      "height": 42,
-      "label": "Picket section cut to 4 ft"
+      "height": 36,
+      "label": "Picket bay 6 ft (2×4 rails, 12 pickets)"
     },
     {
-      "id": "s31",
+      "id": "s35",
       "type": "rect",
       "pts": [
         {
-          "x": 290.25,
+          "x": 218.25,
           "y": 286.5
         },
         {
-          "x": 336,
+          "x": 264,
           "y": 289.5
         }
       ],
@@ -671,19 +755,19 @@
       "material": "pt",
       "fill": "solid",
       "elevation": 2,
-      "height": 42,
+      "height": 36,
       "label": "Gate leaf 4 ft (left)"
     },
     {
-      "id": "s32",
+      "id": "s36",
       "type": "rect",
       "pts": [
         {
-          "x": 336,
+          "x": 264,
           "y": 286.5
         },
         {
-          "x": 381.75,
+          "x": 309.75,
           "y": 289.5
         }
       ],
@@ -692,15 +776,15 @@
       "material": "pt",
       "fill": "solid",
       "elevation": 2,
-      "height": 42,
+      "height": 36,
       "label": "Gate leaf 4 ft (right)"
     },
     {
-      "id": "s33",
+      "id": "s37",
       "type": "text",
       "pts": [
         {
-          "x": 292,
+          "x": 220,
           "y": 268
         }
       ],
@@ -709,7 +793,7 @@
       "size": 5
     },
     {
-      "id": "s34",
+      "id": "s38",
       "type": "dimension",
       "pts": [
         {
@@ -724,7 +808,7 @@
       "layer": "dims"
     },
     {
-      "id": "s35",
+      "id": "s39",
       "type": "dimension",
       "pts": [
         {
@@ -739,7 +823,7 @@
       "layer": "dims"
     },
     {
-      "id": "s36",
+      "id": "s40",
       "type": "dimension",
       "pts": [
         {
@@ -754,22 +838,22 @@
       "layer": "dims"
     },
     {
-      "id": "s37",
+      "id": "s41",
       "type": "dimension",
       "pts": [
         {
-          "x": 288,
+          "x": 216,
           "y": 318
         },
         {
-          "x": 384,
+          "x": 312,
           "y": 318
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s38",
+      "id": "s42",
       "type": "text",
       "pts": [
         {
@@ -782,7 +866,7 @@
       "size": 6
     },
     {
-      "id": "s39",
+      "id": "s43",
       "type": "text",
       "pts": [
         {
@@ -791,7 +875,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Picket fence ~3½ ft, 8 ft pre-assembled sections on 4×4 posts. Gate location to confirm on site.",
+      "text": "3 ft picket fence, 6 ft bays built on site, 4×4 posts. 3 bays each side of an 8 ft gate; 4 bays down each side. 88 ft total.",
       "size": 5
     }
   ]
