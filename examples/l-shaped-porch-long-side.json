@@ -261,16 +261,16 @@
       "type": "rect",
       "pts": [
         {
-          "x": 32,
+          "x": 33,
           "y": -38.5
         },
         {
-          "x": 35,
+          "x": 34.5,
           "y": -92.5
         }
       ],
       "step": 1,
-      "label": "Double 2×4 mullion between windows",
+      "label": "Single 2×4 divider between windows",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -282,16 +282,16 @@
       "type": "rect",
       "pts": [
         {
-          "x": 62,
+          "x": 62.5,
           "y": -38.5
         },
         {
-          "x": 65,
+          "x": 64,
           "y": -92.5
         }
       ],
       "step": 1,
-      "label": "Double 2×4 mullion between windows",
+      "label": "Single 2×4 divider between windows",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -375,12 +375,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 32.75,
+          "x": 33,
           "y": -102.75
         },
         {
-          "x": 34.25,
-          "y": -115.135
+          "x": 34.5,
+          "y": -115.247
         }
       ],
       "step": 2,
@@ -396,12 +396,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 62.75,
+          "x": 62.5,
           "y": -102.75
         },
         {
-          "x": 64.25,
-          "y": -128.611
+          "x": 64,
+          "y": -128.499
         }
       ],
       "step": 2,
@@ -421,12 +421,12 @@
           "y": -38.75
         },
         {
-          "x": 31.75,
+          "x": 32.75,
           "y": -92.25
         }
       ],
       "step": 3,
-      "label": "Window 26½\" × 53½\"",
+      "label": "Window 27½\" × 53½\"",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -437,16 +437,16 @@
       "type": "rect",
       "pts": [
         {
-          "x": 35.25,
+          "x": 34.75,
           "y": -38.75
         },
         {
-          "x": 61.75,
+          "x": 62.25,
           "y": -92.25
         }
       ],
       "step": 3,
-      "label": "Window 26½\" × 53½\"",
+      "label": "Window 27½\" × 53½\"",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -457,7 +457,7 @@
       "type": "rect",
       "pts": [
         {
-          "x": 65.25,
+          "x": 64.25,
           "y": -38.75
         },
         {
@@ -466,7 +466,7 @@
         }
       ],
       "step": 3,
-      "label": "Window 26½\" × 53½\"",
+      "label": "Window 27½\" × 53½\"",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -481,12 +481,12 @@
           "y": -102.75
         },
         {
-          "x": 32.5,
+          "x": 32.75,
           "y": -102.75
         },
         {
-          "x": 32.5,
-          "y": -114.099
+          "x": 32.75,
+          "y": -114.211
         }
       ],
       "closed": true,
@@ -502,20 +502,20 @@
       "type": "polygon",
       "pts": [
         {
-          "x": 34.5,
+          "x": 34.75,
           "y": -102.75
         },
         {
-          "x": 62.5,
+          "x": 62.25,
           "y": -102.75
         },
         {
-          "x": 62.5,
-          "y": -127.575
+          "x": 62.25,
+          "y": -127.462
         },
         {
-          "x": 34.5,
-          "y": -114.997
+          "x": 34.75,
+          "y": -115.11
         }
       ],
       "closed": true,
@@ -531,7 +531,7 @@
       "type": "polygon",
       "pts": [
         {
-          "x": 64.5,
+          "x": 64.25,
           "y": -102.75
         },
         {
@@ -543,8 +543,8 @@
           "y": -140.714
         },
         {
-          "x": 64.5,
-          "y": -128.473
+          "x": 64.25,
+          "y": -128.361
         }
       ],
       "closed": true,
@@ -564,7 +564,7 @@
           "y": 12
         },
         {
-          "x": 32,
+          "x": 33,
           "y": 12
         }
       ],
@@ -575,11 +575,11 @@
       "type": "dimension",
       "pts": [
         {
-          "x": 35,
+          "x": 34.5,
           "y": 12
         },
         {
-          "x": 62,
+          "x": 62.5,
           "y": 12
         }
       ],
@@ -590,7 +590,7 @@
       "type": "dimension",
       "pts": [
         {
-          "x": 65,
+          "x": 64,
           "y": 12
         },
         {
@@ -679,7 +679,7 @@
         }
       ],
       "layer": "detail",
-      "text": "WINDOWS: 90\" frames to three 27\" × 54\" openings — 2×4 plates top and bottom,",
+      "text": "WINDOWS: 90\" frames to three 28\" × 54\" openings — 2×4 plates top and bottom,",
       "size": 5
     },
     {
@@ -692,7 +692,7 @@
         }
       ],
       "layer": "detail",
-      "text": "a jack each end, double 2×4 between windows. Windows 26½\" × 53½\".",
+      "text": "a jack each end, a single 2×4 between windows. Windows 27½\" × 53½\" (stock 28 × 54).",
       "size": 5
     },
     {
@@ -809,7 +809,7 @@
         }
       ],
       "layer": "detail",
-      "text": "triangle 25.3\" long × 11.3\" tall; middle 28\" wide, 12.2\" → 24.8\" tall;",
+      "text": "triangle 25 1/2\" long × 11 7/16\" tall; middle 27 1/2\" wide, 12 3/8\" → 24 11/16\" tall;",
       "size": 5
     },
     {
@@ -822,7 +822,7 @@
         }
       ],
       "layer": "detail",
-      "text": "house end 27¼\" wide, 25.7\" → 38.0\" tall.",
+      "text": "house end 27 1/2\" wide, 25 5/8\" → 37 15/16\" tall.",
       "size": 5
     }
   ]

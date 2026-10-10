@@ -478,14 +478,14 @@
       "pts": [
         {
           "x": 126.5,
-          "y": 28.5
+          "y": 29.5
         },
         {
           "x": 130,
-          "y": 31.5
+          "y": 31
         }
       ],
-      "label": "Double 2×4 mullion between side windows",
+      "label": "Single 2×4 divider between side windows",
       "elevation": 38.5,
       "height": 54.0,
       "step": 2,
@@ -500,14 +500,14 @@
       "pts": [
         {
           "x": 126.5,
-          "y": 58.5
+          "y": 59
         },
         {
           "x": 130,
-          "y": 61.5
+          "y": 60.5
         }
       ],
-      "label": "Double 2×4 mullion between side windows",
+      "label": "Single 2×4 divider between side windows",
       "elevation": 38.5,
       "height": 54.0,
       "step": 2,
@@ -521,15 +521,15 @@
       "type": "rect",
       "pts": [
         {
-          "x": 92.5,
-          "y": 90.0
+          "x": 93.25,
+          "y": 90
         },
         {
-          "x": 95.5,
+          "x": 94.75,
           "y": 93.5
         }
       ],
-      "label": "Double 2×4 mullion between front windows",
+      "label": "Single 2×4 divider between front windows",
       "elevation": 38.5,
       "height": 54.0,
       "step": 2,
@@ -543,15 +543,15 @@
       "type": "rect",
       "pts": [
         {
-          "x": 63.25,
-          "y": 90.0
+          "x": 63.375,
+          "y": 90
         },
         {
-          "x": 92.25,
+          "x": 92.875,
           "y": 93.5
         }
       ],
-      "label": "Window — front, 29\" × 53½\" (framed opening 29½\" × 54\")",
+      "label": "Window — front, 29½\" × 53½\" (framed opening 30¼\" × 54\")",
       "layer": "windows",
       "step": 3,
       "material": "glass",
@@ -564,15 +564,15 @@
       "type": "rect",
       "pts": [
         {
-          "x": 95.75,
-          "y": 90.0
+          "x": 95.125,
+          "y": 90
         },
         {
-          "x": 124.75,
+          "x": 124.625,
           "y": 93.5
         }
       ],
-      "label": "Window — front, 29\" × 53½\" (framed opening 29½\" × 54\")",
+      "label": "Window — front, 29½\" × 53½\" (framed opening 30¼\" × 54\")",
       "layer": "windows",
       "step": 3,
       "material": "glass",
@@ -586,14 +586,14 @@
       "pts": [
         {
           "x": 126.5,
-          "y": 61.75
+          "y": 60.75
         },
         {
           "x": 130,
           "y": 88.25
         }
       ],
-      "label": "Window — side, 26½\" × 53½\" (framed opening 27\" × 54\")",
+      "label": "Window — side, 27½\" × 53½\" (framed opening 28\" × 54\")",
       "layer": "windows",
       "step": 3,
       "material": "glass",
@@ -607,14 +607,14 @@
       "pts": [
         {
           "x": 126.5,
-          "y": 31.75
+          "y": 31.25
         },
         {
           "x": 130,
-          "y": 58.25
+          "y": 58.75
         }
       ],
-      "label": "Window — side, 26½\" × 53½\" (framed opening 27\" × 54\")",
+      "label": "Window — side, 27½\" × 53½\" (framed opening 28\" × 54\")",
       "layer": "windows",
       "step": 3,
       "material": "glass",
@@ -632,10 +632,10 @@
         },
         {
           "x": 130,
-          "y": 28.25
+          "y": 29.25
         }
       ],
-      "label": "Window — side, 26½\" × 53½\" (framed opening 27\" × 54\")",
+      "label": "Window — side, 27½\" × 53½\" (framed opening 28\" × 54\")",
       "layer": "windows",
       "step": 3,
       "material": "glass",
@@ -815,7 +815,7 @@
         }
       ],
       "layer": "detail",
-      "text": "FRONT: 65\", double 2×4 in the middle → two 29½\" framed → windows 29\" × 53½\".",
+      "text": "FRONT: 65\", single 2×4 in the middle → two 30¼\" framed → windows 29½\" × 53½\".",
       "size": 5
     },
     {
@@ -828,7 +828,7 @@
         }
       ],
       "layer": "detail",
-      "text": "LONG SIDE: 90\" to the house corner, no post there. Two double 2×4s",
+      "text": "LONG SIDE: 90\" to the house corner, no post there. Single 2×4s",
       "size": 5
     },
     {
@@ -841,7 +841,7 @@
         }
       ],
       "layer": "detail",
-      "text": "split it → three 27\" framed openings → windows 26½\" × 53½\".",
+      "text": "between → three 28\" framed openings → windows 27½\" × 53½\" (stock 28 × 54).",
       "size": 5
     },
     {
