@@ -24,7 +24,7 @@ export const EXAMPLES = [
     name: "Giles Porch — plan (overhead)",
     blurb:
       "Jesse & Doree Giles, Phase 3 porch enclosure. Overhead view of the stone-wall porch: a 58\" × 91\" open walkway (no door) at the wall corner, two windows split by a cedar mullion in the 65\" " +
-      "front opening, and two more the same way on the 90\" long side.",
+      "front opening, and three on the 90\" long side.",
     teaches: [
       "Existing (reference only) — house, stone wall, posts and beam are ghosted and never counted",
       "Build steps — ‹ › shows the walkway trim, the mullion, then the windows",
@@ -36,7 +36,7 @@ export const EXAMPLES = [
     file: "examples/l-shaped-porch-long-side.json",
     name: "Giles Porch — long side (elevation)",
     blurb:
-      "Jesse & Doree Giles, Phase 3 porch enclosure. The 90\" side seen from outside: two windows on the stone cap, and the triangle between the beam " +
+      "Jesse & Doree Giles, Phase 3 porch enclosure. The 90\" side seen from outside: three windows on the stone cap, and the triangle between the beam " +
       "and the roof framed in 2×4, wrapped in cedar and glazed with two layers of plexiglass.",
     teaches: [
       "Elevation view — canvas up is height, so this is how the wall will actually look",

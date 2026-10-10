@@ -261,11 +261,32 @@
       "type": "rect",
       "pts": [
         {
-          "x": 47,
+          "x": 32,
           "y": -38.5
         },
         {
-          "x": 50,
+          "x": 35,
+          "y": -92.5
+        }
+      ],
+      "step": 1,
+      "label": "Double 2×4 mullion between windows",
+      "layer": "frame",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 3.5
+    },
+    {
+      "id": "s11b",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 62,
+          "y": -38.5
+        },
+        {
+          "x": 65,
           "y": -92.5
         }
       ],
@@ -354,12 +375,33 @@
       "type": "rect",
       "pts": [
         {
-          "x": 47.75,
+          "x": 32.75,
           "y": -102.75
         },
         {
-          "x": 49.25,
-          "y": -121.873
+          "x": 34.25,
+          "y": -115.135
+        }
+      ],
+      "step": 2,
+      "label": "2×4 cedar mullion (lines up with the one below)",
+      "layer": "frame",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 3.5
+    },
+    {
+      "id": "s15b",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 62.75,
+          "y": -102.75
+        },
+        {
+          "x": 64.25,
+          "y": -128.611
         }
       ],
       "step": 2,
@@ -379,12 +421,12 @@
           "y": -38.75
         },
         {
-          "x": 46.75,
+          "x": 31.75,
           "y": -92.25
         }
       ],
       "step": 3,
-      "label": "Window 41½\" × 53½\"",
+      "label": "Window 26½\" × 53½\"",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -395,7 +437,27 @@
       "type": "rect",
       "pts": [
         {
-          "x": 50.25,
+          "x": 35.25,
+          "y": -38.75
+        },
+        {
+          "x": 61.75,
+          "y": -92.25
+        }
+      ],
+      "step": 3,
+      "label": "Window 26½\" × 53½\"",
+      "layer": "windows",
+      "material": "glass",
+      "fill": "light",
+      "height": 1
+    },
+    {
+      "id": "s17b",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 65.25,
           "y": -38.75
         },
         {
@@ -404,7 +466,7 @@
         }
       ],
       "step": 3,
-      "label": "Window 41½\" × 53½\"",
+      "label": "Window 26½\" × 53½\"",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -415,21 +477,21 @@
       "type": "polygon",
       "pts": [
         {
-          "x": 7.679,
+          "x": 7.235,
           "y": -102.75
         },
         {
-          "x": 47.5,
+          "x": 32.5,
           "y": -102.75
         },
         {
-          "x": 47.5,
-          "y": -120.837
+          "x": 32.5,
+          "y": -114.099
         }
       ],
       "closed": true,
       "step": 4,
-      "label": "Plexiglass, 2 layers + air space — small triangle, in cedar stops",
+      "label": "Plexiglass, 2 layers + air space — triangle, in cedar stops",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -440,7 +502,36 @@
       "type": "polygon",
       "pts": [
         {
-          "x": 49.5,
+          "x": 34.5,
+          "y": -102.75
+        },
+        {
+          "x": 62.5,
+          "y": -102.75
+        },
+        {
+          "x": 62.5,
+          "y": -127.575
+        },
+        {
+          "x": 34.5,
+          "y": -114.997
+        }
+      ],
+      "closed": true,
+      "step": 4,
+      "label": "Plexiglass, 2 layers + air space — middle, in cedar stops",
+      "layer": "windows",
+      "material": "glass",
+      "fill": "light",
+      "height": 1
+    },
+    {
+      "id": "s19b",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 64.5,
           "y": -102.75
         },
         {
@@ -452,13 +543,13 @@
           "y": -140.714
         },
         {
-          "x": 49.5,
-          "y": -121.735
+          "x": 64.5,
+          "y": -128.473
         }
       ],
       "closed": true,
       "step": 4,
-      "label": "Plexiglass, 2 layers + air space — trapezoid, in cedar stops",
+      "label": "Plexiglass, 2 layers + air space — house end, in cedar stops",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -473,7 +564,7 @@
           "y": 12
         },
         {
-          "x": 47,
+          "x": 32,
           "y": 12
         }
       ],
@@ -484,7 +575,22 @@
       "type": "dimension",
       "pts": [
         {
-          "x": 50,
+          "x": 35,
+          "y": 12
+        },
+        {
+          "x": 62,
+          "y": 12
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s21b",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 65,
           "y": 12
         },
         {
@@ -573,7 +679,7 @@
         }
       ],
       "layer": "detail",
-      "text": "WINDOWS: 90\" frames to two 42\" × 54\" openings — 2×4 plates top and bottom,",
+      "text": "WINDOWS: 90\" frames to three 27\" × 54\" openings — 2×4 plates top and bottom,",
       "size": 5
     },
     {
@@ -586,7 +692,7 @@
         }
       ],
       "layer": "detail",
-      "text": "a jack each end, double 2×4 in the middle. Windows 41½\" × 53½\".",
+      "text": "a jack each end, double 2×4 between windows. Windows 26½\" × 53½\".",
       "size": 5
     },
     {
@@ -625,7 +731,7 @@
         }
       ],
       "layer": "detail",
-      "text": "one against the house, and a mullion right over the window mullion.",
+      "text": "one against the house, and a mullion right over each window mullion.",
       "size": 5
     },
     {
@@ -651,7 +757,7 @@
         }
       ],
       "layer": "detail",
-      "text": "with an air space, in cedar stops: small triangle front, trapezoid at house.",
+      "text": "with an air space, in cedar stops: three pieces, one over each window.",
       "size": 5
     },
     {
@@ -690,7 +796,7 @@
         }
       ],
       "layer": "detail",
-      "text": "PLEXIGLASS — one 4×8 sheet makes all 4 pieces. Cut on site ¼\" under the hole:",
+      "text": "PLEXIGLASS — one 4×8 sheet makes all 6 pieces. Cut on site ¼\" under the hole:",
       "size": 5
     },
     {
@@ -703,7 +809,7 @@
         }
       ],
       "layer": "detail",
-      "text": "small triangle ~39.8\" long × 18.1\" tall at the mullion;",
+      "text": "triangle 25.3\" long × 11.3\" tall; middle 28\" wide, 12.2\" → 24.8\" tall;",
       "size": 5
     },
     {
@@ -716,7 +822,7 @@
         }
       ],
       "layer": "detail",
-      "text": "trapezoid ~42.2\" wide, 19.0\" tall at the mullion, 38.0\" at the house.",
+      "text": "house end 27¼\" wide, 25.7\" → 38.0\" tall.",
       "size": 5
     }
   ]

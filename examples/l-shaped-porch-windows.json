@@ -478,11 +478,33 @@
       "pts": [
         {
           "x": 126.5,
-          "y": 43.5
+          "y": 28.5
         },
         {
           "x": 130,
-          "y": 46.5
+          "y": 31.5
+        }
+      ],
+      "label": "Double 2×4 mullion between side windows",
+      "elevation": 38.5,
+      "height": 54.0,
+      "step": 2,
+      "layer": "trim",
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid"
+    },
+    {
+      "id": "s22b",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": 58.5
+        },
+        {
+          "x": 130,
+          "y": 61.5
         }
       ],
       "label": "Double 2×4 mullion between side windows",
@@ -564,14 +586,14 @@
       "pts": [
         {
           "x": 126.5,
-          "y": 46.75
+          "y": 61.75
         },
         {
           "x": 130,
           "y": 88.25
         }
       ],
-      "label": "Window — side, 41½\" × 53½\" (framed opening 42\" × 54\")",
+      "label": "Window — side, 26½\" × 53½\" (framed opening 27\" × 54\")",
       "layer": "windows",
       "step": 3,
       "material": "glass",
@@ -585,14 +607,35 @@
       "pts": [
         {
           "x": 126.5,
+          "y": 31.75
+        },
+        {
+          "x": 130,
+          "y": 58.25
+        }
+      ],
+      "label": "Window — side, 26½\" × 53½\" (framed opening 27\" × 54\")",
+      "layer": "windows",
+      "step": 3,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 38.75,
+      "height": 53.5
+    },
+    {
+      "id": "s25b",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
           "y": 1.75
         },
         {
           "x": 130,
-          "y": 43.25
+          "y": 28.25
         }
       ],
-      "label": "Window — side, 41½\" × 53½\" (framed opening 42\" × 54\")",
+      "label": "Window — side, 26½\" × 53½\" (framed opening 27\" × 54\")",
       "layer": "windows",
       "step": 3,
       "material": "glass",
@@ -681,7 +724,7 @@
         }
       ],
       "layer": "detail",
-      "text": "90\" — 2 windows",
+      "text": "90\" — 3 windows",
       "size": 7
     },
     {
@@ -785,7 +828,7 @@
         }
       ],
       "layer": "detail",
-      "text": "LONG SIDE: 90\" to the house corner, no post there. Double 2×4 in the",
+      "text": "LONG SIDE: 90\" to the house corner, no post there. Two double 2×4s",
       "size": 5
     },
     {
@@ -798,7 +841,7 @@
         }
       ],
       "layer": "detail",
-      "text": "middle → two 42\" framed openings → windows 41½\" × 53½\".",
+      "text": "split it → three 27\" framed openings → windows 26½\" × 53½\".",
       "size": 5
     },
     {
