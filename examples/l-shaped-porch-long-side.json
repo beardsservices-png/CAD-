@@ -363,7 +363,7 @@
         }
       ],
       "step": 2,
-      "label": "2×4 tied into the wall framing, soffit removed (cedar-wrapped)",
+      "label": "2×4 tied into the wall framing, siding removed (cedar-wrapped)",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -731,7 +731,7 @@
         }
       ],
       "layer": "detail",
-      "text": "one tied into the wall (soffit off), and a mullion right over each window mullion.",
+      "text": "one tied into the wall (siding off), and a mullion right over each window mullion.",
       "size": 5
     },
     {
