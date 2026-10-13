@@ -70,4 +70,41 @@ export const EXAMPLES = [
       "Build steps — posts, sections, then the gate",
     ],
   },
+  {
+    id: "backstop-plan",
+    file: "examples/backstop-plan.json",
+    name: "Range Backstop — plan (overhead)",
+    blurb:
+      "Shooting range backstop: four 8 ft railroad-tie sections, 8 courses (56 in) high, with dirt banked in front. " +
+      "End sections angle forward 28°, the two middle sections kink back 6 in at the center joint (the M), " +
+      "rebar through every course into the ground, kickers on the back at each joint and end.",
+    teaches: [
+      "Build steps — ‹ › shows the tie wall, then rebar and kickers, then the dirt",
+      "Materials — counts the ties, rebar and kicker pieces",
+      "3D Preview — the courses stack and the angled sections show",
+    ],
+  },
+  {
+    id: "backstop-rear",
+    file: "examples/backstop-rear.json",
+    name: "Range Backstop — rear view (elevation)",
+    blurb:
+      "The backstop seen from behind: eight courses of 7×9 ties per section, two rebar per section " +
+      "(dashed where they are in the ground) and a kicker at each joint and end.",
+    teaches: [
+      "Elevation view — canvas up is height",
+      "Materials — the tie count here is the shopping list",
+    ],
+  },
+  {
+    id: "backstop-section",
+    file: "examples/backstop-section.json",
+    name: "Range Backstop — side section",
+    blurb:
+      "Cut through the wall: dirt face sloping out from near the top of the ties, rebar through every course " +
+      "into the ground, and a 45° kicker braced against the back.",
+    teaches: [
+      "Elevation view — shooter on the left, kicker on the right",
+    ],
+  },
 ];

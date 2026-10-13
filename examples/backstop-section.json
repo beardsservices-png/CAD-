@@ -1,0 +1,389 @@
+{
+  "version": 1,
+  "name": "Shooting Range Backstop — side section",
+  "viewMode": "elevation",
+  "layers": [
+    {
+      "id": "grade",
+      "name": "Grade",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "dirt",
+      "name": "Dirt berm",
+      "color": "#a16207",
+      "visible": true
+    },
+    {
+      "id": "ties",
+      "name": "Railroad ties",
+      "color": "#7c4a1e",
+      "visible": true
+    },
+    {
+      "id": "rebar",
+      "name": "Rebar",
+      "color": "#475569",
+      "visible": true
+    },
+    {
+      "id": "kickers",
+      "name": "Kickers",
+      "color": "#b45309",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#6d28d9",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    }
+  ],
+  "activeLayer": "grade",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "line",
+      "pts": [
+        {
+          "x": -130,
+          "y": 0
+        },
+        {
+          "x": 80,
+          "y": 0
+        }
+      ],
+      "layer": "grade",
+      "existing": true,
+      "label": "Grade",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": -75,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": -50.0
+        }
+      ],
+      "closed": true,
+      "layer": "dirt",
+      "step": 3,
+      "fill": "light",
+      "height": 96,
+      "elevation": 0,
+      "label": "Dirt berm — about 1.5:1 slope"
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -0.0
+        },
+        {
+          "x": 9.0,
+          "y": -7.0
+        }
+      ],
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "height": 96,
+      "elevation": 0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -7.0
+        },
+        {
+          "x": 9.0,
+          "y": -14.0
+        }
+      ],
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "height": 96,
+      "elevation": 0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -14.0
+        },
+        {
+          "x": 9.0,
+          "y": -21.0
+        }
+      ],
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "height": 96,
+      "elevation": 0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -21.0
+        },
+        {
+          "x": 9.0,
+          "y": -28.0
+        }
+      ],
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "height": 96,
+      "elevation": 0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -28.0
+        },
+        {
+          "x": 9.0,
+          "y": -35.0
+        }
+      ],
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "height": 96,
+      "elevation": 0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -35.0
+        },
+        {
+          "x": 9.0,
+          "y": -42.0
+        }
+      ],
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "height": 96,
+      "elevation": 0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -42.0
+        },
+        {
+          "x": 9.0,
+          "y": -49.0
+        }
+      ],
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "height": 96,
+      "elevation": 0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -49.0
+        },
+        {
+          "x": 9.0,
+          "y": -56.0
+        }
+      ],
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "height": 96,
+      "elevation": 0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 4.2,
+          "y": -56.0
+        },
+        {
+          "x": 4.8,
+          "y": 40
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "height": 0.6,
+      "label": "5/8 in × 8 ft rebar"
+    },
+    {
+      "id": "s12",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 9.0,
+          "y": -36.0
+        },
+        {
+          "x": 41.0,
+          "y": 0
+        },
+        {
+          "x": 46.0,
+          "y": 0
+        },
+        {
+          "x": 14.0,
+          "y": -36.0
+        }
+      ],
+      "closed": true,
+      "layer": "kickers",
+      "step": 2,
+      "material": "wood",
+      "fill": "solid",
+      "height": 7,
+      "elevation": 0,
+      "label": "Kicker — 45° tie piece, 3 ft 9 in"
+    },
+    {
+      "id": "s13",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 42.0,
+          "y": 0
+        },
+        {
+          "x": 42.6,
+          "y": 30
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "height": 0.6,
+      "label": "5/8 in rebar pin at kicker foot"
+    },
+    {
+      "id": "s14",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 0,
+          "y": 14
+        },
+        {
+          "x": -75,
+          "y": 14
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s15",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 25.0,
+          "y": 0
+        },
+        {
+          "x": 25.0,
+          "y": -56.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s16",
+      "type": "text",
+      "pts": [
+        {
+          "x": -125,
+          "y": 28
+        }
+      ],
+      "layer": "detail",
+      "text": "Side section. Dirt face slopes from just under the top of the ties out to grade (~6 ft).",
+      "size": 5
+    },
+    {
+      "id": "s17",
+      "type": "text",
+      "pts": [
+        {
+          "x": -125,
+          "y": 37
+        }
+      ],
+      "layer": "detail",
+      "text": "Rebar through all 8 courses and 40 in into the ground. Kicker at 45° on the back.",
+      "size": 5
+    }
+  ]
+}

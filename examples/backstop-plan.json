@@ -1,0 +1,1432 @@
+{
+  "version": 1,
+  "name": "Shooting Range Backstop — plan (overhead)",
+  "viewMode": "plan",
+  "layers": [
+    {
+      "id": "dirt",
+      "name": "Dirt berm",
+      "color": "#a16207",
+      "visible": true
+    },
+    {
+      "id": "ties",
+      "name": "Railroad ties",
+      "color": "#7c4a1e",
+      "visible": true
+    },
+    {
+      "id": "rebar",
+      "name": "Rebar",
+      "color": "#475569",
+      "visible": true
+    },
+    {
+      "id": "kickers",
+      "name": "Kickers",
+      "color": "#b45309",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#6d28d9",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    }
+  ],
+  "activeLayer": "dirt",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 45.069
+        },
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 180.575,
+          "y": 45.069
+        },
+        {
+          "x": 180.575,
+          "y": 75.069
+        },
+        {
+          "x": -180.575,
+          "y": 75.069
+        }
+      ],
+      "closed": true,
+      "layer": "dirt",
+      "step": 3,
+      "fill": "light",
+      "height": 1,
+      "elevation": 0,
+      "label": "Dirt berm (see side section for the slope)"
+    },
+    {
+      "id": "s2",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 45.069
+        },
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": -100.038,
+          "y": -7.947
+        },
+        {
+          "x": -184.801,
+          "y": 37.123
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 0.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s3",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 45.069
+        },
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": -100.038,
+          "y": -7.947
+        },
+        {
+          "x": -184.801,
+          "y": 37.123
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 7.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s4",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 45.069
+        },
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": -100.038,
+          "y": -7.947
+        },
+        {
+          "x": -184.801,
+          "y": 37.123
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 14.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s5",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 45.069
+        },
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": -100.038,
+          "y": -7.947
+        },
+        {
+          "x": -184.801,
+          "y": 37.123
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 21.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s6",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 45.069
+        },
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": -100.038,
+          "y": -7.947
+        },
+        {
+          "x": -184.801,
+          "y": 37.123
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 28.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s7",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 45.069
+        },
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": -100.038,
+          "y": -7.947
+        },
+        {
+          "x": -184.801,
+          "y": 37.123
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 35.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s8",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 45.069
+        },
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": -100.038,
+          "y": -7.947
+        },
+        {
+          "x": -184.801,
+          "y": 37.123
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 42.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s9",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 45.069
+        },
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": -100.038,
+          "y": -7.947
+        },
+        {
+          "x": -184.801,
+          "y": 37.123
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 49.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s10",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": -0.562,
+          "y": -14.982
+        },
+        {
+          "x": -96.375,
+          "y": -8.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 0.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s11",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": -0.562,
+          "y": -14.982
+        },
+        {
+          "x": -96.375,
+          "y": -8.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 7.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s12",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": -0.562,
+          "y": -14.982
+        },
+        {
+          "x": -96.375,
+          "y": -8.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 14.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s13",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": -0.562,
+          "y": -14.982
+        },
+        {
+          "x": -96.375,
+          "y": -8.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 21.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s14",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": -0.562,
+          "y": -14.982
+        },
+        {
+          "x": -96.375,
+          "y": -8.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 28.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s15",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": -0.562,
+          "y": -14.982
+        },
+        {
+          "x": -96.375,
+          "y": -8.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 35.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s16",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": -0.562,
+          "y": -14.982
+        },
+        {
+          "x": -96.375,
+          "y": -8.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 42.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s17",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -95.812,
+          "y": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": -0.562,
+          "y": -14.982
+        },
+        {
+          "x": -96.375,
+          "y": -8.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 49.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s18",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 96.375,
+          "y": -8.982
+        },
+        {
+          "x": 0.562,
+          "y": -14.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 0.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s19",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 96.375,
+          "y": -8.982
+        },
+        {
+          "x": 0.562,
+          "y": -14.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 7.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s20",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 96.375,
+          "y": -8.982
+        },
+        {
+          "x": 0.562,
+          "y": -14.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 14.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s21",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 96.375,
+          "y": -8.982
+        },
+        {
+          "x": 0.562,
+          "y": -14.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 21.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s22",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 96.375,
+          "y": -8.982
+        },
+        {
+          "x": 0.562,
+          "y": -14.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 28.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s23",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 96.375,
+          "y": -8.982
+        },
+        {
+          "x": 0.562,
+          "y": -14.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 35.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s24",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 96.375,
+          "y": -8.982
+        },
+        {
+          "x": 0.562,
+          "y": -14.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 42.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s25",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -6.0
+        },
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 96.375,
+          "y": -8.982
+        },
+        {
+          "x": 0.562,
+          "y": -14.982
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 49.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s26",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 180.575,
+          "y": 45.069
+        },
+        {
+          "x": 184.801,
+          "y": 37.123
+        },
+        {
+          "x": 100.038,
+          "y": -7.947
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 0.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s27",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 180.575,
+          "y": 45.069
+        },
+        {
+          "x": 184.801,
+          "y": 37.123
+        },
+        {
+          "x": 100.038,
+          "y": -7.947
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 7.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s28",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 180.575,
+          "y": 45.069
+        },
+        {
+          "x": 184.801,
+          "y": 37.123
+        },
+        {
+          "x": 100.038,
+          "y": -7.947
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 14.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s29",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 180.575,
+          "y": 45.069
+        },
+        {
+          "x": 184.801,
+          "y": 37.123
+        },
+        {
+          "x": 100.038,
+          "y": -7.947
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 21.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s30",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 180.575,
+          "y": 45.069
+        },
+        {
+          "x": 184.801,
+          "y": 37.123
+        },
+        {
+          "x": 100.038,
+          "y": -7.947
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 28.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s31",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 180.575,
+          "y": 45.069
+        },
+        {
+          "x": 184.801,
+          "y": 37.123
+        },
+        {
+          "x": 100.038,
+          "y": -7.947
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 35.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s32",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 180.575,
+          "y": 45.069
+        },
+        {
+          "x": 184.801,
+          "y": 37.123
+        },
+        {
+          "x": 100.038,
+          "y": -7.947
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 42.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s33",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 95.812,
+          "y": 0.0
+        },
+        {
+          "x": 180.575,
+          "y": 45.069
+        },
+        {
+          "x": 184.801,
+          "y": 37.123
+        },
+        {
+          "x": 100.038,
+          "y": -7.947
+        }
+      ],
+      "closed": true,
+      "layer": "ties",
+      "step": 1,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 49.0,
+      "height": 7.0,
+      "label": "Railroad tie 7×9 in × 8 ft"
+    },
+    {
+      "id": "s34",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -181.71,
+          "y": 35.48
+        },
+        {
+          "x": -187.891,
+          "y": 38.766
+        },
+        {
+          "x": -202.914,
+          "y": 10.512
+        },
+        {
+          "x": -196.733,
+          "y": 7.225
+        }
+      ],
+      "closed": true,
+      "layer": "kickers",
+      "step": 2,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 36.0,
+      "label": "Kicker — 45° tie piece, 3 ft 9 in"
+    },
+    {
+      "id": "s35",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -94.894,
+          "y": -9.613
+        },
+        {
+          "x": -101.629,
+          "y": -7.708
+        },
+        {
+          "x": -110.338,
+          "y": -38.5
+        },
+        {
+          "x": -103.602,
+          "y": -40.405
+        }
+      ],
+      "closed": true,
+      "layer": "kickers",
+      "step": 2,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 36.0,
+      "label": "Kicker — 45° tie piece, 3 ft 9 in"
+    },
+    {
+      "id": "s36",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 3.5,
+          "y": -15.0
+        },
+        {
+          "x": -3.5,
+          "y": -15.0
+        },
+        {
+          "x": -3.5,
+          "y": -47.0
+        },
+        {
+          "x": 3.5,
+          "y": -47.0
+        }
+      ],
+      "closed": true,
+      "layer": "kickers",
+      "step": 2,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 36.0,
+      "label": "Kicker — 45° tie piece, 3 ft 9 in"
+    },
+    {
+      "id": "s37",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 101.629,
+          "y": -7.708
+        },
+        {
+          "x": 94.894,
+          "y": -9.613
+        },
+        {
+          "x": 103.602,
+          "y": -40.405
+        },
+        {
+          "x": 110.338,
+          "y": -38.5
+        }
+      ],
+      "closed": true,
+      "layer": "kickers",
+      "step": 2,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 36.0,
+      "label": "Kicker — 45° tie piece, 3 ft 9 in"
+    },
+    {
+      "id": "s38",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 187.891,
+          "y": 38.766
+        },
+        {
+          "x": 181.71,
+          "y": 35.48
+        },
+        {
+          "x": 196.733,
+          "y": 7.225
+        },
+        {
+          "x": 202.914,
+          "y": 10.512
+        }
+      ],
+      "closed": true,
+      "layer": "kickers",
+      "step": 2,
+      "material": "wood",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 36.0,
+      "label": "Kicker — 45° tie piece, 3 ft 9 in"
+    },
+    {
+      "id": "s39",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -172.405,
+          "y": 35.15
+        },
+        {
+          "x": -171.78,
+          "y": 35.775
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": -40,
+      "height": 96.0,
+      "label": "5/8 in × 8 ft rebar"
+    },
+    {
+      "id": "s40",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -108.833,
+          "y": 1.348
+        },
+        {
+          "x": -108.208,
+          "y": 1.973
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": -40,
+      "height": 96.0,
+      "label": "5/8 in × 8 ft rebar"
+    },
+    {
+      "id": "s41",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -84.43,
+          "y": -5.554
+        },
+        {
+          "x": -83.805,
+          "y": -4.929
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": -40,
+      "height": 96.0,
+      "label": "5/8 in × 8 ft rebar"
+    },
+    {
+      "id": "s42",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -12.57,
+          "y": -10.054
+        },
+        {
+          "x": -11.945,
+          "y": -9.429
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": -40,
+      "height": 96.0,
+      "label": "5/8 in × 8 ft rebar"
+    },
+    {
+      "id": "s43",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 11.945,
+          "y": -10.054
+        },
+        {
+          "x": 12.57,
+          "y": -9.429
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": -40,
+      "height": 96.0,
+      "label": "5/8 in × 8 ft rebar"
+    },
+    {
+      "id": "s44",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 83.805,
+          "y": -5.554
+        },
+        {
+          "x": 84.43,
+          "y": -4.929
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": -40,
+      "height": 96.0,
+      "label": "5/8 in × 8 ft rebar"
+    },
+    {
+      "id": "s45",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 108.208,
+          "y": 1.348
+        },
+        {
+          "x": 108.833,
+          "y": 1.973
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": -40,
+      "height": 96.0,
+      "label": "5/8 in × 8 ft rebar"
+    },
+    {
+      "id": "s46",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 171.78,
+          "y": 35.15
+        },
+        {
+          "x": 172.405,
+          "y": 35.775
+        }
+      ],
+      "layer": "rebar",
+      "step": 2,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": -40,
+      "height": 96.0,
+      "label": "5/8 in × 8 ft rebar"
+    },
+    {
+      "id": "s47",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -180.575,
+          "y": 89.069
+        },
+        {
+          "x": 180.575,
+          "y": 89.069
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s48",
+      "type": "text",
+      "pts": [
+        {
+          "x": -60.0,
+          "y": 105.069
+        }
+      ],
+      "layer": "detail",
+      "text": "30 ft across the ends — 4 sections of 8 ft ties",
+      "size": 6
+    },
+    {
+      "id": "s49",
+      "type": "text",
+      "pts": [
+        {
+          "x": -95,
+          "y": -52
+        }
+      ],
+      "layer": "detail",
+      "text": "Shooter side is the bottom of the page. Ties 9 in deep, 8 courses (56 in).",
+      "size": 5
+    },
+    {
+      "id": "s50",
+      "type": "text",
+      "pts": [
+        {
+          "x": -95,
+          "y": -61
+        }
+      ],
+      "layer": "detail",
+      "text": "Middle joint set back 6 in (the M). End sections angle forward 28°.",
+      "size": 5
+    },
+    {
+      "id": "s51",
+      "type": "text",
+      "pts": [
+        {
+          "x": -95,
+          "y": -70
+        }
+      ],
+      "layer": "detail",
+      "text": "Courses lap at every joint (alternate). 2 rebar per section, through all courses.",
+      "size": 5
+    }
+  ]
+}
