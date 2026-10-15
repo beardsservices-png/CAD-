@@ -37,7 +37,7 @@ export const EXAMPLES = [
     name: "Giles Porch — long side (elevation)",
     blurb:
       "Jesse & Doree Giles, Phase 3 porch enclosure. The 90\" side seen from outside: three windows on the stone cap, and the triangle between the beam " +
-      "and the roof framed in 2×4, wrapped in cedar and glazed with two layers of plexiglass.",
+      "and the roof framed in 2×4, wrapped in cedar and glazed with one layer of plexiglass.",
     teaches: [
       "Elevation view — canvas up is height, so this is how the wall will actually look",
       "Build steps — mullion, triangle framing, windows, then the triangle plexiglass",

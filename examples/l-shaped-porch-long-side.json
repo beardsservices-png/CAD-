@@ -363,7 +363,7 @@
         }
       ],
       "step": 2,
-      "label": "2×4 tied into the wall framing, siding removed (cedar-wrapped)",
+      "label": "2×4 screwed through the siding into the wall framing (cedar-wrapped)",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -491,7 +491,7 @@
       ],
       "closed": true,
       "step": 4,
-      "label": "Plexiglass, 2 layers + air space — triangle, in cedar stops",
+      "label": "Plexiglass ¼\" one layer — triangle, in cedar stops",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -520,7 +520,7 @@
       ],
       "closed": true,
       "step": 4,
-      "label": "Plexiglass, 2 layers + air space — middle, in cedar stops",
+      "label": "Plexiglass ¼\" one layer — middle, in cedar stops",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -549,7 +549,7 @@
       ],
       "closed": true,
       "step": 4,
-      "label": "Plexiglass, 2 layers + air space — house end, in cedar stops",
+      "label": "Plexiglass ¼\" one layer — house end, in cedar stops",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -731,7 +731,7 @@
         }
       ],
       "layer": "detail",
-      "text": "one tied into the wall (siding off), and a mullion right over each window mullion.",
+      "text": "one screwed through the siding into the wall, and a mullion right over each window mullion.",
       "size": 5
     },
     {
@@ -744,7 +744,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Wrap it in cedar to match the posts. Two layers of ¼\" clear plexiglass",
+      "text": "Wrap it in cedar to match the posts. One layer of ¼\" clear plexiglass",
       "size": 5
     },
     {
@@ -757,7 +757,7 @@
         }
       ],
       "layer": "detail",
-      "text": "with an air space, in cedar stops: three pieces, one over each window.",
+      "text": "in cedar stops: three pieces, one over each window.",
       "size": 5
     },
     {
@@ -796,7 +796,7 @@
         }
       ],
       "layer": "detail",
-      "text": "PLEXIGLASS — one 4×8 sheet makes all 6 pieces. Cut on site ¼\" under the hole:",
+      "text": "PLEXIGLASS — one 36×72 sheet makes all 3 pieces. Cut on site ¼\" under the hole:",
       "size": 5
     },
     {
