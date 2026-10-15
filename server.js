@@ -147,7 +147,10 @@ const server = http.createServer((req, res) => {
       return res.end("Not found");
     }
     const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, { "Content-Type": MIME[ext] || "application/octet-stream" });
+    const headers = { "Content-Type": MIME[ext] || "application/octet-stream" };
+    // The app shell and worker must never be served stale, or a deploy would not reach installed copies.
+    if (urlPath === "/index.html" || urlPath === "/sw.js" || ext === ".webmanifest") headers["Cache-Control"] = "no-cache";
+    res.writeHead(200, headers);
     res.end(data);
   });
 });
