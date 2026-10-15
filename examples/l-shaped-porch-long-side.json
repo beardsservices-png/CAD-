@@ -824,6 +824,32 @@
       "layer": "detail",
       "text": "house end 27 1/2\" wide, 25 5/8\" → 37 15/16\" tall.",
       "size": 5
+    },
+    {
+      "id": "jobstamp0",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": -162
+        }
+      ],
+      "layer": "detail",
+      "text": "GILES — JOB 111 — PHASE 3 PORCH ENCLOSURE",
+      "size": 7
+    },
+    {
+      "id": "jobstamp1",
+      "type": "text",
+      "pts": [
+        {
+          "x": -4,
+          "y": -154
+        }
+      ],
+      "layer": "detail",
+      "text": "Estimate BHS20260627D  ·  BHS app: Filing Cabinet, job 111",
+      "size": 5
     }
   ]
 }
