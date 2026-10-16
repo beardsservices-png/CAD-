@@ -68,6 +68,11 @@ class App {
     this._dragging = false;
     this.dimBuffer = null; // typed-dimension entry while drawing
 
+    // A phone held sideways has ~350px of height: start with the side panel closed so the drawing
+    // gets the screen. The Panel button opens it over the drawing.
+    if (window.matchMedia && window.matchMedia("(max-height: 520px)").matches) {
+      document.body.classList.add("hide-panel");
+    }
     this._initCanvas();
     installPointer(this);
     installKeyboard(this);

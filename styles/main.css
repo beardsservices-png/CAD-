@@ -34,9 +34,20 @@ body {
   color: #e2e8f0;
   flex: 0 0 auto;
 }
-.brand { display: flex; align-items: center; gap: 8px; font-weight: 600; letter-spacing: 0.2px; }
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 600; letter-spacing: 0.2px; flex: 0 0 auto; white-space: nowrap; }
 .brand .logo { color: #60a5fa; font-size: 18px; }
-.file-actions { display: flex; gap: 6px; }
+/* The buttons are one row that SCROLLS sideways (touch or wheel). It used to run off the edge of a
+   phone held sideways, with Materials and 3D View out of reach and nothing to scroll. */
+.file-actions {
+  display: flex; gap: 6px; align-items: center;
+  flex: 1 1 auto; min-width: 0;
+  margin-left: 12px;
+  overflow-x: auto; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.file-actions::-webkit-scrollbar { display: none; }
+.file-actions > * { flex: 0 0 auto; }
 .ghost {
   background: transparent;
   color: #cbd5e1;
@@ -45,6 +56,7 @@ body {
   padding: 6px 11px;
   font-size: 13px;
   cursor: pointer;
+  white-space: nowrap;
 }
 .ghost:hover { background: #1e293b; color: #fff; }
 .ghost.primary { background: #2563eb; border-color: #2563eb; color: #fff; }
@@ -82,18 +94,17 @@ body.hide-panel .panel { display: none; }
 .overlay-bar .o-views { display: flex; gap: 4px; }
 .overlay-bar .o-views .ghost { padding: 5px 10px; }
 
-/* Project name in the top bar */
+/* The drawing's name, in the bottom bar where it costs the drawing nothing */
 .project-name {
-  color: #93c5fd;
-  font-weight: 500;
-  font-size: 13px;
-  margin-left: 6px;
-  max-width: 220px;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 12px;
+  margin-right: 14px;
+  max-width: 40vw;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.project-name::before { content: "· "; color: #64748b; }
 .project-name:empty { display: none; }
 
 /* Modal (Cloud Projects) */
@@ -407,6 +418,14 @@ body.hide-panel .panel { display: none; }
   font-variant-numeric: tabular-nums;
 }
 .statusbar .spacer { flex: 1 1 auto; }
+.sb-btn {
+  flex: 0 0 auto;
+  width: 30px; height: 22px; margin-right: 4px;
+  border: 1px solid var(--line); border-radius: 6px; background: #fff;
+  color: var(--ink); font-size: 15px; line-height: 1; padding: 0; cursor: pointer;
+}
+.sb-btn:hover { background: var(--accent-soft); border-color: #bfd3ff; color: var(--accent); }
+.statusbar #coords { margin-left: 8px; white-space: nowrap; }
 
 /* Build-step playback control */
 .step-ctl { display: flex; align-items: center; gap: 6px; margin-right: 16px; }
@@ -433,4 +452,32 @@ body.hide-panel .panel { display: none; }
 @media (max-width: 720px) {
   .panel { display: none; }
   .toolbar { width: 62px; }
+}
+
+/* A phone held sideways has about 350px of height. Give the drawing all of it:
+   a slim top bar, the tools in two columns so they fit without scrolling, and the side
+   panel opening OVER the drawing (closed to start with) instead of squeezing it. */
+@media (max-height: 520px) {
+  .topbar { height: 40px; padding: 0 8px; }
+  .brand-text { display: none; }
+  .ghost { padding: 5px 10px; font-size: 12.5px; }
+  .tb-div { margin: 0 2px; }
+  .workspace { position: relative; }
+  .toolbar {
+    width: 88px; padding: 6px;
+    display: grid; grid-template-columns: 1fr 1fr; align-content: start; gap: 4px;
+  }
+  .tool-btn { padding: 5px 2px; gap: 1px; }
+  .tool-btn span { font-size: 17px; }
+  .tool-btn small { font-size: 9.5px; }
+  .tool-btn[data-tool="measure"] span { font-size: 13px; }
+  .panel {
+    position: absolute; top: 0; right: 0; bottom: 0; z-index: 30;
+    width: min(300px, 62vw);
+    box-shadow: -6px 0 18px rgba(15, 23, 42, 0.2);
+  }
+  .statusbar { height: 28px; }
+  .hint { bottom: 8px; font-size: 11px; padding: 4px 10px; }
+  .modal { padding: 8px; }
+  .modal-card { max-height: 94vh; }
 }
