@@ -49,13 +49,13 @@ export const EXAMPLES = [
     file: "examples/collins-picket-fence-plan.json",
     name: "Collins Picket Fence — plan (overhead)",
     blurb:
-      "Charlotte Collins, back-yard picket fence replacement, 3 ft tall, 92 ft with the gate. Four 6 ft bays down each " +
-      "24 ft side; the back widened from 38 ft to 44 ft to match the deck — three 6 ft bays each side of " +
-      "one 8 ft tractor gate. Bays built on site from 2×4 rails and cut pickets. Old fence line ghosted.",
+      "Charlotte Collins, back-yard picket fence replacement, 3 ft tall, same footprint as the old fence: 38 ft across the back, " +
+      "24 ft down each side, one 4 ft gate in the middle of the back run. 86 ft of run, 82 ft of fence plus the gate. " +
+      "Hand framed on site from 2×4 rails and 6 ft pickets cut in half, 3½–4 in between pickets. Old fence line ghosted.",
     teaches: [
-      "Existing (reference only) — the deck and the old 38 ft fence line are ghosted and never counted",
-      "Build steps — posts, then the sections, then the gate leaves",
-      "Materials — counts the posts, bays and gate leaves for the homeowner's shopping list",
+      "Existing (reference only) — the deck and the old fence line are ghosted and never counted",
+      "Build steps — posts, then the sections, then the gate",
+      "Materials — counts the posts, bays and gate for the materials list",
     ],
   },
   {
@@ -63,8 +63,8 @@ export const EXAMPLES = [
     file: "examples/collins-picket-fence-back.json",
     name: "Collins Picket Fence — back run (elevation)",
     blurb:
-      "Charlotte Collins. The 44 ft back run seen from the yard: 3 ft pickets on two 2×4 rails, " +
-      "posts every 6 ft, and the 8 ft tractor gate in the middle.",
+      "Charlotte Collins. The 38 ft back run seen from the yard: 3 ft pickets on two 2×4 rails, " +
+      "posts every 67 in, and the 4 ft gate in the middle (three bays each side).",
     teaches: [
       "Elevation view — canvas up is height, so this is how the fence will actually look",
       "Build steps — posts, sections, then the gate",
