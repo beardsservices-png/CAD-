@@ -312,7 +312,7 @@
         }
       ],
       "step": 2,
-      "label": "2×4 bottom plate on beam (cedar-wrapped)",
+      "label": "PT 2×4 bottom plate on beam (1×4 cedar face)",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -342,7 +342,7 @@
       ],
       "closed": true,
       "step": 2,
-      "label": "2×4 nailer under rafter (cedar-wrapped)",
+      "label": "PT 2×4 nailer under rafter (1×4 cedar face)",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -363,7 +363,7 @@
         }
       ],
       "step": 2,
-      "label": "2×4 screwed through the siding into the wall framing (cedar-wrapped)",
+      "label": "PT 2×4 screwed through the siding into the wall framing (1×4 cedar face)",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -384,7 +384,7 @@
         }
       ],
       "step": 2,
-      "label": "2×4 cedar mullion (lines up with the one below)",
+      "label": "PT 2×4 mullion, 3\" cedar cover (lines up with the divider below)",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -405,7 +405,7 @@
         }
       ],
       "step": 2,
-      "label": "2×4 cedar mullion (lines up with the one below)",
+      "label": "PT 2×4 mullion, 3\" cedar cover (lines up with the divider below)",
       "layer": "frame",
       "material": "wood",
       "color": "#b45309",
@@ -491,7 +491,7 @@
       ],
       "closed": true,
       "step": 4,
-      "label": "Plexiglass ¼\" one layer — triangle, in cedar stops",
+      "label": "Plexiglass ¼\" one layer — triangle, between ¾×1½ PVC strips",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -520,7 +520,7 @@
       ],
       "closed": true,
       "step": 4,
-      "label": "Plexiglass ¼\" one layer — middle, in cedar stops",
+      "label": "Plexiglass ¼\" one layer — middle, between ¾×1½ PVC strips",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -549,7 +549,7 @@
       ],
       "closed": true,
       "step": 4,
-      "label": "Plexiglass ¼\" one layer — house end, in cedar stops",
+      "label": "Plexiglass ¼\" one layer — house end, between ¾×1½ PVC strips",
       "layer": "windows",
       "material": "glass",
       "fill": "light",
@@ -744,7 +744,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Wrap it in cedar to match the posts. One layer of ¼\" clear plexiglass",
+      "text": "1×4 cedar faces, inside edge flush with the PVC. One layer of ¼\" clear plexiglass",
       "size": 5
     },
     {
@@ -757,7 +757,7 @@
         }
       ],
       "layer": "detail",
-      "text": "in cedar stops: three pieces, one over each window.",
+      "text": "centered between ¾×1½ PVC strips on foam tape: three pieces, one over each window. No metal.",
       "size": 5
     },
     {
