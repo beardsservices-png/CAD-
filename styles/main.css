@@ -69,6 +69,14 @@ body {
 .panel section.collapsed > h3.collapsible::after { transform: rotate(-90deg); }
 .panel section.collapsed > *:not(h3) { display: none; }
 
+/* Close button at the top of the side panel (the Panel button in the top bar does the same) */
+.panel-close {
+  position: sticky; top: -12px; z-index: 2; display: block; width: calc(100% + 24px); margin: -12px -12px 12px;
+  padding: 10px 12px; border: 0; border-bottom: 1px solid var(--line); background: var(--panel);
+  font: 600 13px/1 inherit; color: var(--ink); text-align: left; cursor: pointer;
+}
+.panel-close:hover { background: var(--bg); }
+
 /* Hide the whole side panel for a clean canvas (Tab / Panel button) */
 body.hide-panel .panel { display: none; }
 
@@ -480,4 +488,15 @@ body.hide-panel .panel { display: none; }
   .hint { bottom: 8px; font-size: 11px; padding: 4px 10px; }
   .modal { padding: 8px; }
   .modal-card { max-height: 94vh; }
+}
+
+/* Touch screens narrower than a laptop (a phone in fullscreen can be just over 520px tall):
+   the side panel opens OVER the drawing instead of squeezing it, and starts closed. */
+@media (pointer: coarse) and (max-width: 1100px) {
+  .workspace { position: relative; }
+  .panel {
+    position: absolute; top: 0; right: 0; bottom: 0; z-index: 30;
+    width: min(300px, 62vw);
+    box-shadow: -6px 0 18px rgba(15, 23, 42, 0.2);
+  }
 }

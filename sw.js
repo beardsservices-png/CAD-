@@ -2,7 +2,7 @@
 // Network first for everything, so a deploy is picked up on the next open; the last
 // copy is used only when there is no connection. /api/ (saved projects) is never cached.
 // Bump VERSION to make every installed copy drop its cache.
-const VERSION = "v1";
+const VERSION = "v2";
 const CACHE = `draft-studio-${VERSION}`;
 
 self.addEventListener("install", (e) => { self.skipWaiting(); });

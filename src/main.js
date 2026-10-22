@@ -70,7 +70,8 @@ class App {
 
     // A phone held sideways has ~350px of height: start with the side panel closed so the drawing
     // gets the screen. The Panel button opens it over the drawing.
-    if (window.matchMedia && window.matchMedia("(max-height: 520px)").matches) {
+    // Any touch screen narrower than a laptop starts closed too (phones in fullscreen can be just over 520px tall).
+    if (window.matchMedia && window.matchMedia("(max-height: 520px), (pointer: coarse) and (max-width: 1100px)").matches) {
       document.body.classList.add("hide-panel");
     }
     this._initCanvas();
@@ -335,6 +336,7 @@ class App {
     document.getElementById("btn-undo").onclick = () => { this.doc.undo(); this.refreshPanel(); this._save(); };
     document.getElementById("btn-redo").onclick = () => { this.doc.redo(); this.refreshPanel(); this._save(); };
     document.getElementById("btn-panel").onclick = () => this._togglePanel();
+    document.getElementById("btn-panel-close").onclick = () => this._togglePanel();
     document.getElementById("btn-materials").onclick = () => this._openMaterials();
     document.getElementById("btn-examples").onclick = () => this._openExamples();
     document.getElementById("btn-examples-close").onclick = () =>
