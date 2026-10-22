@@ -175,7 +175,8 @@ export class View3D {
     for (const f of this._faces()) {
       const vs = f.verts;
       for (let i = 1; i < vs.length - 1; i++) {
-        tris.push([vs[0], vs[i], vs[i + 1]]); // fan triangulation
+        // fan triangulation; plan faces are mirrored by _pt3, so flip the winding back
+        tris.push(this.doc && this.doc.viewMode === "elevation" ? [vs[0], vs[i], vs[i + 1]] : [vs[0], vs[i + 1], vs[i]]);
       }
     }
     return tris;
@@ -228,9 +229,13 @@ export class View3D {
   // canvas is the ground and thickness rises (Z). In an elevation drawing the
   // canvas is a vertical face — canvas Y *is* height — and thickness goes back
   // into the drawing (Y).
+  // Plan canvas Y runs DOWN the screen (toward the front), while world Y is north
+  // with Z up. Using canvas Y as world Y mirrored every plan in 3D (the Giles porch
+  // came out with its walls on the wrong sides), so plan Y is negated: the front of
+  // the drawing faces south, toward the Front view camera.
   _pt3(px, py, d) {
     if (this.doc && this.doc.viewMode === "elevation") return { x: px, y: d, z: -py };
-    return { x: px, y: py, z: d };
+    return { x: px, y: -py, z: d };
   }
 
   _quad(a, b, z0, z1, color, alpha) {
@@ -262,7 +267,7 @@ export class View3D {
     const cx = (min.x + max.x) / 2, cy = (min.y + max.y) / 2;
     this.cam.target = this.doc.viewMode === "elevation"
       ? { x: cx, y: maxZ / 2, z: -cy }
-      : { x: cx, y: cy, z: maxZ / 2 };
+      : { x: cx, y: -cy, z: maxZ / 2 };
     const spanX = (max.x - min.x) || 240;
     const spanY = (max.y - min.y) || 240;
     const span = Math.max(spanX, spanY, maxZ) * 1.5;
@@ -411,7 +416,8 @@ export class View3D {
       max.x = Math.max(max.x, b.max.x); max.y = Math.max(max.y, b.max.y);
     }
     if (min.x === Infinity) return;
-    const c = this._project({ x: (min.x + max.x) / 2 + 12, y: (min.y + max.y) / 2 + 12, z: 0 }, basis, cx, cy);
+    const midY = (min.y + max.y) / 2;
+    const c = this._project({ x: (min.x + max.x) / 2 + 12, y: (this.doc.viewMode === "elevation" ? midY : -midY) + 12, z: 0 }, basis, cx, cy);
     const rx = ((max.x - min.x) / 2 + 20) * this.cam.scale;
     const ry = ((max.y - min.y) / 2 + 20) * this.cam.scale * 0.5;
     const g = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, Math.max(rx, ry));
