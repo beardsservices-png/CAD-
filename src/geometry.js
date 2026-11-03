@@ -203,8 +203,10 @@ export function arcThrough(a, b, c) {
   const a0 = Math.atan2(a.y - uy, a.x - ux);
   const a1 = Math.atan2(b.y - uy, b.x - ux);
   const a2e = Math.atan2(c.y - uy, c.x - ux);
-  // Determine sweep direction so the arc passes through b.
-  const ccw = arcContains(a0, a2e, a1, false);
+  // Sweep direction so the arc passes through b: increasing angle (ccw) when b
+  // lies on the increasing path from a to c. (This used to test the decreasing
+  // path, so every 3-point arc drew the long way round, away from b.)
+  const ccw = arcContains(a0, a2e, a1, true);
   return { center, r, a0, a1: a2e, ccw };
 }
 

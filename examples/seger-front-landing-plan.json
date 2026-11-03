@@ -1,0 +1,743 @@
+{
+  "version": 1,
+  "name": "Seger Front Landing — plan (overhead)",
+  "viewMode": "plan",
+  "layers": [
+    {
+      "id": "existing",
+      "name": "Existing",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "demo",
+      "name": "Comes out",
+      "color": "#dc2626",
+      "visible": true
+    },
+    {
+      "id": "concrete",
+      "name": "New concrete",
+      "color": "#475569",
+      "visible": true
+    },
+    {
+      "id": "rail",
+      "name": "Handrail",
+      "color": "#111827",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#64748b",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    }
+  ],
+  "activeLayer": "existing",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -6
+        },
+        {
+          "x": 140,
+          "y": 0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "brick",
+      "fill": "light",
+      "height": 104.0,
+      "label": "House wall, brick (existing)",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -140,
+          "y": 27.0
+        },
+        {
+          "x": 0,
+          "y": 32.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "brick",
+      "fill": "light",
+      "height": 104.0,
+      "label": "Garage front wall, brick (existing)",
+      "locked": true
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -5,
+          "y": -6
+        },
+        {
+          "x": 0,
+          "y": 27.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "brick",
+      "fill": "light",
+      "height": 104.0,
+      "label": "Garage side wall, brick (existing)",
+      "locked": true
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -129.0,
+          "y": 29.0
+        },
+        {
+          "x": -33.0,
+          "y": 31.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "height": 84,
+      "label": "Garage door (existing)",
+      "locked": true
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -33.0,
+          "y": 27.0
+        },
+        {
+          "x": -29.0,
+          "y": 32.75
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "height": 86,
+      "label": "Garage door trim (existing)",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 3.25,
+          "y": -5
+        },
+        {
+          "x": 39.25,
+          "y": -1.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 20.0,
+      "height": 80,
+      "label": "Entry door 36 in (existing)",
+      "locked": true
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.5,
+          "y": -1.5
+        },
+        {
+          "x": 41.0,
+          "y": 0.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "metal",
+      "fill": "light",
+      "elevation": 20.0,
+      "height": 81,
+      "label": "Storm door (existing)",
+      "locked": true
+    },
+    {
+      "id": "s8",
+      "type": "arc",
+      "pts": [
+        {
+          "x": 39.0,
+          "y": 0.5
+        },
+        {
+          "x": 28.456,
+          "y": 25.956
+        },
+        {
+          "x": 3.0,
+          "y": 36.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "dash": "dashed",
+      "label": "Storm door swing",
+      "locked": true
+    },
+    {
+      "id": "s9",
+      "type": "line",
+      "pts": [
+        {
+          "x": 3.0,
+          "y": 0.5
+        },
+        {
+          "x": 3.0,
+          "y": 36.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "dash": "dashed",
+      "label": "Storm door, fully open",
+      "locked": true
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 58.0,
+          "y": 0
+        },
+        {
+          "x": 73.0,
+          "y": 1.25
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "elevation": 44.0,
+      "height": 58.5,
+      "label": "Shutter (existing)",
+      "locked": true
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 73.0,
+          "y": -6
+        },
+        {
+          "x": 109.0,
+          "y": 0.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 44.0,
+      "height": 58.5,
+      "label": "Window (existing)",
+      "locked": true
+    },
+    {
+      "id": "s12",
+      "type": "line",
+      "pts": [
+        {
+          "x": -29.0,
+          "y": 32.0
+        },
+        {
+          "x": -29.0,
+          "y": 142.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "label": "Driveway edge (existing, to confirm)",
+      "locked": true
+    },
+    {
+      "id": "s13",
+      "type": "line",
+      "pts": [
+        {
+          "x": 0.5,
+          "y": 0.5
+        },
+        {
+          "x": 55,
+          "y": 0.5
+        },
+        {
+          "x": 55,
+          "y": 30
+        },
+        {
+          "x": 0.5,
+          "y": 30
+        }
+      ],
+      "layer": "demo",
+      "existing": true,
+      "dash": "dashed",
+      "label": "Old brick steps + block caps (come out)",
+      "locked": true
+    },
+    {
+      "id": "s14",
+      "type": "line",
+      "pts": [
+        {
+          "x": 46,
+          "y": 4
+        },
+        {
+          "x": 46,
+          "y": 28
+        }
+      ],
+      "layer": "demo",
+      "existing": true,
+      "dash": "dashed",
+      "label": "Old railing (comes off)",
+      "locked": true
+    },
+    {
+      "id": "s15",
+      "type": "line",
+      "pts": [
+        {
+          "x": -27.0,
+          "y": 38.0
+        },
+        {
+          "x": 1.0,
+          "y": 38.0
+        }
+      ],
+      "layer": "demo",
+      "existing": true,
+      "dash": "dotted",
+      "label": "Buried pavers (come out where the new steps go)",
+      "locked": true
+    },
+    {
+      "id": "s16",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 60.0,
+          "y": 68.0
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 19.0,
+      "label": "Concrete landing 5'-0\" wide x 5'-8\" deep"
+    },
+    {
+      "id": "s17",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 32.0
+        },
+        {
+          "x": 0.0,
+          "y": 68.0
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 12.666666666666668,
+      "label": "Concrete step 1: 12 in tread x 3 ft wide"
+    },
+    {
+      "id": "s18",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -24.0,
+          "y": 32.0
+        },
+        {
+          "x": -12.0,
+          "y": 68.0
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 6.333333333333334,
+      "label": "Concrete step 2: 12 in tread x 3 ft wide"
+    },
+    {
+      "id": "s19",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -26.0,
+          "y": 32.25
+        },
+        {
+          "x": 0,
+          "y": 34.0
+        }
+      ],
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": 49.0,
+      "height": 1.75,
+      "label": "Handrail on the garage brick, about 26 in"
+    },
+    {
+      "id": "s20",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 0,
+          "y": 98.0
+        },
+        {
+          "x": 60.0,
+          "y": 98.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s21",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -24.0,
+          "y": 98.0
+        },
+        {
+          "x": 0,
+          "y": 98.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s22",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 80.0,
+          "y": 0
+        },
+        {
+          "x": 80.0,
+          "y": 68.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s23",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 70.0,
+          "y": 32.0
+        },
+        {
+          "x": 70.0,
+          "y": 68.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s24",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -29.0,
+          "y": 16.0
+        },
+        {
+          "x": 0,
+          "y": 16.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s25",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -16,
+          "y": 0
+        },
+        {
+          "x": -16,
+          "y": 32.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s26",
+      "type": "text",
+      "pts": [
+        {
+          "x": 32,
+          "y": 46
+        }
+      ],
+      "layer": "detail",
+      "text": "NEW LANDING",
+      "size": 7
+    },
+    {
+      "id": "s27",
+      "type": "text",
+      "pts": [
+        {
+          "x": 32,
+          "y": 53
+        }
+      ],
+      "layer": "detail",
+      "text": "1\" below the threshold,",
+      "size": 4.5
+    },
+    {
+      "id": "s28",
+      "type": "text",
+      "pts": [
+        {
+          "x": 32,
+          "y": 59
+        }
+      ],
+      "layer": "detail",
+      "text": "falls 1/8 in. per ft to the front",
+      "size": 4.5
+    },
+    {
+      "id": "s29",
+      "type": "text",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 77.0
+        }
+      ],
+      "layer": "detail",
+      "text": "2 steps down",
+      "size": 5
+    },
+    {
+      "id": "s30",
+      "type": "text",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 84.0
+        }
+      ],
+      "layer": "detail",
+      "text": "to the driveway",
+      "size": 4.5
+    },
+    {
+      "id": "s31",
+      "type": "text",
+      "pts": [
+        {
+          "x": -80,
+          "y": 72.0
+        }
+      ],
+      "layer": "detail",
+      "text": "DRIVEWAY",
+      "size": 7
+    },
+    {
+      "id": "s32",
+      "type": "text",
+      "pts": [
+        {
+          "x": -80,
+          "y": 6.0
+        }
+      ],
+      "layer": "detail",
+      "text": "GARAGE",
+      "size": 7
+    },
+    {
+      "id": "s33",
+      "type": "text",
+      "pts": [
+        {
+          "x": 70,
+          "y": -14
+        }
+      ],
+      "layer": "detail",
+      "text": "HOUSE (door wall)",
+      "size": 6
+    },
+    {
+      "id": "s34",
+      "type": "text",
+      "pts": [
+        {
+          "x": -92,
+          "y": 94.0
+        }
+      ],
+      "layer": "detail",
+      "text": "Steps stop 5 in. short of the garage door trim,",
+      "size": 4.5
+    },
+    {
+      "id": "s35",
+      "type": "text",
+      "pts": [
+        {
+          "x": -92,
+          "y": 100.0
+        }
+      ],
+      "layer": "detail",
+      "text": "so nothing sits in front of the garage door.",
+      "size": 4.5
+    },
+    {
+      "id": "s36",
+      "type": "text",
+      "pts": [
+        {
+          "x": -92,
+          "y": 112.0
+        }
+      ],
+      "layer": "detail",
+      "text": "Handrail mounts on the garage brick beside the steps.",
+      "size": 4.5
+    },
+    {
+      "id": "s37",
+      "type": "text",
+      "pts": [
+        {
+          "x": 110,
+          "y": 40
+        }
+      ],
+      "layer": "detail",
+      "text": "Landing stops at the shutter line,",
+      "size": 4.5
+    },
+    {
+      "id": "s38",
+      "type": "text",
+      "pts": [
+        {
+          "x": 110,
+          "y": 46
+        }
+      ],
+      "layer": "detail",
+      "text": "not under the window.",
+      "size": 4.5
+    },
+    {
+      "id": "s39",
+      "type": "text",
+      "pts": [
+        {
+          "x": 110,
+          "y": 58
+        }
+      ],
+      "layer": "detail",
+      "text": "1/2 in. expansion strip against",
+      "size": 4.5
+    },
+    {
+      "id": "s40",
+      "type": "text",
+      "pts": [
+        {
+          "x": 110,
+          "y": 64
+        }
+      ],
+      "layer": "detail",
+      "text": "all brick it touches.",
+      "size": 4.5
+    },
+    {
+      "id": "s41",
+      "type": "text",
+      "pts": [
+        {
+          "x": -40,
+          "y": 128.0
+        }
+      ],
+      "layer": "detail",
+      "text": "Existing sizes estimated from photos: check door wall to garage face (32 in), garage brick (29 in) and threshold height (20 in) before forming.",
+      "size": 4.5
+    }
+  ]
+}

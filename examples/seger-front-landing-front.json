@@ -1,0 +1,584 @@
+{
+  "version": 1,
+  "name": "Seger Front Landing — front view (elevation)",
+  "viewMode": "elevation",
+  "layers": [
+    {
+      "id": "existing",
+      "name": "Existing",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "concrete",
+      "name": "New concrete",
+      "color": "#475569",
+      "visible": true
+    },
+    {
+      "id": "rail",
+      "name": "Handrail",
+      "color": "#111827",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#64748b",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    }
+  ],
+  "activeLayer": "existing",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 140,
+          "y": -104.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "brick",
+      "fill": "light",
+      "elevation": 68.0,
+      "height": 6,
+      "label": "House wall, brick (existing)",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -140,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": -104.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "brick",
+      "fill": "light",
+      "elevation": 36.0,
+      "height": 60,
+      "label": "Garage front, brick (existing)",
+      "locked": true
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -129.0,
+          "y": 0
+        },
+        {
+          "x": -33.0,
+          "y": -84
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "elevation": 35.5,
+      "height": 1,
+      "label": "Garage door (existing)",
+      "locked": true
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -33.0,
+          "y": 0
+        },
+        {
+          "x": -29.0,
+          "y": -86
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "elevation": 35.25,
+      "height": 1,
+      "label": "Garage door trim (existing)",
+      "locked": true
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 3.25,
+          "y": -20.0
+        },
+        {
+          "x": 39.25,
+          "y": -100.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 67.0,
+      "height": 1.5,
+      "label": "Entry door (existing)",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.5,
+          "y": -20.0
+        },
+        {
+          "x": 41.0,
+          "y": -101.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 66.0,
+      "height": 1,
+      "label": "Storm door (existing)",
+      "locked": true
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 58.0,
+          "y": -44.0
+        },
+        {
+          "x": 73.0,
+          "y": -102.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "elevation": 66.75,
+      "height": 1.25,
+      "label": "Shutter (existing)",
+      "locked": true
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 73.0,
+          "y": -44.0
+        },
+        {
+          "x": 109.0,
+          "y": -102.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 67.5,
+      "height": 1,
+      "label": "Window (existing)",
+      "locked": true
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -140,
+          "y": 0
+        },
+        {
+          "x": -29.0,
+          "y": 0.01
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "concrete",
+      "fill": "light",
+      "elevation": -60,
+      "height": 96.0,
+      "label": "Driveway (existing)",
+      "locked": true
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 60.0,
+          "y": -19.0
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 68.0,
+      "label": "Concrete landing"
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 0
+        },
+        {
+          "x": 0.0,
+          "y": -12.667
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 36.0,
+      "label": "Concrete step 1"
+    },
+    {
+      "id": "s12",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -24.0,
+          "y": 0
+        },
+        {
+          "x": -12.0,
+          "y": -6.333
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 36.0,
+      "label": "Concrete step 2"
+    },
+    {
+      "id": "s13",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -24.0,
+          "y": 12
+        },
+        {
+          "x": 60.0,
+          "y": 0
+        }
+      ],
+      "layer": "concrete",
+      "step": 1,
+      "material": "concrete",
+      "fill": false,
+      "dash": "dashed",
+      "elevation": 0,
+      "height": 8,
+      "label": "Footing edge 12 in deep, on 4 in compacted gravel"
+    },
+    {
+      "id": "s14",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0,
+          "y": -55.0
+        },
+        {
+          "x": -26.0,
+          "y": -41.278
+        },
+        {
+          "x": -26.0,
+          "y": -39.528
+        },
+        {
+          "x": 0,
+          "y": -53.25
+        }
+      ],
+      "closed": true,
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": 33.5,
+      "height": 1.75,
+      "label": "Handrail, wall-mounted on the garage brick"
+    },
+    {
+      "id": "s15",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -4,
+          "y": -51.917
+        },
+        {
+          "x": -2,
+          "y": -49.417
+        }
+      ],
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": 35.0,
+      "height": 1,
+      "label": "Handrail wall bracket"
+    },
+    {
+      "id": "s16",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -22.0,
+          "y": -42.417
+        },
+        {
+          "x": -20.0,
+          "y": -39.917
+        }
+      ],
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": 35.0,
+      "height": 1,
+      "label": "Handrail wall bracket"
+    },
+    {
+      "id": "s17",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 0,
+          "y": 20
+        },
+        {
+          "x": 60.0,
+          "y": 20
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s18",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -24.0,
+          "y": 20
+        },
+        {
+          "x": 0,
+          "y": 20
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s19",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -29.0,
+          "y": 30
+        },
+        {
+          "x": 0,
+          "y": 30
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s20",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 70.0,
+          "y": 0
+        },
+        {
+          "x": 70.0,
+          "y": -19.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s21",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -34.0,
+          "y": 0
+        },
+        {
+          "x": -34.0,
+          "y": -6.333
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s22",
+      "type": "text",
+      "pts": [
+        {
+          "x": 30,
+          "y": 8
+        }
+      ],
+      "layer": "detail",
+      "text": "footing edge + gravel base",
+      "size": 4.5
+    },
+    {
+      "id": "s23",
+      "type": "text",
+      "pts": [
+        {
+          "x": 30,
+          "y": -25.0
+        }
+      ],
+      "layer": "detail",
+      "text": "NEW LANDING",
+      "size": 6
+    },
+    {
+      "id": "s24",
+      "type": "text",
+      "pts": [
+        {
+          "x": 90.0,
+          "y": -24.0
+        }
+      ],
+      "layer": "detail",
+      "text": "1\" below the threshold:",
+      "size": 4.5
+    },
+    {
+      "id": "s25",
+      "type": "text",
+      "pts": [
+        {
+          "x": 90.0,
+          "y": -18.0
+        }
+      ],
+      "layer": "detail",
+      "text": "the storm door clears it",
+      "size": 4.5
+    },
+    {
+      "id": "s26",
+      "type": "text",
+      "pts": [
+        {
+          "x": 90.0,
+          "y": -7.5
+        }
+      ],
+      "layer": "detail",
+      "text": "3 risers, about 6 3/8\" each",
+      "size": 4.5
+    },
+    {
+      "id": "s27",
+      "type": "text",
+      "pts": [
+        {
+          "x": -62,
+          "y": -62
+        }
+      ],
+      "layer": "detail",
+      "text": "Handrail on the garage brick,",
+      "size": 4.5
+    },
+    {
+      "id": "s28",
+      "type": "text",
+      "pts": [
+        {
+          "x": -62,
+          "y": -57
+        }
+      ],
+      "layer": "detail",
+      "text": "36\" above the step edges",
+      "size": 4.5
+    },
+    {
+      "id": "s29",
+      "type": "text",
+      "pts": [
+        {
+          "x": -80,
+          "y": -40
+        }
+      ],
+      "layer": "detail",
+      "text": "GARAGE DOOR",
+      "size": 6
+    },
+    {
+      "id": "s30",
+      "type": "text",
+      "pts": [
+        {
+          "x": 20,
+          "y": -112.0
+        }
+      ],
+      "layer": "detail",
+      "text": "Front view, standing in the yard. Existing sizes estimated from photos.",
+      "size": 4.5
+    }
+  ]
+}
