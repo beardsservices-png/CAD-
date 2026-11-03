@@ -1,6 +1,6 @@
 // Screenshot a Draft Studio example in 2D and 3D so the drawing is checked before it ships.
 //
-//   (cd /home/user/CAD- && PORT=8099 node server.js &)      # start the app locally first
+//   (cd /home/user/CAD- && PORT=8099 DATA_DIR=/tmp/cad-preview node server.js &)   # start the app locally first
 //   node preview_example.mjs <example-id> <out-prefix>
 //
 // Writes <out-prefix>-2d.png and <out-prefix>-3d.png. Prints page errors, if any.
