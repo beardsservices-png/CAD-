@@ -115,7 +115,8 @@ export const EXAMPLES = [
       "John Seger, front entry. The brick steps under the storm door come out; a 5 ft × 5 ft 8 in concrete " +
       "landing goes in 1 in below the threshold, running 3 ft past the garage wall so the storm door opens over it. " +
       "Two 12 in steps drop sideways to the driveway in front of the garage brick, stopping short of the garage " +
-      "door, with the handrail on the garage brick. Existing sizes estimated from photos.",
+      "door, with the handrail on the garage brick. A second run of two 12 in steps, 3 ft wide, comes off the " +
+      "front of the landing into the yard. Existing sizes estimated from photos.",
     teaches: [
       "Existing (reference only) — house, garage, doors, window, old steps and the storm door swing are ghosted",
       "Build steps — gravel base and expansion strip, then the one pour, then the handrail",
@@ -128,7 +129,8 @@ export const EXAMPLES = [
     name: "Seger Front Landing — front view (elevation)",
     blurb:
       "The same landing seen from the yard: 19 in landing face, three risers of about 6 3/8 in down to the " +
-      "driveway, the handrail 36 in above the step nosings on the garage brick, and the storm door clearing the landing.",
+      "driveway on the side and the same three risers off the front, the handrail 36 in above the step nosings " +
+      "on the garage brick, and the storm door clearing the landing.",
     teaches: [
       "Elevation view — canvas up is height, so the step profile reads like the real thing",
       "Build steps — thickened edge, the pour, then the handrail",

@@ -46,14 +46,14 @@
         },
         {
           "x": 140,
-          "y": -104.0
+          "y": -104
         }
       ],
       "layer": "existing",
       "existing": true,
       "material": "brick",
       "fill": "light",
-      "elevation": 68.0,
+      "elevation": 68,
       "height": 6,
       "label": "House wall, brick (existing)",
       "locked": true
@@ -68,14 +68,14 @@
         },
         {
           "x": 0,
-          "y": -104.0
+          "y": -104
         }
       ],
       "layer": "existing",
       "existing": true,
       "material": "brick",
       "fill": "light",
-      "elevation": 36.0,
+      "elevation": 36,
       "height": 60,
       "label": "Garage front, brick (existing)",
       "locked": true
@@ -85,11 +85,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": -129.0,
+          "x": -129,
           "y": 0
         },
         {
-          "x": -33.0,
+          "x": -33,
           "y": -84
         }
       ],
@@ -106,11 +106,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": -33.0,
+          "x": -33,
           "y": 0
         },
         {
-          "x": -29.0,
+          "x": -29,
           "y": -86
         }
       ],
@@ -128,18 +128,18 @@
       "pts": [
         {
           "x": 3.25,
-          "y": -20.0
+          "y": -20
         },
         {
           "x": 39.25,
-          "y": -100.0
+          "y": -100
         }
       ],
       "layer": "existing",
       "existing": true,
       "material": "wood",
       "fill": "light",
-      "elevation": 67.0,
+      "elevation": 67,
       "height": 1.5,
       "label": "Entry door (existing)",
       "locked": true
@@ -150,18 +150,18 @@
       "pts": [
         {
           "x": 1.5,
-          "y": -20.0
+          "y": -20
         },
         {
-          "x": 41.0,
-          "y": -101.0
+          "x": 41,
+          "y": -101
         }
       ],
       "layer": "existing",
       "existing": true,
       "material": "glass",
       "fill": "light",
-      "elevation": 66.0,
+      "elevation": 66,
       "height": 1,
       "label": "Storm door (existing)",
       "locked": true
@@ -171,11 +171,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": 58.0,
-          "y": -44.0
+          "x": 58,
+          "y": -44
         },
         {
-          "x": 73.0,
+          "x": 73,
           "y": -102.5
         }
       ],
@@ -192,11 +192,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": 73.0,
-          "y": -44.0
+          "x": 73,
+          "y": -44
         },
         {
-          "x": 109.0,
+          "x": 109,
           "y": -102.5
         }
       ],
@@ -218,7 +218,7 @@
           "y": 0
         },
         {
-          "x": -29.0,
+          "x": -29,
           "y": 0.01
         }
       ],
@@ -227,7 +227,7 @@
       "material": "concrete",
       "fill": "light",
       "elevation": -60,
-      "height": 96.0,
+      "height": 96,
       "label": "Driveway (existing)",
       "locked": true
     },
@@ -240,8 +240,8 @@
           "y": 0
         },
         {
-          "x": 60.0,
-          "y": -19.0
+          "x": 60,
+          "y": -19
         }
       ],
       "layer": "concrete",
@@ -249,7 +249,7 @@
       "material": "concrete",
       "fill": "solid",
       "elevation": 0,
-      "height": 68.0,
+      "height": 68,
       "label": "Concrete landing"
     },
     {
@@ -257,11 +257,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": -12.0,
+          "x": -12,
           "y": 0
         },
         {
-          "x": 0.0,
+          "x": 0,
           "y": -12.667
         }
       ],
@@ -270,7 +270,7 @@
       "material": "concrete",
       "fill": "solid",
       "elevation": 0,
-      "height": 36.0,
+      "height": 36,
       "label": "Concrete step 1"
     },
     {
@@ -278,11 +278,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": -24.0,
+          "x": -24,
           "y": 0
         },
         {
-          "x": -12.0,
+          "x": -12,
           "y": -6.333
         }
       ],
@@ -291,7 +291,7 @@
       "material": "concrete",
       "fill": "solid",
       "elevation": 0,
-      "height": 36.0,
+      "height": 36,
       "label": "Concrete step 2"
     },
     {
@@ -299,11 +299,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": -24.0,
+          "x": -24,
           "y": 12
         },
         {
-          "x": 60.0,
+          "x": 60,
           "y": 0
         }
       ],
@@ -322,14 +322,14 @@
       "pts": [
         {
           "x": 0,
-          "y": -55.0
+          "y": -55
         },
         {
-          "x": -26.0,
+          "x": -26,
           "y": -41.278
         },
         {
-          "x": -26.0,
+          "x": -26,
           "y": -39.528
         },
         {
@@ -363,7 +363,7 @@
       "step": 3,
       "material": "metal",
       "fill": "solid",
-      "elevation": 35.0,
+      "elevation": 35,
       "height": 1,
       "label": "Handrail wall bracket"
     },
@@ -372,11 +372,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": -22.0,
+          "x": -22,
           "y": -42.417
         },
         {
-          "x": -20.0,
+          "x": -20,
           "y": -39.917
         }
       ],
@@ -384,7 +384,7 @@
       "step": 3,
       "material": "metal",
       "fill": "solid",
-      "elevation": 35.0,
+      "elevation": 35,
       "height": 1,
       "label": "Handrail wall bracket"
     },
@@ -397,7 +397,7 @@
           "y": 20
         },
         {
-          "x": 60.0,
+          "x": 60,
           "y": 20
         }
       ],
@@ -408,7 +408,7 @@
       "type": "dimension",
       "pts": [
         {
-          "x": -24.0,
+          "x": -24,
           "y": 20
         },
         {
@@ -423,7 +423,7 @@
       "type": "dimension",
       "pts": [
         {
-          "x": -29.0,
+          "x": -29,
           "y": 30
         },
         {
@@ -438,12 +438,12 @@
       "type": "dimension",
       "pts": [
         {
-          "x": 70.0,
+          "x": 70,
           "y": 0
         },
         {
-          "x": 70.0,
-          "y": -19.0
+          "x": 70,
+          "y": -19
         }
       ],
       "layer": "dims"
@@ -453,11 +453,11 @@
       "type": "dimension",
       "pts": [
         {
-          "x": -34.0,
+          "x": -34,
           "y": 0
         },
         {
-          "x": -34.0,
+          "x": -34,
           "y": -6.333
         }
       ],
@@ -468,7 +468,7 @@
       "type": "text",
       "pts": [
         {
-          "x": 30,
+          "x": 64,
           "y": 8
         }
       ],
@@ -482,7 +482,7 @@
       "pts": [
         {
           "x": 30,
-          "y": -25.0
+          "y": -25
         }
       ],
       "layer": "detail",
@@ -494,8 +494,8 @@
       "type": "text",
       "pts": [
         {
-          "x": 90.0,
-          "y": -24.0
+          "x": 90,
+          "y": -24
         }
       ],
       "layer": "detail",
@@ -507,8 +507,8 @@
       "type": "text",
       "pts": [
         {
-          "x": 90.0,
-          "y": -18.0
+          "x": 90,
+          "y": -18
         }
       ],
       "layer": "detail",
@@ -520,12 +520,12 @@
       "type": "text",
       "pts": [
         {
-          "x": 90.0,
+          "x": 90,
           "y": -7.5
         }
       ],
       "layer": "detail",
-      "text": "3 risers, about 6 3/8\" each",
+      "text": "SIDE: 3 risers, about 6 3/8\" each",
       "size": 4.5
     },
     {
@@ -573,11 +573,116 @@
       "pts": [
         {
           "x": 20,
-          "y": -112.0
+          "y": -112
         }
       ],
       "layer": "detail",
       "text": "Front view, standing in the yard. Existing sizes estimated from photos.",
+      "size": 4.5
+    },
+    {
+      "id": "s31",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 12,
+          "y": 0
+        },
+        {
+          "x": 48,
+          "y": -12.667
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -12,
+      "height": 12,
+      "label": "Front step 1"
+    },
+    {
+      "id": "s32",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 12,
+          "y": 0
+        },
+        {
+          "x": 48,
+          "y": -6.333
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -24,
+      "height": 12,
+      "label": "Front step 2"
+    },
+    {
+      "id": "s33",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 12,
+          "y": 12
+        },
+        {
+          "x": 48,
+          "y": 0
+        }
+      ],
+      "layer": "concrete",
+      "step": 1,
+      "material": "concrete",
+      "fill": false,
+      "dash": "dashed",
+      "elevation": -24,
+      "height": 24,
+      "label": "Footing edge 12 in deep, front steps, on 4 in compacted gravel"
+    },
+    {
+      "id": "s34",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 12,
+          "y": 30
+        },
+        {
+          "x": 48,
+          "y": 30
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s35",
+      "type": "text",
+      "pts": [
+        {
+          "x": 90,
+          "y": 14
+        }
+      ],
+      "layer": "detail",
+      "text": "FRONT: same 3 risers,",
+      "size": 4.5
+    },
+    {
+      "id": "s36",
+      "type": "text",
+      "pts": [
+        {
+          "x": 90,
+          "y": 20
+        }
+      ],
+      "layer": "detail",
+      "text": "3 ft wide, centered",
       "size": 4.5
     }
   ]
