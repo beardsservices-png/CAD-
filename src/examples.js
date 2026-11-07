@@ -136,4 +136,18 @@ export const EXAMPLES = [
       "Build steps — thickened edge, the pour, then the handrail",
     ],
   },
+  {
+    id: "giles-transom-windows-elevation",
+    file: "examples/giles-transom-windows-elevation.json",
+    name: "Giles Porch — transom windows (elevation)",
+    blurb:
+      "Jesse & Doree Giles, Phase 3 porch enclosure. Three hinged transom windows above the beam, over the walkway and the two front windows: " +
+      "cedar picture frames with 1/4\" plexiglass clamped between, bottom hinges, gas struts and a pole-operated quarter-turn latch. " +
+      "Bay widths are estimated from a photo.",
+    teaches: [
+      "Existing (reference only) — beam, posts, rafters and the windows below are ghosted",
+      "Build steps — cedar frames, plexiglass, then hinges, struts and latch",
+      "Materials — counts the trim pieces, glazing and hardware for the three units",
+    ],
+  },
 ];

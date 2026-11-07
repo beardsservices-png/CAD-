@@ -1,0 +1,1058 @@
+{
+  "version": 1,
+  "name": "Giles Porch — transom windows (elevation)",
+  "viewMode": "elevation",
+  "layers": [
+    {
+      "id": "walls",
+      "name": "Existing",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "frame",
+      "name": "Pocket & Trim",
+      "color": "#b45309",
+      "visible": true
+    },
+    {
+      "id": "windows",
+      "name": "Transom Windows",
+      "color": "#0891b2",
+      "visible": true
+    },
+    {
+      "id": "hardware",
+      "name": "Hardware",
+      "color": "#475569",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#6d28d9",
+      "visible": true
+    }
+  ],
+  "activeLayer": "walls",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -94
+        },
+        {
+          "x": 130,
+          "y": -101.25
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "height": 3.5,
+      "label": "Existing beam (front)",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 58,
+          "y": -94
+        },
+        {
+          "x": 61.5,
+          "y": -37
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 3.5,
+      "label": "Existing 4×4 cedar post",
+      "locked": true
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 126.5,
+          "y": -94
+        },
+        {
+          "x": 130,
+          "y": -37
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 3.5,
+      "label": "Existing 4×4 cedar post",
+      "locked": true
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 61.5,
+          "y": -92.5
+        },
+        {
+          "x": 126.5,
+          "y": -38.5
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "material": "glass",
+      "fill": "light",
+      "height": 1,
+      "label": "Front windows below (separate work)",
+      "locked": true
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -91
+        },
+        {
+          "x": 58,
+          "y": 0
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "material": "drywall",
+      "fill": false,
+      "dash": "dashed",
+      "height": 0.5,
+      "label": "Walkway opening below (door)",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -0.75,
+          "y": -113.25
+        },
+        {
+          "x": 0.75,
+          "y": -101.25
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "height": 3.5,
+      "label": "Existing 2×12 rafter (position from photo — verify)",
+      "locked": true
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 46.0,
+          "y": -113.25
+        },
+        {
+          "x": 47.5,
+          "y": -101.25
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "height": 3.5,
+      "label": "Existing 2×12 rafter (position from photo — verify)",
+      "locked": true
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 94.0,
+          "y": -113.25
+        },
+        {
+          "x": 95.5,
+          "y": -101.25
+        }
+      ],
+      "layer": "walls",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "height": 3.5,
+      "label": "Existing 2×12 rafter (position from photo — verify)",
+      "locked": true
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.0,
+          "y": -103.75
+        },
+        {
+          "x": 45.0,
+          "y": -101.25
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom bottom rail"
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.0,
+          "y": -113.25
+        },
+        {
+          "x": 45.0,
+          "y": -110.75
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom top rail"
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.0,
+          "y": -110.75
+        },
+        {
+          "x": 3.5,
+          "y": -103.75
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom stile"
+    },
+    {
+      "id": "s12",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 42.5,
+          "y": -110.75
+        },
+        {
+          "x": 45.0,
+          "y": -103.75
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom stile"
+    },
+    {
+      "id": "s13",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 3.5,
+          "y": -110.75
+        },
+        {
+          "x": 42.5,
+          "y": -103.75
+        }
+      ],
+      "layer": "windows",
+      "step": 2,
+      "material": "glass",
+      "fill": "light",
+      "height": 0.25,
+      "label": "¼\" clear plexiglass — not drilled, 3/16\" expansion gap"
+    },
+    {
+      "id": "s14",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 6.0,
+          "y": -102.75
+        },
+        {
+          "x": 10.0,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 0.5,
+      "label": "Stainless exterior utility hinge"
+    },
+    {
+      "id": "s15",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 36.0,
+          "y": -102.75
+        },
+        {
+          "x": 40.0,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 0.5,
+      "label": "Stainless exterior utility hinge"
+    },
+    {
+      "id": "s16",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.4,
+          "y": -110.25
+        },
+        {
+          "x": 2.4,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 1,
+      "label": "Gas strut (≈10\", lbs per weighed unit)"
+    },
+    {
+      "id": "s17",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 43.6,
+          "y": -110.25
+        },
+        {
+          "x": 44.6,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 1,
+      "label": "Gas strut (≈10\", lbs per weighed unit)"
+    },
+    {
+      "id": "s18",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 21.8,
+          "y": -112.85
+        },
+        {
+          "x": 24.2,
+          "y": -111.15
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 0.8,
+      "label": "¼-turn cam latch (T-handle for pole key)"
+    },
+    {
+      "id": "s19",
+      "type": "text",
+      "pts": [
+        {
+          "x": 5.0,
+          "y": -116.25
+        }
+      ],
+      "layer": "detail",
+      "text": "A — over walkway/door",
+      "size": 5
+    },
+    {
+      "id": "s20",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 49.0,
+          "y": -103.75
+        },
+        {
+          "x": 93.0,
+          "y": -101.25
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom bottom rail"
+    },
+    {
+      "id": "s21",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 49.0,
+          "y": -113.25
+        },
+        {
+          "x": 93.0,
+          "y": -110.75
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom top rail"
+    },
+    {
+      "id": "s22",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 49.0,
+          "y": -110.75
+        },
+        {
+          "x": 51.5,
+          "y": -103.75
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom stile"
+    },
+    {
+      "id": "s23",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 90.5,
+          "y": -110.75
+        },
+        {
+          "x": 93.0,
+          "y": -103.75
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom stile"
+    },
+    {
+      "id": "s24",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 51.5,
+          "y": -110.75
+        },
+        {
+          "x": 90.5,
+          "y": -103.75
+        }
+      ],
+      "layer": "windows",
+      "step": 2,
+      "material": "glass",
+      "fill": "light",
+      "height": 0.25,
+      "label": "¼\" clear plexiglass — not drilled, 3/16\" expansion gap"
+    },
+    {
+      "id": "s25",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 54.0,
+          "y": -102.75
+        },
+        {
+          "x": 58.0,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 0.5,
+      "label": "Stainless exterior utility hinge"
+    },
+    {
+      "id": "s26",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 84.0,
+          "y": -102.75
+        },
+        {
+          "x": 88.0,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 0.5,
+      "label": "Stainless exterior utility hinge"
+    },
+    {
+      "id": "s27",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 49.4,
+          "y": -110.25
+        },
+        {
+          "x": 50.4,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 1,
+      "label": "Gas strut (≈10\", lbs per weighed unit)"
+    },
+    {
+      "id": "s28",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 91.6,
+          "y": -110.25
+        },
+        {
+          "x": 92.6,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 1,
+      "label": "Gas strut (≈10\", lbs per weighed unit)"
+    },
+    {
+      "id": "s29",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 69.8,
+          "y": -112.85
+        },
+        {
+          "x": 72.2,
+          "y": -111.15
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 0.8,
+      "label": "¼-turn cam latch (T-handle for pole key)"
+    },
+    {
+      "id": "s30",
+      "type": "text",
+      "pts": [
+        {
+          "x": 53.0,
+          "y": -116.25
+        }
+      ],
+      "layer": "detail",
+      "text": "B — over left front window",
+      "size": 5
+    },
+    {
+      "id": "s31",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 96.5,
+          "y": -103.75
+        },
+        {
+          "x": 126.0,
+          "y": -101.25
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom bottom rail"
+    },
+    {
+      "id": "s32",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 96.5,
+          "y": -113.25
+        },
+        {
+          "x": 126.0,
+          "y": -110.75
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom top rail"
+    },
+    {
+      "id": "s33",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 96.5,
+          "y": -110.75
+        },
+        {
+          "x": 99.0,
+          "y": -103.75
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom stile"
+    },
+    {
+      "id": "s34",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 123.5,
+          "y": -110.75
+        },
+        {
+          "x": 126.0,
+          "y": -103.75
+        }
+      ],
+      "layer": "frame",
+      "step": 1,
+      "material": "wood",
+      "color": "#b45309",
+      "fill": "solid",
+      "height": 0.625,
+      "label": "Cedar trim 5/8 × 2½ — transom stile"
+    },
+    {
+      "id": "s35",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 99.0,
+          "y": -110.75
+        },
+        {
+          "x": 123.5,
+          "y": -103.75
+        }
+      ],
+      "layer": "windows",
+      "step": 2,
+      "material": "glass",
+      "fill": "light",
+      "height": 0.25,
+      "label": "¼\" clear plexiglass — not drilled, 3/16\" expansion gap"
+    },
+    {
+      "id": "s36",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 101.5,
+          "y": -102.75
+        },
+        {
+          "x": 105.5,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 0.5,
+      "label": "Stainless exterior utility hinge"
+    },
+    {
+      "id": "s37",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 117.0,
+          "y": -102.75
+        },
+        {
+          "x": 121.0,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 0.5,
+      "label": "Stainless exterior utility hinge"
+    },
+    {
+      "id": "s38",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 96.9,
+          "y": -110.25
+        },
+        {
+          "x": 97.9,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 1,
+      "label": "Gas strut (≈10\", lbs per weighed unit)"
+    },
+    {
+      "id": "s39",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 124.6,
+          "y": -110.25
+        },
+        {
+          "x": 125.6,
+          "y": -101.25
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 1,
+      "label": "Gas strut (≈10\", lbs per weighed unit)"
+    },
+    {
+      "id": "s40",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 110.05,
+          "y": -112.85
+        },
+        {
+          "x": 112.45,
+          "y": -111.15
+        }
+      ],
+      "layer": "hardware",
+      "step": 3,
+      "material": "steel",
+      "fill": "solid",
+      "height": 0.8,
+      "label": "¼-turn cam latch (T-handle for pole key)"
+    },
+    {
+      "id": "s41",
+      "type": "text",
+      "pts": [
+        {
+          "x": 100.5,
+          "y": -116.25
+        }
+      ],
+      "layer": "detail",
+      "text": "C — over right front window",
+      "size": 5
+    },
+    {
+      "id": "s42",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 1.0,
+          "y": -121.25
+        },
+        {
+          "x": 45.0,
+          "y": -121.25
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s43",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 49.0,
+          "y": -121.25
+        },
+        {
+          "x": 93.0,
+          "y": -121.25
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s44",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 96.5,
+          "y": -121.25
+        },
+        {
+          "x": 126.0,
+          "y": -121.25
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s45",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -6,
+          "y": -101.25
+        },
+        {
+          "x": -6,
+          "y": -113.25
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s46",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": 6
+        }
+      ],
+      "layer": "detail",
+      "text": "GILES — TRANSOM WINDOWS above the beam: over the walkway (door) and the two front windows. Seen from outside.",
+      "size": 5
+    },
+    {
+      "id": "s47",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": 13
+        }
+      ],
+      "layer": "detail",
+      "text": "Three drop-down units, 12\" tall, hinged at the bottom on top of the beam. A and B are 44\" wide, C fits the bay by the corner post.",
+      "size": 5
+    },
+    {
+      "id": "s48",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": 20
+        }
+      ],
+      "layer": "detail",
+      "text": "Each unit is a cedar picture frame (5/8 × 2½, front and back) with ¼\" plexiglass clamped between — no holes in the plastic.",
+      "size": 5
+    },
+    {
+      "id": "s49",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": 27
+        }
+      ],
+      "layer": "detail",
+      "text": "Two stainless hinges at the bottom. Two gas struts (over-center: they hold it open flat and push it closed).",
+      "size": 5
+    },
+    {
+      "id": "s50",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": 34
+        }
+      ],
+      "layer": "detail",
+      "text": "A ¼-turn cam latch at the top crushes the foam weatherstrip. Worked from the ground with a pole key.",
+      "size": 5
+    },
+    {
+      "id": "s51",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": 41
+        }
+      ],
+      "layer": "detail",
+      "text": "Weatherstrip: EPDM foam on the inside of the exterior lip. Silicone safe for acrylic only on the glass.",
+      "size": 5
+    },
+    {
+      "id": "s52",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": 48
+        }
+      ],
+      "layer": "detail",
+      "text": "ESTIMATED FROM PHOTOS — the bay widths and rafter spots are not measured. Tape needed: rafter-to-rafter at each bay,",
+      "size": 5
+    },
+    {
+      "id": "s53",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": 55
+        }
+      ],
+      "layer": "detail",
+      "text": "beam top to soffit, and how far each bay sits from the corner post.",
+      "size": 5
+    },
+    {
+      "id": "s54",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": -151.25
+        }
+      ],
+      "layer": "detail",
+      "text": "GILES — JOB 112 — PHASE 3 PORCH ENCLOSURE",
+      "size": 5
+    },
+    {
+      "id": "s55",
+      "type": "text",
+      "pts": [
+        {
+          "x": -6,
+          "y": -144.25
+        }
+      ],
+      "layer": "detail",
+      "text": "Transom windows — estimate EST20261107",
+      "size": 5
+    }
+  ]
+}
