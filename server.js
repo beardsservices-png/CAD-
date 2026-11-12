@@ -7,9 +7,21 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const ROOT = __dirname;
 const PORT = process.env.PORT || 8080;
+
+// When DRAWINGS_KEY is set, every /api/drawings call must send it in the
+// X-Studio-Key header. Unset, the API stays open (local development).
+const DRAWINGS_KEY = process.env.DRAWINGS_KEY || "";
+
+function keyOk(req) {
+  if (!DRAWINGS_KEY) return true;
+  const sent = Buffer.from(String(req.headers["x-studio-key"] || ""));
+  const want = Buffer.from(DRAWINGS_KEY);
+  return sent.length === want.length && crypto.timingSafeEqual(sent, want);
+}
 
 // Where drawings are stored. Point DATA_DIR at your Railway volume (e.g. /data).
 // Falls back to a local ./.data folder for development.
@@ -80,10 +92,11 @@ async function handleApi(req, res, urlPath) {
   const resource = parts[1];
 
   if (resource === "health") {
-    return sendJSON(res, 200, { ok: true, storage: DATA_DIR });
+    return sendJSON(res, 200, { ok: true, locked: !!DRAWINGS_KEY });
   }
 
   if (resource !== "drawings") return sendJSON(res, 404, { error: "Not found" });
+  if (!keyOk(req)) return sendJSON(res, 401, { error: "Key required" });
 
   const id = parts[2];
 
