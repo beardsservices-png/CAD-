@@ -1,0 +1,444 @@
+{
+  "version": 1,
+  "name": "Seger Front Steps B (angled) — front view (elevation)",
+  "viewMode": "elevation",
+  "layers": [
+    {
+      "id": "existing",
+      "name": "Existing",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "concrete",
+      "name": "New concrete",
+      "color": "#475569",
+      "visible": true
+    },
+    {
+      "id": "rail",
+      "name": "Handrail",
+      "color": "#111827",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#64748b",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    }
+  ],
+  "activeLayer": "existing",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 140,
+          "y": -104.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "brick",
+      "fill": "light",
+      "elevation": 92.0,
+      "height": 6,
+      "label": "House wall, brick (existing)",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -140,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": -104.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "brick",
+      "fill": "light",
+      "elevation": 44.0,
+      "height": 60,
+      "label": "Garage front, brick (existing)",
+      "locked": true
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -129.0,
+          "y": 0
+        },
+        {
+          "x": -33.0,
+          "y": -84
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "elevation": 43.5,
+      "height": 1,
+      "label": "Garage door (existing)",
+      "locked": true
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 3.25,
+          "y": -25.0
+        },
+        {
+          "x": 39.25,
+          "y": -105.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 91.0,
+      "height": 1.5,
+      "label": "Entry door (existing)",
+      "locked": true
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 1.5,
+          "y": -25.0
+        },
+        {
+          "x": 41.0,
+          "y": -106.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 90.0,
+      "height": 1,
+      "label": "Storm door (existing)",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 58.0,
+          "y": -49.0
+        },
+        {
+          "x": 73.0,
+          "y": -107.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "elevation": 90.75,
+      "height": 1.25,
+      "label": "Shutter (existing)",
+      "locked": true
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 73.0,
+          "y": -49.0
+        },
+        {
+          "x": 109.0,
+          "y": -107.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "glass",
+      "fill": "light",
+      "elevation": 91.5,
+      "height": 1,
+      "label": "Window (existing)",
+      "locked": true
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -18.0
+        },
+        {
+          "x": 72.0,
+          "y": -24.0
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 43.159379566434055,
+      "height": 48.840620433565945,
+      "label": "Upper landing riser"
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -12.0
+        },
+        {
+          "x": 72.0,
+          "y": -18.0
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 13.0,
+      "height": 43.0,
+      "label": "Step 3 riser"
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -12,
+          "y": 0
+        },
+        {
+          "x": 72.0,
+          "y": -12.0
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 44.0,
+      "label": "Lower landing"
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -24,
+          "y": 0
+        },
+        {
+          "x": -12,
+          "y": -6.0
+        }
+      ],
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 0,
+      "height": 44.0,
+      "label": "Step 1"
+    },
+    {
+      "id": "s12",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -12,
+          "y": -12.0
+        },
+        {
+          "x": -10.0,
+          "y": -48.0
+        }
+      ],
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": 0.5,
+      "height": 2.0,
+      "label": "Handrail post"
+    },
+    {
+      "id": "s13",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 35.0,
+          "y": -12.0
+        },
+        {
+          "x": 37.0,
+          "y": -48.0
+        }
+      ],
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": 0.5,
+      "height": 2.0,
+      "label": "Handrail post"
+    },
+    {
+      "id": "s14",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 70.0,
+          "y": -12.0
+        },
+        {
+          "x": 72.0,
+          "y": -48.0
+        }
+      ],
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": 0.5,
+      "height": 2.0,
+      "label": "Handrail post"
+    },
+    {
+      "id": "s15",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -12,
+          "y": -46.5
+        },
+        {
+          "x": 72.0,
+          "y": -48.0
+        }
+      ],
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": 0.5,
+      "height": 2.0,
+      "label": "Handrail, front"
+    },
+    {
+      "id": "s16",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -24,
+          "y": 14
+        },
+        {
+          "x": -12,
+          "y": 14
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s17",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -12,
+          "y": 14
+        },
+        {
+          "x": 72.0,
+          "y": 14
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s18",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 82.0,
+          "y": 0
+        },
+        {
+          "x": 82.0,
+          "y": -24.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s19",
+      "type": "text",
+      "pts": [
+        {
+          "x": 102.0,
+          "y": -26.0
+        }
+      ],
+      "layer": "detail",
+      "text": "4 steps, 6 in each",
+      "size": 4.5
+    },
+    {
+      "id": "s20",
+      "type": "text",
+      "pts": [
+        {
+          "x": 102.0,
+          "y": -20.0
+        }
+      ],
+      "layer": "detail",
+      "text": "upper landing 1 in below the threshold",
+      "size": 4.5
+    },
+    {
+      "id": "s21",
+      "type": "text",
+      "pts": [
+        {
+          "x": 20,
+          "y": -112.0
+        }
+      ],
+      "layer": "detail",
+      "text": "Front view, version B (angled). Standing in the yard.",
+      "size": 4.5
+    }
+  ]
+}

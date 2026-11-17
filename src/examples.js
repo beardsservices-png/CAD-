@@ -108,31 +108,32 @@ export const EXAMPLES = [
     ],
   },
   {
-    id: "seger-front-landing-plan",
-    file: "examples/seger-front-landing-plan.json",
-    name: "Seger Front Landing — plan (overhead)",
-    blurb:
-      "John Seger, front entry. The brick steps under the storm door come out. A 6 ft × 5 ft upper landing 1 in below " +
-      "the threshold fills the space to the garage corner; one step down (parallel to the house) to a 6 ft × 3 ft lower " +
-      "landing; turn left and three steps drop to the driveway in front of the garage brick, stopping short of the " +
-      "garage door. Handrail from the house down the window side, around the corner, to the three steps.",
-    teaches: [
-      "Existing (reference only) — house, garage, doors, window, old steps and the storm door swing are ghosted",
-      "Build steps — the one pour, then the handrail",
-      "3D Preview — two landing levels, the steps down to the drive and the rail around the open sides",
-    ],
+    id: "seger-steps-a-plan",
+    file: "examples/seger-steps-a-plan.json",
+    name: "Seger Front Steps A (square) — plan (overhead)",
+    blurb: "John Seger front steps (17 Nov): 72 x 36 upper landing at the door, 12 in step out to the garage corner, 44 in lower landing, one step down to the driveway; four 6 in steps; handrail on the window side and front.",
+    teaches: ["Existing (reference only) is ghosted", "3D Preview shows the four 6 in levels"],
   },
   {
-    id: "seger-front-landing-front",
-    file: "examples/seger-front-landing-front.json",
-    name: "Seger Front Landing — front view (elevation)",
-    blurb:
-      "The same entry seen from the yard: four equal steps of about 4 3/4 in from the driveway to the upper landing, " +
-      "the lower landing's face with the step down behind it, and the 36 in handrail along the front.",
-    teaches: [
-      "Elevation view — canvas up is height, so the step profile reads like the real thing",
-      "Build steps — footing edge, the pour, then the handrail",
-    ],
+    id: "seger-steps-a-front",
+    file: "examples/seger-steps-a-front.json",
+    name: "Seger Front Steps A (square) — front view (elevation)",
+    blurb: "John Seger front steps (17 Nov): 72 x 36 upper landing at the door, 12 in step out to the garage corner, 44 in lower landing, one step down to the driveway; four 6 in steps; handrail on the window side and front.",
+    teaches: ["Existing (reference only) is ghosted", "3D Preview shows the four 6 in levels"],
+  },
+  {
+    id: "seger-steps-b-plan",
+    file: "examples/seger-steps-b-plan.json",
+    name: "Seger Front Steps B (angled) — plan (overhead)",
+    blurb: "John Seger front steps (17 Nov): 72 x 36 upper landing at the door, 12 in step out to the garage corner, 44 in lower landing, one step down to the driveway; four 6 in steps; handrail on the window side and front. Version B: from the storm-door latch, the landing edge kicks out 22.5 deg and step 3 out 45 deg.",
+    teaches: ["Existing (reference only) is ghosted", "3D Preview shows the four 6 in levels"],
+  },
+  {
+    id: "seger-steps-b-front",
+    file: "examples/seger-steps-b-front.json",
+    name: "Seger Front Steps B (angled) — front view (elevation)",
+    blurb: "John Seger front steps (17 Nov): 72 x 36 upper landing at the door, 12 in step out to the garage corner, 44 in lower landing, one step down to the driveway; four 6 in steps; handrail on the window side and front. Version B (angled).",
+    teaches: ["Existing (reference only) is ghosted", "3D Preview shows the four 6 in levels"],
   },
   {
     id: "giles-transom-windows-elevation",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "name": "Seger Front Landing — front view (elevation)",
+  "name": "Seger Front Steps A (square) — front view (elevation)",
   "viewMode": "elevation",
   "layers": [
     {
@@ -53,7 +53,7 @@
       "existing": true,
       "material": "brick",
       "fill": "light",
-      "elevation": 96.0,
+      "elevation": 92.0,
       "height": 6,
       "label": "House wall, brick (existing)",
       "locked": true
@@ -75,7 +75,7 @@
       "existing": true,
       "material": "brick",
       "fill": "light",
-      "elevation": 36.0,
+      "elevation": 44.0,
       "height": 60,
       "label": "Garage front, brick (existing)",
       "locked": true
@@ -96,7 +96,7 @@
       "layer": "existing",
       "existing": true,
       "fill": "light",
-      "elevation": 35.5,
+      "elevation": 43.5,
       "height": 1,
       "label": "Garage door (existing)",
       "locked": true
@@ -106,20 +106,21 @@
       "type": "rect",
       "pts": [
         {
-          "x": -33.0,
-          "y": 0
+          "x": 3.25,
+          "y": -25.0
         },
         {
-          "x": -29.0,
-          "y": -86
+          "x": 39.25,
+          "y": -105.0
         }
       ],
       "layer": "existing",
       "existing": true,
+      "material": "wood",
       "fill": "light",
-      "elevation": 35.25,
-      "height": 1,
-      "label": "Garage door trim (existing)",
+      "elevation": 91.0,
+      "height": 1.5,
+      "label": "Entry door (existing)",
       "locked": true
     },
     {
@@ -127,21 +128,21 @@
       "type": "rect",
       "pts": [
         {
-          "x": 3.25,
-          "y": -20.0
+          "x": 1.5,
+          "y": -25.0
         },
         {
-          "x": 39.25,
-          "y": -100.0
+          "x": 41.0,
+          "y": -106.0
         }
       ],
       "layer": "existing",
       "existing": true,
-      "material": "wood",
+      "material": "glass",
       "fill": "light",
-      "elevation": 95.0,
-      "height": 1.5,
-      "label": "Entry door (existing)",
+      "elevation": 90.0,
+      "height": 1,
+      "label": "Storm door (existing)",
       "locked": true
     },
     {
@@ -149,21 +150,20 @@
       "type": "rect",
       "pts": [
         {
-          "x": 1.5,
-          "y": -20.0
+          "x": 58.0,
+          "y": -49.0
         },
         {
-          "x": 41.0,
-          "y": -101.0
+          "x": 73.0,
+          "y": -107.5
         }
       ],
       "layer": "existing",
       "existing": true,
-      "material": "glass",
       "fill": "light",
-      "elevation": 94.0,
-      "height": 1,
-      "label": "Storm door (existing)",
+      "elevation": 90.75,
+      "height": 1.25,
+      "label": "Shutter (existing)",
       "locked": true
     },
     {
@@ -171,20 +171,21 @@
       "type": "rect",
       "pts": [
         {
-          "x": 58.0,
-          "y": -44.0
+          "x": 73.0,
+          "y": -49.0
         },
         {
-          "x": 73.0,
-          "y": -102.5
+          "x": 109.0,
+          "y": -107.5
         }
       ],
       "layer": "existing",
       "existing": true,
+      "material": "glass",
       "fill": "light",
-      "elevation": 94.75,
-      "height": 1.25,
-      "label": "Shutter (existing)",
+      "elevation": 91.5,
+      "height": 1,
+      "label": "Window (existing)",
       "locked": true
     },
     {
@@ -192,77 +193,75 @@
       "type": "rect",
       "pts": [
         {
-          "x": 73.0,
-          "y": -44.0
+          "x": 0,
+          "y": -18.0
         },
         {
-          "x": 109.0,
-          "y": -102.5
+          "x": 72.0,
+          "y": -24.0
         }
       ],
-      "layer": "existing",
-      "existing": true,
-      "material": "glass",
-      "fill": "light",
-      "elevation": 95.5,
-      "height": 1,
-      "label": "Window (existing)",
-      "locked": true
+      "layer": "concrete",
+      "step": 2,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 56.0,
+      "height": 36.0,
+      "label": "Upper landing riser"
     },
     {
       "id": "s9",
       "type": "rect",
       "pts": [
         {
-          "x": -140,
-          "y": 0
+          "x": 0,
+          "y": -12.0
         },
         {
-          "x": -29.0,
-          "y": 0.01
+          "x": 72.0,
+          "y": -18.0
         }
       ],
-      "layer": "existing",
-      "existing": true,
+      "layer": "concrete",
+      "step": 2,
       "material": "concrete",
-      "fill": "light",
-      "elevation": -60,
-      "height": 96.0,
-      "label": "Driveway (existing)",
-      "locked": true
+      "fill": "solid",
+      "elevation": 44.0,
+      "height": 12.0,
+      "label": "Step 3 riser"
     },
     {
       "id": "s10",
       "type": "rect",
       "pts": [
         {
-          "x": 0,
-          "y": -14.25
+          "x": -12,
+          "y": 0
         },
         {
           "x": 72.0,
-          "y": -19.0
+          "y": -12.0
         }
       ],
       "layer": "concrete",
       "step": 2,
       "material": "concrete",
       "fill": "solid",
-      "elevation": 36.0,
-      "height": 60.0,
-      "label": "Upper landing (step 1 riser seen above the lower landing)"
+      "elevation": 0,
+      "height": 44.0,
+      "label": "Lower landing"
     },
     {
       "id": "s11",
       "type": "rect",
       "pts": [
         {
-          "x": 0,
+          "x": -24,
           "y": 0
         },
         {
-          "x": 72.0,
-          "y": -14.25
+          "x": -12,
+          "y": -6.0
         }
       ],
       "layer": "concrete",
@@ -270,84 +269,83 @@
       "material": "concrete",
       "fill": "solid",
       "elevation": 0,
-      "height": 36.0,
-      "label": "Lower landing"
+      "height": 44.0,
+      "label": "Step 1"
     },
     {
       "id": "s12",
       "type": "rect",
       "pts": [
         {
-          "x": -12.0,
-          "y": 0
+          "x": -12,
+          "y": -12.0
         },
         {
-          "x": 0.0,
-          "y": -9.5
+          "x": -10.0,
+          "y": -48.0
         }
       ],
-      "layer": "concrete",
-      "step": 2,
-      "material": "concrete",
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
       "fill": "solid",
-      "elevation": 0,
-      "height": 36.0,
-      "label": "Step 2"
+      "elevation": 0.5,
+      "height": 2.0,
+      "label": "Handrail post"
     },
     {
       "id": "s13",
       "type": "rect",
       "pts": [
         {
-          "x": -24.0,
-          "y": 0
+          "x": 35.0,
+          "y": -12.0
         },
         {
-          "x": -12.0,
-          "y": -4.75
+          "x": 37.0,
+          "y": -48.0
         }
       ],
-      "layer": "concrete",
-      "step": 2,
-      "material": "concrete",
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
       "fill": "solid",
-      "elevation": 0,
-      "height": 36.0,
-      "label": "Step 3"
+      "elevation": 0.5,
+      "height": 2.0,
+      "label": "Handrail post"
     },
     {
       "id": "s14",
       "type": "rect",
       "pts": [
         {
-          "x": -24.0,
-          "y": 12
+          "x": 70.0,
+          "y": -12.0
         },
         {
           "x": 72.0,
-          "y": 0
+          "y": -48.0
         }
       ],
-      "layer": "concrete",
-      "step": 1,
-      "material": "concrete",
-      "fill": false,
-      "dash": "dashed",
-      "elevation": 0,
-      "height": 8,
-      "label": "Footing edge 12 in deep, on 4 in compacted gravel"
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
+      "fill": "solid",
+      "elevation": 0.5,
+      "height": 2.0,
+      "label": "Handrail post"
     },
     {
       "id": "s15",
       "type": "rect",
       "pts": [
         {
-          "x": 1,
-          "y": -14.25
+          "x": -12,
+          "y": -46.5
         },
         {
-          "x": 3.0,
-          "y": -50.25
+          "x": 72.0,
+          "y": -48.0
         }
       ],
       "layer": "rail",
@@ -356,103 +354,40 @@
       "fill": "solid",
       "elevation": 0.5,
       "height": 2.0,
-      "label": "Handrail post"
+      "label": "Handrail, front"
     },
     {
       "id": "s16",
-      "type": "rect",
+      "type": "dimension",
       "pts": [
         {
-          "x": 35.0,
-          "y": -14.25
+          "x": -24,
+          "y": 14
         },
         {
-          "x": 37.0,
-          "y": -50.25
+          "x": -12,
+          "y": 14
         }
       ],
-      "layer": "rail",
-      "step": 3,
-      "material": "metal",
-      "fill": "solid",
-      "elevation": 0.5,
-      "height": 2.0,
-      "label": "Handrail post"
+      "layer": "dims"
     },
     {
       "id": "s17",
-      "type": "rect",
+      "type": "dimension",
       "pts": [
         {
-          "x": 70.0,
-          "y": -14.25
+          "x": -12,
+          "y": 14
         },
         {
           "x": 72.0,
-          "y": -50.25
+          "y": 14
         }
       ],
-      "layer": "rail",
-      "step": 3,
-      "material": "metal",
-      "fill": "solid",
-      "elevation": 0.5,
-      "height": 2.0,
-      "label": "Handrail post"
+      "layer": "dims"
     },
     {
       "id": "s18",
-      "type": "rect",
-      "pts": [
-        {
-          "x": 1,
-          "y": -48.75
-        },
-        {
-          "x": 72.0,
-          "y": -50.25
-        }
-      ],
-      "layer": "rail",
-      "step": 3,
-      "material": "metal",
-      "fill": "solid",
-      "elevation": 0.5,
-      "height": 2.0,
-      "label": "Handrail, front of the lower landing"
-    },
-    {
-      "id": "s19",
-      "type": "dimension",
-      "pts": [
-        {
-          "x": 0,
-          "y": 20
-        },
-        {
-          "x": 72.0,
-          "y": 20
-        }
-      ],
-      "layer": "dims"
-    },
-    {
-      "id": "s20",
-      "type": "dimension",
-      "pts": [
-        {
-          "x": -24.0,
-          "y": 20
-        },
-        {
-          "x": 0,
-          "y": 20
-        }
-      ],
-      "layer": "dims"
-    },
-    {
-      "id": "s21",
       "type": "dimension",
       "pts": [
         {
@@ -461,80 +396,39 @@
         },
         {
           "x": 82.0,
-          "y": -19.0
-        }
-      ],
-      "layer": "dims"
-    },
-    {
-      "id": "s22",
-      "type": "dimension",
-      "pts": [
-        {
-          "x": -34.0,
-          "y": 0
-        },
-        {
-          "x": -34.0,
-          "y": -4.75
-        }
-      ],
-      "layer": "dims"
-    },
-    {
-      "id": "s23",
-      "type": "text",
-      "pts": [
-        {
-          "x": 102.0,
           "y": -24.0
         }
       ],
-      "layer": "detail",
-      "text": "1\" below the threshold",
-      "size": 4.5
+      "layer": "dims"
     },
     {
-      "id": "s24",
+      "id": "s19",
       "type": "text",
       "pts": [
         {
           "x": 102.0,
-          "y": -7.5
+          "y": -26.0
         }
       ],
       "layer": "detail",
-      "text": "4 steps, about 4 3/4\" each",
+      "text": "4 steps, 6 in each",
       "size": 4.5
     },
     {
-      "id": "s25",
+      "id": "s20",
       "type": "text",
       "pts": [
         {
-          "x": 36,
-          "y": -56.25
+          "x": 102.0,
+          "y": -20.0
         }
       ],
       "layer": "detail",
-      "text": "Handrail, 36 in. high",
+      "text": "upper landing 1 in below the threshold",
       "size": 4.5
     },
     {
-      "id": "s26",
-      "type": "text",
-      "pts": [
-        {
-          "x": -80,
-          "y": -40
-        }
-      ],
-      "layer": "detail",
-      "text": "GARAGE DOOR",
-      "size": 6
-    },
-    {
-      "id": "s27",
+      "id": "s21",
       "type": "text",
       "pts": [
         {
@@ -543,7 +437,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Front view, standing in the yard. Threshold height estimated from photos.",
+      "text": "Front view, version A (square). Standing in the yard.",
       "size": 4.5
     }
   ]
