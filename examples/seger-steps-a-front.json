@@ -1,12 +1,18 @@
 {
   "version": 1,
-  "name": "Seger Front Steps A (square) — front view (elevation)",
+  "name": "Seger Front Steps A (as formed) — front view (elevation)",
   "viewMode": "elevation",
   "layers": [
     {
       "id": "existing",
       "name": "Existing",
       "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "old",
+      "name": "Old work left under the pour",
+      "color": "#a8a29e",
       "visible": true
     },
     {
@@ -194,7 +200,7 @@
       "pts": [
         {
           "x": 0,
-          "y": -18.0
+          "y": -16.0
         },
         {
           "x": 72.0,
@@ -215,11 +221,11 @@
       "pts": [
         {
           "x": 0,
-          "y": -12.0
+          "y": -8.0
         },
         {
-          "x": 72.0,
-          "y": -18.0
+          "x": 84.0,
+          "y": -16.0
         }
       ],
       "layer": "concrete",
@@ -228,19 +234,19 @@
       "fill": "solid",
       "elevation": 44.0,
       "height": 12.0,
-      "label": "Step 3 riser"
+      "label": "Middle step riser"
     },
     {
       "id": "s10",
       "type": "rect",
       "pts": [
         {
-          "x": -12,
+          "x": -12.0,
           "y": 0
         },
         {
-          "x": 72.0,
-          "y": -12.0
+          "x": 84.0,
+          "y": -8.0
         }
       ],
       "layer": "concrete",
@@ -256,33 +262,33 @@
       "type": "rect",
       "pts": [
         {
-          "x": -24,
-          "y": 0
+          "x": -12.0,
+          "y": -8.0
         },
         {
-          "x": -12,
-          "y": -6.0
+          "x": -10.0,
+          "y": -44.0
         }
       ],
-      "layer": "concrete",
-      "step": 2,
-      "material": "concrete",
+      "layer": "rail",
+      "step": 3,
+      "material": "metal",
       "fill": "solid",
-      "elevation": 0,
-      "height": 44.0,
-      "label": "Step 1"
+      "elevation": 0.5,
+      "height": 2.0,
+      "label": "Handrail post"
     },
     {
       "id": "s12",
       "type": "rect",
       "pts": [
         {
-          "x": -12,
-          "y": -12.0
+          "x": 36.0,
+          "y": -8.0
         },
         {
-          "x": -10.0,
-          "y": -48.0
+          "x": 38.0,
+          "y": -44.0
         }
       ],
       "layer": "rail",
@@ -298,12 +304,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 35.0,
-          "y": -12.0
+          "x": 82.0,
+          "y": -8.0
         },
         {
-          "x": 37.0,
-          "y": -48.0
+          "x": 84.0,
+          "y": -44.0
         }
       ],
       "layer": "rail",
@@ -319,33 +325,12 @@
       "type": "rect",
       "pts": [
         {
-          "x": 70.0,
-          "y": -12.0
+          "x": -12.0,
+          "y": -42.5
         },
         {
-          "x": 72.0,
-          "y": -48.0
-        }
-      ],
-      "layer": "rail",
-      "step": 3,
-      "material": "metal",
-      "fill": "solid",
-      "elevation": 0.5,
-      "height": 2.0,
-      "label": "Handrail post"
-    },
-    {
-      "id": "s15",
-      "type": "rect",
-      "pts": [
-        {
-          "x": -12,
-          "y": -46.5
-        },
-        {
-          "x": 72.0,
-          "y": -48.0
+          "x": 84.0,
+          "y": -44.0
         }
       ],
       "layer": "rail",
@@ -357,16 +342,31 @@
       "label": "Handrail, front"
     },
     {
+      "id": "s15",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -12.0,
+          "y": 14
+        },
+        {
+          "x": 84.0,
+          "y": 14
+        }
+      ],
+      "layer": "dims"
+    },
+    {
       "id": "s16",
       "type": "dimension",
       "pts": [
         {
-          "x": -24,
-          "y": 14
+          "x": 94.0,
+          "y": 0
         },
         {
-          "x": -12,
-          "y": 14
+          "x": 94.0,
+          "y": -8.0
         }
       ],
       "layer": "dims"
@@ -376,12 +376,12 @@
       "type": "dimension",
       "pts": [
         {
-          "x": -12,
-          "y": 14
+          "x": 94.0,
+          "y": -8.0
         },
         {
-          "x": 72.0,
-          "y": 14
+          "x": 94.0,
+          "y": -16.0
         }
       ],
       "layer": "dims"
@@ -391,11 +391,11 @@
       "type": "dimension",
       "pts": [
         {
-          "x": 82.0,
-          "y": 0
+          "x": 94.0,
+          "y": -16.0
         },
         {
-          "x": 82.0,
+          "x": 94.0,
           "y": -24.0
         }
       ],
@@ -406,12 +406,12 @@
       "type": "text",
       "pts": [
         {
-          "x": 102.0,
+          "x": 112.0,
           "y": -26.0
         }
       ],
       "layer": "detail",
-      "text": "4 steps, 6 in each",
+      "text": "3 step-downs, 8 in each",
       "size": 4.5
     },
     {
@@ -419,12 +419,12 @@
       "type": "text",
       "pts": [
         {
-          "x": 102.0,
+          "x": 112.0,
           "y": -20.0
         }
       ],
       "layer": "detail",
-      "text": "upper landing 1 in below the threshold",
+      "text": "upper landing 1 in below the door",
       "size": 4.5
     },
     {
@@ -437,7 +437,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Front view, version A (square). Standing in the yard.",
+      "text": "Front view, as formed. Standing in the yard.",
       "size": 4.5
     }
   ]

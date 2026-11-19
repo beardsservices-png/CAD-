@@ -110,16 +110,16 @@ export const EXAMPLES = [
   {
     id: "seger-steps-a-plan",
     file: "examples/seger-steps-a-plan.json",
-    name: "Seger Front Steps A (square) — plan (overhead)",
-    blurb: "John Seger front steps (17 Nov): 72 x 36 upper landing at the door, 12 in step out to the garage corner, 44 in lower landing, one step down to the driveway; four 6 in steps; handrail on the window side and front.",
+    name: "Seger Front Steps A (as formed) — plan (overhead)",
+    blurb: "John Seger front steps as formed (19 Nov): three 8 in step-downs. 72 x 36 upper landing 1 in below the door, 12 in middle step, lower landing 8 in up running 12 in past the old slab at the front and on the window side. Old slab, little landing and brick steps stay under the pour (ghosted).",
     teaches: ["Existing (reference only) is ghosted", "3D Preview shows the four 6 in levels"],
   },
   {
     id: "seger-steps-a-front",
     file: "examples/seger-steps-a-front.json",
-    name: "Seger Front Steps A (square) — front view (elevation)",
-    blurb: "John Seger front steps (17 Nov): 72 x 36 upper landing at the door, 12 in step out to the garage corner, 44 in lower landing, one step down to the driveway; four 6 in steps; handrail on the window side and front.",
-    teaches: ["Existing (reference only) is ghosted", "3D Preview shows the four 6 in levels"],
+    name: "Seger Front Steps A (as formed) — front view (elevation)",
+    blurb: "John Seger front steps as formed (19 Nov): three 8 in step-downs. 72 x 36 upper landing 1 in below the door, 12 in middle step, lower landing 8 in up running 12 in past the old slab at the front and on the window side. Old slab, little landing and brick steps stay under the pour (ghosted).",
+    teaches: ["Existing (reference only) is ghosted", "3D Preview shows the three 8 in levels"],
   },
   {
     id: "seger-steps-b-plan",
