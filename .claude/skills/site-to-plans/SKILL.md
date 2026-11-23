@@ -24,6 +24,12 @@ always Brian's: the price book's, or his own words.
   customer's own texts and call summary before designing: Seger's lead asked for a back patio
   and "a sloped area" that Brian never mentioned in the chat.
 - List what is **existing** (stays, drawn ghosted) vs **new** (the work).
+- If the house already has the same kind of thing (another set of stairs, a rail), look at it:
+  the customer may want the new work to match it. Ask for a photo if there isn't one.
+- Note site conditions that can change the design: where yard water and downspouts run, slope,
+  soft or wet ground. (Church: the stepping-stone path sat right in the drainage line.)
+- Put any pictures the customer sent (sketches, AI renders) on the job as files; pictures sent
+  by text don't reach the app on their own.
 
 ### Reaching the BHS app
 
@@ -152,7 +158,7 @@ his own words, never yours.
    multiple-choice box, with options built from **his own history**: past lines for the same work
    (`GET /api/search?q=<work words>`; ask him which customer if he remembers one, e.g. "the steps
    on Louann"), `GET /api/dashboard` → `avg_hourly_rate`, `GET /api/pricing-check` → per-service
-   $/hr. homewyse is the benchmark for new items, when it has a page.
+   $/hr. homewyse is the benchmark for new items, when it has a page (method in `business/rules/estimating-rules.md`).
 3. **A lump sum he gives** is split over the measured lines (never quantity 1 for measurable
    work) and each per-unit price is saved to the price book with `POST /api/catalog`
    (`price_low = price_high`), then the lines point at those items, so the next quote starts there.
@@ -170,16 +176,16 @@ his own words, never yours.
 - **Volume:** flat slab at 4 in = sq.ft. ÷ 81 cu.yd. A tall stoop is figured with a core of
   compacted gravel and the broken-up old steps (6 in walls and top); give the solid figure too,
   because rounding up "to cover our butts" only covers the core version. Brian rounds up.
-- **Ready-mix goes ON the estimate** as ONE `service_type: "supplier"` line (*They pay the supplier*),
-  never `materials`: `N cu.yd.` at his per-yard figure ($125 in late Nov 2026), described as an estimated
-  amount paid to the plant on delivery that will vary with taxes and fees. **No short load, trip or
-  distance lines** (Brian, 23 Nov 2026: not ours to guess). Supplier lines print under the total and are in
-  no figure anywhere (pinned by the app's `test_supplier_lines.py`).
-- **What the homeowner buys** goes on as one `supplier` line per part (stairs and rails, stepping-stone
-  supplies...): the estimated total with tax, described *an itemized list will be provided once the
-  estimate is approved*. Put the itemized list (with store prices) in the job's private notes.
-- **Brian edits the lines himself.** Read the job before writing to it and send his lines back unchanged
-  (with their ids); only add or change what he asked for.
+- **Ready-mix** goes on the estimate as a `service_type: "supplier"` line (*They pay the supplier*),
+  so it stays out of his totals and income: `N cu.yd.` at his per-yard estimate ($125 in late Nov 2026),
+  described as an approximate amount paid to the plant that will vary with taxes and fees. The plant's
+  own fees (short load, trip) are the plant's to set, so Brian leaves them off (23 Nov 2026).
+- **What the homeowner buys** can go on as a `supplier` line per part of the job: the estimated total
+  with tax, described as *an itemized list will be provided once the estimate is approved*. The itemized
+  list (with store prices) goes in the job's private notes.
+- **Read the job before writing to it:** Brian edits lines himself. If something in his edits looks off
+  (a price that still includes work that was dropped, a unit that doesn't match its price-book item),
+  tell him what you see and why, and let him decide.
 - **Labor includes the forms** (plywood, 2x4s, screws, about $100 at stoop size); he strips the
   sides after the top is broomed and finishes the edges, so a stoop is a 2-day job. Gravel,
   rebar, expansion strip and a handrail are the homeowner's, listed in the private notes.
@@ -194,35 +200,6 @@ estimate now says and which prices are still his to set, the decisions made for 
 still unknown (with the exact measurement needed), and what he does on his phone (review the
 estimate, email the PDF). Finished means on `main`; check the deploy before saying it is live.
 
-### Pricing a new item from homewyse (works from a cloud session)
-
-The page's figures load by script, so read them the way the page does:
-`GET https://www.homewyse.com/hwref/new4.php?lc=72653` (send a browser User-Agent and the page as Referer)
-returns the zip factor (0.79 in Nov 2026). In the page source, `ilp[1]` is labor hours per unit and
-`vmin[1]` / `vmax[1]` the national hourly range: labor per unit = `ilp × vq × vmin|vmax × factor`.
-Take the midpoint, save it with `POST /api/catalog` (homewyse's labor wording, "Basic" dropped). Pages that
-exist: stamped / single-color stamped concrete, concrete sidewalk / patio / pad, acrylic sealer,
-stairway (interior, per lin.ft. of run), stairway handrail. No deck-railing page. Then **ask Brian**:
-his own numbers usually run below it (Church, 23 Nov: stairs came in at $177 a step, he set $120).
-
-### Lessons from Church (deck stairs + stamped rounds, 23 Nov 2026)
-
-- **Ask what any existing stairs on the house look like** and match them (Church: white risers and
-  posts, brown two-board treads and 2x6 cap). Put the customer's own pictures (AI renders too) on the
-  job with `POST /api/jobs/<id>/files`: pictures sent by text never reach the app.
-- **Round stepping stones:** take his diameter as the size of every round unless he says otherwise
-  (the first draft varied them 36-48 in with a 6 ft landing; he wanted all 3 ft 6 in, almost touching,
-  in an S, 11 over about 40 ft). Draw rounds as `circle` shapes (two bbox corners); in plan, stair
-  stringers and rails are `height: 0` lines or the 3D view shows a solid block.
-- **A round narrower than the stair cannot carry it:** a hidden footing under the bottom step
-  (about 57 x 12 x 6 in) poured from the same truck, and the first round starts right at the step.
-- **Deck height from photos:** count brick courses (king brick 3 in a course) and check against a
-  36 in deck rail. 7 risers works for any rise from 44 to 54 in, so the estimate can go out before the tape.
-- **He thinks in line items.** Stairs and their rails are ONE line (per step), unless the job is rails
-  only (then Railing - install). Church: $173.73 a step with rails = his $120 a step + the rails.
-- **Water first:** soft dirt where a path goes usually means water runs there. Ask where the downspouts
-  and yard water go before laying stones (Church: the whole path is the drainage line).
-
 ## Gotchas learned the hard way
 
 - An ambiguous end (post vs siding corner) is the most common wrong guess — photos from
@@ -230,6 +207,9 @@ his own numbers usually run below it (Church, 23 Nov: stairs came in at $177 a s
 - Perspective lies about slopes in photos; do not infer a beam's pitch from one picture.
 - A measured opening is not a unit size: frame it (plates, jacks, mullions), then size
   units to the framed opening minus ½".
+- Round pours (stepping stones, round pads) are `circle` shapes (two bounding-box corners); the panel
+  then gives each one's area. In a plan, stair stringers and rails drawn as `height: 0` lines keep the
+  3D view from showing the stairs as a solid block.
 - Headless Chromium will not fetch Google Fonts; `plansheet.py` inlines them.
 - Screenshot the sheet elements, not a scrolled page — scroll captures come out
   half-drawn.
