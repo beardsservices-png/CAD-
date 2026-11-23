@@ -111,7 +111,7 @@ export const EXAMPLES = [
     id: "church-stairs-path-plan",
     file: "examples/church-stairs-path-plan.json",
     name: "Church Deck Stairs + Stepping Stones — plan (overhead)",
-    blurb: "Dennis Church (23 Nov 2026, from photos): 4 ft wide stairs off the end of the deck built to match the stairs on the other side, 7 risers about 7 1/8 in, rails both sides, set on a hidden concrete footing; then 9 stamped rounds, each 3 ft 6 in, about 5 in apart, out about 40 ft to the pea gravel garden.",
+    blurb: "Dennis Church (23 Nov 2026, from photos): 4 ft wide stairs off the end of the deck built to match the stairs on the other side, 7 risers about 7 1/8 in, rails both sides, set on a hidden concrete footing; then 11 stamped rounds, each 3 ft 6 in, almost touching in an S, about 40 ft to the pea gravel garden.",
     teaches: ["Circles for round pours (area per round in the panel)", "Stringers dashed under the treads", "Existing deck, rail and garden ghosted"],
   },
   {

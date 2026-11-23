@@ -260,19 +260,19 @@
       "pts": [
         {
           "x": -90,
-          "y": 478
+          "y": 524
         },
         {
           "x": 150,
-          "y": 470
+          "y": 516
         },
         {
           "x": 175,
-          "y": 540
+          "y": 590
         },
         {
           "x": -110,
-          "y": 560
+          "y": 606
         }
       ],
       "closed": true,
@@ -612,11 +612,11 @@
       "pts": [
         {
           "x": 44.25,
-          "y": 66.0
+          "y": 65.0
         },
         {
           "x": 86.25,
-          "y": 108.0
+          "y": 107.0
         }
       ],
       "layer": "concrete",
@@ -632,12 +632,12 @@
       "type": "circle",
       "pts": [
         {
-          "x": 34.25,
-          "y": 111.924
+          "x": 58.25,
+          "y": 106.713
         },
         {
-          "x": 76.25,
-          "y": 153.924
+          "x": 100.25,
+          "y": 148.713
         }
       ],
       "layer": "concrete",
@@ -653,12 +653,12 @@
       "type": "circle",
       "pts": [
         {
-          "x": 28.25,
-          "y": 158.539
+          "x": 78.25,
+          "y": 145.905
         },
         {
-          "x": 70.25,
-          "y": 200.539
+          "x": 120.25,
+          "y": 187.905
         }
       ],
       "layer": "concrete",
@@ -674,12 +674,12 @@
       "type": "circle",
       "pts": [
         {
-          "x": 36.25,
-          "y": 204.853
+          "x": 94.25,
+          "y": 186.893
         },
         {
-          "x": 78.25,
-          "y": 246.853
+          "x": 136.25,
+          "y": 228.893
         }
       ],
       "layer": "concrete",
@@ -695,12 +695,12 @@
       "type": "circle",
       "pts": [
         {
-          "x": 50.25,
-          "y": 249.72
+          "x": 94.25,
+          "y": 230.893
         },
         {
-          "x": 92.25,
-          "y": 291.72
+          "x": 136.25,
+          "y": 272.893
         }
       ],
       "layer": "concrete",
@@ -716,12 +716,12 @@
       "type": "circle",
       "pts": [
         {
-          "x": 56.25,
-          "y": 296.335
+          "x": 76.25,
+          "y": 271.043
         },
         {
-          "x": 98.25,
-          "y": 338.335
+          "x": 118.25,
+          "y": 313.043
         }
       ],
       "layer": "concrete",
@@ -737,12 +737,12 @@
       "type": "circle",
       "pts": [
         {
-          "x": 50.25,
-          "y": 342.951
+          "x": 52.25,
+          "y": 307.921
         },
         {
-          "x": 92.25,
-          "y": 384.951
+          "x": 94.25,
+          "y": 349.921
         }
       ],
       "layer": "concrete",
@@ -758,12 +758,12 @@
       "type": "circle",
       "pts": [
         {
-          "x": 38.25,
-          "y": 388.393
+          "x": 28.25,
+          "y": 344.799
         },
         {
-          "x": 80.25,
-          "y": 430.393
+          "x": 70.25,
+          "y": 386.799
         }
       ],
       "layer": "concrete",
@@ -779,12 +779,12 @@
       "type": "circle",
       "pts": [
         {
-          "x": 30.25,
-          "y": 434.707
+          "x": 10.25,
+          "y": 384.949
         },
         {
-          "x": 72.25,
-          "y": 476.707
+          "x": 52.25,
+          "y": 426.949
         }
       ],
       "layer": "concrete",
@@ -797,6 +797,48 @@
     },
     {
       "id": "s37",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 10.25,
+          "y": 428.949
+        },
+        {
+          "x": 52.25,
+          "y": 470.949
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 3 ft 6 in"
+    },
+    {
+      "id": "s38",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 24.25,
+          "y": 470.662
+        },
+        {
+          "x": 66.25,
+          "y": 512.662
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 3 ft 6 in"
+    },
+    {
+      "id": "s39",
       "type": "dimension",
       "pts": [
         {
@@ -811,7 +853,7 @@
       "layer": "dims"
     },
     {
-      "id": "s38",
+      "id": "s40",
       "type": "dimension",
       "pts": [
         {
@@ -826,7 +868,7 @@
       "layer": "dims"
     },
     {
-      "id": "s39",
+      "id": "s41",
       "type": "dimension",
       "pts": [
         {
@@ -835,13 +877,13 @@
         },
         {
           "x": 240,
-          "y": 476.707
+          "y": 512.662
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s40",
+      "id": "s42",
       "type": "dimension",
       "pts": [
         {
@@ -856,7 +898,7 @@
       "layer": "dims"
     },
     {
-      "id": "s41",
+      "id": "s43",
       "type": "text",
       "pts": [
         {
@@ -869,7 +911,7 @@
       "size": 6
     },
     {
-      "id": "s42",
+      "id": "s44",
       "type": "text",
       "pts": [
         {
@@ -882,7 +924,7 @@
       "size": 6
     },
     {
-      "id": "s43",
+      "id": "s45",
       "type": "text",
       "pts": [
         {
@@ -891,11 +933,11 @@
         }
       ],
       "layer": "detail",
-      "text": "About 40 ft of path: 9 rounds, each 3 ft 6 in",
+      "text": "About 40 ft of path: 11 rounds, each 3 ft 6 in,",
       "size": 6
     },
     {
-      "id": "s44",
+      "id": "s46",
       "type": "text",
       "pts": [
         {
@@ -904,11 +946,11 @@
         }
       ],
       "layer": "detail",
-      "text": "starting right at the bottom step,",
+      "text": "in an S, starting right at the bottom step,",
       "size": 6
     },
     {
-      "id": "s45",
+      "id": "s47",
       "type": "text",
       "pts": [
         {
@@ -917,11 +959,11 @@
         }
       ],
       "layer": "detail",
-      "text": "about 5 in of grass between, 4 in thick, stamped",
+      "text": "almost touching, 4 in thick, stamped",
       "size": 6
     },
     {
-      "id": "s46",
+      "id": "s48",
       "type": "text",
       "pts": [
         {
@@ -934,7 +976,7 @@
       "size": 6
     },
     {
-      "id": "s47",
+      "id": "s49",
       "type": "text",
       "pts": [
         {
@@ -947,7 +989,7 @@
       "size": 5
     },
     {
-      "id": "s48",
+      "id": "s50",
       "type": "text",
       "pts": [
         {

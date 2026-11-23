@@ -835,11 +835,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": 66.0,
+          "x": 65.0,
           "y": -1
         },
         {
-          "x": 108.0,
+          "x": 107.0,
           "y": 3
         }
       ],
@@ -856,11 +856,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": 111.924,
+          "x": 106.713,
           "y": -1
         },
         {
-          "x": 153.924,
+          "x": 148.713,
           "y": 3
         }
       ],
@@ -868,7 +868,7 @@
       "step": 3,
       "material": "concrete",
       "fill": "solid",
-      "elevation": 34.25,
+      "elevation": 58.25,
       "height": 42.0,
       "label": "Stamped round 3 ft 6 in"
     },
@@ -877,11 +877,11 @@
       "type": "rect",
       "pts": [
         {
-          "x": 158.539,
+          "x": 145.905,
           "y": -1
         },
         {
-          "x": 200.539,
+          "x": 187.905,
           "y": 3
         }
       ],
@@ -889,7 +889,7 @@
       "step": 3,
       "material": "concrete",
       "fill": "solid",
-      "elevation": 28.25,
+      "elevation": 78.25,
       "height": 42.0,
       "label": "Stamped round 3 ft 6 in"
     },
@@ -973,11 +973,11 @@
       "type": "dimension",
       "pts": [
         {
-          "x": 66.0,
+          "x": 65.0,
           "y": 12
         },
         {
-          "x": 108.0,
+          "x": 107.0,
           "y": 12
         }
       ],
