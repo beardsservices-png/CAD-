@@ -170,15 +170,16 @@ his own words, never yours.
 - **Volume:** flat slab at 4 in = sq.ft. ÷ 81 cu.yd. A tall stoop is figured with a core of
   compacted gravel and the broken-up old steps (6 in walls and top); give the solid figure too,
   because rounding up "to cover our butts" only covers the core version. Brian rounds up.
-- **Ready-mix goes ON the estimate**, the one exception to labor-only (every past concrete job
-  had it: Bradford, Lenz, Cole, Welch; Travis Green in the notes), as **`service_type:
-  "supplier"`** lines (*They pay the supplier* on the line sheet) — never `materials`, which
-  would put the concrete into his total, the balance due and his income. A supplier line prints
-  under the total in its own table and is in no figure anywhere (pinned by the app's
-  `test_supplier_lines.py`). Lines: `N cu.yd.` at his per-yard figure with fiber mesh and tax
-  (about $100 in Nov 2026), a short load fee (about $50), and a trip fee for the boonies
-  ($25–30). Description on each: *"Estimated price, after tax. Paid to the ready-mix supplier on
-  the day of delivery."* Two pours on one truck can save the second short load and trip: say so.
+- **Ready-mix goes ON the estimate** as ONE `service_type: "supplier"` line (*They pay the supplier*),
+  never `materials`: `N cu.yd.` at his per-yard figure ($125 in late Nov 2026), described as an estimated
+  amount paid to the plant on delivery that will vary with taxes and fees. **No short load, trip or
+  distance lines** (Brian, 23 Nov 2026: not ours to guess). Supplier lines print under the total and are in
+  no figure anywhere (pinned by the app's `test_supplier_lines.py`).
+- **What the homeowner buys** goes on as one `supplier` line per part (stairs and rails, stepping-stone
+  supplies...): the estimated total with tax, described *an itemized list will be provided once the
+  estimate is approved*. Put the itemized list (with store prices) in the job's private notes.
+- **Brian edits the lines himself.** Read the job before writing to it and send his lines back unchanged
+  (with their ids); only add or change what he asked for.
 - **Labor includes the forms** (plywood, 2x4s, screws, about $100 at stoop size); he strips the
   sides after the top is broomed and finishes the edges, so a stoop is a 2-day job. Gravel,
   rebar, expansion strip and a handrail are the homeowner's, listed in the private notes.
