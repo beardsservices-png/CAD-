@@ -28,7 +28,8 @@ always Brian's: the price book's, or his own words.
 ### Reaching the BHS app
 
 `https://bhsmobileapp-production.up.railway.app`, header `Authorization: Bearer $APP_API_TOKEN`.
-If the variable is not set, tell Brian to add `APP_API_TOKEN` in this environment's settings
+In a cloud session the network proxy may already sign requests to the app: try one request with no
+token first (it worked on 23 Nov 2026). If it is refused and the variable is not set, tell Brian to add `APP_API_TOKEN` in this environment's settings
 (environment menu in the title bar → Edit → Network secrets / environment variables); never ask
 him to paste it in chat. If he pastes it anyway, keep it in a scratch file, never in a repo.
 
@@ -191,6 +192,32 @@ Plain language, short: what was drawn and where to open it (already in Projects)
 estimate now says and which prices are still his to set, the decisions made for him, what is
 still unknown (with the exact measurement needed), and what he does on his phone (review the
 estimate, email the PDF). Finished means on `main`; check the deploy before saying it is live.
+
+### Pricing a new item from homewyse (works from a cloud session)
+
+The page's figures load by script, so read them the way the page does:
+`GET https://www.homewyse.com/hwref/new4.php?lc=72653` (send a browser User-Agent and the page as Referer)
+returns the zip factor (0.79 in Nov 2026). In the page source, `ilp[1]` is labor hours per unit and
+`vmin[1]` / `vmax[1]` the national hourly range: labor per unit = `ilp × vq × vmin|vmax × factor`.
+Take the midpoint, save it with `POST /api/catalog` (homewyse's labor wording, "Basic" dropped). Pages that
+exist: stamped / single-color stamped concrete, concrete sidewalk / patio / pad, acrylic sealer,
+stairway (interior, per lin.ft. of run), stairway handrail. No deck-railing page. Then **ask Brian**:
+his own numbers usually run below it (Church, 23 Nov: stairs came in at $177 a step, he set $120).
+
+### Lessons from Church (deck stairs + stamped rounds, 23 Nov 2026)
+
+- **Ask what any existing stairs on the house look like** and match them (Church: white risers and
+  posts, brown two-board treads and 2x6 cap). Put the customer's own pictures (AI renders too) on the
+  job with `POST /api/jobs/<id>/files`: pictures sent by text never reach the app.
+- **Round stepping stones:** take his diameter as the size of every round unless he says otherwise
+  (the first draft varied them 36-48 in with a 6 ft landing; he wanted all 3 ft 6 in, almost touching,
+  in an S, 11 over about 40 ft). Draw rounds as `circle` shapes (two bbox corners); in plan, stair
+  stringers and rails are `height: 0` lines or the 3D view shows a solid block.
+- **A round narrower than the stair cannot carry it:** a hidden footing under the bottom step
+  (about 57 x 12 x 6 in) poured from the same truck, and the first round starts right at the step.
+- **Deck height from photos:** count brick courses (king brick 3 in a course) and check against a
+  36 in deck rail. 7 risers works for any rise from 44 to 54 in, so the estimate can go out before the tape.
+- **He thinks in totals:** give the whole stair job and the price per round, then the line detail.
 
 ## Gotchas learned the hard way
 
