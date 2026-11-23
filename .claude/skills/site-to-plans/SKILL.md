@@ -217,7 +217,10 @@ his own numbers usually run below it (Church, 23 Nov: stairs came in at $177 a s
   (about 57 x 12 x 6 in) poured from the same truck, and the first round starts right at the step.
 - **Deck height from photos:** count brick courses (king brick 3 in a course) and check against a
   36 in deck rail. 7 risers works for any rise from 44 to 54 in, so the estimate can go out before the tape.
-- **He thinks in totals:** give the whole stair job and the price per round, then the line detail.
+- **He thinks in line items.** Stairs and their rails are ONE line (per step), unless the job is rails
+  only (then Railing - install). Church: $173.73 a step with rails = his $120 a step + the rails.
+- **Water first:** soft dirt where a path goes usually means water runs there. Ask where the downspouts
+  and yard water go before laying stones (Church: the whole path is the drainage line).
 
 ## Gotchas learned the hard way
 
