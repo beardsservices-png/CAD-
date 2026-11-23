@@ -586,36 +586,37 @@
     },
     {
       "id": "s27",
-      "type": "circle",
+      "type": "rect",
       "pts": [
         {
-          "x": 29.25,
-          "y": 40.0
+          "x": 37.0,
+          "y": 51.999
         },
         {
-          "x": 101.25,
-          "y": 112.0
+          "x": 94.5,
+          "y": 64.0
         }
       ],
       "layer": "concrete",
       "step": 3,
       "material": "concrete",
-      "fill": "solid",
-      "elevation": -3,
-      "height": 4,
-      "label": "Stamped round 6 ft (stairs land on it)"
+      "fill": "light",
+      "dash": "dashed",
+      "elevation": -5,
+      "height": 6,
+      "label": "Concrete footing under the stair foot (hidden)"
     },
     {
       "id": "s28",
       "type": "circle",
       "pts": [
         {
-          "x": 36.25,
-          "y": 116.482
+          "x": 44.25,
+          "y": 66.0
         },
         {
-          "x": 78.25,
-          "y": 158.482
+          "x": 86.25,
+          "y": 108.0
         }
       ],
       "layer": "concrete",
@@ -624,19 +625,19 @@
       "fill": "solid",
       "elevation": -3,
       "height": 4,
-      "label": "Stamped round 42 in"
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s29",
       "type": "circle",
       "pts": [
         {
-          "x": 31.25,
-          "y": 162.748
+          "x": 34.25,
+          "y": 111.924
         },
         {
-          "x": 67.25,
-          "y": 198.748
+          "x": 76.25,
+          "y": 153.924
         }
       ],
       "layer": "concrete",
@@ -645,19 +646,19 @@
       "fill": "solid",
       "elevation": -3,
       "height": 4,
-      "label": "Stamped round 36 in"
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s30",
       "type": "circle",
       "pts": [
         {
-          "x": 35.25,
-          "y": 202.672
+          "x": 28.25,
+          "y": 158.539
         },
         {
-          "x": 83.25,
-          "y": 250.672
+          "x": 70.25,
+          "y": 200.539
         }
       ],
       "layer": "concrete",
@@ -666,19 +667,19 @@
       "fill": "solid",
       "elevation": -3,
       "height": 4,
-      "label": "Stamped round 48 in"
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s31",
       "type": "circle",
       "pts": [
         {
-          "x": 53.25,
-          "y": 253.63
+          "x": 36.25,
+          "y": 204.853
         },
         {
-          "x": 93.25,
-          "y": 293.63
+          "x": 78.25,
+          "y": 246.853
         }
       ],
       "layer": "concrete",
@@ -687,19 +688,19 @@
       "fill": "solid",
       "elevation": -3,
       "height": 4,
-      "label": "Stamped round 40 in"
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s32",
       "type": "circle",
       "pts": [
         {
-          "x": 55.25,
-          "y": 298.459
+          "x": 50.25,
+          "y": 249.72
         },
         {
-          "x": 99.25,
-          "y": 342.459
+          "x": 92.25,
+          "y": 291.72
         }
       ],
       "layer": "concrete",
@@ -708,19 +709,19 @@
       "fill": "solid",
       "elevation": -3,
       "height": 4,
-      "label": "Stamped round 44 in"
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s33",
       "type": "circle",
       "pts": [
         {
-          "x": 49.25,
-          "y": 346.334
+          "x": 56.25,
+          "y": 296.335
         },
         {
-          "x": 85.25,
-          "y": 382.334
+          "x": 98.25,
+          "y": 338.335
         }
       ],
       "layer": "concrete",
@@ -729,19 +730,19 @@
       "fill": "solid",
       "elevation": -3,
       "height": 4,
-      "label": "Stamped round 36 in"
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s34",
       "type": "circle",
       "pts": [
         {
-          "x": 34.25,
-          "y": 385.666
+          "x": 50.25,
+          "y": 342.951
         },
         {
-          "x": 76.25,
-          "y": 427.666
+          "x": 92.25,
+          "y": 384.951
         }
       ],
       "layer": "concrete",
@@ -750,19 +751,19 @@
       "fill": "solid",
       "elevation": -3,
       "height": 4,
-      "label": "Stamped round 42 in"
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s35",
       "type": "circle",
       "pts": [
         {
-          "x": 30.25,
-          "y": 432.264
+          "x": 38.25,
+          "y": 388.393
         },
         {
-          "x": 68.25,
-          "y": 470.264
+          "x": 80.25,
+          "y": 430.393
         }
       ],
       "layer": "concrete",
@@ -771,10 +772,31 @@
       "fill": "solid",
       "elevation": -3,
       "height": 4,
-      "label": "Stamped round 38 in"
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s36",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 30.25,
+          "y": 434.707
+        },
+        {
+          "x": 72.25,
+          "y": 476.707
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 3 ft 6 in"
+    },
+    {
+      "id": "s37",
       "type": "dimension",
       "pts": [
         {
@@ -789,7 +811,7 @@
       "layer": "dims"
     },
     {
-      "id": "s37",
+      "id": "s38",
       "type": "dimension",
       "pts": [
         {
@@ -804,7 +826,7 @@
       "layer": "dims"
     },
     {
-      "id": "s38",
+      "id": "s39",
       "type": "dimension",
       "pts": [
         {
@@ -813,28 +835,28 @@
         },
         {
           "x": 240,
-          "y": 470.264
-        }
-      ],
-      "layer": "dims"
-    },
-    {
-      "id": "s39",
-      "type": "dimension",
-      "pts": [
-        {
-          "x": 29.25,
-          "y": 125
-        },
-        {
-          "x": 101.25,
-          "y": 125
+          "y": 476.707
         }
       ],
       "layer": "dims"
     },
     {
       "id": "s40",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 44.25,
+          "y": 120
+        },
+        {
+          "x": 86.25,
+          "y": 120
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s41",
       "type": "text",
       "pts": [
         {
@@ -847,7 +869,7 @@
       "size": 6
     },
     {
-      "id": "s41",
+      "id": "s42",
       "type": "text",
       "pts": [
         {
@@ -860,7 +882,7 @@
       "size": 6
     },
     {
-      "id": "s42",
+      "id": "s43",
       "type": "text",
       "pts": [
         {
@@ -869,11 +891,11 @@
         }
       ],
       "layer": "detail",
-      "text": "About 40 ft of path: a 6 ft round where the",
+      "text": "About 40 ft of path: 9 rounds, each 3 ft 6 in",
       "size": 6
     },
     {
-      "id": "s43",
+      "id": "s44",
       "type": "text",
       "pts": [
         {
@@ -882,11 +904,11 @@
         }
       ],
       "layer": "detail",
-      "text": "stairs land, then 8 rounds 36-48 in across,",
+      "text": "starting right at the bottom step,",
       "size": 6
     },
     {
-      "id": "s44",
+      "id": "s45",
       "type": "text",
       "pts": [
         {
@@ -899,7 +921,7 @@
       "size": 6
     },
     {
-      "id": "s45",
+      "id": "s46",
       "type": "text",
       "pts": [
         {
@@ -912,7 +934,7 @@
       "size": 6
     },
     {
-      "id": "s46",
+      "id": "s47",
       "type": "text",
       "pts": [
         {
@@ -925,7 +947,7 @@
       "size": 5
     },
     {
-      "id": "s47",
+      "id": "s48",
       "type": "text",
       "pts": [
         {

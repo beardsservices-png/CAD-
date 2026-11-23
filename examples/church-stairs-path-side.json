@@ -814,32 +814,32 @@
       "type": "rect",
       "pts": [
         {
-          "x": 40.0,
+          "x": 51.999,
           "y": -1
         },
         {
-          "x": 112.0,
-          "y": 3
+          "x": 64.0,
+          "y": 5
         }
       ],
       "layer": "concrete",
       "step": 3,
       "material": "concrete",
-      "fill": "solid",
-      "elevation": 29.25,
-      "height": 72.0,
-      "label": "Stamped round 6 ft (stairs land on it)"
+      "fill": "light",
+      "elevation": 37.0,
+      "height": 57.5,
+      "label": "Concrete footing under the stair foot (hidden)"
     },
     {
       "id": "s37",
       "type": "rect",
       "pts": [
         {
-          "x": 116.482,
+          "x": 66.0,
           "y": -1
         },
         {
-          "x": 158.482,
+          "x": 108.0,
           "y": 3
         }
       ],
@@ -847,20 +847,20 @@
       "step": 3,
       "material": "concrete",
       "fill": "solid",
-      "elevation": 36.25,
-      "height": 42,
-      "label": "Stamped round 42 in"
+      "elevation": 44.25,
+      "height": 42.0,
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s38",
       "type": "rect",
       "pts": [
         {
-          "x": 162.748,
+          "x": 111.924,
           "y": -1
         },
         {
-          "x": 198.748,
+          "x": 153.924,
           "y": 3
         }
       ],
@@ -868,12 +868,33 @@
       "step": 3,
       "material": "concrete",
       "fill": "solid",
-      "elevation": 31.25,
-      "height": 36,
-      "label": "Stamped round 36 in"
+      "elevation": 34.25,
+      "height": 42.0,
+      "label": "Stamped round 3 ft 6 in"
     },
     {
       "id": "s39",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 158.539,
+          "y": -1
+        },
+        {
+          "x": 200.539,
+          "y": 3
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 28.25,
+      "height": 42.0,
+      "label": "Stamped round 3 ft 6 in"
+    },
+    {
+      "id": "s40",
       "type": "dimension",
       "pts": [
         {
@@ -888,7 +909,7 @@
       "layer": "dims"
     },
     {
-      "id": "s40",
+      "id": "s41",
       "type": "dimension",
       "pts": [
         {
@@ -903,7 +924,7 @@
       "layer": "dims"
     },
     {
-      "id": "s41",
+      "id": "s42",
       "type": "dimension",
       "pts": [
         {
@@ -918,7 +939,7 @@
       "layer": "dims"
     },
     {
-      "id": "s42",
+      "id": "s43",
       "type": "dimension",
       "pts": [
         {
@@ -933,7 +954,7 @@
       "layer": "dims"
     },
     {
-      "id": "s43",
+      "id": "s44",
       "type": "dimension",
       "pts": [
         {
@@ -948,22 +969,22 @@
       "layer": "dims"
     },
     {
-      "id": "s44",
+      "id": "s45",
       "type": "dimension",
       "pts": [
         {
-          "x": 40.0,
+          "x": 66.0,
           "y": 12
         },
         {
-          "x": 112.0,
+          "x": 108.0,
           "y": 12
         }
       ],
       "layer": "dims"
     },
     {
-      "id": "s45",
+      "id": "s46",
       "type": "text",
       "pts": [
         {
@@ -976,7 +997,7 @@
       "size": 5
     },
     {
-      "id": "s46",
+      "id": "s47",
       "type": "text",
       "pts": [
         {
@@ -985,11 +1006,11 @@
         }
       ],
       "layer": "detail",
-      "text": "Stringers hang on the deck rim with stringer connectors and sit on the 6 ft round",
+      "text": "Stringers hang on the deck rim with stringer connectors and sit on a hidden concrete footing",
       "size": 5
     },
     {
-      "id": "s47",
+      "id": "s48",
       "type": "text",
       "pts": [
         {
@@ -1002,7 +1023,7 @@
       "size": 5
     },
     {
-      "id": "s48",
+      "id": "s49",
       "type": "text",
       "pts": [
         {
@@ -1015,7 +1036,7 @@
       "size": 5
     },
     {
-      "id": "s49",
+      "id": "s50",
       "type": "text",
       "pts": [
         {
