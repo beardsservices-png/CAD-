@@ -1,0 +1,941 @@
+{
+  "version": 1,
+  "name": "Church Deck Stairs + Stepping Stones — plan (overhead)",
+  "viewMode": "plan",
+  "layers": [
+    {
+      "id": "existing",
+      "name": "Existing",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "stairs",
+      "name": "New stairs",
+      "color": "#b45309",
+      "visible": true
+    },
+    {
+      "id": "rail",
+      "name": "New stair rails",
+      "color": "#111827",
+      "visible": true
+    },
+    {
+      "id": "concrete",
+      "name": "New stamped concrete",
+      "color": "#475569",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#6d28d9",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    }
+  ],
+  "activeLayer": "existing",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -260,
+          "y": -8
+        },
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "brick",
+      "fill": "light",
+      "height": 48,
+      "label": "House and screened porch, brick (existing)",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": -160
+        },
+        {
+          "x": 152,
+          "y": 0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 38,
+      "height": 12,
+      "label": "Deck (existing), surface about 50 in above the yard",
+      "locked": true
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 3.5,
+          "y": 3.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 38,
+      "height": 48,
+      "label": "Deck rail post (existing)",
+      "locked": true
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 38,
+          "y": 0
+        },
+        {
+          "x": 41.5,
+          "y": 3.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 38,
+      "height": 48,
+      "label": "Deck rail post (existing)",
+      "locked": true
+    },
+    {
+      "id": "s5",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 148.5,
+          "y": 0
+        },
+        {
+          "x": 152.0,
+          "y": 3.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 38,
+      "height": 48,
+      "label": "Deck rail post (existing)",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 3.5,
+          "y": 1
+        },
+        {
+          "x": 38,
+          "y": 2.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "elevation": 50,
+      "height": 36,
+      "label": "Deck rail (existing)",
+      "locked": true
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 92.5,
+          "y": 1
+        },
+        {
+          "x": 148.5,
+          "y": 2.5
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "elevation": 50,
+      "height": 36,
+      "label": "Deck rail, cut down to fit (existing)",
+      "locked": true
+    },
+    {
+      "id": "s8",
+      "type": "line",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": 1.75
+        },
+        {
+          "x": 89,
+          "y": 1.75
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "dash": "dashed",
+      "label": "Rail section taken out for the stairs",
+      "locked": true
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -170,
+          "y": 4
+        },
+        {
+          "x": -140,
+          "y": 34
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "metal",
+      "fill": "light",
+      "height": 32,
+      "label": "AC unit (existing)",
+      "locked": true
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -136,
+          "y": 4
+        },
+        {
+          "x": -106,
+          "y": 34
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "metal",
+      "fill": "light",
+      "height": 32,
+      "label": "AC unit (existing)",
+      "locked": true
+    },
+    {
+      "id": "s11",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": -90,
+          "y": 478
+        },
+        {
+          "x": 150,
+          "y": 470
+        },
+        {
+          "x": 175,
+          "y": 540
+        },
+        {
+          "x": -110,
+          "y": 560
+        }
+      ],
+      "closed": true,
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "height": 1,
+      "label": "Pea gravel garden (existing)",
+      "locked": true
+    },
+    {
+      "id": "s12",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 89,
+          "y": 0
+        },
+        {
+          "x": 92.5,
+          "y": 3.5
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 38,
+      "height": 48,
+      "label": "4x4 post, bolted to the deck rim"
+    },
+    {
+      "id": "s13",
+      "type": "line",
+      "pts": [
+        {
+          "x": 42.25,
+          "y": 0
+        },
+        {
+          "x": 42.25,
+          "y": 63.0
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "dash": "dashed",
+      "height": 0,
+      "label": "2x12 stringer, cut (7 risers)"
+    },
+    {
+      "id": "s14",
+      "type": "line",
+      "pts": [
+        {
+          "x": 57.583,
+          "y": 0
+        },
+        {
+          "x": 57.583,
+          "y": 63.0
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "dash": "dashed",
+      "height": 0,
+      "label": "2x12 stringer, cut (7 risers)"
+    },
+    {
+      "id": "s15",
+      "type": "line",
+      "pts": [
+        {
+          "x": 72.917,
+          "y": 0
+        },
+        {
+          "x": 72.917,
+          "y": 63.0
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "dash": "dashed",
+      "height": 0,
+      "label": "2x12 stringer, cut (7 risers)"
+    },
+    {
+      "id": "s16",
+      "type": "line",
+      "pts": [
+        {
+          "x": 88.25,
+          "y": 0
+        },
+        {
+          "x": 88.25,
+          "y": 63.0
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "dash": "dashed",
+      "height": 0,
+      "label": "2x12 stringer, cut (7 risers)"
+    },
+    {
+      "id": "s17",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": 0.0
+        },
+        {
+          "x": 89.0,
+          "y": 10.5
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.357142857142854,
+      "height": 1.5,
+      "label": "Tread, two 2x6 x 47 1/2 in"
+    },
+    {
+      "id": "s18",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": 10.5
+        },
+        {
+          "x": 89.0,
+          "y": 21.0
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 34.214285714285715,
+      "height": 1.5,
+      "label": "Tread, two 2x6 x 47 1/2 in"
+    },
+    {
+      "id": "s19",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": 21.0
+        },
+        {
+          "x": 89.0,
+          "y": 31.5
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 27.07142857142857,
+      "height": 1.5,
+      "label": "Tread, two 2x6 x 47 1/2 in"
+    },
+    {
+      "id": "s20",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": 31.5
+        },
+        {
+          "x": 89.0,
+          "y": 42.0
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 19.928571428571427,
+      "height": 1.5,
+      "label": "Tread, two 2x6 x 47 1/2 in"
+    },
+    {
+      "id": "s21",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": 42.0
+        },
+        {
+          "x": 89.0,
+          "y": 52.5
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 12.785714285714285,
+      "height": 1.5,
+      "label": "Tread, two 2x6 x 47 1/2 in"
+    },
+    {
+      "id": "s22",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": 52.5
+        },
+        {
+          "x": 89.0,
+          "y": 63.0
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 5.642857142857139,
+      "height": 1.5,
+      "label": "Tread, two 2x6 x 47 1/2 in"
+    },
+    {
+      "id": "s23",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 38.0,
+          "y": 56.0
+        },
+        {
+          "x": 41.5,
+          "y": 59.5
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 1,
+      "height": 45,
+      "label": "4x4 stair post, bolted to the stringer"
+    },
+    {
+      "id": "s24",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 89.0,
+          "y": 56.0
+        },
+        {
+          "x": 92.5,
+          "y": 59.5
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 1,
+      "height": 45,
+      "label": "4x4 stair post, bolted to the stringer"
+    },
+    {
+      "id": "s25",
+      "type": "line",
+      "pts": [
+        {
+          "x": 39.75,
+          "y": 3.5
+        },
+        {
+          "x": 39.75,
+          "y": 56.0
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "height": 0,
+      "label": "Stair guard with graspable handrail"
+    },
+    {
+      "id": "s26",
+      "type": "line",
+      "pts": [
+        {
+          "x": 90.75,
+          "y": 3.5
+        },
+        {
+          "x": 90.75,
+          "y": 56.0
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "height": 0,
+      "label": "Stair guard with graspable handrail"
+    },
+    {
+      "id": "s27",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 29.25,
+          "y": 40.0
+        },
+        {
+          "x": 101.25,
+          "y": 112.0
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 6 ft (stairs land on it)"
+    },
+    {
+      "id": "s28",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 36.25,
+          "y": 116.482
+        },
+        {
+          "x": 78.25,
+          "y": 158.482
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 42 in"
+    },
+    {
+      "id": "s29",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 31.25,
+          "y": 162.748
+        },
+        {
+          "x": 67.25,
+          "y": 198.748
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 36 in"
+    },
+    {
+      "id": "s30",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 35.25,
+          "y": 202.672
+        },
+        {
+          "x": 83.25,
+          "y": 250.672
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 48 in"
+    },
+    {
+      "id": "s31",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 53.25,
+          "y": 253.63
+        },
+        {
+          "x": 93.25,
+          "y": 293.63
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 40 in"
+    },
+    {
+      "id": "s32",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 55.25,
+          "y": 298.459
+        },
+        {
+          "x": 99.25,
+          "y": 342.459
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 44 in"
+    },
+    {
+      "id": "s33",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 49.25,
+          "y": 346.334
+        },
+        {
+          "x": 85.25,
+          "y": 382.334
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 36 in"
+    },
+    {
+      "id": "s34",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 34.25,
+          "y": 385.666
+        },
+        {
+          "x": 76.25,
+          "y": 427.666
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 42 in"
+    },
+    {
+      "id": "s35",
+      "type": "circle",
+      "pts": [
+        {
+          "x": 30.25,
+          "y": 432.264
+        },
+        {
+          "x": 68.25,
+          "y": 470.264
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": -3,
+      "height": 4,
+      "label": "Stamped round 38 in"
+    },
+    {
+      "id": "s36",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 41.5,
+          "y": -20
+        },
+        {
+          "x": 89.0,
+          "y": -20
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s37",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 200,
+          "y": 0
+        },
+        {
+          "x": 200,
+          "y": 63.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s38",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 240,
+          "y": 0
+        },
+        {
+          "x": 240,
+          "y": 470.264
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s39",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 29.25,
+          "y": 125
+        },
+        {
+          "x": 101.25,
+          "y": 125
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s40",
+      "type": "text",
+      "pts": [
+        {
+          "x": 228,
+          "y": 30
+        }
+      ],
+      "layer": "detail",
+      "text": "Stairs: 7 risers about 7 1/8 in, 6 treads 10 1/2 in",
+      "size": 6
+    },
+    {
+      "id": "s41",
+      "type": "text",
+      "pts": [
+        {
+          "x": 228,
+          "y": 40
+        }
+      ],
+      "layer": "detail",
+      "text": "4 ft wide, guard rail and handrail both sides",
+      "size": 6
+    },
+    {
+      "id": "s42",
+      "type": "text",
+      "pts": [
+        {
+          "x": 250,
+          "y": 250
+        }
+      ],
+      "layer": "detail",
+      "text": "About 40 ft of path: a 6 ft round where the",
+      "size": 6
+    },
+    {
+      "id": "s43",
+      "type": "text",
+      "pts": [
+        {
+          "x": 250,
+          "y": 260
+        }
+      ],
+      "layer": "detail",
+      "text": "stairs land, then 8 rounds 36-48 in across,",
+      "size": 6
+    },
+    {
+      "id": "s44",
+      "type": "text",
+      "pts": [
+        {
+          "x": 250,
+          "y": 270
+        }
+      ],
+      "layer": "detail",
+      "text": "about 5 in of grass between, 4 in thick, stamped",
+      "size": 6
+    },
+    {
+      "id": "s45",
+      "type": "text",
+      "pts": [
+        {
+          "x": 250,
+          "y": 280
+        }
+      ],
+      "layer": "detail",
+      "text": "in a stone pattern, top about 1 in above the grass",
+      "size": 6
+    },
+    {
+      "id": "s46",
+      "type": "text",
+      "pts": [
+        {
+          "x": -300,
+          "y": 160
+        }
+      ],
+      "layer": "detail",
+      "text": "Deck height estimated from photos (+/- 3 in): measure before cutting stringers",
+      "size": 5
+    },
+    {
+      "id": "s47",
+      "type": "text",
+      "pts": [
+        {
+          "x": -300,
+          "y": 170
+        }
+      ],
+      "layer": "detail",
+      "text": "Path layout is a guide: set the rounds where they walk best",
+      "size": 5
+    }
+  ]
+}

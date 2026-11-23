@@ -108,6 +108,20 @@ export const EXAMPLES = [
     ],
   },
   {
+    id: "church-stairs-path-plan",
+    file: "examples/church-stairs-path-plan.json",
+    name: "Church Deck Stairs + Stepping Stones — plan (overhead)",
+    blurb: "Dennis Church (23 Nov 2026, from photos): 4 ft wide stairs off the end of the deck, 7 risers about 7 1/8 in, guard and graspable handrail both sides, landing on a 6 ft stamped concrete round; then 8 stamped rounds 36-48 in across, about 5 in apart, out about 40 ft to the pea gravel garden.",
+    teaches: ["Circles for round pours (area per round in the panel)", "Stringers dashed under the treads", "Existing deck, rail and garden ghosted"],
+  },
+  {
+    id: "church-stairs-path-side",
+    file: "examples/church-stairs-path-side.json",
+    name: "Church Deck Stairs + Stepping Stones — side view (elevation)",
+    blurb: "Dennis Church: side view of the deck stairs. 50 in rise (from photos) in 7 risers, 6 treads of 10 1/2 in, cut 2x12 stringer hung on the rim and seated on the 6 ft round, guard 36 in over the nosings with a graspable handrail on top; the rounds 4 in thick, about 1 in above the grass.",
+    teaches: ["A cut stringer drawn as one polygon", "Rake rails as slanted polygons", "Elevation: up is negative"],
+  },
+  {
     id: "seger-steps-a-plan",
     file: "examples/seger-steps-a-plan.json",
     name: "Seger Front Steps A (as formed) — plan (overhead)",

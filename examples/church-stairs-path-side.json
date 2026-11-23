@@ -1,0 +1,1031 @@
+{
+  "version": 1,
+  "name": "Church Deck Stairs + Stepping Stones — side view (elevation)",
+  "viewMode": "elevation",
+  "layers": [
+    {
+      "id": "existing",
+      "name": "Existing",
+      "color": "#94a3b8",
+      "visible": true
+    },
+    {
+      "id": "stairs",
+      "name": "New stairs",
+      "color": "#b45309",
+      "visible": true
+    },
+    {
+      "id": "rail",
+      "name": "New stair rails",
+      "color": "#111827",
+      "visible": true
+    },
+    {
+      "id": "concrete",
+      "name": "New stamped concrete",
+      "color": "#475569",
+      "visible": true
+    },
+    {
+      "id": "dims",
+      "name": "Dimensions",
+      "color": "#6d28d9",
+      "visible": true
+    },
+    {
+      "id": "detail",
+      "name": "Notes",
+      "color": "#334155",
+      "visible": true
+    }
+  ],
+  "activeLayer": "existing",
+  "shapes": [
+    {
+      "id": "s1",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -96,
+          "y": -50.0
+        },
+        {
+          "x": 0,
+          "y": -38.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 0,
+      "height": 152,
+      "label": "Deck rim and boards (existing)",
+      "locked": true
+    },
+    {
+      "id": "s2",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -14,
+          "y": -38.0
+        },
+        {
+          "x": -8.5,
+          "y": 0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 0,
+      "height": 5.5,
+      "label": "Deck post (existing)",
+      "locked": true
+    },
+    {
+      "id": "s3",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -3.5,
+          "y": -87.5
+        },
+        {
+          "x": 0,
+          "y": -38.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "material": "wood",
+      "fill": "light",
+      "elevation": 38,
+      "height": 3.5,
+      "label": "Deck rail post (existing)",
+      "locked": true
+    },
+    {
+      "id": "s4",
+      "type": "rect",
+      "pts": [
+        {
+          "x": -96,
+          "y": -87.5
+        },
+        {
+          "x": -3.5,
+          "y": -86.0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "fill": "light",
+      "elevation": 0,
+      "height": 3.5,
+      "label": "Deck rail cap (existing)",
+      "locked": true
+    },
+    {
+      "id": "s5",
+      "type": "line",
+      "pts": [
+        {
+          "x": -120,
+          "y": 0
+        },
+        {
+          "x": 215,
+          "y": 0
+        }
+      ],
+      "layer": "existing",
+      "existing": true,
+      "label": "Yard (grade)",
+      "locked": true
+    },
+    {
+      "id": "s6",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 63.0,
+          "y": 0
+        },
+        {
+          "x": 63.0,
+          "y": -7.143
+        },
+        {
+          "x": 52.5,
+          "y": -7.143
+        },
+        {
+          "x": 52.5,
+          "y": -14.286
+        },
+        {
+          "x": 42.0,
+          "y": -14.286
+        },
+        {
+          "x": 42.0,
+          "y": -21.429
+        },
+        {
+          "x": 31.5,
+          "y": -21.429
+        },
+        {
+          "x": 31.5,
+          "y": -28.571
+        },
+        {
+          "x": 21.0,
+          "y": -28.571
+        },
+        {
+          "x": 21.0,
+          "y": -35.714
+        },
+        {
+          "x": 10.5,
+          "y": -35.714
+        },
+        {
+          "x": 10.5,
+          "y": -42.857
+        },
+        {
+          "x": 0.0,
+          "y": -42.857
+        },
+        {
+          "x": 0,
+          "y": -42.857
+        },
+        {
+          "x": 0,
+          "y": -36.394
+        },
+        {
+          "x": 53.499,
+          "y": 0
+        }
+      ],
+      "closed": true,
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "light",
+      "elevation": 41.5,
+      "height": 1.5,
+      "label": "2x12 stringer, cut (4 across)"
+    },
+    {
+      "id": "s7",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 52.5,
+          "y": -7.143
+        },
+        {
+          "x": 63.75,
+          "y": -5.643
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Tread, two 2x6"
+    },
+    {
+      "id": "s8",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 62.25,
+          "y": -5.643
+        },
+        {
+          "x": 63.0,
+          "y": -0.0
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Riser board, 1x8"
+    },
+    {
+      "id": "s9",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 42.0,
+          "y": -14.286
+        },
+        {
+          "x": 53.25,
+          "y": -12.786
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Tread, two 2x6"
+    },
+    {
+      "id": "s10",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 51.75,
+          "y": -12.786
+        },
+        {
+          "x": 52.5,
+          "y": -7.143
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Riser board, 1x8"
+    },
+    {
+      "id": "s11",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 31.5,
+          "y": -21.429
+        },
+        {
+          "x": 42.75,
+          "y": -19.929
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Tread, two 2x6"
+    },
+    {
+      "id": "s12",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 41.25,
+          "y": -19.929
+        },
+        {
+          "x": 42.0,
+          "y": -14.286
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Riser board, 1x8"
+    },
+    {
+      "id": "s13",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 21.0,
+          "y": -28.571
+        },
+        {
+          "x": 32.25,
+          "y": -27.071
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Tread, two 2x6"
+    },
+    {
+      "id": "s14",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 30.75,
+          "y": -27.071
+        },
+        {
+          "x": 31.5,
+          "y": -21.429
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Riser board, 1x8"
+    },
+    {
+      "id": "s15",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 10.5,
+          "y": -35.714
+        },
+        {
+          "x": 21.75,
+          "y": -34.214
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Tread, two 2x6"
+    },
+    {
+      "id": "s16",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 20.25,
+          "y": -34.214
+        },
+        {
+          "x": 21.0,
+          "y": -28.571
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Riser board, 1x8"
+    },
+    {
+      "id": "s17",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -42.857
+        },
+        {
+          "x": 11.25,
+          "y": -41.357
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Tread, two 2x6"
+    },
+    {
+      "id": "s18",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 9.75,
+          "y": -41.357
+        },
+        {
+          "x": 10.5,
+          "y": -35.714
+        }
+      ],
+      "layer": "stairs",
+      "step": 1,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 41.5,
+      "height": 47.5,
+      "label": "Riser board, 1x8"
+    },
+    {
+      "id": "s19",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 56.0,
+          "y": -48.214
+        },
+        {
+          "x": 59.5,
+          "y": -1
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 38.0,
+      "height": 3.5,
+      "label": "4x4 stair post, bolted to the stringer"
+    },
+    {
+      "id": "s20",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -86.0
+        },
+        {
+          "x": 56.0,
+          "y": -47.905
+        },
+        {
+          "x": 56.0,
+          "y": -46.405
+        },
+        {
+          "x": 0.0,
+          "y": -84.5
+        }
+      ],
+      "closed": true,
+      "layer": "rail",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 38.0,
+      "height": 3.5,
+      "label": "Top rail, 2x4 on the rake"
+    },
+    {
+      "id": "s21",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -87.5
+        },
+        {
+          "x": 56.0,
+          "y": -49.405
+        },
+        {
+          "x": 56.0,
+          "y": -47.905
+        },
+        {
+          "x": 0.0,
+          "y": -86.0
+        }
+      ],
+      "closed": true,
+      "layer": "rail",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 38.0,
+      "height": 3.5,
+      "label": "Graspable handrail on top (treated, finger groove)"
+    },
+    {
+      "id": "s22",
+      "type": "polygon",
+      "pts": [
+        {
+          "x": 0.0,
+          "y": -55.0
+        },
+        {
+          "x": 56.0,
+          "y": -16.905
+        },
+        {
+          "x": 56.0,
+          "y": -15.405
+        },
+        {
+          "x": 0.0,
+          "y": -53.5
+        }
+      ],
+      "closed": true,
+      "layer": "rail",
+      "step": 2,
+      "material": "pt",
+      "fill": "solid",
+      "elevation": 38.0,
+      "height": 3.5,
+      "label": "Bottom rail, 2x4 on the rake"
+    },
+    {
+      "id": "s23",
+      "type": "line",
+      "pts": [
+        {
+          "x": 3.5,
+          "y": -52.619
+        },
+        {
+          "x": 3.5,
+          "y": -82.119
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s24",
+      "type": "line",
+      "pts": [
+        {
+          "x": 7.7,
+          "y": -49.762
+        },
+        {
+          "x": 7.7,
+          "y": -79.262
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s25",
+      "type": "line",
+      "pts": [
+        {
+          "x": 11.9,
+          "y": -46.905
+        },
+        {
+          "x": 11.9,
+          "y": -76.405
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s26",
+      "type": "line",
+      "pts": [
+        {
+          "x": 16.1,
+          "y": -44.048
+        },
+        {
+          "x": 16.1,
+          "y": -73.548
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s27",
+      "type": "line",
+      "pts": [
+        {
+          "x": 20.3,
+          "y": -41.19
+        },
+        {
+          "x": 20.3,
+          "y": -70.69
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s28",
+      "type": "line",
+      "pts": [
+        {
+          "x": 24.5,
+          "y": -38.333
+        },
+        {
+          "x": 24.5,
+          "y": -67.833
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s29",
+      "type": "line",
+      "pts": [
+        {
+          "x": 28.7,
+          "y": -35.476
+        },
+        {
+          "x": 28.7,
+          "y": -64.976
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s30",
+      "type": "line",
+      "pts": [
+        {
+          "x": 32.9,
+          "y": -32.619
+        },
+        {
+          "x": 32.9,
+          "y": -62.119
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s31",
+      "type": "line",
+      "pts": [
+        {
+          "x": 37.1,
+          "y": -29.762
+        },
+        {
+          "x": 37.1,
+          "y": -59.262
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s32",
+      "type": "line",
+      "pts": [
+        {
+          "x": 41.3,
+          "y": -26.905
+        },
+        {
+          "x": 41.3,
+          "y": -56.405
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s33",
+      "type": "line",
+      "pts": [
+        {
+          "x": 45.5,
+          "y": -24.048
+        },
+        {
+          "x": 45.5,
+          "y": -53.548
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s34",
+      "type": "line",
+      "pts": [
+        {
+          "x": 49.7,
+          "y": -21.19
+        },
+        {
+          "x": 49.7,
+          "y": -50.69
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s35",
+      "type": "line",
+      "pts": [
+        {
+          "x": 53.9,
+          "y": -18.333
+        },
+        {
+          "x": 53.9,
+          "y": -47.833
+        }
+      ],
+      "layer": "rail",
+      "step": 2,
+      "label": "Black aluminum baluster"
+    },
+    {
+      "id": "s36",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 40.0,
+          "y": -1
+        },
+        {
+          "x": 112.0,
+          "y": 3
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 29.25,
+      "height": 72.0,
+      "label": "Stamped round 6 ft (stairs land on it)"
+    },
+    {
+      "id": "s37",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 116.482,
+          "y": -1
+        },
+        {
+          "x": 158.482,
+          "y": 3
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 36.25,
+      "height": 42,
+      "label": "Stamped round 42 in"
+    },
+    {
+      "id": "s38",
+      "type": "rect",
+      "pts": [
+        {
+          "x": 162.748,
+          "y": -1
+        },
+        {
+          "x": 198.748,
+          "y": 3
+        }
+      ],
+      "layer": "concrete",
+      "step": 3,
+      "material": "concrete",
+      "fill": "solid",
+      "elevation": 31.25,
+      "height": 36,
+      "label": "Stamped round 36 in"
+    },
+    {
+      "id": "s39",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": -30,
+          "y": 0
+        },
+        {
+          "x": -30,
+          "y": -50.0
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s40",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 0,
+          "y": 22
+        },
+        {
+          "x": 63.0,
+          "y": 22
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s41",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 71.0,
+          "y": 0
+        },
+        {
+          "x": 71.0,
+          "y": -7.143
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s42",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 52.5,
+          "y": -17.143
+        },
+        {
+          "x": 63.0,
+          "y": -17.143
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s43",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 68.0,
+          "y": -11.905
+        },
+        {
+          "x": 68.0,
+          "y": -49.405
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s44",
+      "type": "dimension",
+      "pts": [
+        {
+          "x": 40.0,
+          "y": 12
+        },
+        {
+          "x": 112.0,
+          "y": 12
+        }
+      ],
+      "layer": "dims"
+    },
+    {
+      "id": "s45",
+      "type": "text",
+      "pts": [
+        {
+          "x": 100,
+          "y": -96
+        }
+      ],
+      "layer": "detail",
+      "text": "7 equal risers about 7 1/8 in, 6 treads 10 1/2 in (2x6 pair, 3/4 in nosing)",
+      "size": 5
+    },
+    {
+      "id": "s46",
+      "type": "text",
+      "pts": [
+        {
+          "x": 100,
+          "y": -90
+        }
+      ],
+      "layer": "detail",
+      "text": "Stringers hang on the deck rim with stringer connectors and sit on the 6 ft round",
+      "size": 5
+    },
+    {
+      "id": "s47",
+      "type": "text",
+      "pts": [
+        {
+          "x": 100,
+          "y": -84
+        }
+      ],
+      "layer": "detail",
+      "text": "Guard 36 in above the nosings, balusters under 4 in apart, closed risers",
+      "size": 5
+    },
+    {
+      "id": "s48",
+      "type": "text",
+      "pts": [
+        {
+          "x": 100,
+          "y": -78
+        }
+      ],
+      "layer": "detail",
+      "text": "Rounds: 4 in thick on compacted dirt, top about 1 in above the grass",
+      "size": 5
+    },
+    {
+      "id": "s49",
+      "type": "text",
+      "pts": [
+        {
+          "x": -110,
+          "y": -104
+        }
+      ],
+      "layer": "detail",
+      "text": "Deck height estimated from photos (+/- 3 in)",
+      "size": 5
+    }
+  ]
+}
