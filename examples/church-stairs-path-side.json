@@ -244,7 +244,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Tread, two 2x6"
+      "label": "Tread, two 2x6 (stained brown)"
     },
     {
       "id": "s8",
@@ -265,7 +265,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Riser board, 1x8"
+      "label": "Riser board, 1x8 (painted white)"
     },
     {
       "id": "s9",
@@ -286,7 +286,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Tread, two 2x6"
+      "label": "Tread, two 2x6 (stained brown)"
     },
     {
       "id": "s10",
@@ -307,7 +307,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Riser board, 1x8"
+      "label": "Riser board, 1x8 (painted white)"
     },
     {
       "id": "s11",
@@ -328,7 +328,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Tread, two 2x6"
+      "label": "Tread, two 2x6 (stained brown)"
     },
     {
       "id": "s12",
@@ -349,7 +349,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Riser board, 1x8"
+      "label": "Riser board, 1x8 (painted white)"
     },
     {
       "id": "s13",
@@ -370,7 +370,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Tread, two 2x6"
+      "label": "Tread, two 2x6 (stained brown)"
     },
     {
       "id": "s14",
@@ -391,7 +391,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Riser board, 1x8"
+      "label": "Riser board, 1x8 (painted white)"
     },
     {
       "id": "s15",
@@ -412,7 +412,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Tread, two 2x6"
+      "label": "Tread, two 2x6 (stained brown)"
     },
     {
       "id": "s16",
@@ -433,7 +433,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Riser board, 1x8"
+      "label": "Riser board, 1x8 (painted white)"
     },
     {
       "id": "s17",
@@ -454,7 +454,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Tread, two 2x6"
+      "label": "Tread, two 2x6 (stained brown)"
     },
     {
       "id": "s18",
@@ -475,7 +475,7 @@
       "fill": "solid",
       "elevation": 41.5,
       "height": 47.5,
-      "label": "Riser board, 1x8"
+      "label": "Riser board, 1x8 (painted white)"
     },
     {
       "id": "s19",
@@ -556,7 +556,7 @@
       "fill": "solid",
       "elevation": 38.0,
       "height": 3.5,
-      "label": "Graspable handrail on top (treated, finger groove)"
+      "label": "2x6 cap, stained brown to match the other stairs"
     },
     {
       "id": "s22",
@@ -998,7 +998,7 @@
         }
       ],
       "layer": "detail",
-      "text": "Guard 36 in above the nosings, balusters under 4 in apart, closed risers",
+      "text": "Match the other stairs: white risers and posts, brown treads and cap. Guard 36 in, balusters under 4 in apart",
       "size": 5
     },
     {

@@ -564,7 +564,7 @@
       "layer": "rail",
       "step": 2,
       "height": 0,
-      "label": "Stair guard with graspable handrail"
+      "label": "Stair guard: white rails, black balusters, brown cap"
     },
     {
       "id": "s26",
@@ -582,7 +582,7 @@
       "layer": "rail",
       "step": 2,
       "height": 0,
-      "label": "Stair guard with graspable handrail"
+      "label": "Stair guard: white rails, black balusters, brown cap"
     },
     {
       "id": "s27",
@@ -856,7 +856,7 @@
         }
       ],
       "layer": "detail",
-      "text": "4 ft wide, guard rail and handrail both sides",
+      "text": "4 ft wide, rails both sides; built to match the stairs on the other side",
       "size": 6
     },
     {
